@@ -14,6 +14,7 @@ import {
   useLatestProjects,
   useLatestMyImages,
 } from "../components/hooks"
+import { PhotoCard } from "../components/photo"
 
 export default function IndexPage() {
   return (
@@ -113,17 +114,17 @@ function LatestPhoto() {
   return (
     <StyledSection>
       <h2 className="section-title">
-        <span role="img">📷</span> Photo
+        <span role="img">📷</span>Latest Photo
       </h2>
       {edges.map(edge => (
-        <Link to={edge.node.slug.current}>
-          <Img
-            key={edge.node.id}
-            fluid={edge.node.myImage.asset.fluid}
-            style={{
-              marginBottom: `4rem`,
-            }}
-          />
+        <Link
+          to={`/photo/${edge.node.slug.current}`}
+          style={{
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+        >
+          <PhotoCard sanityMyImage={edge.node} />
         </Link>
       ))}
       <Button onClick={() => navigate(`/photo`)}>View All</Button>

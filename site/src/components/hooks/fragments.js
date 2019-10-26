@@ -44,11 +44,19 @@ export const MY_IMAGE_FRAGMENT = graphql`
     slug {
       current
     }
+    datePosted
+    caption
     myImage {
       asset {
         fluid(maxWidth: 800, maxHeight: 600) {
           ...GatsbySanityImageFluid
         }
+      }
+    }
+    tags {
+      tag
+      slug {
+        current
       }
     }
   }
