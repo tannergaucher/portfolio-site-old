@@ -41,6 +41,7 @@ const Post = ({ data, pageContext }) => {
       <StyledPost>
         <SEO title={post.frontmatter.title} />
         <h1 className="post-title">{post.frontmatter.title}</h1>
+        <p className="post-description">{post.frontmatter.description}</p>
         <h4 className="post-date">{post.frontmatter.date}</h4>
         <div
           className="post-body"
@@ -69,13 +70,7 @@ export default Post
 export const pageQuery = graphql`
   query POST_MARKDOWN_QUERY($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      frontmatter {
-        title
-        date(formatString: "MM/DD/YYYY")
-        tags
-      }
+      ...PostFragment
     }
   }
 `
