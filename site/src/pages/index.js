@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { navigate } from "gatsby"
+import { navigate, Link } from "gatsby"
 
 
 
@@ -17,6 +17,7 @@ import {
   useLatestProjects,
   useLatestMyImages,
 } from "../components/hooks"
+import { PhotoCard } from "../components/photo"
 
 export default function IndexPage() {
   return (
@@ -71,7 +72,7 @@ const StyledSection = styled.div`
   margin: 10rem 0;
 
   .section-title {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   span {
@@ -89,7 +90,7 @@ function LatestPosts() {
       {edges.map(edge => (
         <PostCard key={edge.node.id} post={edge.node} />
       ))}
-      <Button onClick={() => navigate(`/posts`)}>All Posts</Button>
+      <Button onClick={() => navigate(`/posts`)}>View All</Button>
     </StyledSection>
   )
 }
@@ -105,7 +106,7 @@ function Projects() {
       {edges.map(edge => (
         <ProjectCard key={edge.node.id} project={edge.node} />
       ))}
-      <Button onClick={() => navigate(`/projects`)}>All Projects</Button>
+      <Button onClick={() => navigate(`/projects`)}>View All</Button>
     </StyledSection>
   )
 }
@@ -116,12 +117,21 @@ function LatestPhoto() {
   return (
     <StyledSection>
       <h2 className="section-title">
-        <span role="img">📷</span> Photo
+        <span role="img">📷</span>Latest Photo
       </h2>
       {edges.map(edge => (
-        // <Img key={edge.node.id} fluid={edge.node.myImage.asset.fluid} />
+        <Link
+          to={`/photo/${edge.node.slug.current}`}
+          style={{
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+        >
+          <PhotoCard sanityMyImage={edge.node} />
+        </Link>
+
       ))}
-      <Button onClick={() => navigate(`/photo`)}> All Photo</Button>
+      <Button onClick={() => navigate(`/photo`)}>View All</Button>
     </StyledSection>
   )
 }

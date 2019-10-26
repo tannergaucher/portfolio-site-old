@@ -1,5 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 import { Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
@@ -13,7 +14,9 @@ export default function Photo() {
       <StyledPage>
         <h1 className="page-title">Photo</h1>
         {edges.map(edge => (
-          <Img key={edge.node.id} fluid={edge.node.myImage.asset.fluid} />
+          <Link to={edge.node.slug.current}>
+            <Img key={edge.node.id} fluid={edge.node.myImage.asset.fluid} />
+          </Link>
         ))}
       </StyledPage>
     </Layout>
