@@ -7,8 +7,6 @@ const StyledPhotoCard = styled.div`
 `
 
 export default function PhotoCard({ sanityMyImage }) {
-  console.log(sanityMyImage.myImage.asset.fluid.aspectRatio)
-
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
 
   return (
