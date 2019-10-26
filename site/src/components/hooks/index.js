@@ -4,6 +4,8 @@ import { useAllPosts } from "./use-all-posts"
 import { useLatestPosts } from "./use-latest-posts"
 import { useAllProjects } from "./use-all-projects"
 import { useLatestProjects } from "./use-latest-projects"
+import { useAllMyImages } from "./use-all-my-images"
+import { useLatestMyImages } from "./use-latest-my-images"
 
 export {
   useAllPosts,
@@ -12,4 +14,6 @@ export {
   useLatestPosts,
   useAllProjects,
   useLatestProjects,
+  useAllMyImages,
+  useLatestMyImages,
 }
