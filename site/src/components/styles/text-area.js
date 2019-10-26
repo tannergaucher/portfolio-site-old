@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Input = styled.input`
+const TextArea = styled.textarea`
   border: 2px solid black;
   border-radius: var(--radius);
   font-size: var(--font-size);
@@ -9,4 +9,4 @@ const Input = styled.input`
   padding: 0.5rem;
 `
 
-export default Input
+export default TextArea
