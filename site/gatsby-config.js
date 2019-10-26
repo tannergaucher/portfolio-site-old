@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Tanner Gaucher`,
-    description: `Software Development Blog`,
+    description: `Portfolio Site`,
     author: `tannermichaelgaucher@gmail.com`,
     social: {
       github: `http://github.com/tannergaucher`,
@@ -9,6 +9,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `tnsmw3ka`,
+        dataset: `production`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
