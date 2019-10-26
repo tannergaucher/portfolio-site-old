@@ -3,13 +3,11 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { navigate, Link } from "gatsby"
 
-
-
 import { SEO, ContactForm } from "../components/elements"
 import { StyledPage } from "../components/styles"
 import { PostCard } from "../components/post"
 import { ProjectCard } from "../components/project"
-import {} from '../components/'
+import { PhotoCard } from "../components/photo"
 import { Button } from "../components/styles"
 import {
   useAvatarImage,
@@ -17,7 +15,6 @@ import {
   useLatestProjects,
   useLatestMyImages,
 } from "../components/hooks"
-import { PhotoCard } from "../components/photo"
 
 export default function IndexPage() {
   return (
@@ -129,7 +126,6 @@ function LatestPhoto() {
         >
           <PhotoCard sanityMyImage={edge.node} />
         </Link>
-
       ))}
       <Button onClick={() => navigate(`/photo`)}>View All</Button>
     </StyledSection>

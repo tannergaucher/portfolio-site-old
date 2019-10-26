@@ -48,7 +48,7 @@ export const MY_IMAGE_FRAGMENT = graphql`
     caption
     myImage {
       asset {
-        fluid(maxWidth: 800, maxHeight: 600) {
+        fluid(maxWidth: 800) {
           ...GatsbySanityImageFluid
         }
       }
