@@ -12,6 +12,7 @@ import {
   useAvatarImage,
   useLatestPosts,
   useLatestProjects,
+  useLatestMyImages,
 } from "../components/hooks"
 
 export default function IndexPage() {
@@ -27,7 +28,6 @@ export default function IndexPage() {
   )
 }
 
-// TODO: MOVE BIO TO ELEMENTS
 const StyledBio = styled.div`
   margin-top: 10rem;
 
@@ -57,7 +57,9 @@ function Bio() {
       <a href="http://www.github.com/tannergaucher">
         <Button>Github</Button>
       </a>
-      <Button primary>Contact Me</Button>
+      <Button primary onClick={() => navigate(`/contact`)}>
+        Contact Me
+      </Button>
     </StyledBio>
   )
 }
@@ -100,26 +102,23 @@ function Projects() {
       {edges.map(edge => (
         <ProjectCard key={edge.node.id} project={edge.node} />
       ))}
-      <Button
-        onClick={() => {
-          navigate(`/projects`)
-        }}
-      >
-        All Projects
-      </Button>
+      <Button onClick={() => navigate(`/projects`)}>All Projects</Button>
     </StyledSection>
   )
 }
 
 function LatestPhoto() {
-  // TODO: conts {edges} = useLatestPhoto()
+  const { edges } = useLatestMyImages()
+
   return (
     <StyledSection>
       <h2 className="section-title">
         <span role="img">📷</span> Photo
       </h2>
-      {/* <LatestPhoto/> */}
-      <Button> All Photo</Button>
+      {edges.map(edge => (
+        <Img key={edge.node.id} fluid={edge.node.myImage.asset.fluid} />
+      ))}
+      <Button onClick={() => navigate(`/photo`)}> All Photo</Button>
     </StyledSection>
   )
 }
