@@ -4,12 +4,16 @@ import Img from "gatsby-image"
 
 const StyledPhotoCard = styled.div``
 
+function formatDate(dateString) {
+  return dateString.split("T")[0]
+}
+
 export default function PhotoCard({ sanityMyImage }) {
   return (
     <StyledPhotoCard>
       <Img fluid={sanityMyImage.myImage.asset.fluid} />
       <p>{sanityMyImage.caption}</p>
-      <h6>{sanityMyImage.datePosted}</h6>
+      <h5>{formatDate(sanityMyImage.datePosted)}</h5>
       {/* TAGS */}
     </StyledPhotoCard>
   )
