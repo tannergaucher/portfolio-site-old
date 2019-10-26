@@ -1,7 +1,7 @@
 ---
 title: "Hello, World!"
 date: "2016-10-07"
-description: "Beep beep boop boop."
+description: "Beep boop, beep boop."
 tags: ["Blog", "React"]
 ---
 

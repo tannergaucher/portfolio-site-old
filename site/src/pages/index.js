@@ -3,10 +3,13 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { navigate } from "gatsby"
 
+
+
 import { SEO, ContactForm } from "../components/elements"
 import { StyledPage } from "../components/styles"
 import { PostCard } from "../components/post"
 import { ProjectCard } from "../components/project"
+import {} from '../components/'
 import { Button } from "../components/styles"
 import {
   useAvatarImage,
@@ -116,7 +119,7 @@ function LatestPhoto() {
         <span role="img">📷</span> Photo
       </h2>
       {edges.map(edge => (
-        <Img key={edge.node.id} fluid={edge.node.myImage.asset.fluid} />
+        // <Img key={edge.node.id} fluid={edge.node.myImage.asset.fluid} />
       ))}
       <Button onClick={() => navigate(`/photo`)}> All Photo</Button>
     </StyledSection>

@@ -1,17 +1,18 @@
 ---
 title: "Deploy a Serverless React + GraphQL App on Netlify: Part One"
 date: "2019-10-23"
-description: "Get a serverless GraphQL app up and running in 10 minutes."
+description: "Running an Apollo server GraphQL API as a Lambda Function."
 tags: ["React", "GraphQL", "Netlify Functions", "AWS"]
 ---
 
 ## Why this stack?
 
-- Netlity is great for hosting. Now can deploy server side code along with client side code with AWS lambda functions.
-  - Don't have to touch AWS
-  - Netlify Continuous Integration
-    - Pull requests trigger branch previews
-    - Client and lambda functions served from the same URL. No Cors issues.
+Netlity is great for hosting. Now can deploy server side code along with client side code with AWS lambda functions.
+
+- Don't have to touch AWS
+- Netlify Continuous Integration
+  - Pull requests trigger branch previews
+  - Client and lambda functions served from the same URL. No Cors issues.
 
 ## Assumptions
 
@@ -34,3 +35,14 @@ tags: ["React", "GraphQL", "Netlify Functions", "AWS"]
 ## Step Four: Add Apollo Client
 
 ## Step Five: Make a query with the React Apollo useStaticQuery hook
+
+Here is what code spippets look like.
+
+```js
+const firstName = "tanner"
+const lastName = "gaucher"
+
+export default function me() {
+  return firstname + " " + lastname
+}
+```
