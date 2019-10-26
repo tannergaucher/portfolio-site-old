@@ -1,11 +1,12 @@
 ---
 title: "Deploy a Serverless React + GraphQL App on Netlify: Part Three"
 date: "2019-10-28"
-description: "Beep beep boop boop."
+description: "Adding authentication with Json Webtoken."
 tags: ["React", "GraphQL", "Netlify"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non suscipit tellus. Sed mi tellus, tristique eu laoreet non, semper ac lacus. Donec commodo laoreet accumsan. Nulla vitae rutrum lorem. Nunc sit amet ullamcorper magna. Suspendisse consectetur nunc non ipsum sodales imperdiet. Vestibulum tincidunt velit non augue pharetra interdum nec ut ligula. Mauris sagittis blandit lacus sed auctor. Fusce tortor ante, accumsan a lacinia vitae, hendrerit sit amet orci. Maecenas venenatis diam a malesuada rutrum. Nunc mollis tincidunt consequat. Etiam sit amet dignissim nisl, in tincidunt elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur luctus varius sodales. Nam finibus euismod nisl, sed feugiat enim malesuada a. Vestibulum cursus, purus sed vehicula fermentum, lacus justo posuere purus, efficitur rhoncus tortor dui ut turpis.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non suscipit tellus.
+Sed mi tellus, tristique eu laoreet non, semper ac lacus. Donec commodo laoreet accumsan. Nulla vitae rutrum lorem. Nunc sit amet ullamcorper magna. Suspendisse consectetur nunc non ipsum sodales imperdiet. Vestibulum tincidunt velit non augue pharetra interdum nec ut ligula. Mauris sagittis blandit lacus sed auctor. Fusce tortor ante, accumsan a lacinia vitae, hendrerit sit amet orci. Maecenas venenatis diam a malesuada rutrum. Nunc mollis tincidunt consequat. Etiam sit amet dignissim nisl, in tincidunt elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur luctus varius sodales. Nam finibus euismod nisl, sed feugiat enim malesuada a. Vestibulum cursus, purus sed vehicula fermentum, lacus justo posuere purus, efficitur rhoncus tortor dui ut turpis.
 
 ## Some Heading Two
 
