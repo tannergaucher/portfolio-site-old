@@ -7,12 +7,20 @@ const StyledPhotoCard = styled.div`
 `
 
 export default function PhotoCard({ sanityMyImage }) {
+  const { aspectRatio } = sanityMyImage.myImage.asset.fluid
+
   return (
     <StyledPhotoCard>
-      <Img fluid={sanityMyImage.myImage.asset.fluid} />
+      <div
+        className="image-wrapper"
+        style={{
+          maxWidth: aspectRatio < 1 ? "600px" : "",
+        }}
+      >
+        <Img fluid={sanityMyImage.myImage.asset.fluid} />
+      </div>
       <p>{sanityMyImage.caption}</p>
       <h5>{sanityMyImage.datePosted}</h5>
-      {/* TAGS */}
     </StyledPhotoCard>
   )
 }
