@@ -1,6 +1,6 @@
 ---
 title: "Deploy a Serverless React + GraphQL App on Netlify: Part Two"
 date: "2019-10-25"
-description: "Still beep beep boop boop."
+description: "Adding Data Persistence with Prisma."
 tags: ["React", "GraphQL", "Netlify"]
 ---

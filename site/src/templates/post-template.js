@@ -48,7 +48,7 @@ const Post = ({ data, pageContext }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
 
-        <div className="next-previous">
+        {/* <div className="next-previous">
           {previous && (
             <Link className="previous-post-title" to={previous.fields.slug}>
               <h3>Last Post: {previous.frontmatter.title}</h3>
@@ -59,7 +59,7 @@ const Post = ({ data, pageContext }) => {
               <h3>Next Post: {next.frontmatter.title}</h3>
             </Link>
           )}
-        </div>
+        </div> */}
       </StyledPost>
     </Layout>
   )
