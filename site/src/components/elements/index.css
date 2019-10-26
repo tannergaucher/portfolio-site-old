@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Merriweather:400,900&display=swap");
+
+:root {
+  --container: 800px;
+  --serif: "Merriweather", serif;
+  --mono: "Inconsolata", monospace;
+  --line-height: 1.5;
+  --font-size: 21px;
+  --letter-spacing: 0.5px;
+  --radius: 2px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: var(--duration);
+}
+
+p {
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+a {
+  color: blue;
+}
+
+ul,
+li {
+  line-height: var(--line-height);
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  margin-bottom: rem;
+}
+
+.gatsby-highlight pre[class*="language-"] code {
+  font-family: var(--mono);
+}
