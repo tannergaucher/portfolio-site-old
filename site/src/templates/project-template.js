@@ -7,8 +7,6 @@ import { StyledPage } from "../components/styles"
 export default function ProjectTemplate({ data }) {
   const project = data.markdownRemark
 
-  console.log(project)
-
   return (
     <Layout>
       <StyledPage>
@@ -21,11 +19,7 @@ export default function ProjectTemplate({ data }) {
 export const pageQuery = graphql`
   query PROJECT_MARKDOWN_QUERY($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      frontmatter {
-        title
-      }
+      ...ProjectFragment
     }
   }
 `

@@ -1,10 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import { Layout } from "../components/elements"
-import { StyledPage } from "../components/styles"
-import { useAllMyImages } from "../components/hooks"
 import { PhotoCard } from "../components/photo"
+import { useAllMyImages } from "../components/hooks"
+import { StyledPage, Link } from "../components/styles"
 
 export default function Photo() {
   const { edges } = useAllMyImages()
@@ -14,10 +13,7 @@ export default function Photo() {
       <StyledPage>
         <h1 className="page-title">Photo</h1>
         {edges.map(edge => (
-          <Link
-            to={`/photo/${edge.node.slug.current}`}
-            style={{ textDecoration: `none`, color: `inherit` }}
-          >
+          <Link to={`/photo/${edge.node.slug.current}`}>
             <PhotoCard key={edge.node.id} sanityMyImage={edge.node} />
           </Link>
         ))}

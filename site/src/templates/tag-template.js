@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export default function Tags({ data, pageContext }) {
-  console.log(data)
-
   return (
     <>
       <h1>{pageContext.tag}</h1>

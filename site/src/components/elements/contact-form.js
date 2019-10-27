@@ -1,16 +1,10 @@
 import React from "react"
-import styled from "styled-components"
 
-import { Button, Input, TextArea } from "../styles"
-
-const StyledContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`
+import { Form, Button, Input, TextArea } from "../styles"
 
 export default function ContactForm() {
   return (
-    <StyledContactForm name="contact" netlify>
+    <Form name="contact" netlify>
       <Input type="email" name="email" placeholder="Your Email" />
       <TextArea
         name="message"
@@ -23,6 +17,6 @@ export default function ContactForm() {
       <Button type="submit" primary>
         Send
       </Button>
-    </StyledContactForm>
+    </Form>
   )
 }

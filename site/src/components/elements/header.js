@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
+import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 const StyledHeader = styled.header`
@@ -10,11 +10,6 @@ const StyledHeader = styled.header`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
-  .title {
-    color: inherit;
-    text-decoration: none;
-  }
 
   nav {
     display: flex;
@@ -37,7 +32,7 @@ export default function Header() {
         <Link to="/posts">
           <h3 className="nav-link">Posts</h3>
         </Link>
-        <Link>
+        <Link to="/projects">
           <h3 className="nav-link">Projects</h3>
         </Link>
         <Link to="/photo">

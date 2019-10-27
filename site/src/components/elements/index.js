@@ -1,3 +1,4 @@
+import Bio from "./bio"
 import Footer from "./footer"
 import Header from "./header"
 import Layout from "./layout"
@@ -9,6 +10,7 @@ import { ThemeContext } from "./theme-context"
 import { SetThemeContext } from "./theme-context"
 
 export {
+  Bio,
   Footer,
   Header,
   Layout,

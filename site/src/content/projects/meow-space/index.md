@@ -1,6 +1,6 @@
 ---
 title: "Meow Space"
-description: "All the cats."
+description: "React Apollo Hooks."
 technologies: ["React", "GraphQL"]
 url: "foo@foo.com"
 thumbnail: "./thumbnail.jpg"

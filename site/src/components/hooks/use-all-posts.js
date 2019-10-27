@@ -10,7 +10,6 @@ export const useAllPosts = () => {
         ) {
           edges {
             node {
-              # TODO: CHANGE TO POSTFRAGMENT
               ...PostFragment
             }
           }
