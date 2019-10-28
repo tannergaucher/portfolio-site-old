@@ -17,6 +17,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'country',
+      title: 'Country',
+      type: 'reference',
+      to: { type: 'country' },
+    },
+    {
       name: 'slug',
       title: 'Image slug',
       type: 'slug',
