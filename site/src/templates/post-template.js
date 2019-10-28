@@ -23,6 +23,7 @@ const StyledPost = styled(StyledPage)`
 const Post = ({ data, pageContext }) => {
   const post = data.markdownRemark
   //TODO:  const { next, previous } = pageContext
+  console.log(post)
 
   return (
     <Layout>

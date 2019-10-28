@@ -4,6 +4,7 @@ export const POST_FRAGMENT = graphql`
   fragment PostFragment on MarkdownRemark {
     id
     excerpt
+    html
     frontmatter {
       title
       date(formatString: "MM/DD/YYYY")
