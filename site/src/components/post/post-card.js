@@ -1,14 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+
+import { Link } from "../styles"
 
 const StyledPost = styled.div`
   margin-bottom: 4rem;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
 
   .post-date {
     margin-top: 0;

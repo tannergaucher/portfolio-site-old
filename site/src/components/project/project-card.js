@@ -1,17 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import Img from "gatsby-image"
+
+import { Link } from "../styles"
 
 const StyledProject = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 4rem;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
 
   .img-wrapper {
     flex: 1;
@@ -36,10 +32,7 @@ const StyledProject = styled.div`
 
 export default function ProjectCard({ project }) {
   return (
-    <Link
-      to={`/projects${project.fields.slug}`}
-      style={{ color: `inherit`, textDecoration: `none` }}
-    >
+    <Link to={`/projects${project.fields.slug}`}>
       <StyledProject>
         <div className="img-wrapper">
           <Img fluid={project.frontmatter.thumbnail.childImageSharp.fluid} />
@@ -47,7 +40,6 @@ export default function ProjectCard({ project }) {
         <div className="project-details">
           <h3 className="project-title">{project.frontmatter.title}</h3>
           <p className="project-description">
-            Problem solved and technologies used:{" "}
             {project.frontmatter.description}
           </p>
         </div>

@@ -6,7 +6,7 @@ const Button = styled.button`
   border-radius: var(--radius);
   font-family: var(--serif);
   font-size: var(--font-size);
-  background: ${props => (props.primary ? "black" : "")};
+  background: ${props => (props.primary ? "black" : "inherit")};
   color: ${props => (props.primary ? "white" : "black")};
 `
 

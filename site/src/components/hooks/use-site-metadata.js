@@ -6,6 +6,7 @@ export const useSiteMetadata = () => {
       query SiteMetadata {
         site {
           siteMetadata {
+            # TODO: MAKE SITE METADATA FRAGMENT
             title
             description
             author
