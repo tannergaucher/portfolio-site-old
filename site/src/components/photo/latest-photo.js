@@ -14,7 +14,7 @@ export default function LatestPhoto() {
         <span role="img">📷</span>Latest Photo
       </h2>
       {edges.map(edge => (
-        <Link to={`/photo/${edge.node.slug.current}`}>
+        <Link key={edge.node.id} to={`/photo/${edge.node.slug.current}`}>
           <PhotoCard sanityMyImage={edge.node} />
         </Link>
       ))}

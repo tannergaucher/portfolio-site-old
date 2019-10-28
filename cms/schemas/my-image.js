@@ -7,6 +7,9 @@ export default {
       name: 'myImage',
       title: 'Image',
       type: 'image',
+      options: {
+        metadata: ['location'],
+      },
     },
     {
       name: 'caption',

@@ -51,6 +51,12 @@ export const MY_IMAGE_FRAGMENT = graphql`
         fluid(maxWidth: 800) {
           ...GatsbySanityImageFluid
         }
+        metadata {
+          location {
+            lat
+            lng
+          }
+        }
       }
     }
     tags {
