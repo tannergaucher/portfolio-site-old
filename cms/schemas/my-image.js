@@ -34,7 +34,7 @@ export default {
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [{ type: 'tag' }],
+      of: [{ type: 'reference', to: { type: 'imageTag' } }],
     },
   ],
 }
