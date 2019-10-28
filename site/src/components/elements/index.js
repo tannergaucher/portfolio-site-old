@@ -6,18 +6,5 @@ import SEO from "./seo"
 import Avatar from "./avatar"
 import ThemeButton from "./theme-button"
 import ContactForm from "./contact-form"
-import { ThemeContext } from "./theme-context"
-import { SetThemeContext } from "./theme-context"
 
-export {
-  Bio,
-  Footer,
-  Header,
-  Layout,
-  SEO,
-  Avatar,
-  ThemeButton,
-  ThemeContext,
-  SetThemeContext,
-  ContactForm,
-}
+export { Bio, Footer, Header, Layout, SEO, Avatar, ThemeButton, ContactForm }

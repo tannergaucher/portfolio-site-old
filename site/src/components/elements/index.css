@@ -19,6 +19,11 @@ body {
   transition-duration: var(--duration);
 }
 
+.dark {
+  background: black;
+  color: white;
+}
+
 p {
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);

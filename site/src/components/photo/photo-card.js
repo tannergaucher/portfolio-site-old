@@ -20,6 +20,7 @@ export default function PhotoCard({ sanityMyImage }) {
         <Img fluid={sanityMyImage.myImage.asset.fluid} />
       </div>
       <p>{sanityMyImage.caption}</p>
+      {/* format date  */}
       <h5>{sanityMyImage.datePosted}</h5>
     </StyledPhotoCard>
   )

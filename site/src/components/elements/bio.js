@@ -17,7 +17,7 @@ const StyledBio = styled.div`
     margin: 6rem 0 4rem 0;
   }
 
-  button {
+  .github-btn {
     margin-right: 1rem;
   }
 `
@@ -39,7 +39,7 @@ export default function Bio() {
         </h3>
       </div>
       <a href="http://www.github.com/tannergaucher">
-        <Button>Github</Button>
+        <Button className="github-btn">Github</Button>
       </a>
       <Button primary onClick={() => navigate(`/contact`)}>
         Contact Me

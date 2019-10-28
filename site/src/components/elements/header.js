@@ -3,20 +3,24 @@ import styled from "styled-components"
 
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
+import { ThemeButton } from "../elements"
 
 const StyledHeader = styled.header`
   padding: 0.5rem;
   max-width: var(--container);
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-
-  nav {
-    display: flex;
-  }
 
   .nav-link {
     margin-right: 2.5rem;
+  }
+
+  .title-theme {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  nav {
+    display: flex;
   }
 `
 
@@ -25,9 +29,12 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <Link to="/" className="title">
-        <h3>{title}</h3>
-      </Link>
+      <div className="title-theme">
+        <Link to="/" className="title">
+          <h3>{title}</h3>
+        </Link>
+        <ThemeButton />
+      </div>
       <nav>
         <Link to="/posts">
           <h3 className="nav-link">Posts</h3>
