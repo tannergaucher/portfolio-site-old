@@ -8,6 +8,8 @@ const StyledPhotoCard = styled.div`
 `
 
 export default function PhotoCard({ sanityMyImage }) {
+  console.log(sanityMyImage)
+
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
   const formattedDate = moment(sanityMyImage.datePosted).format("MM/DD/YYYY")
 

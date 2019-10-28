@@ -46,6 +46,12 @@ export const MY_IMAGE_FRAGMENT = graphql`
     }
     datePosted
     caption
+    country {
+      name
+      slug {
+        current
+      }
+    }
     myImage {
       asset {
         fluid(maxWidth: 800) {
