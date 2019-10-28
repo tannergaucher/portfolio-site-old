@@ -52,7 +52,7 @@ export default function PhotoCard({ sanityMyImage }) {
 
       <div className="image-tags">
         {sanityMyImage.tags.map(tag => (
-          <Link to={`photo/${tag.slug.current}`}>
+          <Link key={tag.slug.current} to={`photo/${tag.slug.current}`}>
             <h5 className="image-tag">#{tag.tag}</h5>
           </Link>
         ))}

@@ -14,7 +14,7 @@ export default function LatestPhoto() {
         <span role="img">📷</span>Latest Photo
       </h2>
       {edges.map(edge => (
-        <PhotoCard sanityMyImage={edge.node} />
+        <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
       ))}
       <Button onClick={() => navigate(`/photo`)}>View All</Button>
     </StyledSection>
