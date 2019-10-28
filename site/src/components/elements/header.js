@@ -33,7 +33,7 @@ export default function Header() {
         <Link to="/" className="title">
           <h3>{title}</h3>
         </Link>
-        <ThemeButton />
+        {/* <ThemeButton /> */}
       </div>
       <nav>
         <Link to="/posts">
