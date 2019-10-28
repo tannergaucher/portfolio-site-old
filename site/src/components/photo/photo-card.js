@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import moment from "moment"
 
 const StyledPhotoCard = styled.div`
   margin-bottom: 5rem;
@@ -8,6 +9,7 @@ const StyledPhotoCard = styled.div`
 
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
+  const formattedDate = moment(sanityMyImage.datePosted).format("MM/DD/YYYY")
 
   return (
     <StyledPhotoCard>
@@ -20,8 +22,7 @@ export default function PhotoCard({ sanityMyImage }) {
         <Img fluid={sanityMyImage.myImage.asset.fluid} />
       </div>
       <p>{sanityMyImage.caption}</p>
-      {/* format date  */}
-      <h5>{sanityMyImage.datePosted}</h5>
+      <h5>{formattedDate}</h5>
     </StyledPhotoCard>
   )
 }
