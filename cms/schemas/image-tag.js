@@ -1,6 +1,6 @@
 export default {
-  name: 'tag',
-  title: 'Tag',
+  name: 'imageTag',
+  title: 'Image Tag',
   type: 'document',
   fields: [
     {

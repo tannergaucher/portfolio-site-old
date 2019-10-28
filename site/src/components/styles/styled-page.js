@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StyledPage = styled.div`
-  max-width: 1000px;
+  max-width: var(--container);
   margin: 5rem auto;
 
   .page-title {

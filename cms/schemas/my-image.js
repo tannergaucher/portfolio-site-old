@@ -7,11 +7,20 @@ export default {
       name: 'myImage',
       title: 'Image',
       type: 'image',
+      options: {
+        metadata: ['location'],
+      },
     },
     {
       name: 'caption',
       title: 'Caption',
       type: 'string',
+    },
+    {
+      name: 'country',
+      title: 'Country',
+      type: 'reference',
+      to: { type: 'country' },
     },
     {
       name: 'slug',
@@ -31,7 +40,7 @@ export default {
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [{ type: 'tag' }],
+      of: [{ type: 'reference', to: { type: 'imageTag' } }],
     },
   ],
 }

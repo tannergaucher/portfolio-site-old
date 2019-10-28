@@ -110,4 +110,30 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // query all images from sanity cms
+  const allMyImagesQuery = await graphql(`
+    query {
+      allSanityMyImage {
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  // create page for each image
+  allMyImagesQuery.data.allSanityMyImage.edges.forEach(edge => {
+    createPage({
+      path: `/photo/${edge.node.slug.current}`,
+      component: path.resolve(`./src/templates/photo-template.js`),
+      context: {
+        slug: edge.node.slug.current,
+      },
+    })
+  })
 }

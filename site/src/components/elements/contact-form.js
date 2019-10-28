@@ -1,21 +1,22 @@
 import React from "react"
-import styled from "styled-components"
 
-const StyledContactForm = styled.form``
+import { Form, Button, Input, TextArea } from "../styles"
 
 export default function ContactForm() {
   return (
-    <StyledContactForm>
-      <input type="email" placeholder="Your Email" />
-      <textarea
-        name=""
+    <Form name="contact" netlify>
+      <Input type="email" name="email" placeholder="Your Email" />
+      <TextArea
+        name="message"
         id=""
         cols="30"
         rows="10"
+        htmlFor="message"
         placeholder="Message"
-      ></textarea>
-
-      <button>Send</button>
-    </StyledContactForm>
+      ></TextArea>
+      <Button type="submit" primary>
+        Send
+      </Button>
+    </Form>
   )
 }

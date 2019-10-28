@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
+import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 const StyledFooter = styled.div`
@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <StyledFooter>
       <div className="container">
-        <Link to="/" style={{ color: `inherit`, textDecoration: `none` }}>
+        <Link to="/">
           <h3 className="site-title">{title}</h3>
         </Link>
       </div>

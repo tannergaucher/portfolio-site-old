@@ -10,15 +10,12 @@ export default function UserThemeContext({ children }) {
   }, [theme])
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <SetThemeContext.Provider value={setTheme}>
-        {children}
-      </SetThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
     </ThemeContext.Provider>
   )
 }
 
 const ThemeContext = createContext()
-const SetThemeContext = createContext()
 
-export { ThemeContext, SetThemeContext }
+export { ThemeContext }

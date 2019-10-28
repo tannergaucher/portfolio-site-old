@@ -37,3 +37,39 @@ export const PROJECT_FRAGMENT = graphql`
     }
   }
 `
+
+export const MY_IMAGE_FRAGMENT = graphql`
+  fragment MyImageFragment on SanityMyImage {
+    id
+    slug {
+      current
+    }
+    datePosted
+    caption
+    country {
+      name
+      slug {
+        current
+      }
+    }
+    myImage {
+      asset {
+        fluid(maxWidth: 800) {
+          ...GatsbySanityImageFluid
+        }
+        metadata {
+          location {
+            lat
+            lng
+          }
+        }
+      }
+    }
+    tags {
+      tag
+      slug {
+        current
+      }
+    }
+  }
+`

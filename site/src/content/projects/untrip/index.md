@@ -1,8 +1,16 @@
 ---
 title: "Untrip.app"
-description: "I am the project description"
-technologies: ["React", "GraphQL"]
-url: "foo@foo.com"
+description: "Gatsby App. Staticly built content pulled from Sanity headless CMS."
+technologies:
+  [
+    "React",
+    "GraphQL",
+    "Apollo Server",
+    "Apollo Client",
+    "React Apollo Hooks",
+    "Styled Components",
+  ]
+url: "https://untrip.app"
 thumbnail: "./thumbnail.jpg"
 ---
 

@@ -1,5 +1,4 @@
 import PostCard from "./post-card"
-import Tags from "./tags"
-import NextPrev from "./next-previous"
+import LatestPosts from "./latest-posts"
 
-export { PostCard, Tags, NextPrev }
+export { PostCard, LatestPosts }
