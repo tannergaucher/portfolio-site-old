@@ -11,30 +11,14 @@ export default {
         metadata: ['location'],
       },
     },
-    {
-      name: 'caption',
-      title: 'Caption',
-      type: 'string',
-    },
-    {
-      name: 'country',
-      title: 'Country',
-      type: 'reference',
-      to: { type: 'country' },
-    },
+    // TODO MAKE A RANDOMLY GENERATED IAMGE SLUG
     {
       name: 'slug',
-      title: 'Image slug',
+      title: 'Image Slug',
       type: 'slug',
       options: {
-        source: 'caption',
         maxLength: 96,
       },
-    },
-    {
-      name: 'datePosted',
-      title: 'Date Posted',
-      type: 'datetime',
     },
     {
       name: 'tags',
