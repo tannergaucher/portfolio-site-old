@@ -20,10 +20,8 @@ const StyledPost = styled(StyledPage)`
   }
 `
 
-const Post = ({ data, pageContext }) => {
+export default function Post({ data, pageContext }) {
   const post = data.markdownRemark
-
-  console.log(pageContext)
   const { next, previous } = pageContext
 
   return (
@@ -40,20 +38,18 @@ const Post = ({ data, pageContext }) => {
 
         {next && (
           <Link to={next.fields.slug}>
-            <h4>Next Post: {next.frontmatter.title}</h4>
+            <h3>Next Post: {next.frontmatter.title}</h3>
           </Link>
         )}
         {previous && (
           <Link to={previous.fields.slug}>
-            <h4>Previous Post: {previous.frontmatter.title}</h4>
+            <h3>Previous Post: {previous.frontmatter.title}</h3>
           </Link>
         )}
       </StyledPost>
     </Layout>
   )
 }
-
-export default Post
 
 export const pageQuery = graphql`
   query POST_MARKDOWN_QUERY($slug: String!) {

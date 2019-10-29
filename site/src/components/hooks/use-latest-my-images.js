@@ -4,7 +4,7 @@ export const useLatestMyImages = () => {
   const { allSanityMyImage } = useStaticQuery(
     graphql`
       query USE_LATEST_MY_IMAGES {
-        allSanityMyImage(limit: 1) {
+        allSanityMyImage(limit: 2) {
           edges {
             node {
               ...MyImageFragment

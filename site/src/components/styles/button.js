@@ -8,6 +8,7 @@ const Button = styled.button`
   font-size: var(--font-size);
   background: ${props => (props.primary ? "black" : "inherit")};
   color: ${props => (props.primary ? "white" : "black")};
+  text-transform: uppercase;
 `
 
 export default Button

@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
 
 import { Link, Button } from "../styles"
 
@@ -24,8 +23,8 @@ export default function ProjectCard({ project }) {
       <StyledProject>
         <h3 className="project-title">{project.frontmatter.title}</h3>
         <p className="project-description">{project.frontmatter.description}</p>
-        <Img fluid={project.frontmatter.thumbnail.childImageSharp.fluid} />
-
+        {/* CHANGE THIS TO EMBEDDED YOUTUBE VIDEO */}
+        {/* <Img fluid={project.frontmatter.thumbnail.childImageSharp.fluid} /> */}
         <h4>Techonogies Used: </h4>
         <ul>
           {project.frontmatter.technologies.map(technology => (
