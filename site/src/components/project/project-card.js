@@ -11,7 +11,6 @@ const StyledProject = styled.div`
 
   .img-wrapper {
     flex: 1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .project-details {
@@ -31,6 +30,8 @@ const StyledProject = styled.div`
 `
 
 export default function ProjectCard({ project }) {
+  console.log(project)
+
   return (
     <Link to={`/projects${project.fields.slug}`}>
       <StyledProject>
@@ -42,6 +43,11 @@ export default function ProjectCard({ project }) {
           <p className="project-description">
             {project.frontmatter.description}
           </p>
+          <ul>
+            {project.frontmatter.technologies.map(technology => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
         </div>
       </StyledProject>
     </Link>

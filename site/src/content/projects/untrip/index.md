@@ -12,6 +12,7 @@ technologies:
   ]
 url: "https://untrip.app"
 thumbnail: "./thumbnail.jpg"
+githubRepository: "http://www.github.com/tanner/foobar"
 ---
 
-Project text and gifs here
+# Coming Soon!
