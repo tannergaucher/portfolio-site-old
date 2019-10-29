@@ -45,16 +45,9 @@ export const MY_IMAGE_FRAGMENT = graphql`
     slug {
       current
     }
-    datePosted
-    caption
-    country {
-      name
-      slug {
-        current
-      }
-    }
     myImage {
       asset {
+        _rawMetadata
         fluid(maxWidth: 800) {
           ...GatsbySanityImageFluid
         }
