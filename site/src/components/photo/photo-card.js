@@ -33,8 +33,6 @@ const StyledPhotoCard = styled.div`
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
 
-  console.log(sanityMyImage)
-
   return (
     <StyledPhotoCard>
       <div
@@ -47,7 +45,9 @@ export default function PhotoCard({ sanityMyImage }) {
           <Img fluid={sanityMyImage.myImage.asset.fluid} />
         </Link>
       </div>
-      <h5 className="image-caption">Exif image location and date time here.</h5>
+      <h5 className="image-caption">
+        {sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal}
+      </h5>
       <div className="image-tags">
         {sanityMyImage.tags.map(tag => (
           <Link key={tag.slug.current} to={`photo/${tag.slug.current}`}>
