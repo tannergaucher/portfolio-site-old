@@ -10,8 +10,8 @@ technologies:
     "React Apollo Hooks",
     "Styled Components",
   ]
-url: "https://untrip.app"
-thumbnail: "./thumbnail.jpg"
+projectUrl: "https://untrip.app"
+screenRecordingUrl: "https://player.vimeo.com/video/316741004"
 githubRepo: "http://www.github.com/tanner/foobar"
 ---
 
