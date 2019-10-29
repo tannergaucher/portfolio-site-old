@@ -8,10 +8,9 @@ export default {
       title: 'Image',
       type: 'image',
       options: {
-        metadata: ['location'],
+        metadata: ['exif', 'location'],
       },
     },
-    // TODO MAKE A RANDOMLY GENERATED IAMGE SLUG
     {
       name: 'slug',
       title: 'Image Slug',

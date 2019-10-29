@@ -33,6 +33,8 @@ const StyledPhotoCard = styled.div`
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
 
+  console.log(sanityMyImage)
+
   return (
     <StyledPhotoCard>
       <div
