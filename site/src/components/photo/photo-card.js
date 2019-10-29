@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import moment from "moment"
 
 import { Link } from "../styles"
 
@@ -19,7 +20,7 @@ const StyledPhotoCard = styled.div`
     display: flex;
   }
 
-  .image-caption {
+  .image-dateTime {
     font-weight: lighter;
     margin-bottom: 1rem;
   }
@@ -33,6 +34,10 @@ const StyledPhotoCard = styled.div`
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
 
+  const formattedDateTime = moment(
+    sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
+  ).format("MM/DD/YYYY hh:mm:ss")
+
   return (
     <StyledPhotoCard>
       <div
@@ -45,9 +50,7 @@ export default function PhotoCard({ sanityMyImage }) {
           <Img fluid={sanityMyImage.myImage.asset.fluid} />
         </Link>
       </div>
-      <h5 className="image-caption">
-        {sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal}
-      </h5>
+      <h5 className="image-dateTime">{formattedDateTime}</h5>
       <div className="image-tags">
         {sanityMyImage.tags.map(tag => (
           <Link key={tag.slug.current} to={`photo/${tag.slug.current}`}>
