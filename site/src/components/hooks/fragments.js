@@ -47,6 +47,7 @@ export const MY_IMAGE_FRAGMENT = graphql`
     }
     myImage {
       asset {
+        _rawMetadata
         fluid(maxWidth: 800) {
           ...GatsbySanityImageFluid
         }
