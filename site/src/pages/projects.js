@@ -11,7 +11,6 @@ export default function Projects() {
   return (
     <Layout>
       <StyledPage>
-        <h1 className="page-title">Projects</h1>
         {edges.map(edge => (
           <ProjectCard key={edge.node.id} project={edge.node} />
         ))}

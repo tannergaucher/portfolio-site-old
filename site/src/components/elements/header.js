@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
-import { ThemeButton } from "../elements"
 
 const StyledHeader = styled.header`
   padding: 0.5rem;
@@ -12,6 +11,7 @@ const StyledHeader = styled.header`
 
   .nav-link {
     margin-right: 2.5rem;
+    margin-top: 0;
   }
 
   .title-theme {
@@ -33,7 +33,6 @@ export default function Header() {
         <Link to="/" className="title">
           <h3>{title}</h3>
         </Link>
-        {/* <ThemeButton /> */}
       </div>
       <nav>
         <Link to="/posts">

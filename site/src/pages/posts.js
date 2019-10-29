@@ -11,7 +11,6 @@ export default function PostsPage() {
   return (
     <Layout>
       <StyledPage>
-        <h1 className="page-title">Posts</h1>
         {edges.map(edge => (
           <PostCard key={edge.node.id} post={edge.node} />
         ))}

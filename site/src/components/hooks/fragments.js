@@ -25,6 +25,7 @@ export const PROJECT_FRAGMENT = graphql`
       description
       technologies
       url
+      githubRepo
       thumbnail {
         childImageSharp {
           fluid {

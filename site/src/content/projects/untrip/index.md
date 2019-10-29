@@ -1,6 +1,6 @@
 ---
 title: "Untrip.app"
-description: "Gatsby App. Staticly built content pulled from Sanity headless CMS."
+description: "I am the project description. Wow."
 technologies:
   [
     "React",
@@ -12,6 +12,7 @@ technologies:
   ]
 url: "https://untrip.app"
 thumbnail: "./thumbnail.jpg"
+githubRepo: "http://www.github.com/tanner/foobar"
 ---
 
-Project text and gifs here
+# Coming Soon!

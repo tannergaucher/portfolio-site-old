@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import { SEO, Layout } from "../components/elements"
-import { StyledPage } from "../components/styles"
+import { StyledPage, Link } from "../components/styles"
 
 const StyledPost = styled(StyledPage)`
   .post-title {
@@ -20,10 +20,9 @@ const StyledPost = styled(StyledPage)`
   }
 `
 
-const Post = ({ data, pageContext }) => {
+export default function Post({ data, pageContext }) {
   const post = data.markdownRemark
-  //TODO:  const { next, previous } = pageContext
-  console.log(post)
+  const { next, previous } = pageContext
 
   return (
     <Layout>
@@ -36,12 +35,21 @@ const Post = ({ data, pageContext }) => {
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+
+        {next && (
+          <Link to={next.fields.slug}>
+            <h3>Next Post: {next.frontmatter.title}</h3>
+          </Link>
+        )}
+        {previous && (
+          <Link to={previous.fields.slug}>
+            <h3>Previous Post: {previous.frontmatter.title}</h3>
+          </Link>
+        )}
       </StyledPost>
     </Layout>
   )
 }
-
-export default Post
 
 export const pageQuery = graphql`
   query POST_MARKDOWN_QUERY($slug: String!) {
