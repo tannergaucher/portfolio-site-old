@@ -23,7 +23,6 @@ exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/posts/" } }
         sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
       ) {
         edges {
           node {
@@ -68,8 +67,9 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/post-template.js`),
       context: {
         slug: edge.node.fields.slug,
-        next: edge.next,
-        previous: edge.previous,
+        // why is this backwards!?
+        next: edge.previous,
+        previous: edge.next,
       },
     })
 
