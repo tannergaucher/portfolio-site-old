@@ -11,7 +11,6 @@ export default function Photo() {
   return (
     <Layout>
       <StyledPage>
-        <h1 className="page-title">Photo</h1>
         {edges.map(edge => (
           <Link to={`/photo/${edge.node.slug.current}`}>
             <PhotoCard key={edge.node.id} sanityMyImage={edge.node} />
