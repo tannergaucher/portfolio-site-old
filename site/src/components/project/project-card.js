@@ -30,7 +30,7 @@ const StyledProject = styled.div`
 export default function ProjectCard({ project }) {
   return (
     <StyledProject>
-      <h3 className="project-title">{project.frontmatter.title}</h3>
+      <h2 className="project-title">{project.frontmatter.title}</h2>
       <p className="project-description">{project.frontmatter.description}</p>
 
       <div className="resp-container">
