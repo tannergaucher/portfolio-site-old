@@ -24,15 +24,9 @@ export const PROJECT_FRAGMENT = graphql`
       title
       description
       technologies
-      url
+      projectUrl
+      screenRecordingUrl
       githubRepo
-      thumbnail {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
     fields {
       slug
