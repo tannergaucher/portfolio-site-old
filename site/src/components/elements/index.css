@@ -11,6 +11,7 @@
   --font-size: 21px;
   --letter-spacing: 0.5px;
   --radius: 2px;
+  --card-margin-bottom: 4rem;
 }
 
 body {

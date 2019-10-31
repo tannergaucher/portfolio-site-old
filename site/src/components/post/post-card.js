@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Link } from "../styles"
 
 const StyledPost = styled.div`
-  margin-bottom: 4rem;
+  margin-bottom: var(--card-margin-bottom);
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
@@ -14,10 +14,12 @@ const StyledPost = styled.div`
     margin-bottom: 0.5rem;
     font-weight: lighter;
     font-family: var(--mono);
+    color: grey;
   }
   .post-title {
     margin-top: 0;
     margin-bottom: 0.5rem;
+    font-weight: 900;
   }
 
   .post-description {
