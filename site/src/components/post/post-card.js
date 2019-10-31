@@ -10,6 +10,7 @@ const StyledPost = styled.div`
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-weight: lighter;
+    font-family: var(--mono);
   }
   .post-title {
     margin-top: 0;
@@ -19,6 +20,7 @@ const StyledPost = styled.div`
   .post-description {
     margin-top: 0;
     font-weight: lighter;
+    font-family: var(--mono);
   }
 `
 

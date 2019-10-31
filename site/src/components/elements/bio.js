@@ -13,8 +13,15 @@ const StyledBio = styled.div`
     border-radius: 50%;
   }
 
+  .bio-intro {
+    font-weight: 900;
+  }
+
   .bio-text {
     margin: 6rem 0 4rem 0;
+  }
+
+  .bio-sentence {
   }
 
   .github-btn {
@@ -29,8 +36,8 @@ export default function Bio() {
     <StyledBio>
       <Img fixed={fixed} />
       <div className="bio-text">
-        <h1>Hi, I'm Tanner.</h1>
-        <h3>
+        <h1 className="bio-intro">Hi, I'm Tanner.</h1>
+        <h3 className="bio-sentence">
           I make things for the web.{" "}
           <a href="https://www.youtube.com/watch?v=CMNry4PE93Y">
             I like turtles,

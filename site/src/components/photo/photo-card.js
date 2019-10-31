@@ -23,6 +23,7 @@ const StyledPhotoCard = styled.div`
   .image-dateTime {
     font-weight: lighter;
     margin-bottom: 1rem;
+    font-family: var(--mono);
   }
 
   .image-tag {

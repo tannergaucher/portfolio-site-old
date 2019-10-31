@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {} from "@reach/router"
 
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
@@ -9,9 +10,14 @@ const StyledHeader = styled.header`
   max-width: var(--container);
   margin: 0 auto;
 
+  .site-title {
+    font-weight: 400;
+  }
+
   .nav-link {
     margin-right: 2.5rem;
     margin-top: 0;
+    font-weight: 400;
   }
 
   .title-theme {
@@ -31,7 +37,7 @@ export default function Header() {
     <StyledHeader>
       <div className="title-theme">
         <Link to="/" className="title">
-          <h3>{title}</h3>
+          <h3 className="site-title">{title}</h3>
         </Link>
       </div>
       <nav>
