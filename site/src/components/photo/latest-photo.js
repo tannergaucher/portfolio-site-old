@@ -10,13 +10,17 @@ export default function LatestPhoto() {
 
   return (
     <StyledSection>
-      <h2 className="section-title">
-        <span role="img">📷</span>Latest Photos
-      </h2>
+      <h2 className="section-title">Latest Photos</h2>
       {edges.map(edge => (
         <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
       ))}
-      <Button onClick={() => navigate(`/photo`)}>View All Photos</Button>
+      <Button
+        className="view-all-btn"
+        onClick={() => navigate(`/photo`)}
+        primary
+      >
+        View All Photos
+      </Button>
     </StyledSection>
   )
 }

@@ -9,13 +9,17 @@ export default function LatestPosts() {
   const { edges } = useLatestPosts()
   return (
     <StyledSection>
-      <h2 className="section-title">
-        <span role="img">✍️</span> Latest Posts{" "}
-      </h2>
+      <h2 className="section-title">Latest Posts</h2>
       {edges.map(edge => (
         <PostCard key={edge.node.id} post={edge.node} />
       ))}
-      <Button onClick={() => navigate(`/posts`)}>View All Posts</Button>
+      <Button
+        className="view-all-btn"
+        onClick={() => navigate(`/posts`)}
+        primary
+      >
+        View All Posts
+      </Button>
     </StyledSection>
   )
 }

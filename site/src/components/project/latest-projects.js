@@ -10,13 +10,17 @@ export default function LatestProjects() {
 
   return (
     <StyledSection>
-      <h2 className="section-title">
-        <span role="img">💻</span>Latest Projects
-      </h2>
+      <h2 className="section-title">Latest Projects</h2>
       {edges.map(edge => (
         <ProjectCard key={edge.node.id} project={edge.node} />
       ))}
-      <Button onClick={() => navigate(`/projects`)}>View All Projects</Button>
+      <Button
+        className="view-all-btn"
+        onClick={() => navigate(`/projects`)}
+        primary
+      >
+        View All Projects
+      </Button>
     </StyledSection>
   )
 }

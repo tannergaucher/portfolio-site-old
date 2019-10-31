@@ -11,15 +11,16 @@ const StyledContactSection = styled(StyledSection)`
   .section-title {
     margin-top: 0;
     margin-bottom: 2rem;
+    text-align: center;
   }
 `
 
 export default function ContactSection() {
   return (
     <StyledContactSection>
-      <h2 className="section-title">
-        <span role="img">💌</span> Contact Me
-      </h2>
+      <div>
+        <h2 className="section-title">Contact Me</h2>
+      </div>
       <ContactForm />
     </StyledContactSection>
   )

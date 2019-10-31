@@ -40,7 +40,7 @@ export default function Header() {
           <h3 className="site-title">{title}</h3>
         </Link>
       </div>
-      <nav>
+      {/* <nav>
         <Link to="/posts">
           <h3 className="nav-link">Posts</h3>
         </Link>
@@ -53,7 +53,7 @@ export default function Header() {
         <Link to="/contact">
           <h3 className="nav-link">Contact</h3>
         </Link>
-      </nav>
+      </nav> */}
     </StyledHeader>
   )
 }

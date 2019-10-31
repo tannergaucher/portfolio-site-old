@@ -12,11 +12,20 @@ const StyledSection = styled.div`
     margin-right: 1rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     margin: 6rem 0;
+
+    .emoji-title {
+      display: flex;
+    }
 
     .section-title {
       margin-bottom: 2rem;
+      margin-left: 1rem;
+    }
+
+    .view-all-btn {
+      margin-left: 1rem;
     }
   }
 `

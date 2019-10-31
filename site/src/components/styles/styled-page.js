@@ -5,7 +5,7 @@ const StyledPage = styled.div`
   margin: 5rem auto;
   padding: 0 0.5rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     margin: 2rem auto;
   }
 `
