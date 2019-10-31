@@ -11,6 +11,10 @@ const StyledFooter = styled.div`
     max-width: var(--container);
     margin: 0 auto;
   }
+
+  .site-title {
+    font-weight: 400;
+  }
 `
 
 export default function Footer() {

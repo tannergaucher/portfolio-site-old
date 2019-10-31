@@ -26,6 +26,14 @@ const StyledPost = styled(StyledPage)`
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
+
+  .next-post-title {
+    font-weight: 900;
+  }
+
+  .prev-post-title {
+    font-weight: 900;
+  }
 `
 
 export default function Post({ data, pageContext }) {
@@ -46,12 +54,14 @@ export default function Post({ data, pageContext }) {
 
         {next && (
           <Link to={next.fields.slug}>
-            <h3>Next Post: {next.frontmatter.title}</h3>
+            <h3 className="next-post-title">Next: {next.frontmatter.title}</h3>
           </Link>
         )}
         {previous && (
           <Link to={previous.fields.slug}>
-            <h3>Previous Post: {previous.frontmatter.title}</h3>
+            <h3 className="prev-post-title">
+              Previous: {previous.frontmatter.title}
+            </h3>
           </Link>
         )}
       </StyledPost>

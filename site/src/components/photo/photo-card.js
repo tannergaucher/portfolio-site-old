@@ -6,29 +6,24 @@ import moment from "moment"
 import { Link } from "../styles"
 
 const StyledPhotoCard = styled.div`
-  margin-bottom: 5rem;
-
-  .image-date-country {
-    display: flex;
-  }
-
-  .image-date {
-    margin-right: 1rem;
-  }
+  margin-bottom: var(--card-margin-bottom);
 
   .image-tags {
     display: flex;
   }
 
   .image-dateTime {
-    font-weight: lighter;
     margin-bottom: 1rem;
+    font-weight: lighter;
     font-family: var(--mono);
+    color: grey;
   }
 
   .image-tag {
     margin-right: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
   }
 `
 
@@ -37,7 +32,7 @@ export default function PhotoCard({ sanityMyImage }) {
 
   const formattedDateTime = moment(
     sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
-  ).format("MM/DD/YYYY hh:mm:ss")
+  ).format("MM.DD.YYYY")
 
   return (
     <StyledPhotoCard>
@@ -47,11 +42,11 @@ export default function PhotoCard({ sanityMyImage }) {
           maxWidth: aspectRatio < 1 ? "600px" : "",
         }}
       >
+        {/* <h5 className="image-dateTime">{formattedDateTime}</h5> */}
         <Link to={`/photo/${sanityMyImage.slug.current}`}>
           <Img fluid={sanityMyImage.myImage.asset.fluid} />
         </Link>
       </div>
-      <h5 className="image-dateTime">{formattedDateTime}</h5>
       <div className="image-tags">
         {sanityMyImage.tags.map(tag => (
           <Link key={tag.slug.current} to={`photo/${tag.slug.current}`}>

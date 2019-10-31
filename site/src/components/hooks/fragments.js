@@ -24,6 +24,7 @@ export const PROJECT_FRAGMENT = graphql`
       title
       description
       technologies
+      problemsSolved
       projectUrl
       screenRecordingUrl
       githubRepo

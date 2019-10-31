@@ -5,7 +5,7 @@ const StyledSection = styled.div`
 
   .section-title {
     margin-bottom: 4rem;
-    font-weight: 900;
+    font-weight: 500;
   }
 
   span {
