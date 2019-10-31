@@ -28,6 +28,24 @@ const StyledBio = styled.div`
   .github-btn {
     margin-right: 1rem;
   }
+
+  @media (max-width: 600px) {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .bio-text {
+      margin: 3rem 0 2rem 0;
+    }
+
+    .bio-intro,
+    .bio-sentence {
+      text-align: center;
+      padding: 0 1rem;
+    }
+  }
 `
 
 export default function Bio() {
@@ -46,12 +64,15 @@ export default function Bio() {
           and JavaScript.
         </h3>
       </div>
-      <a href="http://www.github.com/tannergaucher">
-        <Button className="github-btn">Github</Button>
-      </a>
-      <Button primary onClick={() => navigate(`/contact`)}>
-        Contact Me
-      </Button>
+
+      <div>
+        <a href="http://www.github.com/tannergaucher">
+          <Button className="github-btn">Github</Button>
+        </a>
+        <Button primary onClick={() => navigate(`/contact`)}>
+          Contact Me
+        </Button>
+      </div>
     </StyledBio>
   )
 }

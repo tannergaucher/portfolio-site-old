@@ -11,5 +11,14 @@ const StyledSection = styled.div`
   span {
     margin-right: 1rem;
   }
+
+  @media (max-width: 600px) {
+    margin: 6rem 0;
+
+    .section-title {
+      margin-bottom: 2rem;
+    }
+  }
 `
+
 export default StyledSection
