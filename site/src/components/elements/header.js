@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   }
 
   .nav-link {
-    margin-right: 2.5rem;
+    margin-right: 2rem;
     margin-top: 0;
     font-weight: 400;
   }
