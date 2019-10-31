@@ -5,6 +5,9 @@ import { Link } from "../styles"
 
 const StyledPost = styled.div`
   margin-bottom: 4rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
 
   .post-date {
     margin-top: 0;
@@ -19,6 +22,7 @@ const StyledPost = styled.div`
 
   .post-description {
     margin-top: 0;
+    margin-bottom: 0;
     font-weight: lighter;
     font-family: var(--mono);
   }

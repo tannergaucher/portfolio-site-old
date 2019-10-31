@@ -5,9 +5,18 @@ import { Button } from "../styles"
 
 const StyledProject = styled.div`
   margin-bottom: 6rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
 
-  .view-deployed-btn {
-    margin-right: 1rem;
+  .project-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .project-description {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   .resp-container {
@@ -25,6 +34,24 @@ const StyledProject = styled.div`
     height: 100%;
     border: 0;
   }
+
+  .technologies-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .problems-title {
+    margin-bottom: 1rem;
+  }
+
+  .view-deployed-btn {
+    margin-top: 2rem;
+    margin-right: 1rem;
+  }
+
+  ul {
+    margin: 0;
+  }
 `
 
 export default function ProjectCard({ project }) {
@@ -32,7 +59,6 @@ export default function ProjectCard({ project }) {
     <StyledProject>
       <h2 className="project-title">{project.frontmatter.title}</h2>
       <p className="project-description">{project.frontmatter.description}</p>
-
       <div className="resp-container">
         <iframe
           className="resp-iframe"
@@ -45,13 +71,19 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         />
       </div>
-
-      <h4>Techonogies Used: </h4>
+      <h4 className="technologies-title">Technologies Used</h4>
       <ul>
         {project.frontmatter.technologies.map(technology => (
           <li key={technology}>{technology}</li>
         ))}
       </ul>
+      <h4 className="problems-title">Problems Solved</h4>
+      <ul>
+        {project.frontmatter.problemsSolved.map(problem => (
+          <li key={problem}>{problem}</li>
+        ))}
+      </ul>
+
       <Button className="view-deployed-btn" primary>
         View Deployed
       </Button>

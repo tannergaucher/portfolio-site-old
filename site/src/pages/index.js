@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 import { SEO, ContactForm, Bio } from "../components/elements"
 import { StyledPage, StyledSection } from "../components/styles"
@@ -19,13 +20,24 @@ export default function IndexPage() {
   )
 }
 
+const StyledContactSection = styled(StyledSection)`
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+
+  .section-title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+`
+
 function ContactSection() {
   return (
-    <StyledSection>
+    <StyledContactSection>
       <h2 className="section-title">
-        <span role="img">💌</span> Get in Touch
+        <span role="img">💌</span> Contact Me
       </h2>
       <ContactForm />
-    </StyledSection>
+    </StyledContactSection>
   )
 }

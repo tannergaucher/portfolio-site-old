@@ -8,27 +8,20 @@ import { Link } from "../styles"
 const StyledPhotoCard = styled.div`
   margin-bottom: 5rem;
 
-  .image-date-country {
-    display: flex;
-  }
-
-  .image-date {
-    margin-right: 1rem;
-  }
-
   .image-tags {
     display: flex;
   }
 
   .image-dateTime {
+    margin-top: 1rem;
+    margin-bottom: 0;
     font-weight: lighter;
-    margin-bottom: 1rem;
     font-family: var(--mono);
   }
 
   .image-tag {
     margin-right: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 `
 
@@ -37,7 +30,7 @@ export default function PhotoCard({ sanityMyImage }) {
 
   const formattedDateTime = moment(
     sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
-  ).format("MM/DD/YYYY hh:mm:ss")
+  ).format("MM.DD.YYYY")
 
   return (
     <StyledPhotoCard>
