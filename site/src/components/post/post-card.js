@@ -11,14 +11,13 @@ const StyledPost = styled.div`
 
   .post-date {
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: lighter;
     font-family: var(--mono);
-    color: grey;
   }
   .post-title {
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 900;
   }
 

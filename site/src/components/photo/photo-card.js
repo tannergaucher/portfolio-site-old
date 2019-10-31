@@ -10,6 +10,7 @@ const StyledPhotoCard = styled.div`
 
   .image-tags {
     display: flex;
+    margin-top: 2rem;
   }
 
   .image-dateTime {
@@ -21,8 +22,8 @@ const StyledPhotoCard = styled.div`
 
   .image-tag {
     margin-right: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
     font-weight: 500;
   }
 `

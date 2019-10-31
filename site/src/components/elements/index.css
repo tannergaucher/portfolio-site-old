@@ -8,7 +8,8 @@
   --sans: "Inter", sans-serif;
   --mono: "Inconsolata", monospace;
   --line-height: 1.5;
-  --font-size: 21px;
+  --font-size-lg: 21px;
+  --font-size-sm: 18px;
   --letter-spacing: 0.5px;
   --radius: 2px;
   --card-margin-bottom: 4rem;
@@ -17,7 +18,7 @@
 body {
   margin: 0;
   font-family: var(--sans);
-  font-size: var(--font-size);
+  font-size: var(--font-size-lg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: var(--duration);
@@ -48,4 +49,10 @@ li {
 
 .gatsby-highlight pre[class*="language-"] code {
   font-family: var(--mono);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: var(--font-size-sm);
+  }
 }

@@ -57,6 +57,17 @@ const StyledProject = styled.div`
   ul {
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    button {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 `
 
 export default function ProjectCard({ project }) {
@@ -101,7 +112,7 @@ export default function ProjectCard({ project }) {
           <Button className="view-deployed-btn" primary>
             View Deployed
           </Button>
-          <Button>Github Repo</Button>
+          <Button className="github-repo-btn">Github Repo</Button>
         </div>
       )}
     </StyledProject>

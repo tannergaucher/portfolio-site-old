@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import {} from "@reach/router"
 
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
@@ -12,21 +11,14 @@ const StyledHeader = styled.header`
 
   .site-title {
     font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 0;
   }
 
   .nav-link {
     margin-right: 2rem;
     margin-top: 0;
     font-weight: 400;
-  }
-
-  .title-theme {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  nav {
-    display: flex;
   }
 `
 
@@ -35,25 +27,23 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <div className="title-theme">
+      <nav>
         <Link to="/" className="title">
-          <h3 className="site-title">{title}</h3>
+          <h4 className="site-title">{title}</h4>
         </Link>
-      </div>
-      {/* <nav>
-        <Link to="/posts">
-          <h3 className="nav-link">Posts</h3>
+        {/* <Link to="/posts">
+          <h4 className="nav-link">Posts</h4>
         </Link>
         <Link to="/projects">
-          <h3 className="nav-link">Projects</h3>
+          <h4 className="nav-link">Projects</h4>
         </Link>
         <Link to="/photo">
-          <h3 className="nav-link">Photo</h3>
+          <h4 className="nav-link">Photo</h4>
         </Link>
         <Link to="/contact">
-          <h3 className="nav-link">Contact</h3>
-        </Link>
-      </nav> */}
+          <h4 className="nav-link">Contact</h4>
+        </Link> */}
+      </nav>
     </StyledHeader>
   )
 }

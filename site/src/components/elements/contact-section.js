@@ -19,7 +19,7 @@ export default function ContactSection() {
   return (
     <StyledContactSection>
       <div>
-        <h2 className="section-title">Contact Me</h2>
+        <h2 className="section-title">Contact </h2>
       </div>
       <ContactForm />
     </StyledContactSection>
@@ -29,7 +29,7 @@ export default function ContactSection() {
 function ContactForm() {
   return (
     <Form name="contact" netlify>
-      <Input type="email" name="email" placeholder="Your Email" />
+      <Input type="email" name="email" placeholder="Your Email" required />
       <TextArea
         name="message"
         id=""
@@ -37,6 +37,7 @@ function ContactForm() {
         rows="10"
         htmlFor="message"
         placeholder="Message"
+        required
       ></TextArea>
       <Button type="submit" primary>
         Send

@@ -14,7 +14,6 @@ const StyledBio = styled.div`
   }
 
   .bio-intro {
-    font-weight: 500;
   }
 
   .bio-text {
@@ -22,7 +21,6 @@ const StyledBio = styled.div`
   }
 
   .bio-sentence {
-    font-weight: 500;
   }
 
   .github-btn {

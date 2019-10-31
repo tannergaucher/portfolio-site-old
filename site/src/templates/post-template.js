@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import styled from "styled-components"
 
 import { SEO, Layout } from "../components/elements"
-import { StyledPage, Link } from "../components/styles"
+import { StyledPage, Button } from "../components/styles"
 
 const StyledPost = styled(StyledPage)`
   .post-title {
@@ -16,6 +16,7 @@ const StyledPost = styled(StyledPage)`
     font-weight: lighter;
     font-family: var(--mono);
     margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   .post-description {
@@ -27,12 +28,36 @@ const StyledPost = styled(StyledPage)`
     margin-bottom: 5rem;
   }
 
-  .next-post-title {
-    font-weight: 900;
+  .next-prev-btns {
+    margin-bottom: 3rem;
   }
 
+  .next-prev {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .next-post-title,
   .prev-post-title {
-    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .next-prev-btn {
+    margin-bottom: 2rem;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .post-body {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }
 `
 
@@ -51,19 +76,26 @@ export default function Post({ data, pageContext }) {
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-
-        {next && (
-          <Link to={next.fields.slug}>
-            <h3 className="next-post-title">Next: {next.frontmatter.title}</h3>
-          </Link>
-        )}
-        {previous && (
-          <Link to={previous.fields.slug}>
-            <h3 className="prev-post-title">
-              Previous: {previous.frontmatter.title}
-            </h3>
-          </Link>
-        )}
+        <div className="next-prev-btns">
+          {next && (
+            <Button
+              className="next-prev-btn"
+              onClick={() => navigate(`/${next.fields.slug}`)}
+            >
+              <h3 className="next-prev"> Next </h3>
+              <h3 className="next-post-title">{next.frontmatter.title}</h3>
+            </Button>
+          )}
+          {previous && (
+            <Button
+              className="next-prev-btn"
+              onClick={() => navigate(`/${previous.fields.slug}`)}
+            >
+              <h3 className="next-prev"> Previous</h3>
+              <h3 className="prev-post-title">{previous.frontmatter.title}</h3>
+            </Button>
+          )}
+        </div>
       </StyledPost>
     </Layout>
   )

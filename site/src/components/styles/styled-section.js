@@ -15,17 +15,14 @@ const StyledSection = styled.div`
   @media (max-width: 768px) {
     margin: 6rem 0;
 
-    .emoji-title {
-      display: flex;
-    }
-
     .section-title {
       margin-bottom: 2rem;
-      margin-left: 1rem;
+      margin-left: 0.5rem;
     }
 
     .view-all-btn {
-      margin-left: 1rem;
+      width: -webkit-fill-available;
+      margin-left: 0;
     }
   }
 `
