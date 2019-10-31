@@ -1,20 +1,28 @@
 ---
 title: "Untrip.app"
-description: "I am the project description. Wow."
+description: "Read content. Curate places into your own city playlist and share it on social media."
 technologies:
   [
     "React",
+    "Gatsby",
     "GraphQL",
-    "Apollo Server",
     "Apollo Client",
     "React Apollo Hooks",
     "Styled Components",
+    "Apollo Server",
+    "Netlify AWS Lambda functions",
+    "Prisma Data Layer",
+    "Sanity Headless CMS",
   ]
 
-problemsSolved: ["Problem one.", "Something something problem two."]
+problemsSolved:
+  [
+    "Static content is pulled from CMS, built with gatsby and served with CDN for quick page load.",
+    "After rendering, static gatsby site rehydrates into a dynamic web app with authentication, serverless functions, database.",
+  ]
 projectUrl: "https://untrip.app"
 screenRecordingUrl: "https://player.vimeo.com/video/316741004"
-githubRepo: "http://www.github.com/tanner/foobar"
+githubRepo: "http://www.github.com/tannergaucher/untrip-app"
 ---
 
 # Coming Soon!

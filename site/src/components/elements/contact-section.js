@@ -1,0 +1,45 @@
+import React from "react"
+import styled from "styled-components"
+
+import { Form, Button, Input, TextArea, StyledSection } from "../styles"
+
+const StyledContactSection = styled(StyledSection)`
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+
+  .section-title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+`
+
+export default function ContactSection() {
+  return (
+    <StyledContactSection>
+      <h2 className="section-title">
+        <span role="img">💌</span> Contact Me
+      </h2>
+      <ContactForm />
+    </StyledContactSection>
+  )
+}
+
+function ContactForm() {
+  return (
+    <Form name="contact" netlify>
+      <Input type="email" name="email" placeholder="Your Email" />
+      <TextArea
+        name="message"
+        id=""
+        cols="30"
+        rows="10"
+        htmlFor="message"
+        placeholder="Message"
+      ></TextArea>
+      <Button type="submit" primary>
+        Send
+      </Button>
+    </Form>
+  )
+}
