@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import { ThemeButton } from "../elements"
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
@@ -19,6 +20,11 @@ const StyledHeader = styled.header`
     margin-right: 2rem;
     margin-top: 0;
     font-weight: 400;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
   }
 `
 
@@ -43,6 +49,7 @@ export default function Header() {
         <Link to="/contact">
           <h4 className="nav-link">Contact</h4>
         </Link> */}
+        <ThemeButton />
       </nav>
     </StyledHeader>
   )

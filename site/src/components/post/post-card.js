@@ -5,9 +5,9 @@ import { Link } from "../styles"
 
 const StyledPost = styled.div`
   margin-bottom: var(--card-margin-bottom);
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
+  /* padding: 1rem; */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius); */
 
   .post-date {
     margin-top: 0;
