@@ -6,7 +6,7 @@ const StyledPage = styled.div`
   padding: 0 0.5rem;
 
   @media (max-width: 768px) {
-    margin: 2rem auto;
+    margin: 1rem auto;
   }
 `
 
