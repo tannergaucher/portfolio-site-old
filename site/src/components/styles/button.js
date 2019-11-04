@@ -8,7 +8,8 @@ const Button = styled.button`
   /* change to CSS VARS FOR DARK MODE */
   background: ${props => (props.primary ? "var(--btn-primary)" : "var(--btn)")};
   border-color: var(--btn-text);
-  color: var(--btn-text);
+  color: ${props =>
+    props.primary ? "var(--btn-primary-text)" : "var(--btn-text)"};
   text-transform: uppercase;
   transition-duration: 0.2s;
   
@@ -17,6 +18,8 @@ const Button = styled.button`
     /* background: ${props => (props.primary ? "inherit" : "black")};
     color: ${props => (props.primary ? "blue" : "white")}; */
   }
+
+  
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);

@@ -48,7 +48,6 @@ li {
 }
 
 /* override root vars with theme class */
-
 .dark {
   --bg: black;
   --bg-2: #55555;
@@ -56,7 +55,7 @@ li {
   --link: fuchsia;
   --btn: black;
   --btn-text: fuchsia;
-  --btn-primary: grey;
+  --btn-primary: fuchsia;
   --btn-primary-text: black;
 }
 

@@ -5,9 +5,6 @@ import { Button } from "../styles"
 
 const StyledProject = styled.div`
   margin-bottom: var(--card-margin-bottom);
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
 
   .project-title {
     margin-top: 0;

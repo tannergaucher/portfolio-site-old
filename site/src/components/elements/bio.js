@@ -13,14 +13,8 @@ const StyledBio = styled.div`
     border-radius: 50%;
   }
 
-  .bio-intro {
-  }
-
   .bio-text {
     margin: 6rem 0 4rem 0;
-  }
-
-  .bio-sentence {
   }
 
   .github-btn {
@@ -62,9 +56,11 @@ export default function Bio() {
           and JavaScript.
         </h3>
       </div>
-
       <div>
-        <a href="http://www.github.com/tannergaucher">
+        <a
+          href="http://www.github.com/tannergaucher"
+          style={{ color: `inherit` }}
+        >
           <Button className="github-btn">Github</Button>
         </a>
         <Button primary onClick={() => navigate(`/contact`)}>

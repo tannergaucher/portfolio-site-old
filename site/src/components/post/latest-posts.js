@@ -13,11 +13,7 @@ export default function LatestPosts() {
       {edges.map(edge => (
         <PostCard key={edge.node.id} post={edge.node} />
       ))}
-      <Button
-        className="view-all-btn"
-        onClick={() => navigate(`/posts`)}
-        primary
-      >
+      <Button className="view-all-btn" onClick={() => navigate(`/posts`)}>
         View All Posts
       </Button>
     </StyledSection>
