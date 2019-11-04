@@ -19,7 +19,9 @@
   --btn-primary: black;
   --btn-primary-text: white;
   --btn-border: black;
-  /* var(--link-hover) */
+  --input-bg: white;
+  --input-border: black;
+  --input-text: white;
 }
 
 body {
@@ -29,7 +31,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: var(--duration);
-  /* COLORS */
   background: var(--bg);
   color: var(--text);
 }
@@ -59,7 +60,12 @@ li {
   --btn-primary: fuchsia;
   --btn-primary-text: black;
   --btn-border: fuchsia;
+  --input-bg: black;
+  --input-border: fuchsia;
+  --input-text: white;
 }
+
+/* TODO: MORE THEMES */
 
 .gatsby-highlight pre[class*="language-"] {
   margin-bottom: rem;

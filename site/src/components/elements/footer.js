@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <StyledFooter>
       <div className="container">
-        <Link to="/" none>
+        <Link to="/" none inherit>
           <h4 className="site-title">{title}</h4>
         </Link>
       </div>
