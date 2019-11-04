@@ -13,6 +13,11 @@
   --letter-spacing: 0.5px;
   --radius: 2px;
   --card-margin-bottom: 4rem;
+  /* COLORS */
+  /* var(--bg) */
+  /* var(--text) */
+  /* var(--link) */
+  /* var(--link-hover) */
 }
 
 body {

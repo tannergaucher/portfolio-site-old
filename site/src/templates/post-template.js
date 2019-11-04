@@ -13,14 +13,14 @@ const StyledPost = styled(StyledPage)`
   }
 
   .post-date {
-    font-weight: lighter;
-    font-family: var(--mono);
+    /* font-weight: lighter; */
+    /* font-family: var(--mono); */
     margin-bottom: 1rem;
     margin-top: 0;
   }
 
   .post-description {
-    font-family: var(--mono);
+    /* font-family: var(--mono); */
     margin-top: 1rem;
   }
 
@@ -70,8 +70,8 @@ export default function Post({ data, pageContext }) {
     <Layout>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
+        {/* <h4 className="post-date">{post.frontmatter.date}</h4> */}
         <h1 className="post-title">{post.frontmatter.title}</h1>
-        <h4 className="post-date">{post.frontmatter.date}</h4>
         <p className="post-description">{post.frontmatter.description}</p>
         <div
           className="post-body"
@@ -83,7 +83,7 @@ export default function Post({ data, pageContext }) {
               className="next-prev-btn"
               onClick={() => navigate(`/${next.fields.slug}`)}
             >
-              <h3 className="next-prev"> Next </h3>
+              {/* <h3 className="next-prev"> Next </h3> */}
               <h3 className="next-post-title">{next.frontmatter.title}</h3>
             </Button>
           )}
@@ -92,7 +92,7 @@ export default function Post({ data, pageContext }) {
               className="next-prev-btn"
               onClick={() => navigate(`/${previous.fields.slug}`)}
             >
-              <h3 className="next-prev"> Previous</h3>
+              {/* <h3 className="next-prev"> Previous</h3> */}
               <h3 className="prev-post-title">{previous.frontmatter.title}</h3>
             </Button>
           )}
