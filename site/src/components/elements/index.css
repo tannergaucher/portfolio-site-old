@@ -18,6 +18,7 @@
   --link: blue;
   --btn-primary: black;
   --btn-primary-text: white;
+  --btn-border: black;
   /* var(--link-hover) */
 }
 
@@ -57,6 +58,7 @@ li {
   --btn-text: fuchsia;
   --btn-primary: fuchsia;
   --btn-primary-text: black;
+  --btn-border: fuchsia;
 }
 
 .gatsby-highlight pre[class*="language-"] {
