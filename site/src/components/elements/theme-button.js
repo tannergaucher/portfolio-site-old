@@ -8,9 +8,6 @@ export default function ThemeButton() {
 
   return (
     <Button
-      style={{
-        border: `none`,
-      }}
       onClick={() => {
         document.body.classList.remove(theme)
         const toggledTheme = theme === "dark" ? "light" : "dark"

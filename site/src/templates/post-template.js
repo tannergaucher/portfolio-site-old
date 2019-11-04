@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, navigate } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import { SEO, Layout } from "../components/elements"
-import { StyledPage, Button } from "../components/styles"
+import { StyledPage, Link } from "../components/styles"
 
 const StyledPost = styled(StyledPage)`
   .post-title {
@@ -13,14 +13,11 @@ const StyledPost = styled(StyledPage)`
   }
 
   .post-date {
-    /* font-weight: lighter; */
-    /* font-family: var(--mono); */
     margin-bottom: 1rem;
     margin-top: 0;
   }
 
   .post-description {
-    /* font-family: var(--mono); */
     margin-top: 1rem;
   }
 
@@ -29,7 +26,7 @@ const StyledPost = styled(StyledPage)`
     margin-bottom: 5rem;
   }
 
-  .next-prev-btns {
+  .next-prev-links {
     margin-bottom: 3rem;
   }
 
@@ -39,15 +36,8 @@ const StyledPost = styled(StyledPage)`
     text-align: center;
   }
 
-  .next-post-title,
-  .prev-post-title {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .next-prev-btn {
+  .next-prev-title {
     margin-bottom: 2rem;
-    width: 100%;
 
     &:last-child {
       margin-bottom: 0;
@@ -77,24 +67,16 @@ export default function Post({ data, pageContext }) {
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <div className="next-prev-btns">
+        <div className="next-prev-links">
           {next && (
-            <Button
-              className="next-prev-btn"
-              onClick={() => navigate(`/${next.fields.slug}`)}
-            >
-              {/* <h3 className="next-prev"> Next </h3> */}
-              <h3 className="next-post-title">{next.frontmatter.title}</h3>
-            </Button>
+            <Link to={`/${next.fields.slug}`}>
+              <h3 className="next-prev-title">{next.frontmatter.title}</h3>
+            </Link>
           )}
           {previous && (
-            <Button
-              className="next-prev-btn"
-              onClick={() => navigate(`/${previous.fields.slug}`)}
-            >
-              {/* <h3 className="next-prev"> Previous</h3> */}
-              <h3 className="prev-post-title">{previous.frontmatter.title}</h3>
-            </Button>
+            <Link to={`/${previous.fields.slug}`}>
+              <h3 className="next-prev-title">{previous.frontmatter.title}</h3>
+            </Link>
           )}
         </div>
       </StyledPost>

@@ -2,8 +2,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const StyledLink = styled(Link)`
-  color: inherit;
-  text-decoration: none;
+  color: var(--link);
+  text-decoration: ${props => (props.none ? "none" : "")};
 `
 
 export default StyledLink

@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <nav>
-        <Link to="/" className="title">
+        <Link to="/" className="title" none>
           <h4 className="site-title">{title}</h4>
         </Link>
         {/* <Link to="/posts">
