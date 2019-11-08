@@ -6,5 +6,16 @@ import TextArea from "./text-area"
 import Link from "./link"
 import StyledSection from "./styled-section"
 import Date from "./date"
+import Divider from "./divider"
 
-export { StyledPage, Form, Input, Button, TextArea, Link, StyledSection, Date }
+export {
+  StyledPage,
+  Form,
+  Input,
+  Button,
+  TextArea,
+  Link,
+  StyledSection,
+  Date,
+  Divider,
+}

@@ -9,7 +9,7 @@ const StyledPost = styled(StyledPage)`
   .post-title {
     font-weight: 900;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
 
   .post-date {
@@ -45,6 +45,11 @@ const StyledPost = styled(StyledPage)`
   }
 
   @media (max-width: 768px) {
+    .post-title {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
     .post-body {
       margin-top: 3rem;
       margin-bottom: 3rem;

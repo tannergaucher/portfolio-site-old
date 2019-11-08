@@ -10,20 +10,17 @@ const StyledPost = styled.div`
     margin-top: 0;
     margin-bottom: 1rem;
     font-weight: lighter;
-    font-family: var(--mono);
   }
 
   .post-title {
     margin-top: 0;
     margin-bottom: 1rem;
-    font-weight: 900;
   }
 
   .post-description {
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: lighter;
-    font-family: var(--mono);
+    font-weight: light;
   }
 `
 

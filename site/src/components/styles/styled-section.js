@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
 const StyledSection = styled.div`
-  margin: 10rem 0;
+  margin: var(--lg) 0;
 
   .section-title {
-    margin-bottom: 4rem;
-    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: var(--lg);
   }
 
   span {
@@ -13,12 +13,7 @@ const StyledSection = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 6rem 0;
-
-    .section-title {
-      margin-bottom: 2rem;
-      margin-left: 0.5rem;
-    }
+    margin: var(--md) 0;
 
     .view-all-btn {
       width: -webkit-fill-available;

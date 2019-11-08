@@ -8,13 +8,12 @@ const StyledProject = styled.div`
 
   .project-title {
     margin-top: 0;
-    margin-bottom: 1rem;
-    font-weight: 900;
+    margin-bottom: 2rem;
   }
 
   .project-description {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
   }
 
   .resp-container {
@@ -34,7 +33,7 @@ const StyledProject = styled.div`
   }
 
   .toggle-details-btn {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   .technologies-title {
@@ -73,7 +72,6 @@ export default function ProjectCard({ project }) {
   return (
     <StyledProject>
       <h2 className="project-title">{project.frontmatter.title}</h2>
-      <p className="project-description">{project.frontmatter.description}</p>
       <div className="resp-container">
         <iframe
           className="resp-iframe"
@@ -86,6 +84,7 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         />
       </div>
+      <p className="project-description">{project.frontmatter.description}</p>
 
       <Button className="toggle-details-btn" onClick={() => setShow(!show)}>
         {show ? "Hide " : "View "} Project Details

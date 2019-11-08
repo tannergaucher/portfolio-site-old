@@ -6,13 +6,12 @@ import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 const StyledHeader = styled.header`
-  padding: 0.5rem;
   max-width: var(--container);
-  margin: 0 auto;
+  margin: 5rem auto;
 
   .site-title {
     font-weight: 400;
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -23,8 +22,14 @@ const StyledHeader = styled.header`
   }
 
   nav {
+    padding: 0 0.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    margin: 1rem auto;
   }
 `
 
