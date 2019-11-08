@@ -1,7 +1,9 @@
 import styled from "styled-components"
 
 const TextArea = styled.textarea`
-  border: 2px solid black;
+  border: 2px solid var(--input-border);
+  background: var(--input-background);
+  color: var(--input-text);
   border-radius: var(--radius);
   font-size: var(--font-size-lg);
   font-family: var(--sans);

@@ -5,19 +5,15 @@ import { Button } from "../styles"
 
 const StyledProject = styled.div`
   margin-bottom: var(--card-margin-bottom);
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
 
   .project-title {
     margin-top: 0;
-    margin-bottom: 1rem;
-    font-weight: 900;
+    margin-bottom: 2rem;
   }
 
   .project-description {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
   }
 
   .resp-container {
@@ -37,7 +33,7 @@ const StyledProject = styled.div`
   }
 
   .toggle-details-btn {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   .technologies-title {
@@ -76,7 +72,6 @@ export default function ProjectCard({ project }) {
   return (
     <StyledProject>
       <h2 className="project-title">{project.frontmatter.title}</h2>
-      <p className="project-description">{project.frontmatter.description}</p>
       <div className="resp-container">
         <iframe
           className="resp-iframe"
@@ -89,6 +84,7 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         />
       </div>
+      <p className="project-description">{project.frontmatter.description}</p>
 
       <Button className="toggle-details-btn" onClick={() => setShow(!show)}>
         {show ? "Hide " : "View "} Project Details

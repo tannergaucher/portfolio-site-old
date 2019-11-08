@@ -7,7 +7,7 @@ export const POST_FRAGMENT = graphql`
     html
     frontmatter {
       title
-      date(formatString: "MM.DD.YYYY")
+      date(formatString: "MM/DD/YYYY")
       description
       tags
     }

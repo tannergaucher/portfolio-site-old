@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|Merriweather:400,900&display=swap");
-
-@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 
 :root {
   --container: 800px;
   --serif: "Merriweather", serif;
-  --sans: "Inter", sans-serif;
   --mono: "Inconsolata", monospace;
   --line-height: 1.5;
   --font-size-lg: 21px;
@@ -13,20 +11,34 @@
   --letter-spacing: 0.5px;
   --radius: 2px;
   --card-margin-bottom: 4rem;
+  /* COLORS */
+  --bg: white;
+  --bg-2: black;
+  --text: black;
+  --link: blue;
+  --btn-primary: black;
+  --btn-primary-text: white;
+  --btn-border: black;
+  --input-bg: white;
+  --input-border: black;
+  --input-text: white;
+  /* SPACING */
+  --xs: 0.5rem;
+  --sm: 1rem;
+  --md: 2rem;
+  --lg: 5rem;
+  --xl: 10rem;
 }
 
 body {
   margin: 0;
-  font-family: var(--sans);
+  font-family: var(--serif);
   font-size: var(--font-size-lg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: var(--duration);
-}
-
-.dark {
-  background: black;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
 }
 
 p {
@@ -35,7 +47,7 @@ p {
 }
 
 a {
-  color: blue;
+  color: var(--link);
 }
 
 ul,
@@ -43,6 +55,23 @@ li {
   line-height: var(--line-height);
 }
 
+/* override root vars with theme class */
+.dark {
+  --bg: black;
+  --bg-2: fuchsia;
+  --text: white;
+  --link: fuchsia;
+  --btn: black;
+  --btn-text: white;
+  --btn-primary: white;
+  --btn-primary-text: black;
+  --btn-border: white;
+  --input-bg: black;
+  --input-border: white;
+  --input-text: #fafafa;
+}
+
+/* TODO: MORE THEMES */
 .gatsby-highlight pre[class*="language-"] {
   margin-bottom: rem;
 }

@@ -1,17 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 
+import { ThemeButton } from "../elements"
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 const StyledHeader = styled.header`
-  padding: 0.5rem;
   max-width: var(--container);
-  margin: 0 auto;
+  margin: 5rem auto;
 
   .site-title {
     font-weight: 400;
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -19,6 +19,17 @@ const StyledHeader = styled.header`
     margin-right: 2rem;
     margin-top: 0;
     font-weight: 400;
+  }
+
+  nav {
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    margin: 1rem auto;
   }
 `
 
@@ -28,7 +39,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <nav>
-        <Link to="/" className="title">
+        <Link to="/" className="title" none inherit>
           <h4 className="site-title">{title}</h4>
         </Link>
         {/* <Link to="/posts">
@@ -43,6 +54,7 @@ export default function Header() {
         <Link to="/contact">
           <h4 className="nav-link">Contact</h4>
         </Link> */}
+        <ThemeButton />
       </nav>
     </StyledHeader>
   )

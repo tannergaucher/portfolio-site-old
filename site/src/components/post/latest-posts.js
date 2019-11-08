@@ -3,23 +3,20 @@ import { navigate } from "gatsby"
 
 import { PostCard } from "."
 import { useLatestPosts } from "../hooks"
-import { StyledSection, Button } from "../styles"
+import { StyledSection, Button, Divider, Link } from "../styles"
 
 export default function LatestPosts() {
   const { edges } = useLatestPosts()
   return (
     <StyledSection>
-      <h2 className="section-title">Latest Posts</h2>
+      <Divider />
+      <h2 className="section-title">Posts</h2>
       {edges.map(edge => (
         <PostCard key={edge.node.id} post={edge.node} />
       ))}
-      <Button
-        className="view-all-btn"
-        onClick={() => navigate(`/posts`)}
-        primary
-      >
-        View All Posts
-      </Button>
+      <Link className="view-all-btn" to={`/posts`} primary>
+        <h3>View All Posts</h3>
+      </Link>
     </StyledSection>
   )
 }
