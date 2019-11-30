@@ -1,87 +1,166 @@
-@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
-
 :root {
-  --container: 800px;
-  --serif: "Merriweather", serif;
-  --mono: "Inconsolata", monospace;
-  --line-height: 1.5;
-  --font-size-lg: 21px;
-  --font-size-sm: 18px;
-  --letter-spacing: 0.5px;
+  /* Typography */
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  --heading-line-height: 1.1;
+  --paragraph-line-height: 1.75;
+  --heading-letter-spacing: -1.55px;
+  --paragraph-letter-spacing: -0.2px;
+  /* Vertical Rhythm */
+  --responsive-unit: 0.5vw; /* TWEAK ME  */
+  /* Base Values */
+  --text-base-size: calc(0.9rem + var(--responsive-unit));
+  --text-scale-ratio: 1.3; /* TWEAK ME */
+  /* Type Scale */
+  --text-xs: calc(
+    1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
+      var(--responsive-unit)
+  );
+  --text-sm: calc(1rem / var(--text-scale-ratio) + var(--responsive-unit));
+  --text-md: calc(1rem * var(--text-scale-ratio) + var(--responsive-unit));
+  --text-lg: calc(
+    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) +
+      var(--responsive-unit)
+  );
+  --text-xl: calc(
+    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-xxl: calc(
+    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-xxxl: calc(
+    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  /* Spacing */
+  --baseline: calc(1.2rem + var(--responsive-unit));
+  --component-padding: var(--space-sm);
+  /* Spacing Values */
+  --space-sm: calc(var(--baseline) / 2);
+  --space-md: var(--baseline);
+  --space-lg: calc(var(--baseline) * 2);
+  --space-xl: calc(var(--baseline) * 3);
+  /* Colors */
+  --accent: darkred;
+  --black: black;
+  --white: white;
+  --grey: #555555;
+  --red: tomato;
+  --warning: red;
+  --facebook: #3b5998;
+  --twitter: #1da1f2;
+  --pinterest: #c8232c;
+  --instagram: #5851db;
+  /* Animation */
+  --duration: 0.2s;
+  /* Components */
   --radius: 2px;
-  --card-margin-bottom: 4rem;
-  /* COLORS */
-  --bg: white;
-  --bg-2: black;
-  --text: black;
-  --link: blue;
-  --btn-primary: black;
-  --btn-primary-text: white;
-  --btn-border: black;
-  --input-bg: white;
-  --input-border: black;
-  --input-text: white;
-  /* SPACING */
-  --xs: 0.5rem;
-  --sm: 1rem;
-  --md: 2rem;
-  --lg: 5rem;
-  --xl: 10rem;
+  --thickness: 2px;
+  --container: 1000px;
+}
+
+html {
+  width: 100%;
 }
 
 body {
   margin: 0;
-  font-family: var(--serif);
-  font-size: var(--font-size-lg);
-  -webkit-font-smoothing: antialiased;
+  font-family: var(--sans);
+  font-size: var(--text-base-size);
   -moz-osx-font-smoothing: grayscale;
-  transition-duration: var(--duration);
-  background: var(--bg);
-  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+}
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl);
+  margin: var(--space-xl) 0;
+}
+
+h1,
+.text--xxl {
+  font-size: var(--text-xxl);
+  margin: var(--space-md) 0;
+}
+
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+  margin: var(--space-md) 0;
+}
+
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+  margin: var(--space-md) 0;
+}
+
+h4,
+.text--md {
+  font-size: var(--text-md);
+  margin: var(--space-sm) 0;
+}
+
+.text--sm,
+small {
+  font-size: var(--text-sm);
+  margin: var(--space-sm) 0;
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+  margin: var(--space-sm) 0;
 }
 
 p {
-  line-height: var(--line-height);
-  letter-spacing: var(--letter-spacing);
+  margin: var(--space-sm) 0;
+  line-height: var(--paragraph-line-height);
+  letter-spacing: var(--paragraph-letter-spacing);
 }
 
-a {
-  color: var(--link);
-}
-
-ul,
 li {
-  line-height: var(--line-height);
+  margin-bottom: var(--space-sm);
 }
 
-/* override root vars with theme class */
-.dark {
-  --bg: black;
-  --bg-2: fuchsia;
-  --text: white;
-  --link: fuchsia;
-  --btn: black;
-  --btn-text: white;
-  --btn-primary: white;
-  --btn-primary-text: black;
-  --btn-border: white;
-  --input-bg: black;
-  --input-border: white;
-  --input-text: #fafafa;
+br {
+  margin: var(--space-md) 0;
 }
 
-/* TODO: MORE THEMES */
+input,
+textarea {
+  font-size: var(--text-md);
+}
+
+button {
+  font-size: var(--text-sm);
+}
+
+.component {
+  padding: var(--component-padding);
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .responsive-padding {
+    padding: 0 var(--space-sm);
+  }
+}
+
 .gatsby-highlight pre[class*="language-"] {
-  margin-bottom: rem;
+  margin-bottom: var(--space-md);
 }
 
 .gatsby-highlight pre[class*="language-"] code {
   font-family: var(--mono);
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: var(--font-size-sm);
-  }
 }

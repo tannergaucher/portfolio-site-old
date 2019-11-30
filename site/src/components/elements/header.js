@@ -7,13 +7,7 @@ import { useSiteMetadata } from "../hooks"
 
 const StyledHeader = styled.header`
   max-width: var(--container);
-  margin: 5rem auto;
-
-  .site-title {
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+  margin: 0 auto;
 
   .nav-link {
     margin-right: 2rem;
@@ -27,10 +21,6 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
   }
-
-  @media (max-width: 768px) {
-    margin: 1rem auto;
-  }
 `
 
 export default function Header() {
@@ -39,21 +29,9 @@ export default function Header() {
   return (
     <StyledHeader>
       <nav>
-        <Link to="/" className="title" none inherit>
+        <Link to="/" none inherit>
           <h4 className="site-title">{title}</h4>
         </Link>
-        {/* <Link to="/posts">
-          <h4 className="nav-link">Posts</h4>
-        </Link>
-        <Link to="/projects">
-          <h4 className="nav-link">Projects</h4>
-        </Link>
-        <Link to="/photo">
-          <h4 className="nav-link">Photo</h4>
-        </Link>
-        <Link to="/contact">
-          <h4 className="nav-link">Contact</h4>
-        </Link> */}
         <ThemeButton />
       </nav>
     </StyledHeader>
