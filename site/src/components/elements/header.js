@@ -6,10 +6,10 @@ import { useSiteMetadata } from "../hooks"
 
 const StyledHeader = styled.header``
 
-    margin-top: 0;
 // TODO: Location === /  ?  index header : regular header
 
-export default function Header() {
+export default function Header({ location }) {
+  console.log(location)
   const { title } = useSiteMetadata()
 
   return (

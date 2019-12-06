@@ -5,11 +5,11 @@ import { PhotoCard } from "../components/photo"
 import { useAllMyImages } from "../components/hooks"
 import { StyledPage, Link } from "../components/styles"
 
-export default function Photo() {
+export default function Photo({ location }) {
   const { edges } = useAllMyImages()
 
   return (
-    <Layout>
+    <Layout location={location}>
       <StyledPage>
         {edges.map(edge => (
           <Link to={`/photo/${edge.node.slug.current}`}>
