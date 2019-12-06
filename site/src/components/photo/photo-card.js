@@ -10,14 +10,13 @@ const StyledPhotoCard = styled.div`
 
   .image-tags {
     display: flex;
-    margin-top: 2rem;
+    margin-top: var(--space-md);
   }
 
   .image-dateTime {
-    margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: var(--space-md);
     font-weight: lighter;
-    font-family: var(--mono);
-    color: grey;
   }
 
   .image-tag {
@@ -43,7 +42,7 @@ export default function PhotoCard({ sanityMyImage }) {
           maxWidth: aspectRatio < 1 ? "600px" : "",
         }}
       >
-        {/* <h5 className="image-dateTime">{formattedDateTime}</h5> */}
+        <h5 className="image-dateTime">{formattedDateTime}</h5>
         <Link to={`/photo/${sanityMyImage.slug.current}`}>
           <Img fluid={sanityMyImage.myImage.asset.fluid} />
         </Link>

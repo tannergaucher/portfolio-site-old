@@ -3,16 +3,31 @@ import styled from "styled-components"
 
 import { Link } from "../styles"
 
-const StyledPost = styled.div``
+const StyledPostCard = styled.div`
+  margin-bottom: var(--space-xl);
 
-export default function Post({ post }) {
+  .post-date {
+    margin-bottom: var(--space-sm);
+  }
+
+  .post-title {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  .post-description {
+    margin-top: 0;
+  }
+`
+
+export default function PostCard({ post }) {
   return (
-    <StyledPost>
+    <StyledPostCard>
       <Link to={post.fields.slug} none inherit>
-        <h5 className="post-date">{post.frontmatter.date}</h5>
+        <h4 className="post-date">{post.frontmatter.date}</h4>
         <h2 className="post-title">{post.frontmatter.title}</h2>
-        <p className="post-description">{post.frontmatter.description}</p>
+        <h4 className="post-description">{post.frontmatter.description}</h4>
       </Link>
-    </StyledPost>
+    </StyledPostCard>
   )
 }

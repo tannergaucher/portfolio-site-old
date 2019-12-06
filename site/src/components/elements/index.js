@@ -4,7 +4,6 @@ import Header from "./header"
 import Layout from "./layout"
 import SEO from "./seo"
 import Avatar from "./avatar"
-import ThemeButton from "./theme-button"
-import ContactSection from "./contact-section"
+import Contact from "./contact"
 
-export { Bio, Footer, Header, Layout, SEO, Avatar, ThemeButton, ContactSection }
+export { Bio, Footer, Header, Layout, SEO, Avatar, Contact }

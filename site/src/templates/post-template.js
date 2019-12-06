@@ -65,7 +65,7 @@ export default function Post({ data, pageContext }) {
     <Layout>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        {/* <h4 className="post-date">{post.frontmatter.date}</h4> */}
+        <h4 className="post-date">{post.frontmatter.date}</h4>
         <h1 className="post-title">{post.frontmatter.title}</h1>
         <p className="post-description">{post.frontmatter.description}</p>
         <div
