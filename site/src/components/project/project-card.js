@@ -1,12 +1,42 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
-const StyledProject = styled.div``
+import { Link } from "../styles"
+
+const StyledProject = styled.div`
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+
+  .project-card-img {
+    max-height: 300px;
+    right: -30%;
+    top: 30px;
+    transform: rotate3d(0.342, -0.2, 0, 22deg) rotateZ(7deg);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in 0s;
+  }
+
+  &:hover {
+    .project-card-img {
+      box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+      transform: rotate3d(0.342, -0.2, 0, 12deg) rotateZ(3deg);
+    }
+  }
+`
 
 export default function ProjectCard({ project }) {
   return (
     <StyledProject>
-      <h2 className="project-title">{project.frontmatter.title}</h2>
+      <Link to={`/projects/${project.fields.slug}`} none>
+        <h4 className="project-title">{project.frontmatter.title}</h4>
+        <Img
+          className="project-card-img"
+          fluid={project.frontmatter.cardImage.childImageSharp.fluid}
+        />
+      </Link>
     </StyledProject>
   )
 }
