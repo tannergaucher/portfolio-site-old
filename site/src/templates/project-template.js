@@ -4,11 +4,11 @@ import { graphql } from "gatsby"
 import { Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
 
-export default function ProjectTemplate({ data }) {
+export default function ProjectTemplate({ data, location }) {
   const project = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout location={location}>
       <StyledPage>
         <h1>{project.frontmatter.title}</h1>
       </StyledPage>

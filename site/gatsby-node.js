@@ -1,5 +1,4 @@
 const path = require(`path`)
-const { kebabCase } = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -26,9 +25,6 @@ exports.createPages = async ({ graphql, actions }) => {
       ) {
         edges {
           node {
-            frontmatter {
-              tags
-            }
             fields {
               slug
             }
@@ -56,34 +52,17 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const allPostTags = []
-
   allPostsQuery.data.allMarkdownRemark.edges.forEach(edge => {
-    edge.node.frontmatter.tags.forEach(tag => allPostTags.push(tag))
-
-    // create post pages
+    // Create post pages.
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve(`./src/templates/post-template.js`),
       context: {
         slug: edge.node.fields.slug,
-        // why is this backwards!?
+        // Why is this backwards!?
         next: edge.previous,
         previous: edge.next,
       },
-    })
-
-    // create tag pages
-    const uniqueTags = new Set(allPostTags)
-
-    uniqueTags.forEach(tag => {
-      createPage({
-        path: `/tags/${kebabCase(tag)}`,
-        component: path.resolve(`./src/templates/tag-template.js`),
-        context: {
-          tag,
-        },
-      })
     })
   })
 

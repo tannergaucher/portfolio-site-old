@@ -1,4 +1,4 @@
 import PostCard from "./post-card"
-import LatestPosts from "./latest-posts"
+import Posts from "./posts"
 
-export { PostCard, LatestPosts }
+export { PostCard, Posts }

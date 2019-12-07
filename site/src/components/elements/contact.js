@@ -1,15 +1,23 @@
 import React from "react"
+import styled from "styled-components"
 
 import { Form, Button, Input, TextArea } from "../styles"
 
-export default function ContactSection() {
+const StyledContact = styled.div`
+  max-width: var(--container);
+  margin: 0 auto;
+
+  .section-title {
+    font-weight: 900;
+  }
+`
+
+export default function Contact() {
   return (
-    <>
-      <div>
-        <h2 className="section-title">Contact </h2>
-      </div>
+    <StyledContact>
+      <h4 className="section-title">Contact</h4>
       <ContactForm />
-    </>
+    </StyledContact>
   )
 }
 

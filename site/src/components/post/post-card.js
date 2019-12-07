@@ -1,22 +1,36 @@
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 import { Link } from "../styles"
 
 const StyledPostCard = styled.div`
-  margin-bottom: var(--space-xl);
-
-  .post-date {
-    margin-bottom: var(--space-sm);
-  }
+  margin: var(--space-lg) 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
   .post-title {
-    margin-top: 0;
-    margin-bottom: var(--space-sm);
+    font-weight: 900;
   }
 
-  .post-description {
-    margin-top: 0;
+  .post-info {
+    padding: var(--space-sm);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+  }
+
+  .post-image {
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+    max-height: 400px;
+  }
+
+  .post-time-to-read {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 `
 
@@ -24,9 +38,17 @@ export default function PostCard({ post }) {
   return (
     <StyledPostCard>
       <Link to={post.fields.slug} none inherit>
-        <h4 className="post-date">{post.frontmatter.date}</h4>
-        <h2 className="post-title">{post.frontmatter.title}</h2>
-        <h4 className="post-description">{post.frontmatter.description}</h4>
+        <Img
+          className="post-image"
+          fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+        />
+        <div className="post-info">
+          <h4 className="post-title">{post.frontmatter.title}</h4>
+          <p className="post-description">{post.frontmatter.description}</p>
+          <small className="post-time-to-read">
+            {post.timeToRead} min read
+          </small>
+        </div>
       </Link>
     </StyledPostCard>
   )

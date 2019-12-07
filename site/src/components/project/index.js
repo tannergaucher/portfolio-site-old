@@ -1,4 +1,4 @@
 import ProjectCard from "./project-card.js"
-import LatestProjects from "./latest-projects"
+import Projects from "./projects"
 
-export { ProjectCard, LatestProjects }
+export { ProjectCard, Projects }

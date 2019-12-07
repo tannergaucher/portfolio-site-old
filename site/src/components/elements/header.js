@@ -1,25 +1,51 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Link } from "../styles"
+import { Link, Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
-const StyledHeader = styled.header``
-
-// TODO: Location === /  ?  index header : regular header
-
 export default function Header({ location }) {
-  console.log(location)
   const { title } = useSiteMetadata()
 
   return (
-    <StyledHeader>
-      <nav>
-        <Link to="/" none inherit>
-          <h4 className="site-title">{title}</h4>
-        </Link>
-        {/* GITHUB ICON LINK */}
-      </nav>
-    </StyledHeader>
+    <>
+      {location.pathname === "/" ? (
+        <IndexHeader title={title} />
+      ) : (
+        <PlainHeader title={title} />
+      )}
+    </>
   )
 }
+
+const StyledIndexHeader = styled.header`
+  max-width: var(--container);
+  margin: var(--space-xl) auto;
+
+  .site-title {
+    font-weight: 900;
+  }
+
+  .intro-text {
+    margin-bottom: var(--space-md);
+  }
+`
+
+const IndexHeader = ({ title }) => (
+  <StyledIndexHeader>
+    <Link to="/" none>
+      <h1 className="site-title text--lg">{title}</h1>
+    </Link>
+    <p className="intro-text">
+      I'm a fullstack JavaScript developer, currently seeking a full-time
+      position in New York City / Remote.
+    </p>
+    <Button>Github</Button>
+  </StyledIndexHeader>
+)
+
+const PlainHeader = ({ title }) => (
+  <Link to="/" none>
+    <h4>{title}</h4>
+  </Link>
+)

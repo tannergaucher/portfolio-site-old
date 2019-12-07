@@ -5,11 +5,18 @@ export const POST_FRAGMENT = graphql`
     id
     excerpt
     html
+    timeToRead
     frontmatter {
       title
       date(formatString: "MM.DD.YYYY")
       description
-      tags
+      featuredImage {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     fields {
       slug

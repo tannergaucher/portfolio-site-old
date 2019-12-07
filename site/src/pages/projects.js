@@ -2,11 +2,11 @@ import React from "react"
 
 import { Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
-import { useAllProjects } from "../components/hooks"
+import { useProjects } from "../components/hooks"
 import { ProjectCard } from "../components/project"
 
 export default function Projects({ location }) {
-  const { edges } = useAllProjects()
+  const { edges } = useProjects()
 
   return (
     <Layout location={location}>

@@ -57,12 +57,12 @@ const StyledPost = styled(StyledPage)`
   }
 `
 
-export default function Post({ data, pageContext }) {
+export default function Post({ data, pageContext, location }) {
   const post = data.markdownRemark
   const { next, previous } = pageContext
 
   return (
-    <Layout>
+    <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
         <h4 className="post-date">{post.frontmatter.date}</h4>

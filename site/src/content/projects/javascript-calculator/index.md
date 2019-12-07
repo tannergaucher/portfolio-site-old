@@ -1,5 +1,5 @@
 ---
-title: "Live Chat"
+title: "JS Calculator"
 description: "FreeCodeCamp frontend frameworks project."
 technologies: ["React"]
 problemsSolved: ["Project objectives: To learn the new react useReducer hook."]
