@@ -4,7 +4,13 @@ import styled from "styled-components"
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
-const StyledFooter = styled.div``
+const StyledFooter = styled.div`
+  padding: var(--space-sm);
+
+  .site-title {
+    font-weight: 900;
+  }
+`
 
 export default function Footer() {
   const { title } = useSiteMetadata()
@@ -12,7 +18,7 @@ export default function Footer() {
   return (
     <StyledFooter>
       <Link to="/" none inherit>
-        <h4 className="site-title">{title}</h4>
+        <small className="site-title">{title}</small>
       </Link>
     </StyledFooter>
   )
