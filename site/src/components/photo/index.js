@@ -1,4 +1,4 @@
 import PhotoCard from "./photo-card"
-import LatestPhoto from "./latest-photo"
+import LatestPhotosGrid from "./latest-photos-grid"
 
-export { PhotoCard, LatestPhoto }
+export { PhotoCard, LatestPhotosGrid }

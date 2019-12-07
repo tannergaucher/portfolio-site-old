@@ -5,11 +5,18 @@ export const POST_FRAGMENT = graphql`
     id
     excerpt
     html
+    timeToRead
     frontmatter {
       title
-      date(formatString: "MM/DD/YYYY")
+      date(formatString: "MM.DD.YYYY")
       description
-      tags
+      featuredImage {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     fields {
       slug
@@ -26,8 +33,15 @@ export const PROJECT_FRAGMENT = graphql`
       technologies
       problemsSolved
       projectUrl
-      screenRecordingUrl
+      screenRecording
       githubRepo
+      cardImage {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     fields {
       slug

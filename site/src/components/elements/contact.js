@@ -1,28 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Form, Button, Input, TextArea, StyledSection } from "../styles"
+import { Form, Button, Input, TextArea } from "../styles"
 
-const StyledContactSection = styled(StyledSection)`
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
+const StyledContact = styled.div`
+  max-width: var(--container);
+  margin: 0 auto;
 
   .section-title {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-weight: 900;
   }
 `
 
-export default function ContactSection() {
+export default function Contact() {
   return (
-    <StyledContactSection>
-      <div>
-        <h2 className="section-title">Contact </h2>
-      </div>
+    <StyledContact>
+      <h4 className="section-title">Contact</h4>
       <ContactForm />
-    </StyledContactSection>
+    </StyledContact>
   )
 }
 

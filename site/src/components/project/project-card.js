@@ -1,116 +1,42 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
-import { Button } from "../styles"
+import { Link } from "../styles"
 
 const StyledProject = styled.div`
-  margin-bottom: var(--card-margin-bottom);
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
 
-  .project-title {
-    margin-top: 0;
-    margin-bottom: 2rem;
+  .project-card-img {
+    max-height: 300px;
+    right: -30%;
+    top: 30px;
+    transform: rotate3d(0.342, -0.2, 0, 22deg) rotateZ(7deg);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in 0s;
   }
 
-  .project-description {
-    margin-top: 2rem;
-    margin-bottom: 0;
-  }
-
-  .resp-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%;
-    background: black;
-  }
-
-  .resp-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .toggle-details-btn {
-    margin-top: 2rem;
-  }
-
-  .technologies-title {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .problems-title {
-    margin-bottom: 1rem;
-  }
-
-  .view-deployed-btn {
-    margin-top: 2rem;
-    margin-right: 1rem;
-  }
-
-  ul {
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    button {
-      width: 100%;
-      margin-bottom: 1rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+  &:hover {
+    .project-card-img {
+      box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+      transform: rotate3d(0.342, -0.2, 0, 12deg) rotateZ(3deg);
     }
   }
 `
 
 export default function ProjectCard({ project }) {
-  const [show, setShow] = useState(false)
-
   return (
     <StyledProject>
-      <h2 className="project-title">{project.frontmatter.title}</h2>
-      <div className="resp-container">
-        <iframe
-          className="resp-iframe"
-          src={project.frontmatter.screenRecordingUrl}
-          title={project.frontmatter.title}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
+      <Link to={`/projects/${project.fields.slug}`} none>
+        <h4 className="project-title">{project.frontmatter.title}</h4>
+        <Img
+          className="project-card-img"
+          fluid={project.frontmatter.cardImage.childImageSharp.fluid}
         />
-      </div>
-      <p className="project-description">{project.frontmatter.description}</p>
-
-      <Button className="toggle-details-btn" onClick={() => setShow(!show)}>
-        {show ? "Hide " : "View "} Project Details
-      </Button>
-
-      {show && (
-        <div className="project-details">
-          <h4 className="technologies-title">Technologies Used</h4>
-          <ul>
-            {project.frontmatter.technologies.map(technology => (
-              <li key={technology}>{technology}</li>
-            ))}
-          </ul>
-          <h4 className="problems-title">Problems Solved</h4>
-          <ul>
-            {project.frontmatter.problemsSolved.map(problem => (
-              <li key={problem}>{problem}</li>
-            ))}
-          </ul>
-
-          <Button className="view-deployed-btn" primary>
-            View Deployed
-          </Button>
-          <Button className="github-repo-btn">Github Repo</Button>
-        </div>
-      )}
+      </Link>
     </StyledProject>
   )
 }

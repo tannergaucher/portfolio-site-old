@@ -4,11 +4,11 @@ import { Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
 import { PhotoCard } from "../components/photo"
 
-export default function PhotoTemplatePage({ data }) {
+export default function PhotoTemplatePage({ data, location }) {
   const { sanityMyImage } = data
 
   return (
-    <Layout>
+    <Layout location={location}>
       <StyledPage>
         <PhotoCard sanityMyImage={sanityMyImage} />
       </StyledPage>

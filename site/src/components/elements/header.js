@@ -1,61 +1,81 @@
 import React from "react"
 import styled from "styled-components"
+import { Github, Twitter } from "grommet-icons"
 
-import { ThemeButton } from "../elements"
 import { Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
-const StyledHeader = styled.header`
-  max-width: var(--container);
-  margin: 5rem auto;
-
-  .site-title {
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .nav-link {
-    margin-right: 2rem;
-    margin-top: 0;
-    font-weight: 400;
-  }
-
-  nav {
-    padding: 0 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  @media (max-width: 768px) {
-    margin: 1rem auto;
-  }
-`
-
-export default function Header() {
+export default function Header({ location }) {
   const { title } = useSiteMetadata()
 
   return (
-    <StyledHeader>
-      <nav>
-        <Link to="/" className="title" none inherit>
-          <h4 className="site-title">{title}</h4>
-        </Link>
-        {/* <Link to="/posts">
-          <h4 className="nav-link">Posts</h4>
-        </Link>
-        <Link to="/projects">
-          <h4 className="nav-link">Projects</h4>
-        </Link>
-        <Link to="/photo">
-          <h4 className="nav-link">Photo</h4>
-        </Link>
-        <Link to="/contact">
-          <h4 className="nav-link">Contact</h4>
-        </Link> */}
-        <ThemeButton />
-      </nav>
-    </StyledHeader>
+    <>
+      {location.pathname === "/" ? (
+        <IndexHeader title={title} />
+      ) : (
+        <PlainHeader title={title} />
+      )}
+    </>
   )
 }
+
+const StyledIndexHeader = styled.header`
+  max-width: var(--container);
+  margin: var(--space-xl) auto;
+
+  .site-title {
+    font-weight: 900;
+  }
+
+  .intro-text {
+    margin-bottom: var(--space-md);
+  }
+
+  .github-btn {
+    margin-right: var(--space-md);
+  }
+`
+
+const IndexHeader = ({ title }) => (
+  <StyledIndexHeader>
+    <br />
+    <br />
+    <br />
+    <Link to="/" none>
+      <h1 className="site-title text--lg">{title}</h1>
+    </Link>
+    <p className="intro-text">
+      I'm a fullstack JavaScript developer, currently seeking a full-time
+      position in New York City / remote.
+    </p>
+
+    <div className="social-btns">
+      <button className="github-btn">
+        <Github size="var(--text-sm)" color="var(--black)" />
+      </button>
+
+      <button>
+        <Twitter size="var(--text-sm)" color="var(--black)" />
+      </button>
+    </div>
+  </StyledIndexHeader>
+)
+
+const StyledPlainHeader = styled.header`
+  padding: var(--space-sm);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+
+  .site-title {
+    font-weight: 900;
+  }
+`
+
+const PlainHeader = ({ title }) => (
+  <StyledPlainHeader>
+    <Link to="/" none>
+      <small className="site-title">{title}</small>
+    </Link>
+  </StyledPlainHeader>
+)

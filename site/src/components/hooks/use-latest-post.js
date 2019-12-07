@@ -1,13 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useLatestPosts = () => {
+export const useLatestPost = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query USE_LATEST_POSTS {
         allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/posts/" } }
           sort: { fields: frontmatter___date, order: DESC }
-          limit: 4
+          limit: 1
         ) {
           edges {
             node {

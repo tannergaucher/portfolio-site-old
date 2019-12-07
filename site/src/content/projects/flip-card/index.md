@@ -4,8 +4,9 @@ description: "An app for making and sending jokes and cheesy pick up lines in a 
 technologies: ["React", "GraphQL"]
 problemsSolved: ["Problem one.", "Something something problem two."]
 projectUrl: "http://foo@foo.com"
-screenRecordingUrl: "https://player.vimeo.com/video/316741004"
+screenRecording: "untrip-recording.mp4"
 githubRepo: "http://www.github.com/tanner/foo"
+cardImage: "./untrip-cardimage.png"
 ---
 
 # Coming Soon!

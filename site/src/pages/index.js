@@ -1,23 +1,18 @@
 import React from "react"
 
-import { SEO, ContactSection, Bio, Footer } from "../components/elements"
-import { StyledPage } from "../components/styles"
-import { LatestPosts } from "../components/post"
-import { LatestProjects } from "../components/project"
-import { LatestPhoto } from "../components/photo"
+import { SEO, Layout, Contact } from "../components/elements"
+import { Posts } from "../components/post"
+import { Projects } from "../components/project"
+import { LatestPhotosGrid } from "../components/photo"
 
-export default function IndexPage() {
+export default function IndexPage({ location }) {
   return (
-    <>
-      <StyledPage>
-        <SEO title="Home" />
-        <Bio />
-        <LatestPosts />
-        <LatestProjects />
-        <LatestPhoto />
-        <ContactSection />
-      </StyledPage>
-      <Footer />
-    </>
+    <Layout location={location}>
+      <SEO title="Home" />
+      <Posts />
+      <Projects />
+      <LatestPhotosGrid />
+      <Contact />
+    </Layout>
   )
 }

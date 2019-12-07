@@ -4,9 +4,8 @@ import Input from "./input"
 import Button from "./button"
 import TextArea from "./text-area"
 import Link from "./link"
-import StyledSection from "./styled-section"
-import Date from "./date"
 import Divider from "./divider"
+import AnimatedTitleArrow from "./animated-title-arrow"
 
 export {
   StyledPage,
@@ -15,7 +14,6 @@ export {
   Button,
   TextArea,
   Link,
-  StyledSection,
-  Date,
   Divider,
+  AnimatedTitleArrow,
 }

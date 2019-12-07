@@ -19,6 +19,7 @@
     "gatsby-source-sanity": "^5.0.4",
     "gatsby-transformer-remark": "^2.6.7",
     "gatsby-transformer-sharp": "^2.1.19",
+    "grommet-icons": "^4.4.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "prism-themes": "^1.1.0",
