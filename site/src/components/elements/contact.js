@@ -29,8 +29,7 @@ function ContactForm() {
       <Input type="email" name="email" placeholder="Your Email" required />
       <TextArea
         name="message"
-        id=""
-        cols="30"
+        cols="10"
         rows="10"
         htmlFor="message"
         placeholder="Message"

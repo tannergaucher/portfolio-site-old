@@ -6,6 +6,7 @@ const TextArea = styled.textarea`
   border-radius: var(--radius);
   padding: var(--space-sm);
   margin-bottom: var(--space-md);
+  background-color: var(--white);
 `
 
 export default TextArea

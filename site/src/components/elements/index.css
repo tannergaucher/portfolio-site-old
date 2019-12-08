@@ -4,7 +4,7 @@
     "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   --mono: "Fira Code", monospace;
   --heading-line-height: 1.1;
-  --paragraph-line-height: 1.75;
+  --paragraph-line-height: 1.66;
   --heading-letter-spacing: 0;
   --paragraph-letter-spacing: -0.2px;
   /* Vertical Rhythm */
@@ -46,8 +46,10 @@
   --space-xl: calc(var(--baseline) * 3);
   /* Colors */
   --accent: darkred;
+
   --black: black;
   --white: white;
+
   --grey: #555555;
   --red: tomato;
   --warning: red;
@@ -73,7 +75,8 @@ body {
   font-size: var(--text-base-size);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: #fafafa;
+  background: var(--white);
+  color: var(--black);
 
   /* body */
   /* text */

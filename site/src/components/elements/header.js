@@ -63,6 +63,9 @@ const StyledPlainHeader = styled.header`
   top: 0;
   background: var(--white);
 
+  opacity: 0.9;
+  z-index: 3;
+
   .site-title {
     font-weight: 900;
   }
