@@ -6,9 +6,11 @@ import { Form, Button, Input, TextArea } from "../styles"
 const StyledContact = styled.div`
   max-width: var(--container);
   margin: 0 auto;
+  margin-bottom: var(--space-xl);
 
   .section-title {
     font-weight: 900;
+    margin-bottom: var(--space-md);
   }
 `
 

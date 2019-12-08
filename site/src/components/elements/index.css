@@ -59,7 +59,7 @@
   /* Animation */
   --duration: 0.2s;
   /* Components */
-  --radius: 2px;
+  --radius: 4px;
   --radius-lg: 20px;
   --thickness: 2px;
   --container: 800px;
@@ -136,6 +136,7 @@ p {
 
 li {
   margin-bottom: var(--space-sm);
+  line-height: var(--paragraph-line-height);
 }
 
 br {

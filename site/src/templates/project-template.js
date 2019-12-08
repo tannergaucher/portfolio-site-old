@@ -1,26 +1,36 @@
 import React from "react"
+import styled from "styled-components"
 import { graphql } from "gatsby"
-import { Github, Domain } from "grommet-icons"
+import { Code, Domain } from "grommet-icons"
 
 import { Layout } from "../components/elements"
-import { StyledPage } from "../components/styles"
+import { StyledPage, IconLinkHref } from "../components/styles"
+
+const StyledProjectPage = styled(StyledPage)`
+  .project-hrefs {
+    margin-bottom: var(--space-md);
+  }
+`
 
 export default function ProjectTemplate({ data, location }) {
   const project = data.markdownRemark
 
-  console.log(project)
-
   return (
     <Layout location={location}>
-      <StyledPage>
+      <StyledProjectPage>
         <h1>{project.frontmatter.title}</h1>
         <p>{project.frontmatter.description}</p>
-        <button>
-          <Github size="var(--text-md)" />
-        </button>
-        <button>
-          <Domain size="var(--text-md)" />
-        </button>
+
+        <div className="project-hrefs">
+          <IconLinkHref>
+            <Code size="var(--text-md)" color="var(--black)" />
+          </IconLinkHref>
+
+          <IconLinkHref>
+            <Domain size="var(--text-md)" color="var(--black)" />
+          </IconLinkHref>
+        </div>
+
         <iframe
           src={project.frontmatter.screenRecordingUrl}
           width="640"
@@ -44,7 +54,7 @@ export default function ProjectTemplate({ data, location }) {
             <li key={technology}>{technology}</li>
           ))}
         </ul>
-      </StyledPage>
+      </StyledProjectPage>
     </Layout>
   )
 }

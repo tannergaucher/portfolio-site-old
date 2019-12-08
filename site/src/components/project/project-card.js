@@ -10,6 +10,10 @@ const StyledProject = styled.div`
   padding: var(--space-sm);
   border-radius: var(--radius-lg);
 
+  .project-title {
+    margin-top: 0;
+  }
+
   .project-card-img {
     max-height: 300px;
     right: -30%;

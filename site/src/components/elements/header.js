@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Github, Twitter } from "grommet-icons"
 
-import { Link } from "../styles"
+import { Link, IconLinkHref } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 export default function Header({ location }) {
@@ -30,10 +30,6 @@ const StyledIndexHeader = styled.header`
   .intro-text {
     margin-bottom: var(--space-md);
   }
-
-  .github-btn {
-    margin-right: var(--space-md);
-  }
 `
 
 const IndexHeader = ({ title }) => (
@@ -49,14 +45,14 @@ const IndexHeader = ({ title }) => (
       position in New York City / remote.
     </p>
 
-    <div className="social-btns">
-      <button className="github-btn">
-        <Github size="var(--text-sm)" color="var(--black)" />
-      </button>
+    <div className="social-hrefs">
+      <IconLinkHref href="#">
+        <Github size="var(--text-md)" color="var(--black)" />
+      </IconLinkHref>
 
-      <button>
-        <Twitter size="var(--text-sm)" color="var(--black)" />
-      </button>
+      <IconLinkHref href="#">
+        <Twitter size="var(--text-md)" color="var(--black)" />
+      </IconLinkHref>
     </div>
   </StyledIndexHeader>
 )
