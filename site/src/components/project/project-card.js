@@ -6,7 +6,7 @@ import { Link } from "../styles"
 
 const StyledProject = styled.div`
   overflow: hidden;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
   padding: var(--space-sm);
   border-radius: var(--radius-lg);
 
@@ -16,7 +16,7 @@ const StyledProject = styled.div`
     top: 30px;
     transform: rotate3d(0.342, -0.2, 0, 22deg) rotateZ(7deg);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.15s ease-in 0s;
+    transition: var(--transition);
   }
 
   &:hover {

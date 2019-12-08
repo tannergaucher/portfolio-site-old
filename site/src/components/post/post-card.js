@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { Link } from "../styles"
 
 const StyledPostCard = styled.div`
-  margin: var(--space-lg) 0;
+  margin-bottom: var(--space-lg) 0;
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 

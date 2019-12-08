@@ -33,7 +33,7 @@ export const PROJECT_FRAGMENT = graphql`
       technologies
       problemsSolved
       projectUrl
-      screenRecording
+      screenRecordingUrl
       githubRepo
       cardImage {
         childImageSharp {
