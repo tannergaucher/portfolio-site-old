@@ -9,6 +9,7 @@ const StyledProject = styled.div`
   box-shadow: var(--box-shadow);
   padding: var(--space-sm);
   border-radius: var(--radius-lg);
+  background: var(--bg-2);
 
   .project-title {
     margin-top: 0;

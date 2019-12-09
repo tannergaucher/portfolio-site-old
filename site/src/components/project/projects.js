@@ -31,12 +31,13 @@ export default function Projects() {
         <Link to="/projects">
           <AnimatedTitleArrow>
             <h4 className="section-title">Projects</h4>
-            <FormNextLink className="arrow" size="var(--text-md)" />
+            <FormNextLink className="arrow" size="var(--text-lg)" />
           </AnimatedTitleArrow>
         </Link>
         <p>
-          I like to use React, GraphQL, Gatsby, Apollo Client, Apollo Server,
-          AWS Lambda functions, MongoDB, Prisma, Styled Components.
+          Some technologies I like to use are React, GraphQL, Gatsby, Apollo
+          Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
+          Components.
         </p>
       </div>
 

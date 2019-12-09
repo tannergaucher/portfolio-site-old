@@ -47,11 +47,11 @@ const IndexHeader = ({ title }) => (
 
     <div className="social-hrefs">
       <IconLinkHref href="#">
-        <Github size="var(--text-md)" color="var(--black)" />
+        <Github size="var(--text-md)" color="var(--text-color)" />
       </IconLinkHref>
 
       <IconLinkHref href="#">
-        <Twitter size="var(--text-md)" color="var(--black)" />
+        <Twitter size="var(--text-md)" color="var(--text-color)" />
       </IconLinkHref>
     </div>
   </StyledIndexHeader>
@@ -61,7 +61,7 @@ const StyledPlainHeader = styled.header`
   padding: var(--space-sm);
   position: sticky;
   top: 0;
-  background: var(--white);
+  background: var(--bg-1);
 
   opacity: 0.9;
   z-index: 3;

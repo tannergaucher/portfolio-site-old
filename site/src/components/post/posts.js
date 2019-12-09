@@ -20,7 +20,7 @@ export default function Posts() {
       <Link to="/posts" inherit>
         <AnimatedTitleArrow>
           <h4 className="section-title">Posts</h4>
-          <FormNextLink className="arrow" size="var(--text-md)" />
+          <FormNextLink className="arrow" size="var(--text-lg)" />
         </AnimatedTitleArrow>
       </Link>
       <p>On self-learning, modern JavaScript, web development.</p>

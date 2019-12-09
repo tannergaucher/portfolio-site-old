@@ -20,17 +20,14 @@ export default function ProjectTemplate({ data, location }) {
       <StyledProjectPage>
         <h1>{project.frontmatter.title}</h1>
         <p>{project.frontmatter.description}</p>
-
         <div className="project-hrefs">
           <IconLinkHref>
-            <Code size="var(--text-md)" color="var(--black)" />
+            <Code size="var(--text-md)" color="var(--text-color)" />
           </IconLinkHref>
-
           <IconLinkHref>
-            <Domain size="var(--text-md)" color="var(--black)" />
+            <Domain size="var(--text-md)" color="var(--text-color)" />
           </IconLinkHref>
         </div>
-
         <iframe
           src={project.frontmatter.screenRecordingUrl}
           width="640"

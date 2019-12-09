@@ -35,7 +35,7 @@ export default function LatestPhotosGrid() {
         <Link to="/photos">
           <AnimatedTitleArrow>
             <h4 className="section-title">Photos</h4>
-            <FormNextLink className="arrow" size="var(--text-md)" />
+            <FormNextLink className="arrow" size="var(--text-lg)" />
           </AnimatedTitleArrow>
         </Link>
         <p>Some description here.</p>
