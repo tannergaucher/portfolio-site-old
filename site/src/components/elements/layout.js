@@ -10,8 +10,6 @@ const Main = styled.main`
 `
 
 export default function Layout({ children, location }) {
-  console.log(location)
-
   return (
     <>
       <Header location={location} />

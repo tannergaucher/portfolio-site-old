@@ -8,6 +8,7 @@ import { AnimatedTitleArrow, Link } from "../styles"
 
 const StyledLatestPhotosGrid = styled.div`
   padding: var(--space-md);
+  margin-bottom: var(--space-xl);
 
   .container {
     max-width: var(--container);
@@ -34,11 +35,14 @@ export default function LatestPhotosGrid() {
         <Link to="/photos">
           <AnimatedTitleArrow>
             <h4 className="section-title">Photos</h4>
-            <FormNextLink className="arrow" size="var(--text-md)" />
+            <FormNextLink className="arrow" size="var(--text-lg)" />
           </AnimatedTitleArrow>
         </Link>
         <p>Some description here.</p>
       </div>
+
+      <br />
+
       <div className="photos-grid">
         {edges.map(edge => (
           <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />

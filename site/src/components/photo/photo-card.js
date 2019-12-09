@@ -23,7 +23,10 @@ export default function PhotoCard({ sanityMyImage }) {
         }}
       >
         <Link to={`/photo/${sanityMyImage.slug.current}`}>
-          <Img fluid={sanityMyImage.myImage.asset.fluid} />
+          <Img
+            fluid={sanityMyImage.myImage.asset.fluid}
+            style={{ opacity: `.3` }}
+          />
         </Link>
       </div>
     </StyledPhotoCard>

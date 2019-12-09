@@ -1,15 +1,20 @@
 import styled from "styled-components"
 
 const Button = styled.button`
-  font-size: var(--font-size-lg);
-  font-family: var(--serif);
-  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: ${props => (props.primary ? "var(--bg-2)" : "var(--bg-1)")};
+  color: ${props => (props.primary ? "var(--text-color)" : "var(--bg-2)")};
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--sans);
+  font-weight: bolder;
+  border: ${props =>
+    props.plain
+      ? "var(--thickness) solid var(--bg-1)"
+      : "var(--thickness) solid var(--bg-2)"};
   border-radius: var(--radius);
-  background: ${props => (props.primary ? "var(--btn-primary)" : "var(--btn)")};
-  border: 2px solid var(--black);
-  color: ${props =>
-    props.primary ? "var(--btn-primary-text)" : "var(--btn-text)"};
   text-transform: uppercase;
+  opacity: ${props => (props.loading ? ".5" : "1")};
+  transition: var(--transition);
 `
 
 export default Button

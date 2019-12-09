@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Github, Twitter } from "grommet-icons"
 
+import { IconLinkHref } from "../styles"
+
 const StyledFooter = styled.div`
   padding: var(--space-sm);
 `
@@ -9,12 +11,12 @@ const StyledFooter = styled.div`
 export default function Footer() {
   return (
     <StyledFooter>
-      <button>
-        <Github />
-      </button>
-      <button>
-        <Twitter />
-      </button>
+      <IconLinkHref href="#">
+        <Github size="var(--text-md)" color="var(--text-color)" />
+      </IconLinkHref>
+      <IconLinkHref href="#">
+        <Twitter size="var(--text-md)" color="var(--text-color)" />
+      </IconLinkHref>
     </StyledFooter>
   )
 }

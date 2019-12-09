@@ -6,9 +6,14 @@ import { Link } from "../styles"
 
 const StyledProject = styled.div`
   overflow: hidden;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
   padding: var(--space-sm);
   border-radius: var(--radius-lg);
+  background: var(--bg-2);
+
+  .project-title {
+    margin-top: 0;
+  }
 
   .project-card-img {
     max-height: 300px;
@@ -16,13 +21,15 @@ const StyledProject = styled.div`
     top: 30px;
     transform: rotate3d(0.342, -0.2, 0, 22deg) rotateZ(7deg);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.15s ease-in 0s;
+    transition: var(--transition);
+    filter: opacity(0.2);
   }
 
   &:hover {
     .project-card-img {
       box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
       transform: rotate3d(0.342, -0.2, 0, 12deg) rotateZ(3deg);
+      filter: opacity(1);
     }
   }
 `

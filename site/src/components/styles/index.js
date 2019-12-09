@@ -6,6 +6,7 @@ import TextArea from "./text-area"
 import Link from "./link"
 import Divider from "./divider"
 import AnimatedTitleArrow from "./animated-title-arrow"
+import IconLinkHref from "./icon-link-href"
 
 export {
   StyledPage,
@@ -16,4 +17,5 @@ export {
   Link,
   Divider,
   AnimatedTitleArrow,
+  IconLinkHref,
 }

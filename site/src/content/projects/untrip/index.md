@@ -21,7 +21,7 @@ problemsSolved:
     "After rendering, static gatsby site rehydrates into a dynamic web app with authentication, serverless functions, database.",
   ]
 projectUrl: "https://untrip.app"
-screenRecording: "untrip-recording.mp4"
+screenRecordingUrl: "https://player.vimeo.com/video/377947818"
 githubRepo: "http://www.github.com/tannergaucher/untrip-app"
 cardImage: "./untrip-cardimage.png"
 ---

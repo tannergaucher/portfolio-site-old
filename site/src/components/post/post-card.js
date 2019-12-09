@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { Link } from "../styles"
 
 const StyledPostCard = styled.div`
-  margin: var(--space-lg) 0;
+  margin-bottom: var(--space-lg) 0;
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
@@ -15,7 +15,7 @@ const StyledPostCard = styled.div`
 
   .post-info {
     padding: var(--space-sm);
-    background: var(--white);
+    background: var(--bg-2);
     border-radius: var(--radius-lg);
   }
 
@@ -38,10 +38,10 @@ export default function PostCard({ post }) {
   return (
     <StyledPostCard>
       <Link to={post.fields.slug} none inherit>
-        <Img
+        {/* <Img
           className="post-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-        />
+        /> */}
         <div className="post-info">
           <h4 className="post-title">{post.frontmatter.title}</h4>
           <p className="post-description">{post.frontmatter.description}</p>

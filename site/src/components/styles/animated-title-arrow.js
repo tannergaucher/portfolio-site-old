@@ -3,6 +3,7 @@ import styled from "styled-components"
 const AnimatedTitleArrow = styled.div`
   display: flex;
   align-items: center;
+  transition: var(--transition);
 
   .section-title {
     font-weight: 900;
@@ -10,8 +11,8 @@ const AnimatedTitleArrow = styled.div`
 
   &:hover {
     .arrow {
-      margin-left: var(--space-md);
-      transition-duration: 0.2s;
+      margin-left: var(--space-sm);
+      transition: var(--transition);
     }
   }
 `

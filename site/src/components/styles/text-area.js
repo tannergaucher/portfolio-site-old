@@ -1,18 +1,13 @@
 import styled from "styled-components"
 
 const TextArea = styled.textarea`
-  border: 2px solid var(--input-border);
-  background: var(--input-background);
-  color: var(--input-text);
-  border-radius: var(--radius);
-  font-size: var(--font-size-lg);
   font-family: var(--sans);
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-
-  @media (max-width: 768px) {
-    font-size: var(--font-size-sm);
-  }
+  border: var(--thickness) solid var(--bg-2);
+  border-radius: var(--radius);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-md);
+  background-color: var(--bg-2);
+  color: var(--text-color);
 `
 
 export default TextArea
