@@ -1,8 +1,8 @@
 import React from "react"
+import Img from "gatsby-image"
 
 import { Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
-import { PhotoCard } from "../components/photo"
 
 export default function PhotoTemplatePage({ data, location }) {
   const { sanityMyImage } = data
@@ -10,7 +10,7 @@ export default function PhotoTemplatePage({ data, location }) {
   return (
     <Layout location={location}>
       <StyledPage>
-        <PhotoCard sanityMyImage={sanityMyImage} />
+        <Img fluid={data.sanityMyImage.myImage.asset.fluid} />
       </StyledPage>
     </Layout>
   )

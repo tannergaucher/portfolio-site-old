@@ -22,7 +22,7 @@ const StyledProject = styled.div`
     transform: rotate3d(0.342, -0.2, 0, 22deg) rotateZ(7deg);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
-    filter: opacity(0.2);
+    filter: var(--opacity);
   }
 
   &:hover {
