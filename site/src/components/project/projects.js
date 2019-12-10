@@ -8,11 +8,6 @@ import { useProjects } from "../hooks"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
-
-  .container {
-    max-width: var(--container);
-    margin: 0 auto;
-  }
 `
 
 export default function Projects() {
@@ -20,27 +15,23 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <div className="container">
-        <Link to="/projects">
-          <AnimatedTitleArrow>
-            <h4 className="section-title">Projects</h4>
-            <FormNextLink className="arrow" size="var(--text-lg)" />
-          </AnimatedTitleArrow>
-        </Link>
-        <p>
-          Some technologies I like to use are React, GraphQL, Gatsby, Apollo
-          Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
-          Components.
-        </p>
-
-        <br />
-
-        <ContentGrid>
-          {edges.map(edge => (
-            <ProjectCard key={edge.node.id} project={edge.node} />
-          ))}
-        </ContentGrid>
-      </div>
+      <Link to="/projects">
+        <AnimatedTitleArrow>
+          <h4 className="section-title">Projects</h4>
+          <FormNextLink className="arrow" size="var(--text-lg)" />
+        </AnimatedTitleArrow>
+      </Link>
+      <p>
+        Some technologies I like to use are React, GraphQL, Gatsby, Apollo
+        Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
+        Components.
+      </p>
+      <br />
+      <ContentGrid>
+        {edges.map(edge => (
+          <ProjectCard key={edge.node.id} project={edge.node} />
+        ))}
+      </ContentGrid>
     </StyledProjects>
   )
 }
