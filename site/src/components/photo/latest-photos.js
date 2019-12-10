@@ -20,7 +20,7 @@ export default function LatestPhotos() {
 
   return (
     <StyledLatestPhotos>
-      <h4 className="section-title">Photos</h4>
+      <h4 className="section-title"> Photos</h4>
       <p>Some description here.</p>
       <ViewAll to="/photos" />
       <br />

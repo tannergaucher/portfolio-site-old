@@ -15,7 +15,7 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <h4 className="section-title">Projects</h4>
+      <h4 className="section-title"> Projects</h4>
       <p>
         Some technologies I like to use are React, GraphQL, Gatsby, Apollo
         Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
