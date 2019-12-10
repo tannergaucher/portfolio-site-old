@@ -4,7 +4,7 @@ import { FormNextLink } from "grommet-icons"
 
 import { PhotoCard } from "."
 import { useLatestMyImages } from "../hooks"
-import { AnimatedTitleArrow, Link } from "../styles"
+import { AnimatedTitleArrow, Link, ContentGrid } from "../styles"
 
 const StyledLatestPhotosGrid = styled.div`
   padding: var(--space-md);
@@ -17,12 +17,6 @@ const StyledLatestPhotosGrid = styled.div`
 
   .section-title {
     font-weight: 900;
-  }
-
-  .photos-grid {
-    display: grid;
-    grid-gap: var(--space-md);
-    grid-template-columns: 1fr 1fr 1fr;
   }
 `
 
@@ -42,11 +36,12 @@ export default function LatestPhotosGrid() {
 
         <br />
 
-        <div className="photos-grid">
+        <ContentGrid>
           {edges.map(edge => (
             <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
           ))}
-        </div>
+        </ContentGrid>
+
         <br />
       </div>
     </StyledLatestPhotosGrid>

@@ -4,7 +4,7 @@ import { FormNextLink } from "grommet-icons"
 
 import { useLatestPost } from "../hooks"
 import { PostCard } from "../post"
-import { Link, AnimatedTitleArrow } from "../styles"
+import { Link, AnimatedTitleArrow, ContentGrid } from "../styles"
 
 const StyledPosts = styled.div`
   margin-bottom: var(--space-xl);
@@ -12,12 +12,6 @@ const StyledPosts = styled.div`
   .container {
     max-width: var(--container);
     margin: 0 auto;
-  }
-
-  .posts-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: var(--space-md);
   }
 `
 
@@ -36,14 +30,12 @@ export default function Posts() {
         <p className="posts-section-description">
           On self-learning, modern JavaScript, web development.
         </p>
-
         <br />
-
-        <div className="posts-grid">
+        <ContentGrid>
           {edges.map(edge => (
             <PostCard post={edge.node} key={edge.node.id} />
           ))}
-        </div>
+        </ContentGrid>
       </div>
     </StyledPosts>
   )

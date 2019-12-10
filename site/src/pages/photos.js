@@ -3,7 +3,7 @@ import React from "react"
 import { Layout } from "../components/elements"
 import { PhotoCard } from "../components/photo"
 import { useAllMyImages } from "../components/hooks"
-import { StyledPage, Link } from "../components/styles"
+import { StyledPage, Link, ContentGrid } from "../components/styles"
 
 export default function Photo({ location }) {
   const { edges } = useAllMyImages()
@@ -11,11 +11,13 @@ export default function Photo({ location }) {
   return (
     <Layout location={location}>
       <StyledPage>
-        {edges.map(edge => (
-          <Link to={`/photo/${edge.node.slug.current}`}>
-            <PhotoCard key={edge.node.id} sanityMyImage={edge.node} />
-          </Link>
-        ))}
+        <ContentGrid>
+          {edges.map(edge => (
+            <Link to={`/photo/${edge.node.slug.current}`}>
+              <PhotoCard key={edge.node.id} sanityMyImage={edge.node} />
+            </Link>
+          ))}
+        </ContentGrid>
       </StyledPage>
     </Layout>
   )

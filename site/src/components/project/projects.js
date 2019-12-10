@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FormNextLink } from "grommet-icons"
 
 import { ProjectCard } from "."
-import { Link, AnimatedTitleArrow } from "../styles"
+import { Link, AnimatedTitleArrow, ContentGrid } from "../styles"
 import { useProjects } from "../hooks"
 
 const StyledProjects = styled.div`
@@ -12,12 +12,6 @@ const StyledProjects = styled.div`
   .container {
     max-width: var(--container);
     margin: 0 auto;
-  }
-
-  .project-cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: var(--space-md);
   }
 `
 
@@ -41,11 +35,11 @@ export default function Projects() {
 
         <br />
 
-        <div className="project-cards-grid">
+        <ContentGrid>
           {edges.map(edge => (
             <ProjectCard key={edge.node.id} project={edge.node} />
           ))}
-        </div>
+        </ContentGrid>
       </div>
     </StyledProjects>
   )

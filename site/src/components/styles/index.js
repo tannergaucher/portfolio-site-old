@@ -7,6 +7,7 @@ import Link from "./link"
 import Divider from "./divider"
 import AnimatedTitleArrow from "./animated-title-arrow"
 import IconLinkHref from "./icon-link-href"
+import ContentGrid from "./content-grid"
 
 export {
   StyledPage,
@@ -18,4 +19,5 @@ export {
   Divider,
   AnimatedTitleArrow,
   IconLinkHref,
+  ContentGrid,
 }
