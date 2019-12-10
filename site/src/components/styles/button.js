@@ -11,7 +11,7 @@ const Button = styled.button`
     props.plain
       ? "var(--thickness) solid var(--bg-1)"
       : "var(--thickness) solid var(--bg-2)"};
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   text-transform: uppercase;
   opacity: ${props => (props.loading ? ".5" : "1")};
   transition: var(--transition);

@@ -34,12 +34,14 @@ const StyledIndexHeader = styled.header`
 
 const IndexHeader = ({ title }) => (
   <StyledIndexHeader>
+    {/* FIX THESE  */}
     <br />
     <br />
     <br />
     <Link to="/" none>
       <h1 className="site-title text--lg">{title}</h1>
     </Link>
+
     <p className="intro-text">
       I'm a fullstack JavaScript developer, currently seeking a full-time
       position in New York City / remote.

@@ -39,16 +39,16 @@ export default function LatestPhotosGrid() {
           </AnimatedTitleArrow>
         </Link>
         <p>Some description here.</p>
-      </div>
 
-      <br />
+        <br />
 
-      <div className="photos-grid">
-        {edges.map(edge => (
-          <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
-        ))}
+        <div className="photos-grid">
+          {edges.map(edge => (
+            <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
+          ))}
+        </div>
+        <br />
       </div>
-      <br />
     </StyledLatestPhotosGrid>
   )
 }

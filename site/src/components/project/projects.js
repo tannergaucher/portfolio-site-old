@@ -15,7 +15,6 @@ const StyledProjects = styled.div`
   }
 
   .project-cards-grid {
-    padding: 0 var(--space-md) 0 var(--space-md);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: var(--space-md);
@@ -39,14 +38,14 @@ export default function Projects() {
           Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
           Components.
         </p>
-      </div>
 
-      <br />
+        <br />
 
-      <div className="project-cards-grid">
-        {edges.map(edge => (
-          <ProjectCard key={edge.node.id} project={edge.node} />
-        ))}
+        <div className="project-cards-grid">
+          {edges.map(edge => (
+            <ProjectCard key={edge.node.id} project={edge.node} />
+          ))}
+        </div>
       </div>
     </StyledProjects>
   )

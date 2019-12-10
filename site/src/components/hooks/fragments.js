@@ -10,13 +10,6 @@ export const POST_FRAGMENT = graphql`
       title
       date(formatString: "MM.DD.YYYY")
       description
-      featuredImage {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
     fields {
       slug

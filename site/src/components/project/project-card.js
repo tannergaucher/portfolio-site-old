@@ -6,10 +6,12 @@ import { Link } from "../styles"
 
 const StyledProject = styled.div`
   overflow: hidden;
-  box-shadow: var(--box-shadow);
-  padding: var(--space-sm);
+  box-shadow: var(--elevation-1);
+  padding: var(--space-md);
   border-radius: var(--radius-lg);
   background: var(--bg-2);
+  min-height: var(--card-height);
+  transition: var(--transition);
 
   .project-title {
     margin-top: 0;
@@ -26,8 +28,10 @@ const StyledProject = styled.div`
   }
 
   &:hover {
+    box-shadow: var(--elevation-2);
+
     .project-card-img {
-      box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: var(--elevation-3);
       transform: rotate3d(0.342, -0.2, 0, 12deg) rotateZ(3deg);
       filter: opacity(1);
     }

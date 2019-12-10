@@ -1,5 +1,5 @@
 ---
-title: "Hello, World!"
+title: "Automatic Dark Mode"
 date: "2016-10-07"
 description: "Welcome to my new internet home."
 ---
@@ -17,7 +17,3 @@ Donec quis molestie velit. Maecenas non sagittis purus. In eu urna ac dui tincid
 ## Another Heading Two
 
 Aliquam felis tellus, tincidunt sed molestie vel, placerat id arcu. Vestibulum vitae elit elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pharetra pellentesque sem, eget rutrum ligula dignissim in. Duis lacinia magna justo, sit amet vehicula libero imperdiet id. Mauris rutrum justo ut orci porta fringilla. In dapibus, felis et porttitor malesuada, erat elit semper ante, in volutpat diam sem vel sem. Morbi at faucibus lectus. Maecenas sed turpis eros. Morbi et augue eros. Etiam bibendum, ligula eget efficitur lobortis, erat erat cursus purus, a porta mi nibh non odio. Etiam mollis arcu diam. Sed non quam efficitur, commodo risus id, condimentum nibh. Sed blandit pellentesque consectetur.
-
-```js
-console.log(`Hello World`)
-```
