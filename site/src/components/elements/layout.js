@@ -7,6 +7,7 @@ import "./index.css"
 const Main = styled.main`
   min-height: 100vh;
   margin: 0 auto;
+  max-width: var(--container);
 `
 
 export default function Layout({ children, location }) {

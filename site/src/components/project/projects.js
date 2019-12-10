@@ -1,53 +1,35 @@
 import React from "react"
 import styled from "styled-components"
-import { FormNextLink } from "grommet-icons"
 
 import { ProjectCard } from "."
-import { Link, AnimatedTitleArrow } from "../styles"
-import { useProjects } from "../hooks"
+import { ContentGrid } from "../styles"
+import { useLatestProjects } from "../hooks"
+import { ViewAll } from "../elements"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
-
-  .container {
-    max-width: var(--container);
-    margin: 0 auto;
-  }
-
-  .project-cards-grid {
-    padding: 0 var(--space-md) 0 var(--space-md);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: var(--space-md);
-  }
 `
 
 export default function Projects() {
-  const { edges } = useProjects()
+  const { edges } = useLatestProjects()
 
   return (
     <StyledProjects>
-      <div className="container">
-        <Link to="/projects">
-          <AnimatedTitleArrow>
-            <h4 className="section-title">Projects</h4>
-            <FormNextLink className="arrow" size="var(--text-lg)" />
-          </AnimatedTitleArrow>
-        </Link>
-        <p>
-          Some technologies I like to use are React, GraphQL, Gatsby, Apollo
-          Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
-          Components.
-        </p>
-      </div>
+      <h4 className="section-title"> Projects</h4>
+      <p>
+        Some technologies I like to use are React, GraphQL, Gatsby, Apollo
+        Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
+        Components.
+      </p>
+
+      <ViewAll to="/projects" />
 
       <br />
-
-      <div className="project-cards-grid">
+      <ContentGrid>
         {edges.map(edge => (
           <ProjectCard key={edge.node.id} project={edge.node} />
         ))}
-      </div>
+      </ContentGrid>
     </StyledProjects>
   )
 }

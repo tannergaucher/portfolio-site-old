@@ -5,7 +5,18 @@ import moment from "moment"
 
 import { Link } from "../styles"
 
-const StyledPhotoCard = styled.div``
+const StyledPhotoCard = styled.div`
+  .img {
+    filter: var(--opacity);
+    transition: var(--transition);
+  }
+
+  &:hover {
+    .img {
+      filter: opacity(1);
+    }
+  }
+`
 
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
@@ -23,10 +34,7 @@ export default function PhotoCard({ sanityMyImage }) {
         }}
       >
         <Link to={`/photo/${sanityMyImage.slug.current}`}>
-          <Img
-            fluid={sanityMyImage.myImage.asset.fluid}
-            style={{ opacity: `.3` }}
-          />
+          <Img className="img" fluid={sanityMyImage.myImage.asset.fluid} />
         </Link>
       </div>
     </StyledPhotoCard>

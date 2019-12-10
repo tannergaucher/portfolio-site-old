@@ -1,15 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import { FormNextLink } from "grommet-icons"
 
 import { useLatestPost } from "../hooks"
 import { PostCard } from "../post"
-import { Link, AnimatedTitleArrow } from "../styles"
+import { ContentGrid } from "../styles"
+import { ViewAll } from "../elements"
 
 const StyledPosts = styled.div`
-  max-width: var(--container);
-  margin: 0 auto;
   margin-bottom: var(--space-xl);
+
+  .section-title {
+    font-weight: 900;
+  }
 `
 
 export default function Posts() {
@@ -17,17 +19,17 @@ export default function Posts() {
 
   return (
     <StyledPosts>
-      <Link to="/posts" inherit>
-        <AnimatedTitleArrow>
-          <h4 className="section-title">Posts</h4>
-          <FormNextLink className="arrow" size="var(--text-lg)" />
-        </AnimatedTitleArrow>
-      </Link>
-      <p>On self-learning, modern JavaScript, web development.</p>
+      <h4 className="section-title">Posts</h4>
+      <p className="posts-section-description">
+        On self-learning, modern JavaScript, web development.
+      </p>
+      <ViewAll to="/posts" />
       <br />
-      {edges.map(edge => (
-        <PostCard post={edge.node} key={edge.node.id} />
-      ))}
+      <ContentGrid>
+        {edges.map(edge => (
+          <PostCard post={edge.node} key={edge.node.id} />
+        ))}
+      </ContentGrid>
     </StyledPosts>
   )
 }

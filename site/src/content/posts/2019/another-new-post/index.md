@@ -1,5 +1,5 @@
 ---
-title: "Hello, World!"
+title: "Another New Post"
 date: "2016-10-07"
 description: "Welcome to my new internet home."
 ---

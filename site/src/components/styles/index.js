@@ -5,8 +5,8 @@ import Button from "./button"
 import TextArea from "./text-area"
 import Link from "./link"
 import Divider from "./divider"
-import AnimatedTitleArrow from "./animated-title-arrow"
 import IconLinkHref from "./icon-link-href"
+import ContentGrid from "./content-grid"
 
 export {
   StyledPage,
@@ -16,6 +16,6 @@ export {
   TextArea,
   Link,
   Divider,
-  AnimatedTitleArrow,
   IconLinkHref,
+  ContentGrid,
 }
