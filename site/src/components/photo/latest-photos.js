@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { FormNextLink } from "grommet-icons"
 
 import { PhotoCard } from "."
 import { useLatestMyImages } from "../hooks"
-import { AnimatedTitleArrow, Link, ContentGrid } from "../styles"
+import { ContentGrid } from "../styles"
+import { ViewAll } from "../elements"
 
 const StyledLatestPhotos = styled.div`
   padding: var(--space-md);
@@ -20,16 +20,10 @@ export default function LatestPhotos() {
 
   return (
     <StyledLatestPhotos>
-      <Link to="/photos">
-        <AnimatedTitleArrow>
-          <h4 className="section-title">Photos</h4>
-          <FormNextLink className="arrow" size="var(--text-lg)" />
-        </AnimatedTitleArrow>
-      </Link>
+      <h4 className="section-title">Photos</h4>
       <p>Some description here.</p>
-
+      <ViewAll to="/photos" />
       <br />
-
       <ContentGrid>
         {edges.map(edge => (
           <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />

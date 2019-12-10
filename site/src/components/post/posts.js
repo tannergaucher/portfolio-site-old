@@ -4,10 +4,15 @@ import { FormNextLink } from "grommet-icons"
 
 import { useLatestPost } from "../hooks"
 import { PostCard } from "../post"
-import { Link, AnimatedTitleArrow, ContentGrid } from "../styles"
+import { Link, ContentGrid } from "../styles"
+import { ViewAll } from "../elements"
 
 const StyledPosts = styled.div`
   margin-bottom: var(--space-xl);
+
+  .section-title {
+    font-weight: 900;
+  }
 `
 
 export default function Posts() {
@@ -15,15 +20,21 @@ export default function Posts() {
 
   return (
     <StyledPosts>
-      <Link to="/posts" inherit>
-        <AnimatedTitleArrow>
-          <h4 className="section-title">Posts</h4>
-          <FormNextLink className="arrow" size="var(--text-lg)" />
-        </AnimatedTitleArrow>
-      </Link>
+      <h4 className="section-title">Posts</h4>
+
       <p className="posts-section-description">
         On self-learning, modern JavaScript, web development.
       </p>
+
+      <ViewAll to="/posts" />
+
+      {/* <Link to="/posts" inherit>
+        <AnimatedTitleArrow>
+          <p className="view-all">View all</p>
+          <FormNextLink className="arrow" size="var(--text-lg)" />
+        </AnimatedTitleArrow>
+      </Link> */}
+
       <br />
       <ContentGrid>
         {edges.map(edge => (

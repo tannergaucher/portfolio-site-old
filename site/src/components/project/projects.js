@@ -1,31 +1,29 @@
 import React from "react"
 import styled from "styled-components"
-import { FormNextLink } from "grommet-icons"
 
 import { ProjectCard } from "."
-import { Link, AnimatedTitleArrow, ContentGrid } from "../styles"
-import { useProjects } from "../hooks"
+import { ContentGrid } from "../styles"
+import { useLatestProjects } from "../hooks"
+import { ViewAll } from "../elements"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
 `
 
 export default function Projects() {
-  const { edges } = useProjects()
+  const { edges } = useLatestProjects()
 
   return (
     <StyledProjects>
-      <Link to="/projects">
-        <AnimatedTitleArrow>
-          <h4 className="section-title">Projects</h4>
-          <FormNextLink className="arrow" size="var(--text-lg)" />
-        </AnimatedTitleArrow>
-      </Link>
+      <h4 className="section-title">Projects</h4>
       <p>
         Some technologies I like to use are React, GraphQL, Gatsby, Apollo
         Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
         Components.
       </p>
+
+      <ViewAll to="/projects" />
+
       <br />
       <ContentGrid>
         {edges.map(edge => (
