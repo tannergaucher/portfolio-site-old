@@ -34,7 +34,7 @@ export default function ViewAll({ to }) {
           <FormNextLink
             className="arrow"
             size="var(--text-lg)"
-            color="var(--text-color)"
+            color="var(--href-color)"
           />
         </div>
       </Link>

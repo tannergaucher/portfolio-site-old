@@ -22,7 +22,6 @@ export default function Post({ data, pageContext, location }) {
         <h1 className="post-title">{post.frontmatter.title}</h1>
         <p className="post-description">{post.frontmatter.description}</p>
         <br />
-
         <div
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}

@@ -8,6 +8,10 @@ import { ViewAll } from "../elements"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
+
+  .section-title {
+    font-weight: 900;
+  }
 `
 
 export default function Projects() {
