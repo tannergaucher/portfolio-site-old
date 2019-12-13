@@ -25,6 +25,7 @@ const StyledPostCard = styled.div`
 
   .post-description {
     margin-bottom: 0;
+    color: var(--text-color);
   }
 
   &:hover {
@@ -35,7 +36,7 @@ const StyledPostCard = styled.div`
 export default function PostCard({ post }) {
   return (
     <StyledPostCard>
-      <Link to={post.fields.slug} none inherit>
+      <Link to={post.fields.slug} none>
         <h4 className="post-title">{post.frontmatter.title}</h4>
         <p className="post-description">{post.frontmatter.description}</p>
       </Link>

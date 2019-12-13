@@ -12,10 +12,10 @@ export default function Footer() {
   return (
     <StyledFooter>
       <IconLinkHref href="#">
-        <Github size="var(--text-md)" color="var(--text-color)" />
+        <Github size="var(--text-md)" color="var(--href-color)" />
       </IconLinkHref>
       <IconLinkHref href="#">
-        <Twitter size="var(--text-md)" color="var(--text-color)" />
+        <Twitter size="var(--text-md)" color="var(--href-color)" />
       </IconLinkHref>
     </StyledFooter>
   )

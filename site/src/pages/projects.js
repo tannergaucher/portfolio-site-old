@@ -11,6 +11,8 @@ export default function Projects({ location }) {
   return (
     <Layout location={location}>
       <StyledPage>
+        <h1>Projects</h1>
+        <br />
         <ContentGrid>
           {edges.map(edge => (
             <ProjectCard key={edge.node.id} project={edge.node} />
