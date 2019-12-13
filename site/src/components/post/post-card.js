@@ -26,20 +26,26 @@ const StyledPostCard = styled.div`
   .post-description {
     margin-bottom: 0;
     color: var(--text-color);
+    filter: var(--opacity);
+    transition: var(--transition);
   }
 
   &:hover {
     box-shadow: var(--elevation-2);
+
+    .post-description {
+      filter: opacity(1);
+    }
   }
 `
 
 export default function PostCard({ post }) {
   return (
-    <StyledPostCard>
-      <Link to={post.fields.slug} none>
+    <Link to={post.fields.slug} none>
+      <StyledPostCard>
         <h4 className="post-title">{post.frontmatter.title}</h4>
         <p className="post-description">{post.frontmatter.description}</p>
-      </Link>
-    </StyledPostCard>
+      </StyledPostCard>
+    </Link>
   )
 }
