@@ -1,7 +1,7 @@
 ---
 title: "Automatic Dark Mode"
-date: "2016-10-07"
-description: "Welcome to my new internet home."
+date: "2019-11-13"
+description: "User preference dark mode media query."
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue convallis varius. Praesent congue eros metus, ac gravida sapien lobortis sed. Phasellus venenatis sapien ac elit blandit, vel convallis augue vulputate. Suspendisse lobortis facilisis tincidunt. Aliquam a est ullamcorper, sodales orci ut, efficitur mi. Praesent semper augue a dui sodales aliquam. Pellentesque vel leo eget urna hendrerit dictum. Nunc tincidunt eget lectus malesuada posuere.

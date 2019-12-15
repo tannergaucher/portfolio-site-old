@@ -41,17 +41,14 @@ const IndexHeader = ({ title }) => (
     <Link to="/" none>
       <h1 className="site-title text--lg">{title}</h1>
     </Link>
-
     <p className="intro-text">
-      I'm a fullstack JavaScript developer, currently seeking a full-time
-      position in New York City / remote.
+      I'm a fullstack developer, currently seeking a position in New York City /
+      remote.
     </p>
-
     <div className="social-hrefs">
       <IconLinkHref href="#">
         <Github size="var(--text-md)" color="var(--href-color)" />
       </IconLinkHref>
-
       <IconLinkHref href="#">
         <Twitter size="var(--text-md)" color="var(--href-color)" />
       </IconLinkHref>

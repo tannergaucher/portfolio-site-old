@@ -59,7 +59,7 @@
   --elevation-2: 0px 4px 12px rgba(0, 0, 0, 0.2);
   --elevation-3: 0px 12px 20px rgba(0, 0, 0, 0.2);
   --transition: all 0.15s ease-in 0s;
-  --opacity: opacity(0.25);
+  --opacity: opacity(0.35);
   --card-height: 300px;
 }
 

@@ -59,13 +59,13 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/post-template.js`),
       context: {
         slug: edge.node.fields.slug,
-        // Why is this backwards!?
-        next: edge.previous,
-        previous: edge.next,
+        next: edge.next,
+        previous: edge.previous,
       },
     })
   })
 
+  // Query all projects.
   const allProjectsQuery = await graphql(`
     query {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
@@ -80,6 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // Create page for each project.
   allProjectsQuery.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       path: `/projects${edge.node.fields.slug}`,
@@ -90,7 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // query all images from sanity cms
+  // Query all images from sanity cms.
   const allMyImagesQuery = await graphql(`
     query {
       allSanityMyImage {
@@ -105,7 +106,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  // create page for each image
+  // Create page for each image.
   allMyImagesQuery.data.allSanityMyImage.edges.forEach(edge => {
     createPage({
       path: `/photo/${edge.node.slug.current}`,

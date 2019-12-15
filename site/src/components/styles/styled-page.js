@@ -7,6 +7,10 @@ const StyledPage = styled.div`
   iframe {
     display: block;
   }
+
+  .page-title {
+    font-weight: 900;
+  }
 `
 
 export default StyledPage

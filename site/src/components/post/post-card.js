@@ -11,12 +11,16 @@ const StyledPostCard = styled.div`
   padding: var(--space-md);
   background: var(--bg-2);
   border-radius: var(--radius-lg);
-  min-height: var(--card-height);
   transition: var(--transition);
 
   .post-title {
     font-weight: 900;
-    margin-top: 0;
+  }
+
+  .post-date {
+    font-family: var(--mono);
+    filter: var(--opacity);
+    transition: var(--transition);
   }
 
   .post-time-to-read {
@@ -33,7 +37,8 @@ const StyledPostCard = styled.div`
   &:hover {
     box-shadow: var(--elevation-2);
 
-    .post-description {
+    .post-description,
+    .post-date {
       filter: opacity(1);
     }
   }
@@ -43,7 +48,8 @@ export default function PostCard({ post }) {
   return (
     <Link to={post.fields.slug} none>
       <StyledPostCard>
-        <h4 className="post-title">{post.frontmatter.title}</h4>
+        <small className="post-date">{post.frontmatter.date}</small>
+        <h3 className="post-title">{post.frontmatter.title}</h3>
         <p className="post-description">{post.frontmatter.description}</p>
       </StyledPostCard>
     </Link>

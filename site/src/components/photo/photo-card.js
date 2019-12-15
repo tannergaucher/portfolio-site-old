@@ -21,9 +21,9 @@ const StyledPhotoCard = styled.div`
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid
 
-  // const formattedDateTime = moment(
-  //   sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
-  // ).format("MM.DD.YYYY")
+  const formattedDateTime = moment(
+    sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
+  ).format("MM.DD.YYYY")
 
   return (
     <StyledPhotoCard>
