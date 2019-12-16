@@ -38,9 +38,7 @@ const IndexHeader = ({ title }) => (
     <br />
     <br />
     <br />
-    <Link to="/" none>
-      <h1 className="site-title text--lg">{title}</h1>
-    </Link>
+    <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
       I'm a fullstack developer, currently seeking a position in New York City /
       remote.
@@ -61,10 +59,9 @@ const StyledPlainHeader = styled.header`
   position: sticky;
   top: 0;
   background: var(--bg-1);
-
   opacity: 0.9;
+  /* Because gatsby image has a zIndex */
   z-index: 3;
-
   .site-title {
     font-weight: 900;
   }

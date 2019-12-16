@@ -15,16 +15,15 @@ const StyledPostCard = styled.div`
 
   .post-title {
     font-weight: 900;
+    margin-top: 0;
   }
 
-  .post-date {
+  .post-tag {
+    margin-right: var(--space-md);
+    text-transform: uppercase;
     font-family: var(--mono);
     filter: var(--opacity);
     transition: var(--transition);
-  }
-
-  .post-time-to-read {
-    text-transform: uppercase;
   }
 
   .post-description {
@@ -38,7 +37,7 @@ const StyledPostCard = styled.div`
     box-shadow: var(--elevation-2);
 
     .post-description,
-    .post-date {
+    .post-tag {
       filter: opacity(1);
     }
   }
@@ -48,9 +47,15 @@ export default function PostCard({ post }) {
   return (
     <Link to={post.fields.slug} none>
       <StyledPostCard>
-        <small className="post-date">{post.frontmatter.date}</small>
+        {/* <small className="post-date">{post.frontmatter.date}</small> */}
         <h3 className="post-title">{post.frontmatter.title}</h3>
         <p className="post-description">{post.frontmatter.description}</p>
+        <br />
+        {post.frontmatter.tags.map(tag => (
+          <small className="post-tag" key={tag}>
+            {tag}
+          </small>
+        ))}
       </StyledPostCard>
     </Link>
   )
