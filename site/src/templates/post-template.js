@@ -6,12 +6,18 @@ import { SEO, Layout } from "../components/elements"
 import { StyledPage, Link } from "../components/styles"
 
 const StyledPost = styled(StyledPage)`
+  max-width: var(--container);
+
   .post-date {
     font-family: var(--mono);
   }
 
   .post-title {
     font-weight: 900;
+  }
+
+  .post-description {
+    font-style: italic;
   }
 
   .next-prev-title {

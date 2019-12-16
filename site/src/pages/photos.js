@@ -11,8 +11,6 @@ export default function PhotosPage({ location }) {
   return (
     <Layout location={location}>
       <StyledPage>
-        <h1 className="page-title">Photos</h1>
-
         <ContentGrid>
           {edges.map(edge => (
             <Link to={`/photo/${edge.node.slug.current}`}>

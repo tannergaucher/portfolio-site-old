@@ -1,5 +1,5 @@
 ---
-title: "Automatic Dark Mode With CSS Variables and prefers-color-scheme Media Query  "
+title: "Automatically Switch Between Light / Dark Mode With prefers-color-scheme Media Query and CSS Variables"
 date: "2019-11-13"
 description: "How to detect if a user's system is in dark mode and automatically adjust."
 tags: ["CSS", "Web"]

@@ -6,7 +6,6 @@ import { Link } from "../styles"
 const StyledPostCard = styled.div`
   margin-bottom: var(--space-lg) 0;
   border-radius: var(--radius-lg);
-  box-shadow: var(--elevation-1);
   margin-bottom: var(--space-md);
   padding: var(--space-md);
   background: var(--bg-2);
@@ -14,8 +13,9 @@ const StyledPostCard = styled.div`
   transition: var(--transition);
 
   .post-title {
-    font-weight: 900;
     margin-top: 0;
+    margin-bottom: var(--space-md);
+    color: var(--href-color);
   }
 
   .post-tag {
@@ -25,8 +25,7 @@ const StyledPostCard = styled.div`
   }
 
   .post-description {
-    margin-bottom: 0;
-    color: var(--text-color-lighter);
+    margin-bottom: var(--space-md);
   }
 
   &:hover {
@@ -36,18 +35,16 @@ const StyledPostCard = styled.div`
 
 export default function PostCard({ post }) {
   return (
-    <Link to={post.fields.slug} none>
-      <StyledPostCard>
-        {/* <small className="post-date">{post.frontmatter.date}</small> */}
-        <h3 className="post-title">{post.frontmatter.title}</h3>
+    <StyledPostCard>
+      <Link to={post.fields.slug} none inherit>
+        <h4 className="post-title">{post.frontmatter.title}</h4>
         <p className="post-description">{post.frontmatter.description}</p>
-        <br />
         {post.frontmatter.tags.map(tag => (
           <small className="post-tag" key={tag}>
             {tag}
           </small>
         ))}
-      </StyledPostCard>
-    </Link>
+      </Link>
+    </StyledPostCard>
   )
 }

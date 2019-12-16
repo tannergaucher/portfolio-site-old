@@ -22,6 +22,7 @@ export default function Header({ location }) {
 const StyledIndexHeader = styled.header`
   max-width: var(--container);
   margin: var(--space-xl) auto;
+  padding: var(--space-sm);
 
   .site-title {
     font-weight: 900;

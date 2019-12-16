@@ -1,8 +1,12 @@
 import styled from "styled-components"
 
 const StyledPage = styled.div`
-  max-width: var(--container);
   margin: var(--space-xl) auto;
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
 
   iframe {
     display: block;
