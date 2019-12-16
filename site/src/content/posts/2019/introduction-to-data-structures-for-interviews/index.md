@@ -5,20 +5,191 @@ description: "My notes on the frontend masters course."
 tags: ["Notes", "CS"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue convallis varius. Praesent congue eros metus, ac gravida sapien lobortis sed. Phasellus venenatis sapien ac elit blandit, vel convallis augue vulputate. Suspendisse lobortis facilisis tincidunt. Aliquam a est ullamcorper, sodales orci ut, efficitur mi. Praesent semper augue a dui sodales aliquam. Pellentesque vel leo eget urna hendrerit dictum. Nunc tincidunt eget lectus malesuada posuere.
+- Why care about data structures?
 
-Pellentesque interdum diam arcu, condimentum gravida dui vehicula eget. Fusce scelerisque velit vitae viverra gravida. Nam non tempus risus, eu sollicitudin metus. Nulla consequat, ipsum vitae laoreet venenatis, risus libero pharetra erat, non finibus metus justo in purus. Curabitur in auctor felis. Duis vel est sit amet mauris vehicula posuere. Phasellus ac pulvinar sem. Vivamus maximus ligula ante, id efficitur nibh posuere nec. Cras iaculis ut orci eget fringilla. Nunc faucibus condimentum tortor.
+- Common data structures:
 
-## I'm a Heading Two
+  - Arrays and strings
+  - Hash Tables
+  - Linked Lists
+  - Stacks / queues
+  - Trees / heaps
+  - Graphs
 
-Mauris lorem tellus, pellentesque non finibus eu, sagittis sit amet elit. Vestibulum porta laoreet justo vitae rhoncus. Phasellus maximus, ex vel lacinia imperdiet, nunc risus congue arcu, a luctus orci est in risus. In non vehicula massa. Maecenas suscipit nunc sapien, eget auctor enim varius at. Aenean vestibulum sem gravida, egestas odio et, interdum risus. Nulla commodo lorem tortor, ac placerat urna ultricies eu. Phasellus euismod molestie scelerisque.
+- **On Application versus implementation.** Be able to implement them, but more importantly, be able to apply the correct ones to problems / interview questions
 
-Donec quis molestie velit. Maecenas non sagittis purus. In eu urna ac dui tincidunt ultrices eget non dolor. Proin nec dapibus magna. Curabitur ut sapien ex. Sed tellus quam, condimentum in viverra in, mattis vel felis. Phasellus quis rutrum lectus. Donec in fermentum sem. Sed vulputate, leo in molestie varius, metus est pulvinar lectus, at tempus magna felis eu ante. Sed ac euismod nisl. Fusce ex augue, malesuada at venenatis vitae, luctus a dui. Nulla vel rhoncus mauris. Etiam suscipit sem nec libero porttitor efficitur eu in erat.
+**How To Prepare Effectively**
 
-## Another Heading Two
+- Don't just memorize
+- Find themes but don't jump to conclusions
+- Practice with a timer. Being able to solve things quickly matters
+- Actually practice. Reading doesn't count
 
-Aliquam felis tellus, tincidunt sed molestie vel, placerat id arcu. Vestibulum vitae elit elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pharetra pellentesque sem, eget rutrum ligula dignissim in. Duis lacinia magna justo, sit amet vehicula libero imperdiet id. Mauris rutrum justo ut orci porta fringilla. In dapibus, felis et porttitor malesuada, erat elit semper ante, in volutpat diam sem vel sem. Morbi at faucibus lectus. Maecenas sed turpis eros. Morbi et augue eros. Etiam bibendum, ligula eget efficitur lobortis, erat erat cursus purus, a porta mi nibh non odio. Etiam mollis arcu diam. Sed non quam efficitur, commodo risus id, condimentum nibh. Sed blandit pellentesque consectetur.
+## Stacks & Queues
+
+- Ordered data structures that have opinions about how things can be inserted and removed
+
+- **Stack:** Last in, first out. Push and pop methods
+
+- **Queue** First in, first out. Enqueue and dequeue methods
+
+- Pros: Fast operations
+
+- Common Examples: Linked lists, hash table, array / string.
+
+> Example interview question: Implement a browser's back button using a stack.
+
+**Implementation of a stack:**
 
 ```js
-console.log(`Hello World`)
+class Stack {
+  constructor() {
+    this._storage = {}
+    this._length = 0
+  }
+
+  push(value) {
+    this._storage[this._length] = value
+    this.length++
+  }
+
+  pop() {
+    if (this.length) {
+      const lastValue = this._storage[this._length - 1]
+      delete this._storage[lastValue]
+      this._length--
+
+      return lastValue
+    }
+  }
+
+  peek() {
+    if (this._length) {
+      return this._storage[this._length - 1]
+    }
+  }
+}
 ```
+
+**Implementation of a Queue:**
+
+```js
+class Queue {
+  constructor() {
+    this._storage = {}
+    this._length = 0
+    this._headIndex = 0
+  }
+
+  // Enqueues a new value at the end of the queue.
+  enqueue(value) {
+    const lastIndex = this._length + this._headIndex
+    this._storage[lastIndex] = value
+    this._length++
+  }
+
+  // Dequeues the value from the beginning of the queue and returns it.
+  dequeue() {
+    if (this._length) {
+      const firstValue = this._storage[this._headIndex]
+      delete this._storage[this._headIndex]
+      this._length--
+      this._headIndex++
+
+      return firstValue
+    }
+  }
+
+  // Returns the value from the beginning of the queue without deleting it.
+  peek() {
+    return this._storage[this._headIndex]
+  }
+}
+```
+
+### Linked List
+
+- Organizes items sequentially, with each item storing a pointer to the next
+
+- JS has dynamic arrays, more important in languages that don't have dynamic arrays
+
+- Each item has a property next that points to another object.
+
+> When we assign values to an object, we are really just pointing to that object. That object doesn't live inside that variable, the variable is just a pointer to the object in memory. If you assign another variable to that object, now have 2 variables pointing to the same object. But there's only one object. That's what we mean by reference. Pointers points to nodes (objects).
+
+- Linked lists are often the underlaying data structure for a stack or a queue.
+
+```js
+const linkedList = {
+  head: {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: null,
+      },
+    },
+  },
+}
+```
+
+- This example has no reference to previous. If it did, it would be a **doubly linked list.**
+
+- Common Use Case: **_Least recently used cache._** Keep track of new searches. As we get new input, have to take things out. Least recenty used cache removes oldest one
+
+- Hash tables often use linked lists under the hood.
+
+## Hash Tables
+
+- Organizes data for quick lookup of a value for a given key
+
+- Best for fast lookups + having keys that are flexible. (Array indexes are numerically constrained.)
+
+- Keys can be strings. With ES6, keys can be functions too if using set or map
+
+- In JS, object, set, map are hash table data structures.
+
+**Pros:**
+
+- Fast Lookups
+- Flexible Keys
+
+**Cons:**
+
+- Slow worst case lookups
+- Unordered
+- Single directional lookups
+
+**Main Concepts:**
+
+- Hashing function
+- Collisions
+- Resizing
+
+**Hashing function:** Takes key, hashes it. For every input, always gives the same output.
+
+- For hash tables, we think about the average case, rather than worst, because chance of worst case happening is very slim.
+
+- When thinking about optimizing a problem that resuires a fast lookup, should always think hashtable.
+
+- Be able to choose between appropriate data structure.
+  - Object?
+  - Map?
+  - Set?
+
+## Arrays & Strings
+
+- Array organizes items sequentially in memory.
+
+**Pros:**
+
+- Fast lookups
+- Fast appends
+
+**Cons:**
+
+- Slow insert
+- Slow deletes
+
+Because when inserting / deleting from the middle, must shift everything over.

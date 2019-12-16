@@ -4,9 +4,7 @@ import styled from "styled-components"
 import { Link } from "../styles"
 
 const StyledPostCard = styled.div`
-  margin-bottom: var(--space-lg) 0;
   border-radius: var(--radius-lg);
-  margin-bottom: var(--space-md);
   padding: var(--space-md);
   background: var(--bg-2);
   border-radius: var(--radius-lg);

@@ -54,6 +54,7 @@ export default function PostTemplatePage({ data, pageContext, location }) {
             </Link>
           )}
         </div>
+        <br />
       </StyledPost>
     </Layout>
   )

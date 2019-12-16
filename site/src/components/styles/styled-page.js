@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StyledPage = styled.div`
-  margin: var(--space-xl) auto;
+  margin: var(--space-md) auto;
 
   .container {
     max-width: var(--container);

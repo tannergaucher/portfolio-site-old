@@ -27,9 +27,9 @@ export default function Projects() {
       <div className="container">
         <h4 className="section-title"> Projects</h4>
         <p>
-          Some technologies I like to use are React, GraphQL, Gatsby, Apollo
-          Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
-          Components.
+          Some technologies I like to use are: React, GraphQL, Gatsby, Apollo
+          Client, Apollo Server, AWS Lambda, MongoDB, Prisma, Styled Components,
+          Netlify.
         </p>
         <ViewAll to="/projects" />
         <br />

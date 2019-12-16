@@ -7,7 +7,6 @@ import { ContentGrid } from "../styles"
 import { ViewAll } from "../elements"
 
 const StyledLatestPhotos = styled.div`
-  padding: var(--space-md);
   margin-bottom: var(--space-xl);
 
   .container {

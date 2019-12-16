@@ -1,20 +1,46 @@
 ---
-title: "Automatically Switch Between Light / Dark Mode With prefers-color-scheme Media Query and CSS Variables"
+title: "Switch Between Light / Dark Mode with prefers-color-scheme Media Query and CSS Variables"
 date: "2019-11-13"
-description: "How to detect if a user's system is in dark mode and automatically adjust."
+description: "A simple demo that..."
 tags: ["CSS", "Web"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue convallis varius. Praesent congue eros metus, ac gravida sapien lobortis sed. Phasellus venenatis sapien ac elit blandit, vel convallis augue vulputate. Suspendisse lobortis facilisis tincidunt. Aliquam a est ullamcorper, sodales orci ut, efficitur mi. Praesent semper augue a dui sodales aliquam. Pellentesque vel leo eget urna hendrerit dictum. Nunc tincidunt eget lectus malesuada posuere.
+<!-- GIF HERE  -->
 
-Pellentesque interdum diam arcu, condimentum gravida dui vehicula eget. Fusce scelerisque velit vitae viverra gravida. Nam non tempus risus, eu sollicitudin metus. Nulla consequat, ipsum vitae laoreet venenatis, risus libero pharetra erat, non finibus metus justo in purus. Curabitur in auctor felis. Duis vel est sit amet mauris vehicula posuere. Phasellus ac pulvinar sem. Vivamus maximus ligula ante, id efficitur nibh posuere nec. Cras iaculis ut orci eget fringilla. Nunc faucibus condimentum tortor.
+As someone who spends a lot of time in front of screens, but doesn't enjoy reading text from screen, I put a decent amount of effort into tweaking settings so that the content that I am consuming presents itsef in the most readable way. Usually that means bumping the font size way up, getting rid of ads and annoying distractions, even if that means inspecting an element and throwing in a `display: none` (sorry codesandbox add on the bottom left), and switching to dark mode if that is an option.
 
-## I'm a Heading Two
+Though I tend to live inside Google Chrome, ever since I discovered the reader reader view in Safari, when I come across some content that I would like to read I copy the link and open it up in safari reader mode, where I can adjust the text size, background color, and even font family and font to my liking.
 
-Mauris lorem tellus, pellentesque non finibus eu, sagittis sit amet elit. Vestibulum porta laoreet justo vitae rhoncus. Phasellus maximus, ex vel lacinia imperdiet, nunc risus congue arcu, a luctus orci est in risus. In non vehicula massa. Maecenas suscipit nunc sapien, eget auctor enim varius at. Aenean vestibulum sem gravida, egestas odio et, interdum risus. Nulla commodo lorem tortor, ac placerat urna ultricies eu. Phasellus euismod molestie scelerisque.
+> I look forward to the future of the web moving more towards a default experience similar to safari reader mode, where I declare my preferences for how I want content to be presented, and content automatically presents itself in that way.
 
-Donec quis molestie velit. Maecenas non sagittis purus. In eu urna ac dui tincidunt ultrices eget non dolor. Proin nec dapibus magna. Curabitur ut sapien ex. Sed tellus quam, condimentum in viverra in, mattis vel felis. Phasellus quis rutrum lectus. Donec in fermentum sem. Sed vulputate, leo in molestie varius, metus est pulvinar lectus, at tempus magna felis eu ante. Sed ac euismod nisl. Fusce ex augue, malesuada at venenatis vitae, luctus a dui. Nulla vel rhoncus mauris. Etiam suscipit sem nec libero porttitor efficitur eu in erat.
+Cutting and pasting a link whenever I want to read something doesn't take a ton of effort, but constantly swapping between browsers is not exactly an elegant solution. I've started using the `user-prefers-color-scheme` CSS media
+query because it's a step closer in this direction where content conforms to one's own preferences.
 
-## Another Heading Two
+Here's a minimal example of the `user-prefers-color-scheme` media query. It's an elegant solution to be able to detect the current mode of a user's system with a media query and toggle between a light and dark UI using CSS variables, without having to use any javascript.
 
-Aliquam felis tellus, tincidunt sed molestie vel, placerat id arcu. Vestibulum vitae elit elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pharetra pellentesque sem, eget rutrum ligula dignissim in. Duis lacinia magna justo, sit amet vehicula libero imperdiet id. Mauris rutrum justo ut orci porta fringilla. In dapibus, felis et porttitor malesuada, erat elit semper ante, in volutpat diam sem vel sem. Morbi at faucibus lectus. Maecenas sed turpis eros. Morbi et augue eros. Etiam bibendum, ligula eget efficitur lobortis, erat erat cursus purus, a porta mi nibh non odio. Etiam mollis arcu diam. Sed non quam efficitur, commodo risus id, condimentum nibh. Sed blandit pellentesque consectetur.
+```css
+:root {
+  --text-color: black;
+  --background: white;
+  --href-color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background: black;
+    --href-color: lime;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+}
+```
+
+First we declare some root CSS variables. To keep things simple here, we just a text color and a background color, but this can be extended. Then we query `prefers-color-scheme`. If the user's system is in dark mode, then we can switch the values of the css variable to any arbitrary value.
+
+### Related Links
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme

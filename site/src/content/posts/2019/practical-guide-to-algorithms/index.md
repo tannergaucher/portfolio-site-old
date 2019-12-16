@@ -1,24 +1,119 @@
 ---
 title: "Practical Guide to Algorithms"
 date: "2019-10-07"
-description: "My notes on the Frontend Masters course."
+description: "My notes from the Frontend Masters course."
 tags: ["Notes", "CS"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue convallis varius. Praesent congue eros metus, ac gravida sapien lobortis sed. Phasellus venenatis sapien ac elit blandit, vel convallis augue vulputate. Suspendisse lobortis facilisis tincidunt. Aliquam a est ullamcorper, sodales orci ut, efficitur mi. Praesent semper augue a dui sodales aliquam. Pellentesque vel leo eget urna hendrerit dictum. Nunc tincidunt eget lectus malesuada posuere.
+- **Algorithm:** Steps that you take to solve a problem
 
-Pellentesque interdum diam arcu, condimentum gravida dui vehicula eget. Fusce scelerisque velit vitae viverra gravida. Nam non tempus risus, eu sollicitudin metus. Nulla consequat, ipsum vitae laoreet venenatis, risus libero pharetra erat, non finibus metus justo in purus. Curabitur in auctor felis. Duis vel est sit amet mauris vehicula posuere. Phasellus ac pulvinar sem. Vivamus maximus ligula ante, id efficitur nibh posuere nec. Cras iaculis ut orci eget fringilla. Nunc faucibus condimentum tortor.
+- Why care? It's an engineers job to solve problems
 
-## I'm a Heading Two
+- Identify pattern => Apply correct algorithm => Solve problem in optimal way
 
-Mauris lorem tellus, pellentesque non finibus eu, sagittis sit amet elit. Vestibulum porta laoreet justo vitae rhoncus. Phasellus maximus, ex vel lacinia imperdiet, nunc risus congue arcu, a luctus orci est in risus. In non vehicula massa. Maecenas suscipit nunc sapien, eget auctor enim varius at. Aenean vestibulum sem gravida, egestas odio et, interdum risus. Nulla commodo lorem tortor, ac placerat urna ultricies eu. Phasellus euismod molestie scelerisque.
+## Time Complexity
 
-Donec quis molestie velit. Maecenas non sagittis purus. In eu urna ac dui tincidunt ultrices eget non dolor. Proin nec dapibus magna. Curabitur ut sapien ex. Sed tellus quam, condimentum in viverra in, mattis vel felis. Phasellus quis rutrum lectus. Donec in fermentum sem. Sed vulputate, leo in molestie varius, metus est pulvinar lectus, at tempus magna felis eu ante. Sed ac euismod nisl. Fusce ex augue, malesuada at venenatis vitae, luctus a dui. Nulla vel rhoncus mauris. Etiam suscipit sem nec libero porttitor efficitur eu in erat.
+- How we estimate the speed of an algorithm
 
-## Another Heading Two
+> "As the input grows, it will grow in this proportion."
 
-Aliquam felis tellus, tincidunt sed molestie vel, placerat id arcu. Vestibulum vitae elit elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pharetra pellentesque sem, eget rutrum ligula dignissim in. Duis lacinia magna justo, sit amet vehicula libero imperdiet id. Mauris rutrum justo ut orci porta fringilla. In dapibus, felis et porttitor malesuada, erat elit semper ante, in volutpat diam sem vel sem. Morbi at faucibus lectus. Maecenas sed turpis eros. Morbi et augue eros. Etiam bibendum, ligula eget efficitur lobortis, erat erat cursus purus, a porta mi nibh non odio. Etiam mollis arcu diam. Sed non quam efficitur, commodo risus id, condimentum nibh. Sed blandit pellentesque consectetur.
+- How many operations are expected to solve problem, in respect to input size
 
-```js
-console.log(`Hello World`)
-```
+- Commmon run times from fast to very slow:
+
+  - Contast 0(1)
+  - Logarithmic 0(logn)
+  - Linear 0(n)
+  - Quadratic 0(n2)
+  - Exponential 0(k^n)
+
+- **Logarithmic Time:** As input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. Often better than linear time w/ large datasets
+
+## Space Complexity
+
+- The space that is taken up in memory. Works in similar way to time, but on question of how much more space are we taking up
+
+- **Memoization:** When you cache the result of a funciton. A type of caching
+
+- **Caching:** Saving something into an object or array.
+
+- Caching trades time complexity for space complexity. Important when the callback function is expensive, and usually the right tradeoff in a browser environment.
+
+> Example Problem for caching: Factorials
+
+## Recursion
+
+- When a function calls itself, until it doesn't
+
+- An elegant solution to keep code DRY
+
+**Recursion in 4 steps:**
+
+1. Identify base case.
+2. Identify recursive case.
+3. Return where appropriate.
+4. Write procedures for each case that bring you closer to the base case
+
+Recursion can always be implemented as a loop, but it's often more simple to use recursion.
+
+- Patterns:
+  - Wrapper function
+  - Accumulator function
+
+### Divide and Conquer
+
+- A resursive technique where we:
+  - Take large problem
+  - Divide into sub-problems and do work
+
+### Binary Search
+
+Example: Search for a value in a **_sorted_** array, by cutting the side of the search area in half.
+
+- Steps:
+  - Break sorted array in half
+  - Is value the value that we're looking for `<` or `>` current location
+  - Repeat
+
+### Linear Search
+
+Simply loop through a list, and look for that number.
+
+## Sorting
+
+- Naive sorts: Keep looping and comparing values until list is sorted
+
+  - Bubble sort
+  - Insertion sort
+  - Selection sort
+
+- Divide and conquer sort: Recursively devide list / smaller parts of list until entire list is sorted
+
+  - Mergesort
+  - Quicksort
+
+- For sorting algorithms, you must look at every value, can never be less than linear time
+
+## Greedy Algorithms
+
+- Take the short sighted solution. Given a decision, do the one that looks like the best decision at that time, without considering the big picture
+
+- Always making the locally optimal choice does **_not_** always give the optimal solution.
+
+- When to use: Data set is so large that you can't think of all scenarios. It's computationally too much and it's better to have **_a_** solution than none at all
+
+## Dynamic Programming
+
+- Optimization technique
+
+- Cache values when doing work inside the subproblems. If you have a solution that you can cache, that's dynamic programming
+
+- Different ways of caching:
+  - Top down, recursive approach
+  - Bottom up, iterative technique
+
+## On How to Learn and Improve
+
+- Talk about how code is executing. Reason about it. Don't just run and see what happens. Be able to reason through what you are writing
+
+- In a typical interview environment, you **_can't_** run the code. Need to learn how to debug, run the code in your head

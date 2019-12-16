@@ -21,7 +21,7 @@ export default function Header({ location }) {
 
 const StyledIndexHeader = styled.header`
   max-width: var(--container);
-  margin: var(--space-xl) auto;
+  margin: var(--space-lg) auto;
   padding: var(--space-sm);
 
   .site-title {
@@ -35,10 +35,6 @@ const StyledIndexHeader = styled.header`
 
 const IndexHeader = ({ title }) => (
   <StyledIndexHeader>
-    {/* FIX THESE  */}
-    <br />
-    <br />
-    <br />
     <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
       I'm a fullstack developer, currently seeking a position in New York City /
