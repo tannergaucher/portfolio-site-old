@@ -1,8 +1,8 @@
 ---
-title: "Another New Post"
-date: "2019-12-10"
-description: "Do do do do, do a da da."
-tags: ["React", "JS"]
+title: "Automatic Dark Mode With CSS Variables and prefers-color-scheme Media Query  "
+date: "2019-11-13"
+description: "How to detect if a user's system is in dark mode and automatically adjust."
+tags: ["CSS", "Web"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue convallis varius. Praesent congue eros metus, ac gravida sapien lobortis sed. Phasellus venenatis sapien ac elit blandit, vel convallis augue vulputate. Suspendisse lobortis facilisis tincidunt. Aliquam a est ullamcorper, sodales orci ut, efficitur mi. Praesent semper augue a dui sodales aliquam. Pellentesque vel leo eget urna hendrerit dictum. Nunc tincidunt eget lectus malesuada posuere.
@@ -18,7 +18,3 @@ Donec quis molestie velit. Maecenas non sagittis purus. In eu urna ac dui tincid
 ## Another Heading Two
 
 Aliquam felis tellus, tincidunt sed molestie vel, placerat id arcu. Vestibulum vitae elit elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pharetra pellentesque sem, eget rutrum ligula dignissim in. Duis lacinia magna justo, sit amet vehicula libero imperdiet id. Mauris rutrum justo ut orci porta fringilla. In dapibus, felis et porttitor malesuada, erat elit semper ante, in volutpat diam sem vel sem. Morbi at faucibus lectus. Maecenas sed turpis eros. Morbi et augue eros. Etiam bibendum, ligula eget efficitur lobortis, erat erat cursus purus, a porta mi nibh non odio. Etiam mollis arcu diam. Sed non quam efficitur, commodo risus id, condimentum nibh. Sed blandit pellentesque consectetur.
-
-```js
-console.log(`Hello World`)
-```

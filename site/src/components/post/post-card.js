@@ -22,24 +22,15 @@ const StyledPostCard = styled.div`
     margin-right: var(--space-md);
     text-transform: uppercase;
     font-family: var(--mono);
-    filter: var(--opacity);
-    transition: var(--transition);
   }
 
   .post-description {
     margin-bottom: 0;
-    color: var(--text-color);
-    filter: var(--opacity);
-    transition: var(--transition);
+    color: var(--text-color-lighter);
   }
 
   &:hover {
     box-shadow: var(--elevation-2);
-
-    .post-description,
-    .post-tag {
-      filter: opacity(1);
-    }
   }
 `
 

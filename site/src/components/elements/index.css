@@ -46,13 +46,14 @@
   --space-xl: calc(var(--baseline) * 3);
   /* Colors */
   --text-color: rgb(5, 5, 5);
+  --text-color-lighter: #555555;
   --href-color: black;
   --bg-1: rgb(239, 240, 245);
   --bg-2: rgba(251, 251, 252, 0.945);
   /* Components */
 
   --radius: 4px;
-  --radius-lg: 20px;
+  --radius-lg: 12px;
   --thickness: 2px;
   --container: 900px;
   --elevation-1: 0 4px 12px rgba(0, 0, 0, 0.05);
