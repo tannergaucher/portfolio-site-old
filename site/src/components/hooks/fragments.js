@@ -8,8 +8,9 @@ export const POST_FRAGMENT = graphql`
     timeToRead
     frontmatter {
       title
-      date(formatString: "MM.DD.YYYY")
+      date(formatString: "MM/DD/YYYY")
       description
+      tags
     }
     fields {
       slug

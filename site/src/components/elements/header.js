@@ -21,7 +21,8 @@ export default function Header({ location }) {
 
 const StyledIndexHeader = styled.header`
   max-width: var(--container);
-  margin: var(--space-xl) auto;
+  margin: var(--space-lg) auto;
+  padding: var(--space-sm);
 
   .site-title {
     font-weight: 900;
@@ -34,24 +35,15 @@ const StyledIndexHeader = styled.header`
 
 const IndexHeader = ({ title }) => (
   <StyledIndexHeader>
-    {/* FIX THESE  */}
-    <br />
-    <br />
-    <br />
-    <Link to="/" none>
-      <h1 className="site-title text--lg">{title}</h1>
-    </Link>
-
+    <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
-      I'm a fullstack JavaScript developer, currently seeking a full-time
-      position in New York City / remote.
+      I'm a fullstack developer, currently seeking a position in New York City /
+      remote.
     </p>
-
     <div className="social-hrefs">
       <IconLinkHref href="#">
         <Github size="var(--text-md)" color="var(--href-color)" />
       </IconLinkHref>
-
       <IconLinkHref href="#">
         <Twitter size="var(--text-md)" color="var(--href-color)" />
       </IconLinkHref>
@@ -64,10 +56,9 @@ const StyledPlainHeader = styled.header`
   position: sticky;
   top: 0;
   background: var(--bg-1);
-
   opacity: 0.9;
+  /* Because gatsby image has a zIndex */
   z-index: 3;
-
   .site-title {
     font-weight: 900;
   }

@@ -5,7 +5,7 @@ import { PhotoCard } from "../components/photo"
 import { useAllMyImages } from "../components/hooks"
 import { StyledPage, Link, ContentGrid } from "../components/styles"
 
-export default function Photo({ location }) {
+export default function PhotosPage({ location }) {
   const { edges } = useAllMyImages()
 
   return (

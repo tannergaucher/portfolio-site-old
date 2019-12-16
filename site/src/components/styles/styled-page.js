@@ -1,11 +1,19 @@
 import styled from "styled-components"
 
 const StyledPage = styled.div`
-  max-width: var(--container);
-  margin: var(--space-xl) auto;
+  margin: var(--space-md) auto;
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
 
   iframe {
     display: block;
+  }
+
+  .page-title {
+    font-weight: 900;
   }
 `
 

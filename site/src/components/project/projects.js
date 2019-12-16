@@ -9,6 +9,11 @@ import { ViewAll } from "../elements"
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
 
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+
   .section-title {
     font-weight: 900;
   }
@@ -19,17 +24,17 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <h4 className="section-title"> Projects</h4>
-      <p>
-        Some technologies I like to use are React, GraphQL, Gatsby, Apollo
-        Client, Apollo Server, AWS Lambda functions, MongoDB, Prisma, Styled
-        Components.
-      </p>
-
-      <ViewAll to="/projects" />
-
-      <br />
-      <ContentGrid>
+      <div className="container">
+        <h4 className="section-title"> Projects</h4>
+        <p>
+          Some technologies I like to use are: React, GraphQL, Gatsby, Apollo
+          Client, Apollo Server, AWS Lambda, MongoDB, Prisma, Styled Components,
+          Netlify.
+        </p>
+        <ViewAll to="/projects" />
+        <br />
+      </div>
+      <ContentGrid responsive>
         {edges.map(edge => (
           <ProjectCard key={edge.node.id} project={edge.node} />
         ))}

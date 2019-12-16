@@ -11,7 +11,7 @@ export default function Projects({ location }) {
   return (
     <Layout location={location}>
       <StyledPage>
-        <h1>Projects</h1>
+        <h1 className="page-title">Projects</h1>
         <br />
         <ContentGrid>
           {edges.map(edge => (
