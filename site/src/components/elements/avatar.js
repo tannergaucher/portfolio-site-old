@@ -7,9 +7,6 @@ export default function avatar() {
   const { fixed } = useAvatarImage()
 
   return (
-    <Image
-      fixed={fixed}
-      style={{ borderRadius: `var(--radius-lg)`, filter: `grayscale(1)` }}
-    />
+    <Image fixed={fixed} style={{ borderRadius: ``, gridArea: `avatar` }} />
   )
 }

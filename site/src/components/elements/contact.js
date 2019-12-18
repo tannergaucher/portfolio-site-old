@@ -5,8 +5,7 @@ import { Form, Button, Input, TextArea } from "../styles"
 
 const StyledContact = styled.div`
   max-width: var(--container);
-  margin: 0 auto;
-  margin-bottom: var(--space-xl);
+  margin: var(--space-xl) auto;
 
   .section-title {
     font-weight: 900;
@@ -26,7 +25,7 @@ export default function Contact() {
 function ContactForm() {
   return (
     <Form name="contact" netlify>
-      <Input type="email" name="email" placeholder="Your Email" required />
+      <Input type="email" name="email" placeholder="Email" required />
       <TextArea
         name="message"
         cols="10"

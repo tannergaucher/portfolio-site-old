@@ -8,10 +8,6 @@ import { StyledPage, Link } from "../components/styles"
 const StyledPost = styled(StyledPage)`
   max-width: var(--container);
 
-  .post-date {
-    font-family: var(--mono);
-  }
-
   .post-title {
     font-weight: 900;
   }

@@ -15,11 +15,9 @@ export default function PostsPage({ location }) {
           <h1 className="page-title">Posts</h1>
         </div>
         <br />
-        <ContentGrid responsive>
-          {edges.map(edge => (
-            <PostCard key={edge.node.id} post={edge.node} />
-          ))}
-        </ContentGrid>
+        {edges.map(edge => (
+          <PostCard key={edge.node.id} post={edge.node} />
+        ))}
       </StyledPage>
     </Layout>
   )
