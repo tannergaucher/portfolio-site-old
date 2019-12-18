@@ -5,18 +5,7 @@ import moment from "moment"
 
 import { Link } from "../styles"
 
-const StyledPhotoCard = styled.div`
-  .img {
-    filter: var(--opacity);
-    transition: var(--transition);
-  }
-
-  &:hover {
-    .img {
-      filter: opacity(1);
-    }
-  }
-`
+const StyledPhotoCard = styled.div``
 
 export default function PhotoCard({ sanityMyImage }) {
   const { aspectRatio } = sanityMyImage.myImage.asset.fluid

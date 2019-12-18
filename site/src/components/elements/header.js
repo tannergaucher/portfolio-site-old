@@ -2,8 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { Github, Twitter } from "grommet-icons"
 
-import { Link, IconLinkHref } from "../styles"
+import { Button, Link, IconLinkHref } from "../styles"
 import { useSiteMetadata } from "../hooks"
+import { Avatar } from "../elements"
 
 export default function Header({ location }) {
   const { title } = useSiteMetadata()
@@ -21,24 +22,38 @@ export default function Header({ location }) {
 
 const StyledIndexHeader = styled.header`
   max-width: var(--container);
-  margin: var(--space-lg) auto;
+  margin: var(--space-xl) auto;
   padding: var(--space-sm);
 
   .site-title {
     font-weight: 900;
+    margin-top: var(--space-lg);
   }
 
   .intro-text {
     margin-bottom: var(--space-md);
   }
+
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .intro-text {
+      text-align: center;
+      max-width: 600px;
+    }
+  }
 `
 
 const IndexHeader = ({ title }) => (
   <StyledIndexHeader>
+    <Avatar />
     <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
-      I'm a fullstack developer, currently seeking a position in New York City /
-      remote.
+      Full stack software developer. Currently seeking a position in New York
+      City / remote.
     </p>
     <div className="social-hrefs">
       <IconLinkHref href="#">

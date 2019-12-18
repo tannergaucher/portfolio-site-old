@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import { ProjectCard } from "."
-import { ContentGrid } from "../styles"
 import { useLatestProjects } from "../hooks"
 import { ViewAll } from "../elements"
 
@@ -24,21 +23,19 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <div className="container">
-        <h4 className="section-title"> Projects</h4>
-        <p>
-          Some technologies I like to use are: React, GraphQL, Gatsby, Apollo
-          Client, Apollo Server, AWS Lambda, MongoDB, Prisma, Styled Components,
-          Netlify.
-        </p>
-        <ViewAll to="/projects" />
-        <br />
-      </div>
-      <ContentGrid responsive>
-        {edges.map(edge => (
-          <ProjectCard key={edge.node.id} project={edge.node} />
-        ))}
-      </ContentGrid>
+      <h4 className="section-title"> Projects</h4>
+      <p>
+        Some things I like to use: React, GraphQL, Gatsby, Apollo Client, Apollo
+        Server, AWS Lambda, MongoDB, Prisma, Styled Components, Netlify.
+      </p>
+
+      <ViewAll to="/projects" />
+      <br />
+
+      {edges.map(edge => (
+        <ProjectCard key={edge.node.id} project={edge.node} />
+      ))}
+      <br />
     </StyledProjects>
   )
 }

@@ -7,6 +7,7 @@ import { Link } from "../styles"
 const StyledViewAll = styled.div`
   .text {
     margin: 0;
+    font-weight: bolder;
   }
 
   .arrow {
