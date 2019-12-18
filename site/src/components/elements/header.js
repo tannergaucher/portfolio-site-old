@@ -59,6 +59,7 @@ const StyledPlainHeader = styled.header`
   opacity: 0.9;
   /* Because gatsby image has a zIndex */
   z-index: 3;
+
   .site-title {
     font-weight: 900;
   }
