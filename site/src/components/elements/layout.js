@@ -5,10 +5,10 @@ import { Header, Footer } from "../elements"
 import "./index.css"
 
 const Main = styled.main`
-  min-height: 100vh;
   margin: 0 auto;
-  max-width: var(--container);
   padding: var(--space-sm);
+  min-height: 100vh;
+  max-width: var(--container);
 `
 
 export default function Layout({ children, location }) {

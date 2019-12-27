@@ -8,6 +8,7 @@ const StyledViewAll = styled.div`
   .text {
     margin: 0;
     font-weight: bolder;
+    text-decoration: none;
   }
 
   .arrow {
@@ -29,7 +30,7 @@ const StyledViewAll = styled.div`
 export default function ViewAll({ to }) {
   return (
     <StyledViewAll>
-      <Link to={to}>
+      <Link none to={to}>
         <div className="animated-arrow">
           <p className="text">View All</p>
           <FormNextLink

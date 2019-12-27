@@ -9,7 +9,7 @@ const StyledPostCard = styled.div`
 
   .post-title {
     color: var(--href-color);
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
 
   .post-tag {

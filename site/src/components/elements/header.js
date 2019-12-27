@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Github, Twitter } from "grommet-icons"
 
-import { Button, Link, IconLinkHref } from "../styles"
+import { Link, IconLinkHref } from "../styles"
 import { useSiteMetadata } from "../hooks"
 import { Avatar } from "../elements"
 
@@ -21,9 +21,9 @@ export default function Header({ location }) {
 }
 
 const StyledIndexHeader = styled.header`
-  max-width: var(--container);
   margin: var(--space-xl) auto;
   padding: var(--space-sm);
+  max-width: var(--container);
 
   .site-title {
     font-weight: 900;
