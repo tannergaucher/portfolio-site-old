@@ -19,7 +19,7 @@ export default function Posts() {
 
   return (
     <StyledPosts>
-      <h4 className="section-title"> Posts</h4>
+      <h3 className="section-title"> Posts</h3>
       <p className="posts-section-description">
         On self-learning, modern JavaScript, web development.
       </p>

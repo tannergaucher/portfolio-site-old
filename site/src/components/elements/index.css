@@ -7,9 +7,9 @@
   --serif: "Merriweather", serif;
   --mono: "Fira Code", monospace;
   --heading-line-height: 1.1;
-  --paragraph-line-height: 1.66;
+  --paragraph-line-height: 1.7;
   --heading-letter-spacing: 0;
-  --paragraph-letter-spacing: -0.2px;
+  --paragraph-letter-spacing: 0.01px;
   /* Vertical Rhythm */
   --responsive-unit: 0.7vw; /* TWEAK ME  */
   /* Base Values */
@@ -50,9 +50,9 @@
   /* Colors */
   --text-color: rgb(5, 5, 5);
   --text-color-lighter: #555555;
-  --href-color: black;
-  --bg-1: rgb(239, 240, 245);
-  --bg-2: rgba(251, 251, 252, 0.945);
+  --href-color: blue;
+  --bg-1: white;
+  --bg-2: white;
   --primary-btn-bg: black;
   --outline-btn-bg: var(--bg-2);
   --primary-btn-color: white;
@@ -145,7 +145,6 @@ small {
 p {
   margin-top: 0;
   margin-bottom: var(--space-md);
-
   line-height: var(--paragraph-line-height);
   letter-spacing: var(--paragraph-letter-spacing);
 }

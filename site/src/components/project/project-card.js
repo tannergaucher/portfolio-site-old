@@ -7,7 +7,7 @@ const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
 
   .project-title {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: var(--href-color);
   }
 `
