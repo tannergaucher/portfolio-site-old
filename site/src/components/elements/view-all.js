@@ -24,6 +24,10 @@ const StyledViewAll = styled.div`
     .arrow {
       margin-left: var(--space-sm);
     }
+
+    .text {
+      text-decoration: underline;
+    }
   }
 `
 
