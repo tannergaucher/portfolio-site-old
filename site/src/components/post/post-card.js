@@ -9,13 +9,19 @@ const StyledPostCard = styled.div`
 
   .post-title {
     color: var(--href-color);
-    /* text-decoration: underline; */
   }
 
   .post-tag {
     margin-right: var(--space-md);
     text-transform: uppercase;
     font-family: var(--mono);
+  }
+
+  &:hover {
+    .post-title {
+      text-decoration: underline;
+      transition: var(--transition);
+    }
   }
 `
 

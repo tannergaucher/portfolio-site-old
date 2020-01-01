@@ -13,11 +13,19 @@ const StyledPost = styled(StyledPage)`
   }
 
   .post-description {
+    margin-top: var(--space-md);
     font-style: italic;
   }
 
   .next-prev-title {
     font-weight: 900;
+  }
+
+  .next,
+  .prev {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -29,8 +37,8 @@ export default function PostTemplatePage({ data, pageContext, location }) {
     <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        <small className="post-date">{post.frontmatter.date}</small>
         <h1 className="post-title">{post.frontmatter.title}</h1>
+        <small className="post-date">{post.frontmatter.date}</small>
         <p className="post-description">{post.frontmatter.description}</p>
         <br />
         <div
@@ -40,13 +48,15 @@ export default function PostTemplatePage({ data, pageContext, location }) {
         <br />
         <div className="next-prev-links">
           {next && (
-            <Link to={`/${next.fields.slug}`}>
-              <h3 className="next-prev-title">{next.frontmatter.title}</h3>
+            <Link to={`/${next.fields.slug}`} none>
+              <h3 className="next-prev-title next">{next.frontmatter.title}</h3>
             </Link>
           )}
           {previous && (
-            <Link to={`/${previous.fields.slug}`}>
-              <h3 className="next-prev-title">{previous.frontmatter.title}</h3>
+            <Link to={`/${previous.fields.slug}`} none>
+              <h3 className="next-prev-title prev">
+                {previous.frontmatter.title}
+              </h3>
             </Link>
           )}
         </div>
