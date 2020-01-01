@@ -12,11 +12,17 @@ export default {
       },
     },
     {
+      name: 'caption',
+      title: 'Caption',
+      type: 'string',
+    },
+    {
       name: 'slug',
-      title: 'Image Slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         maxLength: 96,
+        source: 'caption',
       },
     },
     {
