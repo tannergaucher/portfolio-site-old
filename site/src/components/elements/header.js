@@ -28,33 +28,18 @@ const StyledIndexHeader = styled.header`
   .site-title {
     font-weight: 900;
     margin-top: var(--space-lg);
-  }
-
-  .intro-text {
-    margin-bottom: var(--space-md);
-  }
-
-  @media (max-width: 1024px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    .intro-text {
-      text-align: center;
-      max-width: 600px;
-    }
+    color: var(--href-color);
   }
 `
 
 const IndexHeader = ({ title }) => (
   <StyledIndexHeader>
-    <Avatar />
     <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
       Full stack software developer. Currently seeking a position in New York
       City / remote.
     </p>
+    <br />
     <div className="social-hrefs">
       <IconLinkHref href="#">
         <Github size="var(--text-md)" color="var(--href-color)" />
@@ -77,12 +62,13 @@ const StyledPlainHeader = styled.header`
 
   .site-title {
     font-weight: 900;
+    color: var(--href-color);
   }
 `
 
 const PlainHeader = ({ title }) => (
   <StyledPlainHeader>
-    <Link to="/" none>
+    <Link to="/" none inherit>
       <small className="site-title">{title}</small>
     </Link>
   </StyledPlainHeader>

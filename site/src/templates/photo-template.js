@@ -7,13 +7,24 @@ import { StyledPage } from "../components/styles"
 
 const StyledPhotoPage = styled(StyledPage)`
   max-width: var(--container);
+
+  .image {
+    margin-bottom: var(--space-md);
+  }
 `
 
 export default function PhotoTemplatePage({ data, location }) {
+  console.log(data)
+
   return (
     <Layout location={location}>
       <StyledPhotoPage>
-        <Img fluid={data.sanityMyImage.myImage.asset.fluid} />
+        <Img className="image" fluid={data.sanityMyImage.myImage.asset.fluid} />
+        <small>
+          {data.sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal}
+        </small>
+        <br />
+        <small>{data.sanityMyImage.caption}</small>
       </StyledPhotoPage>
     </Layout>
   )

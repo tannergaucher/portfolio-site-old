@@ -12,11 +12,6 @@ const StyledPost = styled(StyledPage)`
     font-weight: 900;
   }
 
-  .post-description {
-    margin-top: var(--space-md);
-    font-style: italic;
-  }
-
   .next-prev-title {
     font-weight: 900;
   }
@@ -37,9 +32,11 @@ export default function PostTemplatePage({ data, pageContext, location }) {
     <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        <h1 className="post-title">{post.frontmatter.title}</h1>
         <small className="post-date">{post.frontmatter.date}</small>
-        <p className="post-description">{post.frontmatter.description}</p>
+        <h1 className="post-title">{post.frontmatter.title}</h1>
+        {/* <small className="post-description">
+          {post.frontmatter.description}
+        </small> */}
         <br />
         <div
           className="post-body"

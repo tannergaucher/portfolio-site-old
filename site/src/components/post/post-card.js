@@ -30,12 +30,14 @@ export default function PostCard({ post }) {
     <StyledPostCard>
       <Link to={post.fields.slug} none inherit>
         <h4 className="post-title">{post.frontmatter.title}</h4>
-        <p className="post-description">{post.frontmatter.description}</p>
-        {post.frontmatter.tags.map(tag => (
+        <small className="post-description">
+          {post.frontmatter.description}
+        </small>
+        {/* {post.frontmatter.tags.map(tag => (
           <small className="post-tag" key={tag}>
             {tag}
           </small>
-        ))}
+        ))} */}
       </Link>
     </StyledPostCard>
   )

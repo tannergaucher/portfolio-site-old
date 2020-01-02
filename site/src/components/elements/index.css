@@ -11,7 +11,7 @@
   --heading-letter-spacing: 0;
   --paragraph-letter-spacing: 0.01px;
   /* Vertical Rhythm */
-  --responsive-unit: 0.7vw; /* TWEAK ME  */
+  --responsive-unit: 1.5vw; /* TWEAK ME  */
   /* Base Values */
   --text-base-size: calc(1rem + var(--responsive-unit));
   --text-scale-ratio: 1.28; /* TWEAK ME */
@@ -147,6 +147,7 @@ p {
   margin-bottom: var(--space-md);
   line-height: var(--paragraph-line-height);
   letter-spacing: var(--paragraph-letter-spacing);
+  font-family: var(--serif);
 }
 
 li {

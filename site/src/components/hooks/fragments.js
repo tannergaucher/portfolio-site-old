@@ -49,6 +49,7 @@ export const MY_IMAGE_FRAGMENT = graphql`
     slug {
       current
     }
+    caption
     myImage {
       asset {
         _rawMetadata

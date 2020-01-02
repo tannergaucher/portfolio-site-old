@@ -4,13 +4,7 @@ import { FormNextLink } from "grommet-icons"
 
 import { Link } from "../styles"
 
-const StyledViewAll = styled.div`
-  .text {
-    margin: 0;
-    font-weight: bolder;
-    text-decoration: none;
-  }
-
+const StyledSectionTitle = styled.div`
   .arrow {
     transition: var(--transition);
   }
@@ -24,19 +18,15 @@ const StyledViewAll = styled.div`
     .arrow {
       margin-left: var(--space-sm);
     }
-
-    .text {
-      text-decoration: underline;
-    }
   }
 `
 
-export default function ViewAll({ to }) {
+export default function SectionTitle({ to, sectionTitle }) {
   return (
-    <StyledViewAll>
+    <StyledSectionTitle>
       <Link none to={to}>
         <div className="animated-arrow">
-          <p className="text">View All</p>
+          <h3 className="section-title">{sectionTitle}</h3>
           <FormNextLink
             className="arrow"
             size="var(--text-lg)"
@@ -45,6 +35,6 @@ export default function ViewAll({ to }) {
         </div>
       </Link>
       <br />
-    </StyledViewAll>
+    </StyledSectionTitle>
   )
 }
