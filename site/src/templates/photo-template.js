@@ -1,6 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import moment from "moment"
 
 import { Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
@@ -14,17 +15,19 @@ const StyledPhotoPage = styled(StyledPage)`
 `
 
 export default function PhotoTemplatePage({ data, location }) {
-  console.log(data)
+  const formatedDateTime = moment(
+    data.sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
+  ).format("MMMM Do YYYY, h:mm:ss A")
 
   return (
     <Layout location={location}>
       <StyledPhotoPage>
         <Img className="image" fluid={data.sanityMyImage.myImage.asset.fluid} />
-        <small>
-          {data.sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal}
+        <small className="image-dateTime-caption">
+          {formatedDateTime}
+          {". "}
+          {data.sanityMyImage.caption}
         </small>
-        <br />
-        <small>{data.sanityMyImage.caption}</small>
       </StyledPhotoPage>
     </Layout>
   )

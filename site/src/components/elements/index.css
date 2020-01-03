@@ -172,6 +172,10 @@ a {
   color: var(--href-color);
 }
 
+pre {
+  font-family: var(--mono);
+}
+
 .component {
   padding: var(--component-padding);
   margin-bottom: var(--space-md);
