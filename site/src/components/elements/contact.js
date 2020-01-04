@@ -5,17 +5,19 @@ import { Form, Button, Input, TextArea } from "../styles"
 
 const StyledContact = styled.div`
   max-width: var(--container);
-  margin: var(--space-xl) auto;
+  margin: var(--space-lg) auto;
 
-  .section-title {
-    margin-bottom: var(--space-md);
+  .contact {
+    color: var(--href-color);
   }
 `
 
 export default function Contact() {
   return (
     <StyledContact>
-      <h3 className="section-title">Contact</h3>
+      <h3 className="contact">Contact</h3>
+      <br />
+
       <Form name="contact" netlify>
         <Input type="email" name="email" placeholder="Email" required />
         <TextArea

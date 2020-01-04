@@ -3,15 +3,11 @@ import styled from "styled-components"
 
 import { PhotoCard } from "."
 import { useLatestMyImages } from "../hooks"
-import { ContentGrid } from "../styles"
-import { ViewAll } from "../elements"
+import { ContentGrid, Link } from "../styles"
+import { SectionTitle } from "../elements"
 
 const StyledLatestPhotos = styled.div`
   margin-bottom: var(--space-xl);
-
-  .section-title {
-    font-weight: 900;
-  }
 `
 
 export default function LatestPhotos() {
@@ -19,15 +15,16 @@ export default function LatestPhotos() {
 
   return (
     <StyledLatestPhotos>
-      <h3 className="section-title"> Photos</h3>
-      <p>Some description here.</p>
-      <ViewAll to="/photos" />
-      <br />
+      <SectionTitle to="/photos" sectionTitle="Photos" />
       <ContentGrid>
         {edges.map(edge => (
           <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
         ))}
       </ContentGrid>
+      {/* TODO */}
+      <br />
+      <br />
+      <br />
       <br />
     </StyledLatestPhotos>
   )

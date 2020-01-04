@@ -5,6 +5,6 @@ import Layout from "./layout"
 import SEO from "./seo"
 import Avatar from "./avatar"
 import Contact from "./contact"
-import ViewAll from "./view-all"
+import SectionTitle from "./section-title"
 
-export { Bio, Footer, Header, Layout, SEO, Avatar, Contact, ViewAll }
+export { Bio, Footer, Header, Layout, SEO, Avatar, Contact, SectionTitle }

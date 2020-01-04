@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Layout } from "../components/elements"
+import { Layout, SectionTitle } from "../components/elements"
 import { useAllPosts } from "../components/hooks"
 import { PostCard } from "../components/post"
 import { ContentGrid, StyledPage } from "../components/styles"
@@ -11,9 +11,7 @@ export default function PostsPage({ location }) {
   return (
     <Layout location={location}>
       <StyledPage>
-        <div className="container">
-          <h1 className="page-title">Posts</h1>
-        </div>
+        <h1 className="page-title">Posts</h1>
         <br />
         {edges.map(edge => (
           <PostCard key={edge.node.id} post={edge.node} />

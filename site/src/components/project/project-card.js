@@ -7,8 +7,11 @@ const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
 
   .project-title {
-    /* text-decoration: underline; */
     color: var(--href-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -17,7 +20,9 @@ export default function ProjectCard({ project }) {
     <StyledProjectCard>
       <Link to={`/projects/${project.fields.slug}`} none inherit>
         <h4 className="project-title">{project.frontmatter.title}</h4>
-        <p>{project.frontmatter.description}</p>
+        <small className="project-description">
+          {project.frontmatter.description}
+        </small>
       </Link>
     </StyledProjectCard>
   )
