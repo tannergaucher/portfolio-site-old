@@ -30,6 +30,17 @@ const StyledIndexHeader = styled.header`
     margin-top: var(--space-lg);
     color: var(--href-color);
   }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .intro-text {
+      text-align: center;
+    }
+  }
 `
 
 const IndexHeader = ({ title }) => (
@@ -65,7 +76,6 @@ const StyledPlainHeader = styled.header`
     color: var(--href-color);
   }
 `
-
 const PlainHeader = ({ title }) => (
   <StyledPlainHeader>
     <Link to="/" none inherit>

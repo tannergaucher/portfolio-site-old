@@ -16,12 +16,14 @@ export default function LatestPhotos() {
   return (
     <StyledLatestPhotos>
       <SectionTitle to="/photos" sectionTitle="Photos" />
-      <br />
       <ContentGrid>
         {edges.map(edge => (
           <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
         ))}
       </ContentGrid>
+      {/* TODO */}
+      <br />
+      <br />
       <br />
       <br />
     </StyledLatestPhotos>
