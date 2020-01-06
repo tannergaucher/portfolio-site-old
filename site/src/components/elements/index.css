@@ -58,11 +58,10 @@
   --primary-btn-color: white;
   --input-border: black;
   /* Components */
-
   --radius: 4px;
   --radius-lg: 12px;
   --thickness: 3px;
-  --container: 800px;
+  --container: 900px;
   --elevation-1: 0 4px 12px rgba(0, 0, 0, 0.05);
   --elevation-2: 0px 4px 12px rgba(0, 0, 0, 0.2);
   --elevation-3: 0px 12px 20px rgba(0, 0, 0, 0.2);
