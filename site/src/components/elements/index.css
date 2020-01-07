@@ -52,7 +52,7 @@
   --text-color-lighter: #555555;
   --href-color: black;
   --bg-1: white;
-  --bg-2: white;
+  --bg-2: #f2f2f2;
   --primary-btn-bg: black;
   --outline-btn-bg: var(--bg-2);
   --primary-btn-color: white;
