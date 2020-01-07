@@ -65,32 +65,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Query all projects.
-  const allProjectsQuery = await graphql(`
-    query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  // Create page for each project.
-  allProjectsQuery.data.allMarkdownRemark.edges.forEach(edge => {
-    createPage({
-      path: `/projects${edge.node.fields.slug}`,
-      component: path.resolve(`./src/templates/project-template.js`),
-      context: {
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-
   // Query all images from sanity cms.
   const allMyImagesQuery = await graphql(`
     query {

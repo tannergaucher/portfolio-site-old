@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Link as LinkIcon } from "grommet-icons"
 
-import { Link, Button } from "../styles"
+import { Button } from "../styles"
 
 const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
@@ -27,13 +26,10 @@ const StyledProjectCard = styled.div`
 export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
-      <Link to={`/projects/${project.fields.slug}`} none inherit>
-        <h4 className="project-title">{project.frontmatter.title}</h4>
-        <small className="project-description">
-          {project.frontmatter.description}
-        </small>
-      </Link>
-
+      <h4 className="project-title">{project.frontmatter.title}</h4>
+      <small className="project-description">
+        {project.frontmatter.description}
+      </small>
       <div className="href-btns">
         <Button className="repo-btn">Repository</Button>
         <Button className="deployed-btn">Deployed</Button>
