@@ -52,7 +52,7 @@
   --text-color-lighter: #555555;
   --href-color: black;
   --bg-1: white;
-  --bg-2: white;
+  --bg-2: #f2f2f2;
   --primary-btn-bg: black;
   --outline-btn-bg: var(--bg-2);
   --primary-btn-color: white;
@@ -61,7 +61,7 @@
   --radius: 4px;
   --radius-lg: 12px;
   --thickness: 2px;
-  --container: 833px;
+  --container: 823px;
   --elevation-1: 0 4px 12px rgba(0, 0, 0, 0.05);
   --elevation-2: 0px 4px 12px rgba(0, 0, 0, 0.2);
   --elevation-3: 0px 12px 20px rgba(0, 0, 0, 0.2);
