@@ -175,6 +175,8 @@ pre {
   font-family: var(--mono);
 }
 
+/* vimeo embed */
+
 .component {
   padding: var(--component-padding);
   margin-bottom: var(--space-md);

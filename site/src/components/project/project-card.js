@@ -14,6 +14,10 @@ const StyledProjectCard = styled.div`
     }
   }
 
+  .project-iframe {
+    margin-top: var(--space-md);
+  }
+
   .href-btns {
     margin-top: var(--space-md);
   }
@@ -30,6 +34,31 @@ export default function ProjectCard({ project }) {
       <small className="project-description">
         {project.frontmatter.description}
       </small>
+      <div
+        className="project-iframe"
+        style={{
+          position: `relative`,
+          paddingTop: `56.25%`,
+        }}
+      >
+        <iframe
+          src="https://player.vimeo.com/video/378214104"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            // maxWidth: `var(--container)`,
+            width: `100%`,
+            height: `100%`,
+            padding: 0,
+            margin: 0,
+          }}
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+        ></iframe>
+      </div>
+
       <div className="href-btns">
         <Button className="repo-btn">Repository</Button>
         <Button className="deployed-btn">Deployed</Button>
