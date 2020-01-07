@@ -67,7 +67,7 @@ export default function ProjectCard({ project }) {
           </a>
         </Button>
         <Button className="deployed-btn">
-          <a href={`${project.frontmatter.projectUrl}`}>
+          <a href={`${project.frontmatter.deployedUrl}`}>
             <Link color="var(--text-color)" size="var(--text-md)" />
           </a>
         </Button>
