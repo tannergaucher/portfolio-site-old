@@ -1,10 +1,9 @@
 ---
 title: "Flip Card"
-description: "An app for making and sending jokes and cheesy pick up lines in a text chat. Flip the card and view the punchline on the back."
+description: "Send cheesy jokes to friends. Flip the card and read the punchline on the back."
 technologies: ["React", "GraphQL"]
-problemsSolved: ["Problem one.", "Something something problem two."]
 deployedUrl: "http://foo@foo.com"
-vimeoUrl: "https://player.vimeo.com/video/377947818"
+vimeoUrl: "https://player.vimeo.com/video/378214104"
 githubRepo: "http://www.github.com/tanner/foo"
 ---
 

@@ -44,7 +44,7 @@ export default function ProjectCard({ project }) {
         }}
       >
         <iframe
-          src="https://player.vimeo.com/video/378214104"
+          src={`${project.frontmatter.vimeoUrl}`}
           style={{
             position: "absolute",
             top: 0,
