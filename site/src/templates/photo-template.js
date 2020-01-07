@@ -10,16 +10,28 @@ import { StyledPage, Button } from "../components/styles"
 
 const StyledPhotoPage = styled(StyledPage)`
   max-width: var(--container);
+  margin: 0 auto;
 
   .image {
     margin-bottom: var(--space-md);
   }
 
-  .post-btn {
-    width: 100%;
+  .photo-btns {
+    display: flex;
     margin-top: var(--space-md);
+  }
+
+  .photo-btn {
     font-size: var(--text-lg);
-    border: var(--thickness) solid var(--bg-2);
+    width: 100%;
+  }
+
+  .previous {
+    margin-right: var(--space-sm);
+  }
+
+  .grid {
+    margin-top: var(--space-sm);
   }
 `
 
@@ -37,23 +49,29 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
           {". "}
           {data.sanityMyImage.caption}
         </small>
-        <br />
-        <Button
-          className="post-btn"
-          onClick={() => navigate(`/photo/${pageContext.next.slug.current}`)}
-        >
-          <FormNext size="var(--text-lg)" color="var(--text-color)" />
-        </Button>
-        <br />
-        <Button
-          className="post-btn"
-          onClick={() =>
-            navigate(`/photo/${pageContext.previous.slug.current}`)
-          }
-        >
-          <FormPrevious size="var(--text-lg)" color="var(--text-color)" />
-        </Button>
-        <Button className="post-btn" onClick={() => navigate(`/photos`)}>
+        <div className="photo-btns">
+          {pageContext.previous && (
+            <Button
+              className="photo-btn previous"
+              onClick={() =>
+                navigate(`/photo/${pageContext.previous.slug.current}`)
+              }
+            >
+              <FormPrevious size="var(--text-lg)" color="var(--text-color)" />
+            </Button>
+          )}
+          {pageContext.next && (
+            <Button
+              className="photo-btn"
+              onClick={() =>
+                navigate(`/photo/${pageContext.next.slug.current}`)
+              }
+            >
+              <FormNext size="var(--text-lg)" color="var(--text-color)" />
+            </Button>
+          )}
+        </div>
+        <Button className="photo-btn grid" onClick={() => navigate(`/photos`)}>
           <Grid size="var(--text-md)" color="var(--text-color)" />
         </Button>
       </StyledPhotoPage>
