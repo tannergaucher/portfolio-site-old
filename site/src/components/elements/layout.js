@@ -6,7 +6,7 @@ import "./index.css"
 
 const Main = styled.main`
   margin: 0 auto;
-  padding: var(--space-sm);
+  padding: 0 var(--space-sm);
   min-height: 100vh;
   max-width: var(--container);
 `

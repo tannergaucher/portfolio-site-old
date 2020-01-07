@@ -14,7 +14,12 @@ export default function PhotosPage({ location }) {
         <ContentGrid>
           {edges.map(edge => (
             <Link to={`/photo/${edge.node.slug.current}`}>
-              <PhotoCard key={edge.node.id} sanityMyImage={edge.node} />
+              <PhotoCard
+                key={edge.node.id}
+                sanityMyImage={edge.node}
+                next={edge.next}
+                previous={edge.previous}
+              />
             </Link>
           ))}
         </ContentGrid>

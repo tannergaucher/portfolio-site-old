@@ -19,7 +19,7 @@ export default function PhotoCard({ sanityMyImage }) {
       <div
         className="image-wrapper"
         style={{
-          // Explain why.
+          // Explain
           maxWidth: aspectRatio < 1 ? "600px" : "",
         }}
       >

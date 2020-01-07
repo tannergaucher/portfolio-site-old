@@ -32,8 +32,8 @@ export default function PostTemplatePage({ data, pageContext, location }) {
     <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        <small className="post-date">{post.frontmatter.date}</small>
         <h1 className="post-title">{post.frontmatter.title}</h1>
+        <p className="post-date">{post.frontmatter.date}</p>
         {/* <small className="post-description">
           {post.frontmatter.description}
         </small> */}

@@ -94,9 +94,21 @@ exports.createPages = async ({ graphql, actions }) => {
   // Query all images from sanity cms.
   const allMyImagesQuery = await graphql(`
     query {
-      allSanityMyImage {
+      allSanityMyImage(
+        sort: { fields: myImage___asset____createdAt, order: DESC }
+      ) {
         edges {
           node {
+            slug {
+              current
+            }
+          }
+          next {
+            slug {
+              current
+            }
+          }
+          previous {
             slug {
               current
             }
@@ -113,6 +125,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/photo-template.js`),
       context: {
         slug: edge.node.slug.current,
+        next: edge.next,
+        previous: edge.previous,
       },
     })
   })
