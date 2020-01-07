@@ -1,5 +1,7 @@
 import React from "react"
+import { navigate } from "gatsby"
 import styled from "styled-components"
+import { Link, Github } from "grommet-icons"
 
 import { Button } from "../styles"
 
@@ -16,6 +18,7 @@ const StyledProjectCard = styled.div`
 
   .project-iframe {
     margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
   }
 
   .href-btns {
@@ -28,12 +31,11 @@ const StyledProjectCard = styled.div`
 `
 
 export default function ProjectCard({ project }) {
+  console.log(project)
+
   return (
     <StyledProjectCard>
       <h4 className="project-title">{project.frontmatter.title}</h4>
-      <small className="project-description">
-        {project.frontmatter.description}
-      </small>
       <div
         className="project-iframe"
         style={{
@@ -47,21 +49,28 @@ export default function ProjectCard({ project }) {
             position: "absolute",
             top: 0,
             left: 0,
-            // maxWidth: `var(--container)`,
             width: `100%`,
             height: `100%`,
-            padding: 0,
-            margin: 0,
           }}
           frameborder="0"
           allow="autoplay; fullscreen"
           allowfullscreen
         ></iframe>
       </div>
-
+      <small className="project-description">
+        {project.frontmatter.description}
+      </small>
       <div className="href-btns">
-        <Button className="repo-btn">Repository</Button>
-        <Button className="deployed-btn">Deployed</Button>
+        <Button className="repo-btn">
+          <a href={`${project.frontmatter.githubRepo}`}>
+            <Github color="var(--text-color)" size="var(--text-md)" />
+          </a>
+        </Button>
+        <Button className="deployed-btn">
+          <a href={`${project.frontmatter.projectUrl}`}>
+            <Link color="var(--text-color)" size="var(--text-md)" />
+          </a>
+        </Button>
       </div>
     </StyledProjectCard>
   )
