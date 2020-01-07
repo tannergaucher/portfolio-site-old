@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { Link as LinkIcon } from "grommet-icons"
 
-import { Link } from "../styles"
+import { Link, Button } from "../styles"
 
 const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
@@ -12,6 +13,14 @@ const StyledProjectCard = styled.div`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .href-btns {
+    margin-top: var(--space-md);
+  }
+
+  .repo-btn {
+    margin-right: var(--space-md);
   }
 `
 
@@ -24,6 +33,11 @@ export default function ProjectCard({ project }) {
           {project.frontmatter.description}
         </small>
       </Link>
+
+      <div className="href-btns">
+        <Button className="repo-btn">Repository</Button>
+        <Button className="deployed-btn">Deployed</Button>
+      </div>
     </StyledProjectCard>
   )
 }
