@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Github, Twitter } from "grommet-icons"
 
-import { Link, IconLinkHref } from "../styles"
+import { Link, Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
 import { Avatar } from "../elements"
 
@@ -31,6 +31,10 @@ const StyledIndexHeader = styled.header`
     color: var(--href-color);
   }
 
+  .github-btn {
+    margin-right: var(--space-sm);
+  }
+
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -50,14 +54,14 @@ const IndexHeader = ({ title }) => (
       Full stack software developer. Currently seeking a position in New York
       City / remote.
     </p>
-    <br />
+
     <div className="social-hrefs">
-      <IconLinkHref href="#">
+      <Button className="github-btn">
         <Github size="var(--text-md)" color="var(--href-color)" />
-      </IconLinkHref>
-      <IconLinkHref href="#">
+      </Button>
+      <Button href="#">
         <Twitter size="var(--text-md)" color="var(--href-color)" />
-      </IconLinkHref>
+      </Button>
     </div>
   </StyledIndexHeader>
 )

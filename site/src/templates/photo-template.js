@@ -11,6 +11,7 @@ import { StyledPage, Button } from "../components/styles"
 const StyledPhotoPage = styled(StyledPage)`
   max-width: var(--container);
   margin: var(--space-md) auto;
+  margin-bottom: var(--space-xl);
 
   .image {
     margin-bottom: var(--space-md);

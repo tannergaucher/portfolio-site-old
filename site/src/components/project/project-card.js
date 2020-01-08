@@ -63,12 +63,12 @@ export default function ProjectCard({ project }) {
       <div className="href-btns">
         <Button className="repo-btn">
           <a href={`${project.frontmatter.githubRepo}`}>
-            <Github color="var(--text-color)" size="var(--text-md)" />
+            <Github color="var(--href-color)" size="var(--text-md)" />
           </a>
         </Button>
         <Button className="deployed-btn">
           <a href={`${project.frontmatter.deployedUrl}`}>
-            <Link color="var(--text-color)" size="var(--text-md)" />
+            <Link color="var(--href-color)" size="var(--text-md)" />
           </a>
         </Button>
       </div>
