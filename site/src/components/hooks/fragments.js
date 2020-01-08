@@ -25,7 +25,6 @@ export const PROJECT_FRAGMENT = graphql`
       title
       description
       technologies
-      problemsSolved
       deployedUrl
       vimeoUrl
       githubRepo

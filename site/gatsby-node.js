@@ -104,4 +104,22 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // query the markdown frontmatter tags of each post
+  // make a set of the tags
+  // create a template page for each tag
+
+  const allTagsQuery = await graphql(`
+    query {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
+        edges {
+          node {
+            frontmatter {
+              tags
+            }
+          }
+        }
+      }
+    }
+  `)
 }

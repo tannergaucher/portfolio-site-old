@@ -1,7 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import { navigate } from "gatsby"
+import { camelCase } from "lodash"
 
-import { Link } from "../styles"
+import { Link, Button } from "../styles"
 
 const StyledPostCard = styled.div`
   transition: var(--transition);
@@ -11,10 +13,12 @@ const StyledPostCard = styled.div`
     color: var(--href-color);
   }
 
+  .post-tags {
+    margin-top: var(--space-md);
+  }
+
   .post-tag {
     margin-right: var(--space-md);
-    text-transform: uppercase;
-    font-family: var(--mono);
   }
 
   &:hover {
@@ -33,12 +37,21 @@ export default function PostCard({ post }) {
         <small className="post-description">
           {post.frontmatter.description}
         </small>
-        {/* {post.frontmatter.tags.map(tag => (
-          <small className="post-tag" key={tag}>
-            {tag}
-          </small>
-        ))} */}
+        <br />
       </Link>
+      <div className="post-tags">
+        {post.frontmatter.tags.map(tag => (
+          <Button
+            className="post-tag"
+            key={tag}
+            onClick={() => {
+              navigate(`/posts/${camelCase(tag)}`)
+            }}
+          >
+            {tag}
+          </Button>
+        ))}
+      </div>
     </StyledPostCard>
   )
 }
