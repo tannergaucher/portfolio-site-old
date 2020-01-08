@@ -11,7 +11,7 @@
   --heading-letter-spacing: 0;
   --paragraph-letter-spacing: 0;
   /* Vertical Rhythm */
-  --responsive-unit: 1.4vw; /* TWEAK ME  */
+  --responsive-unit: 1vw; /* TWEAK ME  */
   /* Base Values */
   --text-base-size: calc(1rem + var(--responsive-unit));
   --text-scale-ratio: 1.3; /* TWEAK ME */
@@ -143,7 +143,7 @@ small {
 
 p {
   margin-top: 0;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
   line-height: var(--paragraph-line-height);
   letter-spacing: var(--paragraph-letter-spacing);
   font-family: var(--serif);
@@ -152,6 +152,15 @@ p {
 li {
   margin-bottom: var(--space-sm);
   line-height: var(--paragraph-line-height);
+}
+
+li:last-child {
+  margin-bottom: var(--space-lg);
+}
+
+/* fixes large margin above sub-list items */
+li > p {
+  margin-bottom: var(--space-sm);
 }
 
 br {
@@ -174,6 +183,8 @@ a {
 pre {
   font-family: var(--mono);
 }
+
+/* vimeo embed */
 
 .component {
   padding: var(--component-padding);

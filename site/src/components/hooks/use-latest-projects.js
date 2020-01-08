@@ -6,9 +6,8 @@ export const useLatestProjects = () => {
       query USE_LATEST_PROJECTS {
         allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/projects/" } }
-          # CHANGE SORT BC PROJECTS ARENT GOING TO HAVE A FRONTMATTER.DATE
           sort: { fields: frontmatter___date, order: DESC }
-          limit: 3
+          limit: 2
         ) {
           edges {
             node {

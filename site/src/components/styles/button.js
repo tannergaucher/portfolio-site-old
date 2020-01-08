@@ -8,7 +8,7 @@ const Button = styled.button`
     props.primary ? "var(--primary-btn-color)" : "var(--outline-btn-color)"};
   padding: var(--space-sm) var(--space-md);
   font-family: var(--serif);
-  font-weight: bolder;
+  /* font-weight: bolder; */
   border: ${props =>
     props.plain
       ? "var(--thickness) solid var(--bg-1)"

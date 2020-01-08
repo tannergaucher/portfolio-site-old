@@ -1,5 +1,5 @@
 ---
-title: "Switch Between Light / Dark Mode with prefers-color-scheme Media Query and CSS Variables"
+title: "Automatically Toggle Between Light and Dark UI With prefers-color-scheme Media Query"
 date: "2019-11-13"
 description: "A simple demo that..."
 tags: ["CSS", "Web"]

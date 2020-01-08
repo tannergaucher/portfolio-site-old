@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { kebabCase } = require(`lodash`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -65,32 +66,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Query all projects.
-  const allProjectsQuery = await graphql(`
-    query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  // Create page for each project.
-  allProjectsQuery.data.allMarkdownRemark.edges.forEach(edge => {
-    createPage({
-      path: `/projects${edge.node.fields.slug}`,
-      component: path.resolve(`./src/templates/project-template.js`),
-      context: {
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-
   // Query all images from sanity cms.
   const allMyImagesQuery = await graphql(`
     query {
@@ -127,6 +102,32 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.slug.current,
         next: edge.next,
         previous: edge.previous,
+      },
+    })
+  })
+
+  // query the markdown frontmatter tags of each post
+  // make a set of the tags
+  // create a template page for each tag
+
+  const allTagsQuery = await graphql(`
+    query {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
+  `)
+
+  const uniqueTags = allTagsQuery.data.allMarkdownRemark.group
+
+  uniqueTags.forEach(uniqueTag => {
+    createPage({
+      path: `/posts/${kebabCase(uniqueTag.fieldValue)}`,
+      component: path.resolve(`./src/templates/tag-template.js`),
+      context: {
+        tag: uniqueTag.fieldValue,
       },
     })
   })

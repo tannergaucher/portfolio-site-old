@@ -25,17 +25,9 @@ export const PROJECT_FRAGMENT = graphql`
       title
       description
       technologies
-      problemsSolved
-      projectUrl
-      screenRecordingUrl
+      deployedUrl
+      vimeoUrl
       githubRepo
-      cardImage {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
     fields {
       slug
