@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Github, Twitter } from "grommet-icons"
 
 import { Button } from "../styles"
+import { useSiteMetadata } from "../hooks"
 
 const StyledFooter = styled.div`
   padding: var(--space-sm);
@@ -13,14 +14,20 @@ const StyledFooter = styled.div`
 `
 
 export default function Footer() {
+  const { social } = useSiteMetadata()
+
   return (
     <StyledFooter>
-      <Button className="github-btn">
-        <Github size="var(--text-md)" color="var(--href-color)" />
-      </Button>
-      <Button>
-        <Twitter size="var(--text-md)" color="var(--href-color)" />
-      </Button>
+      <a href={social.github}>
+        <Button className="github-btn">
+          <Github size="var(--text-md)" color="var(--href-color)" />
+        </Button>
+      </a>
+      <a href={social.twitter}>
+        <Button>
+          <Twitter size="var(--text-md)" color="var(--href-color)" />
+        </Button>
+      </a>
     </StyledFooter>
   )
 }

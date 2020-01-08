@@ -6,7 +6,5 @@ import { useAvatarImage } from "../hooks"
 export default function avatar() {
   const { fixed } = useAvatarImage()
 
-  return (
-    <Image fixed={fixed} style={{ borderRadius: ``, gridArea: `avatar` }} />
-  )
+  return <Image fixed={fixed} />
 }

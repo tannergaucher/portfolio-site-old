@@ -13,9 +13,8 @@ export default function PhotosPage({ location }) {
       <StyledPage>
         <ContentGrid>
           {edges.map(edge => (
-            <Link to={`/photo/${edge.node.slug.current}`}>
+            <Link to={`/photo/${edge.node.slug.current}`} key={edge.node.id}>
               <PhotoCard
-                key={edge.node.id}
                 sanityMyImage={edge.node}
                 next={edge.next}
                 previous={edge.previous}

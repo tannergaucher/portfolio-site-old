@@ -23,9 +23,7 @@ export default function PhotoCard({ sanityMyImage }) {
           maxWidth: aspectRatio < 1 ? "600px" : "",
         }}
       >
-        <Link to={`/photo/${sanityMyImage.slug.current}`}>
-          <Img className="img" fluid={sanityMyImage.myImage.asset.fluid} />
-        </Link>
+        <Img className="img" fluid={sanityMyImage.myImage.asset.fluid} />
       </div>
     </StyledPhotoCard>
   )

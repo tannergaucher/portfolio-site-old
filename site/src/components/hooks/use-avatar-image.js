@@ -6,7 +6,7 @@ export const useAvatarImage = () => {
       query AvatarImage {
         file(relativePath: { regex: "/avatar/" }) {
           childImageSharp {
-            fixed(height: 180, width: 10) {
+            fixed(height: 180) {
               ...GatsbyImageSharpFixed
             }
           }

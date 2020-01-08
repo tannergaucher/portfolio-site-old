@@ -1,5 +1,5 @@
 ---
-title: "Automatically Toggle Between Light and Dark UI With prefers-color-scheme Media Query"
+title: "Automatically Toggle Between Light and Dark UI with prefers-color-scheme Media Query"
 date: "2019-11-13"
 description: "A simple demo that..."
 tags: ["CSS", "Web"]
@@ -10,8 +10,6 @@ tags: ["CSS", "Web"]
 As someone who spends a lot of time in front of screens, but doesn't enjoy reading text from screen, I put a decent amount of effort into tweaking settings so that the content that I am consuming presents itsef in the most readable way. Usually that means bumping the font size way up, getting rid of ads and annoying distractions, even if that means inspecting an element and throwing in a `display: none` (sorry codesandbox add on the bottom left), and switching to dark mode if that is an option.
 
 Though I tend to live inside Google Chrome, ever since I discovered the reader reader view in Safari, when I come across some content that I would like to read I copy the link and open it up in safari reader mode, where I can adjust the text size, background color, and even font family and font to my liking.
-
-> I look forward to the future of the web moving more towards a default experience similar to safari reader mode, where I declare my preferences for how I want content to be presented, and content automatically presents itself in that way.
 
 Cutting and pasting a link whenever I want to read something doesn't take a ton of effort, but constantly swapping between browsers is not exactly an elegant solution. I've started using the `user-prefers-color-scheme` CSS media
 query because it's a step closer in this direction where content conforms to one's own preferences.

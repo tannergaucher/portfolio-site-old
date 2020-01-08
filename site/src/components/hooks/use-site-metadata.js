@@ -5,15 +5,7 @@ export const useSiteMetadata = () => {
     graphql`
       query SiteMetadata {
         site {
-          siteMetadata {
-            # TODO: MAKE SITE METADATA FRAGMENT
-            title
-            description
-            author
-            social {
-              github
-            }
-          }
+          ...SiteMetadataFragment
         }
       }
     `
