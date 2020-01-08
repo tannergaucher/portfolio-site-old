@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { kebabCase } = require(`lodash`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -112,14 +113,22 @@ exports.createPages = async ({ graphql, actions }) => {
   const allTagsQuery = await graphql(`
     query {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
-        edges {
-          node {
-            frontmatter {
-              tags
-            }
-          }
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
   `)
+
+  const uniqueTags = allTagsQuery.data.allMarkdownRemark.group
+
+  uniqueTags.forEach(uniqueTag => {
+    createPage({
+      path: `/posts/${kebabCase(uniqueTag.fieldValue)}`,
+      component: path.resolve(`./src/templates/tag-template.js`),
+      context: {
+        tag: uniqueTag.fieldValue,
+      },
+    })
+  })
 }
