@@ -64,3 +64,17 @@ export const MY_IMAGE_FRAGMENT = graphql`
     }
   }
 `
+
+export const SiteInformation = graphql`
+  fragment SiteMetadataFragment on Site {
+    siteMetadata {
+      title
+      description
+      author
+      social {
+        github
+        twitter
+      }
+    }
+  }
+`

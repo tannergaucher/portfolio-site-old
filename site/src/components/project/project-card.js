@@ -1,7 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby"
 import styled from "styled-components"
-import { Link, Github } from "grommet-icons"
+import { Domain, Github } from "grommet-icons"
 
 import { Button } from "../styles"
 
@@ -10,15 +10,17 @@ const StyledProjectCard = styled.div`
 
   .project-title {
     color: var(--href-color);
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   .project-iframe {
     margin-top: var(--space-md);
     margin-bottom: var(--space-md);
+  }
+
+  iframe {
+    padding: 0;
+    margin: 0;
+    flex: 1;
   }
 
   .href-btns {
@@ -31,8 +33,6 @@ const StyledProjectCard = styled.div`
 `
 
 export default function ProjectCard({ project }) {
-  console.log(project)
-
   return (
     <StyledProjectCard>
       <h4 className="project-title">{project.frontmatter.title}</h4>
@@ -68,7 +68,7 @@ export default function ProjectCard({ project }) {
         </Button>
         <Button className="deployed-btn">
           <a href={`${project.frontmatter.deployedUrl}`}>
-            <Link color="var(--href-color)" size="var(--text-md)" />
+            <Domain color="var(--href-color)" size="var(--text-md)" />
           </a>
         </Button>
       </div>

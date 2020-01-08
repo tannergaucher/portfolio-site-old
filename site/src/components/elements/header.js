@@ -4,17 +4,16 @@ import { Github, Twitter } from "grommet-icons"
 
 import { Link, Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
-import { Avatar } from "../elements"
 
 export default function Header({ location }) {
-  const { title } = useSiteMetadata()
+  const { title, social } = useSiteMetadata()
 
   return (
     <>
       {location.pathname === "/" ? (
-        <IndexHeader title={title} />
+        <IndexHeader title={title} social={social} />
       ) : (
-        <PlainHeader title={title} />
+        <PlainHeader title={title} social={social} />
       )}
     </>
   )
@@ -47,21 +46,24 @@ const StyledIndexHeader = styled.header`
   }
 `
 
-const IndexHeader = ({ title }) => (
+const IndexHeader = ({ title, social }) => (
   <StyledIndexHeader>
     <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
       Full stack software developer. Currently seeking a position in New York
       City / remote.
     </p>
-
     <div className="social-hrefs">
-      <Button className="github-btn">
-        <Github size="var(--text-md)" color="var(--href-color)" />
-      </Button>
-      <Button href="#">
-        <Twitter size="var(--text-md)" color="var(--href-color)" />
-      </Button>
+      <a href={social.github}>
+        <Button className="github-btn">
+          <Github size="var(--text-md)" color="var(--href-color)" />
+        </Button>
+      </a>
+      <a href={social.twitter}>
+        <Button>
+          <Twitter size="var(--text-md)" color="var(--href-color)" />
+        </Button>
+      </a>
     </div>
   </StyledIndexHeader>
 )
