@@ -84,7 +84,7 @@ const StyledPlainHeader = styled.header`
 `
 const PlainHeader = ({ title }) => (
   <StyledPlainHeader>
-    <Link to="/" none inherit>
+    <Link to="/" none="true" inherit="true">
       <small className="site-title">{title}</small>
     </Link>
   </StyledPlainHeader>

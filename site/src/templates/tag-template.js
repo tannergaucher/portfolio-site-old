@@ -9,7 +9,7 @@ export default function Tags({ location, pageContext, data }) {
   return (
     <Layout location={location}>
       <StyledPage>
-        <h1 style={{ textTransform: `uppercase` }}>{pageContext.tag}</h1>
+        <h1>{pageContext.tag}</h1>
         {data.allMarkdownRemark.edges.map(edge => (
           <PostCard post={edge.node} key={edge.node.id} />
         ))}

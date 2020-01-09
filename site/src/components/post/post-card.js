@@ -32,7 +32,7 @@ const StyledPostCard = styled.div`
 export default function PostCard({ post }) {
   return (
     <StyledPostCard>
-      <Link to={post.fields.slug} none inherit>
+      <Link to={post.fields.slug} none="true" inherit="true">
         <h4 className="post-title">{post.frontmatter.title}</h4>
         <small className="post-description">
           {post.frontmatter.description}

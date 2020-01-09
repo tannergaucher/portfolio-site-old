@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import { useLatestPost } from "../hooks"
 import { PostCard } from "../post"
-import { Link } from "../styles"
 import { SectionTitle } from "../elements"
 
 const StyledPosts = styled.div`
@@ -20,7 +19,6 @@ export default function Posts() {
       {edges.map(edge => (
         <PostCard post={edge.node} key={edge.node.id} />
       ))}
-      <br />
     </StyledPosts>
   )
 }
