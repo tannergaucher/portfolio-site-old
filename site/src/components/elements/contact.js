@@ -17,7 +17,6 @@ export default function Contact() {
     <StyledContact>
       <h3 className="contact">Contact</h3>
       <br />
-
       <Form name="contact" netlify>
         <Input type="email" name="email" placeholder="Email" required />
         <TextArea
@@ -32,6 +31,7 @@ export default function Contact() {
           Send
         </Button>
       </Form>
+      <br />
     </StyledContact>
   )
 }

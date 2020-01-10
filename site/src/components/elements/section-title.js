@@ -24,7 +24,7 @@ const StyledSectionTitle = styled.div`
 export default function SectionTitle({ to, sectionTitle }) {
   return (
     <StyledSectionTitle>
-      <Link none to={to}>
+      <Link none="true" to={to}>
         <div className="animated-arrow">
           <h3 className="section-title">{sectionTitle}</h3>
           <FormNextLink

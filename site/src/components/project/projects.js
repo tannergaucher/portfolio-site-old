@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import { ProjectCard } from "."
 import { useLatestProjects } from "../hooks"
-import { Link } from "../styles"
 import { SectionTitle } from "../elements"
 
 const StyledProjects = styled.div`

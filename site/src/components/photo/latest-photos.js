@@ -18,8 +18,8 @@ export default function LatestPhotos() {
       <SectionTitle to="/photos" sectionTitle="Photos" />
       <ContentGrid>
         {edges.map(edge => (
-          <Link to={`/photo/${edge.node.slug.current}`}>
-            <PhotoCard sanityMyImage={edge.node} key={edge.node.id} />
+          <Link to={`/photo/${edge.node.slug.current}`} key={edge.node.id}>
+            <PhotoCard sanityMyImage={edge.node} />
           </Link>
         ))}
       </ContentGrid>

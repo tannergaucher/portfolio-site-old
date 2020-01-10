@@ -45,12 +45,12 @@ export default function PostTemplatePage({ data, pageContext, location }) {
         <br />
         <div className="next-prev-links">
           {next && (
-            <Link to={`/${next.fields.slug}`} none>
+            <Link to={`${next.fields.slug}`} none="true">
               <h3 className="next-prev-title next">{next.frontmatter.title}</h3>
             </Link>
           )}
           {previous && (
-            <Link to={`/${previous.fields.slug}`} none>
+            <Link to={`${previous.fields.slug}`} none="true">
               <h3 className="next-prev-title prev">
                 {previous.frontmatter.title}
               </h3>

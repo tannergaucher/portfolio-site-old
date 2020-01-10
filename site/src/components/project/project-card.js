@@ -1,5 +1,4 @@
 import React from "react"
-import { navigate } from "gatsby"
 import styled from "styled-components"
 import { Domain, Github } from "grommet-icons"
 
@@ -13,14 +12,7 @@ const StyledProjectCard = styled.div`
   }
 
   .project-iframe {
-    margin-top: var(--space-md);
-    margin-bottom: var(--space-md);
-  }
-
-  iframe {
-    padding: 0;
-    margin: 0;
-    flex: 1;
+    margin: var(--space-md) 0;
   }
 
   .href-btns {
@@ -44,6 +36,7 @@ export default function ProjectCard({ project }) {
         }}
       >
         <iframe
+          title="project-screen-recording"
           src={`${project.frontmatter.vimeoUrl}`}
           style={{
             position: "absolute",
@@ -52,9 +45,9 @@ export default function ProjectCard({ project }) {
             width: `100%`,
             height: `100%`,
           }}
-          frameborder="0"
+          frameBorder="0"
           allow="autoplay; fullscreen"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <small className="project-description">

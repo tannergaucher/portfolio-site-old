@@ -1,5 +1,5 @@
 import React from "react"
-import { navigate } from "gatsby"
+import { navigate, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import moment from "moment"
