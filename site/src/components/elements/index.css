@@ -184,6 +184,18 @@ pre {
   font-family: var(--mono);
 }
 
+blockquote {
+  background: var(--bg-2);
+  padding: var(--space-md);
+  margin: 0;
+  margin-bottom: var(--space-lg);
+  border-left: 0.5rem solid var(--href-color);
+}
+
+blockquote > p {
+  margin: 0;
+}
+
 /* vimeo embed */
 
 .component {

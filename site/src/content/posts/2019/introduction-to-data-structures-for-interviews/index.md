@@ -5,14 +5,14 @@ description: "My notes on the frontend masters course."
 tags: ["Notes", "CS"]
 ---
 
-- Common data structures:
+#### Common data structures:
 
-  - Arrays and strings
-  - Hash Tables
-  - Linked Lists
-  - Stacks / queues
-  - Trees / heaps
-  - Graphs
+- Arrays and strings
+- Hash Tables
+- Linked Lists
+- Stacks / queues
+- Trees / heaps
+- Graphs
 
 #### On Application versus implementation
 
