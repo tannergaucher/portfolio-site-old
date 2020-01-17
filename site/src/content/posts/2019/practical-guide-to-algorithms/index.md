@@ -5,68 +5,189 @@ description: "My notes from the Frontend Masters course."
 tags: ["Notes", "CS"]
 ---
 
-- **Algorithm:** Steps that you take to solve a problem
+## Algorithm
 
+- Steps that you take to solve a problem
 - Why care? It's an engineers job to solve problems
+- Identify pattern -> apply correct algorithm -> solve problem in optimal way
 
-- Identify pattern => Apply correct algorithm => Solve problem in optimal way
-
-## Time Complexity
+## Time complexity
 
 - How we estimate the speed of an algorithm
+- How many operations are expected to solve the problem, in respect to input size
+- Pessimistic, assume worst case conditions
 
 > "As the input grows, it will grow in this proportion."
 
-- How many operations are expected to solve problem, in respect to input size
+#### Common run times from fast to very slow
 
-- Commmon run times from fast to very slow:
+- Constant 0(1)
+- Logarithmic 0(logN)
+- Linear 0(n)
+- Quadratic 0(n2)
+- Exponential 0(k^n)
+- Logarithmic
 
-  - Contast 0(1)
-  - Logarithmic 0(logn)
-  - Linear 0(n)
-  - Quadratic 0(n2)
-  - Exponential 0(k^n)
+> #### Logarithmic versus exponential
+>
+> In logarithmic time, as input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. This means logarithmic is often better than linear with large data sets
 
-- **Logarithmic Time:** As input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. Often better than linear time w/ large datasets
+## Space complexity
 
-## Space Complexity
+- How much memory is used
+- Works in similar way to time, but on the question of how much more space are we taking up
 
-- The space that is taken up in memory. Works in similar way to time, but on question of how much more space are we taking up
+## Optimization with caching
 
-- **Memoization:** When you cache the result of a funciton. A type of caching
+- Keeping track of something that you've already seen
+- Save it to an object or array.
+- Caching trades time complexity for space complexity
+- Important when the callback function is expensive, and usually the right tradeoff in a browser environment
 
-- **Caching:** Saving something into an object or array.
+#### Implementing a cache to keep track of already seen values in linear time
 
-- Caching trades time complexity for space complexity. Important when the callback function is expensive, and usually the right tradeoff in a browser environment.
+```js
+const uniqSort = arr => {
+  const cache = {}
+  const unique = []
 
-> Example Problem for caching: Factorials
+  arr.map(num => {
+    if (!cache[num]) {
+      cache[num] = true
+      unique.push(num)
+    }
+  })
+
+  return unique.sort((a, b) => a - b)
+}
+
+uniqSort([4, 2, 2, 2, 3, 2, 2, 2, 2]) // => [2,3,4]
+```
+
+## Memoization
+
+- When you cache the value that a function returns
+
+> #### Memoization and caching
+>
+> Memoization is a type of caching. When you are caching the result of a function, it's called memoization.
+
+- Factorials are a common type of problem to solve using memoization, because you do a lot of the same calculations over and over
+- Rather than recalculating the result, memoize it
+
+#### Using memoization to save the results of a calculation
+
+```js
+const times10 = n => {
+  return n * 10
+}
+
+const cache = {}
+
+const memoTimes10 = n => {
+  if (n in cache) {
+    // fetch from cache
+    return cache[n]
+  } else {
+    // perform calculation
+    const result = times10(n)
+    cache[n] = result
+    return result
+  }
+}
+```
+
+#### Using memoization and closure to solve the same problem
+
+- Cleans up global scope and scopes cache inside of function
+- Uses closure to return a function that can be called later
+- Inside of closure, we retain access to variables that were called before. Can remember prior values
+- Important concept: returning a function from a function that can be called later
+
+```js
+const memoizedClosureTimes10 = () => {
+  // Our cache is not in global scope
+  // And is NOT RESET every time we call the function
+  let cache = {}
+
+  return n => {
+    if (n in cache) {
+      // return from cache
+      return cache[n]
+    } else {
+      // calculate
+      let result = n * 10
+      // save calculation to cache
+      cache[n] = result
+      return result
+    }
+  }
+}
+
+const memoClosureTimes10 = memoizedClosureTimes10()
+
+memoClosureTimes10(9) // calculated
+memoClosureTimes10(10) // calculated
+memoClosureTimes10(9) // cached result
+```
+
+#### Writing a generic memoize function
+
+- Use closure again to return a function that returns an arbitrary callback function
+
+```js
+// Possible callbacks
+const times10 = n => n * 10
+const times20 = n => n * 20
+
+const genericMemoize = cb => {
+  let cache = {}
+
+  return n => {
+    if (n in cache) {
+      // Fetch from cache
+      return cache[n]
+    } else {
+      // Calculate result
+      let result = cb(n)
+      cache[n] = result
+      return result
+    }
+  }
+}
+
+const memoizeTimes20 = genericMemoize(times20)
+
+memoizeTimes20(8) // calculated
+memoizeTimes20(9) // calculated
+memoizeTimes20(8) // cached
+```
 
 ## Recursion
 
 - When a function calls itself, until it doesn't
-
 - An elegant solution to keep code DRY
+- Recursion can always be implemented as a loop, but it's often simpler to use recursion
 
-**Recursion in 4 steps:**
+#### Recursion in 4 steps
 
-1. Identify base case.
-2. Identify recursive case.
-3. Return where appropriate.
-4. Write procedures for each case that bring you closer to the base case
+1. Identify base case (when it is you want your loop to stop)
+2. Identify recursive case (the work that you want to do)
+3. Return where appropriate
+4. Write procedures for each case that bring you closer to the base case(otherwise infinite loop)
 
-Recursion can always be implemented as a loop, but it's often more simple to use recursion.
+#### Recursion patterns
 
-- Patterns:
-  - Wrapper function
-  - Accumulator function
+- Wrapper function
+- Accumulator function
 
-### Divide and Conquer
+#### Divide and Conquer
 
-- A resursive technique where we:
+- A recursive technique where we:
   - Take large problem
   - Divide into sub-problems and do work
 
-### Binary Search
+#### Binary Search
 
 Example: Search for a value in a **_sorted_** array, by cutting the side of the search area in half.
 
@@ -75,7 +196,7 @@ Example: Search for a value in a **_sorted_** array, by cutting the side of the 
   - Is value the value that we're looking for `<` or `>` current location
   - Repeat
 
-### Linear Search
+#### Linear Search
 
 Simply loop through a list, and look for that number.
 
@@ -87,9 +208,9 @@ Simply loop through a list, and look for that number.
   - Insertion sort
   - Selection sort
 
-- Divide and conquer sort: Recursively devide list / smaller parts of list until entire list is sorted
+- Divide and conquer sort: Recursively divide list / smaller parts of list until entire list is sorted
 
-  - Mergesort
+  - Merge sort
   - Quicksort
 
 - For sorting algorithms, you must look at every value, can never be less than linear time
@@ -106,7 +227,7 @@ Simply loop through a list, and look for that number.
 
 - Optimization technique
 
-- Cache values when doing work inside the subproblems. If you have a solution that you can cache, that's dynamic programming
+- Cache values when doing work inside the sub-problems. If you have a solution that you can cache, that's dynamic programming
 
 - Different ways of caching:
   - Top down, recursive approach

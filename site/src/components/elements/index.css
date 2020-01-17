@@ -196,6 +196,15 @@ blockquote > p {
   margin: 0;
 }
 
+blockquote > h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
 /* vimeo embed */
 
 .component {
@@ -210,7 +219,7 @@ blockquote > p {
 }
 
 .gatsby-highlight pre[class*="language-"] {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .gatsby-highlight pre[class*="language-"] code {
