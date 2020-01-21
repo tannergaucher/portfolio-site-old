@@ -188,8 +188,10 @@ memoizeTimes20(8) // cached
 
 ## Search algorithms
 
-- Linear search
-- Binary search
+#### Linear search
+
+- Search for a value in an array by checking each value in order
+- Linear time
 
 #### Implementing linear search
 
@@ -210,6 +212,11 @@ linearSearch([1, 2, 3, 4, 5, 6], 5) // returns 4
 ```
 
 - Simply loop through a list, and look for the searched value
+
+#### Binary search
+
+- Search for a value in a sorted array by cutting the side of the search area in half
+- Logarithmic time
 
 #### Implementing binary search
 
@@ -240,7 +247,7 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
 - Search for a value in a sorted array, by cutting the search area in half
 - Binary search is important because it takes something linear (searching a single value) and turns it into logarithmic time
 - It's logarithmic because the work that we have to do (dataset) is cut in half each time
-- Binary search **has to be sorted**
+- List being searched _must be sorted_ for binary search
 
 #### Binary search steps
 
@@ -248,7 +255,7 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
 2. Is value the value that we're looking for `<` or `>` current location?
 3. Repeat
 
-> #### Binary search and sorted data
+> #### Using binary search
 >
 > If you have an interview question involving a sorted array, binary search is usually the way to go. If it's not sorted, there are other searching algorithms.
 
@@ -271,46 +278,162 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
 #### Divide and conquer sorts
 
 - Recursively divide list / smaller parts of list until entire list is sorted
+- Recursive division == logarithmic time
 - Examples:
   - Merge sort
   - Quicksort
 
-#### Implement bubble sort
+#### Implementing non-optimized bubble sort
 
 ```js
-// TODO
+const arrayRandom = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
+
+function swap(array, i, j) {
+  let temp = array[i]
+  array[i] = array[j]
+  array[j] = temp
+}
+
+function bubbleSortBasic(array) {
+  // Counts are only for demonstration
+  let countOuter = 0
+  let countInner = 0
+  let countSwap = 0
+
+  for (let i = 0; i < array.length; i++) {
+    countOuter++
+    for (let j = 0; j < array.length; j++) {
+      countInner++
+      if (array[j - 1] > array[j]) {
+        countSwap++
+        swap(array, j - 1, j)
+      }
+    }
+  }
+}
+
+bubbleSortBasic(arrayRandom) // =>
+// countOuter = 10
+// countInner = 100
+// swaps = 21
 ```
 
 - Loop through array
 - Compare adjacent indices
 - Swap the greater value to the end
-- If you're dealing with a mostly sorted list, and you've optimized to track already sorted arrays, bubble sort becomes an OK choice
 
-#### Implement merge sort
+#### Implementing optimized bubble sort
 
 ```js
-// TODO
+const arrayRandom = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
+
+function swap(array, i, j) {
+  let temp = array[i]
+  array[i] = array[j]
+  array[j] = temp
+}
+
+function bubbleSort(array) {
+  let countOuter = 0
+  let countInner = 0
+  let countSwap = 0
+
+  let swapped
+
+  do {
+    countOuter++
+    swapped = false
+    for (let i = 0; i < array.length; i++) {
+      countInner++
+      if (array[i] && array[i + 1] && array[i] > array[i + 1]) {
+        countSwap++
+        swap(array, i, i + 1)
+        swapped = true
+      }
+    }
+  } while (swapped)
+}
+
+bubbleSort(arrayRandom) // =>
+// countOuter = 9
+// countInner = 90
+// countSwap = 21
 ```
 
-- Must start with sorted list
-- Sort two sorted lists
-- Divide until it's a list of one
-- Merge each sorted list
-- Means you don't have to compare every value in a quadratic way
-- The merge step (the conquer of divide and conquer) is linear
+- If there's an iteration where we don't have to make any swaps, that's a sign that array is already sorted
+- Can short circuit extra looping and return that array
+
+> #### On using bubble sort
+>
+> If you're dealing with a mostly sorted list, and you've optimized the algorithm to track arrays that are already sorted to begin with, bubble sort becomes an OK choice despite being quadratic time. When dealing with a reversed list, it is terrible.
+
+#### Implementing merge sort
+
+```js
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr
+  }
+
+  const middle = Math.floor(arr.length / 2) // get the middle of the array, rounded down
+  const left = arr.slice(0, middle)
+  const right = arr.slice(middle)
+  const sortedLeft = mergeSort(left)
+  const sortedRight = mergeSort(right)
+
+  return merge(sortedLeft, sortedRight)
+}
+
+// Compare the arrays item by item and return the concatenated result
+function merge(left, right) {
+  let result = []
+  let indexLeft = 0
+  let indexRight = 0
+
+  while (indexLeft < left.length && indexRight < right.length) {
+    if (left[indexLeft] < right[indexRight]) {
+      result.push(left[indexLeft])
+      indexLeft++
+    } else {
+      result.push(right[indexRight])
+      indexRight++
+    }
+  }
+
+  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+}
+
+const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3]
+mergeSort(list) // => [1, 2, 2, 3, 3, 5, 6, 7, 8]
+```
+
+- Start with unsorted list
+- Divide until it's sorted (a list of one)
+- Merge each sorted list (this means you don't have to compare every value in a quadratic way)
+- The merge step (the conquer part of divide and conquer) is linear
 - Merge step:
+
   - Compare first index of left array against first index of right array
   - Push lower value to an empty array
   - Shift the array with the lower value
   - Repeat until both arrays are empty
 
+> #### On using merge sort
+>
+> Merge sort is one of the best sorts. If you need to sort something in an interview, merge sort is probably what they are looking for. However a good strategy is to start with the simplest answer, reference the more complicated answer, but not necessarily jump into influencing merge sort. Acknowledge that you've heard of it, but don't necessarily jump to implement it. "Is it alright to start with bubble sort? It is quadratic time, while merge sort is logarithmic..."
+
 ## Greedy Algorithms
 
-- Take the short sighted solution. Given a decision, do the one that looks like the best decision at that time, without considering the big picture
-
+- Always take the locally optimal solution
+- Given a decision, do the one that looks like the best decision at that time, without considering the big picture
 - Always making the locally optimal choice does **_not_** always give the optimal solution.
-
 - When to use: Data set is so large that you can't think of all scenarios. It's computationally too much and it's better to have **_a_** solution than none at all
+
+#### Implementing a greed makeChange algorithm
+
+```js
+// TODO
+```
 
 ## Dynamic Programming
 
@@ -321,6 +444,8 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
 - Different ways of caching:
   - Top down, recursive approach
   - Bottom up, iterative technique
+
+<!-- top down versus bottom up? examples -->
 
 ## On How to Learn and Improve
 
