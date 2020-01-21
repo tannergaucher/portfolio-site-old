@@ -16,8 +16,7 @@ tags: ["Notes", "CS"]
 - How we estimate the speed of an algorithm
 - How many operations are expected to solve the problem, in respect to input size
 - Pessimistic, assume worst case conditions
-
-> "As the input grows, it will grow in this proportion."
+- "As the input grows, it will grow in this proportion"
 
 #### Common run times from fast to very slow
 
@@ -30,7 +29,7 @@ tags: ["Notes", "CS"]
 
 > #### Logarithmic versus exponential
 >
-> In logarithmic time, as input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. This means logarithmic is often better than linear with large data sets
+> In logarithmic time, as input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. This means logarithmic is often better than linear with large data sets.
 
 ## Space complexity
 
@@ -67,13 +66,12 @@ uniqSort([4, 2, 2, 2, 3, 2, 2, 2, 2]) // => [2,3,4]
 ## Memoization
 
 - When you cache the value that a function returns
+- Factorials are a common type of problem to solve using memoization, because you do a lot of the same calculations over and over
+- Rather than recalculating the result, memoize it
 
 > #### Memoization and caching
 >
-> Memoization is a type of caching. When you are caching the result of a function, it's called memoization.
-
-- Factorials are a common type of problem to solve using memoization, because you do a lot of the same calculations over and over
-- Rather than recalculating the result, memoize it
+> Memoization is just a type of caching. If you are caching the result of a function, then it's called memoization.
 
 #### Using memoization to save the results of a calculation
 
@@ -98,11 +96,6 @@ const memoTimes10 = n => {
 ```
 
 #### Using memoization and closure to solve the same problem
-
-- Cleans up global scope and scopes cache inside of function
-- Uses closure to return a function that can be called later
-- Inside of closure, we retain access to variables that were called before. Can remember prior values
-- Important concept: returning a function from a function that can be called later
 
 ```js
 const memoizedClosureTimes10 = () => {
@@ -131,9 +124,13 @@ memoClosureTimes10(10) // calculated
 memoClosureTimes10(9) // cached result
 ```
 
-#### Writing a generic memoize function
+- Cleans up global scope and scopes cache inside of function
+- Uses closure to return a function that can be called later
+- Inside of closure, we retain access to variables that were called before
+- This lets us remember prior values
+- Important concept: returning a function from a function that can be called later
 
-- Use closure again to return a function that returns an arbitrary callback function
+#### Writing a generic memoize function
 
 ```js
 // Possible callbacks
@@ -163,6 +160,8 @@ memoizeTimes20(9) // calculated
 memoizeTimes20(8) // cached
 ```
 
+- Use closure again to return a function that returns an arbitrary callback function
+
 ## Recursion
 
 - When a function calls itself, until it doesn't
@@ -185,35 +184,125 @@ memoizeTimes20(8) // cached
 
 - A recursive technique where we:
   - Take large problem
-  - Divide into sub-problems and do work
+  - Divide into sub-problems and do work that brings us closer to the base case
 
-#### Binary Search
+## Search algorithms
 
-Example: Search for a value in a **_sorted_** array, by cutting the side of the search area in half.
+- Linear search
+- Binary search
 
-- Steps:
-  - Break sorted array in half
-  - Is value the value that we're looking for `<` or `>` current location
-  - Repeat
+#### Implementing linear search
 
-#### Linear Search
+```js
+function linearSearch(list, item) {
+  let index = -1
 
-Simply loop through a list, and look for that number.
+  list.map((listItem, i) => {
+    if (listItem === item) {
+      index = i
+    }
+  })
 
-## Sorting
+  return index
+}
 
-- Naive sorts: Keep looping and comparing values until list is sorted
+linearSearch([1, 2, 3, 4, 5, 6], 5) // returns 4
+```
 
+- Simply loop through a list, and look for the searched value
+
+#### Implementing binary search
+
+```js
+function binarySearch(list, item) {
+  let min = 0
+  let max = list.length - 1
+  let guess
+
+  while (min <= max) {
+    guess = Math.floor((min + max) / 2)
+
+    if (list[guess] === item) {
+      return guess
+    } else {
+      if (list[guess] < item) {
+        min = guess + 1
+      } else {
+        max = guess - 1
+      }
+    }
+  }
+}
+
+binarySearch([2, 6, 7, 90, 103], 90) // returns 3
+```
+
+- Search for a value in a sorted array, by cutting the search area in half
+- Binary search is important because it takes something linear (searching a single value) and turns it into logarithmic time
+- It's logarithmic because the work that we have to do (dataset) is cut in half each time
+- Binary search **has to be sorted**
+
+#### Binary search steps
+
+1. Break sorted array in half
+2. Is value the value that we're looking for `<` or `>` current location?
+3. Repeat
+
+> #### Binary search and sorted data
+>
+> If you have an interview question involving a sorted array, binary search is usually the way to go. If it's not sorted, there are other searching algorithms.
+
+## Sorting algorithms
+
+- Sorting algorithms must look at every value, can never be less than linear time
+- Two main types of sorts
+  - Naive sorts
+  - Divide and conquer sorts
+
+#### Naive sorts
+
+- Keep looping and comparing values until list is sorted
+- Two loops involved == quadratic time
+- Examples:
   - Bubble sort
   - Insertion sort
   - Selection sort
 
-- Divide and conquer sort: Recursively divide list / smaller parts of list until entire list is sorted
+#### Divide and conquer sorts
 
+- Recursively divide list / smaller parts of list until entire list is sorted
+- Examples:
   - Merge sort
   - Quicksort
 
-- For sorting algorithms, you must look at every value, can never be less than linear time
+#### Implement bubble sort
+
+```js
+// TODO
+```
+
+- Loop through array
+- Compare adjacent indices
+- Swap the greater value to the end
+- If you're dealing with a mostly sorted list, and you've optimized to track already sorted arrays, bubble sort becomes an OK choice
+
+#### Implement merge sort
+
+```js
+// TODO
+```
+
+- Must start with sorted list
+- Sort two sorted lists
+- Divide until it's a list of one
+- Merge each sorted list
+- Means you don't have to compare every value in a quadratic way
+- The merge step (the conquer of divide and conquer) is linear
+- Merge step:
+  - Compare first index of left array against first index of right array
+  - Push lower value to an empty array
+  - Shift the array with the lower value
+  - Repeat until both arrays are empty
 
 ## Greedy Algorithms
 

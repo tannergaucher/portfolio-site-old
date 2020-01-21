@@ -120,12 +120,11 @@ class Queue {
 - Organize items sequentially, with each item storing a pointer to the next
 - JS has dynamic arrays, more important in languages that don't have dynamic arrays
 - Each item has a property next that points to another object
+- Linked lists are often the underlying data structure for a stack or a queue
 
 > #### What is a reference?
 >
 > When we assign values to an object, we are really just pointing to that object. The object doesn't live inside the variable, the variable is just a pointer to the object in memory. If we assign another variable to that object, we have 2 variables pointing to the same object. But there's only one object. That's what we mean by reference. Pointers point to nodes (objects).
-
-- Linked lists are often the underlying data structure for a stack or a queue
 
 #### Pros
 
@@ -336,10 +335,6 @@ class HashTable {
 - Arrays organize items sequentially in memory
 - Strings can be thought of as arrays of characters
 
-> #### Strings and space complexity
->
-> Strings are not mutable. If you change a string, you're really copying to a new string with that change. This has space complexity implications. If you're trying to do something in constant space, you can't use a strings. When working with strings, it's often better to split into array and manipulate using array methods.
-
 #### Pros
 
 - Fast lookups
@@ -349,6 +344,10 @@ class HashTable {
 
 - Slow inserts
 - Slow deletes (because when inserting / deleting from the middle, must shift everything over)
+
+> #### Strings and space complexity
+>
+> Strings are not mutable. If you change a string, you're really copying to a new string with that change. This has space complexity implications. If you're trying to do something in constant space, you can't use a strings. When working with strings, it's often better to split into array and manipulate using array methods.
 
 ## Trees and heaps
 
