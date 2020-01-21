@@ -74,6 +74,8 @@ const StyledPlainHeader = styled.header`
   top: 0;
   background: var(--bg-1);
   opacity: 0.9;
+  /* TODO: Set elevation on scroll  */
+  /* box-shadow: var(--elevation-1); */
   /* Because gatsby image has a zIndex */
   z-index: 3;
 
@@ -82,6 +84,7 @@ const StyledPlainHeader = styled.header`
     color: var(--href-color);
   }
 `
+
 const PlainHeader = ({ title }) => (
   <StyledPlainHeader>
     <Link to="/" none="true" inherit="true">

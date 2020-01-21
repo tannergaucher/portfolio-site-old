@@ -43,10 +43,6 @@ tags: ["Notes", "CS"]
 
 - Fast operations
 
-> #### Common examples of a stack / queue
->
-> Linked lists, hash table, array / string
-
 #### Implementation of a stack
 
 ```js
@@ -137,7 +133,7 @@ class Queue {
 
 - Costly lookups (when searching. If you have a reference to a node that you want to delete, then it's constant)
 
-#### Naive linked list
+#### Naive linked list example
 
 ```js
 const linkedList = {
@@ -160,7 +156,7 @@ const linkedList = {
 
 > #### Common use case for a linked list
 >
-> _Least recently used cache_. Keeping track of new searches. As we get new input, have to take things out. A least recently used cache removes oldest one.
+> A Least recently used cache, which keeps track of new searches. As we get new input, we take things out. A least recently used cache would remove the least recently searched term.
 
 #### Linked list implementation
 
