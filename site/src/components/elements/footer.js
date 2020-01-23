@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Github, Twitter } from "grommet-icons"
+import { Github, LinkedinOption } from "grommet-icons"
 
 import { Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
@@ -23,9 +23,9 @@ export default function Footer() {
           <Github size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
-      <a href={social.twitter}>
+      <a href={social.linkedIn}>
         <Button>
-          <Twitter size="var(--text-md)" color="var(--href-color)" />
+          <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
     </StyledFooter>

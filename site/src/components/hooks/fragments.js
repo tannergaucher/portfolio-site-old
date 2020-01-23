@@ -73,7 +73,7 @@ export const SiteInformation = graphql`
       author
       social {
         github
-        twitter
+        linkedIn
       }
     }
   }

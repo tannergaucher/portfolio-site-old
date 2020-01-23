@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Github, Twitter } from "grommet-icons"
+import { Github, LinkedinOption } from "grommet-icons"
 
 import { Link, Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
@@ -54,14 +54,14 @@ const IndexHeader = ({ title, social }) => (
       City / remote.
     </p>
     <div className="social-hrefs">
-      <a href={social.github}>
+      <a href={social.github} target="_blank">
         <Button className="github-btn">
           <Github size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
-      <a href={social.twitter}>
+      <a href={social.linkedIn} target="_blank">
         <Button>
-          <Twitter size="var(--text-md)" color="var(--href-color)" />
+          <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
     </div>
