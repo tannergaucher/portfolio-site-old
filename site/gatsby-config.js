@@ -5,7 +5,7 @@ module.exports = {
     author: `tannermichaelgaucher@gmail.com`,
     social: {
       github: `http://github.com/tannergaucher`,
-      twitter: `http://twitter.com/tannergaucher`,
+      linkedIn: `https://www.linkedin.com/in/tanner-gaucher-050604197/`,
     },
   },
   plugins: [
