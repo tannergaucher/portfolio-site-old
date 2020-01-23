@@ -73,7 +73,7 @@ const StyledPlainHeader = styled.header`
   position: sticky;
   top: 0;
   background: var(--bg-1);
-  opacity: 0.9;
+  opacity: 0.85;
   /* TODO: Set elevation on scroll  */
   /* box-shadow: var(--elevation-1); */
   /* Because gatsby image has a zIndex */
