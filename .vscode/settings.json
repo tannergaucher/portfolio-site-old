@@ -1,9 +1,6 @@
 {
-    "cSpell.ignoreWords": [
-        "dequeues",
-        "enqueues",
-        "frontmatter",
-        "memoization",
-        "memoized"
+    "cSpell.words": [
+        "datasets",
+        "frontmatter"
     ]
 }

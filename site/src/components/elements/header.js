@@ -48,7 +48,7 @@ const StyledIndexHeader = styled.header`
 
 const IndexHeader = ({ title, social }) => (
   <StyledIndexHeader>
-    <h1 className="site-title text--lg">{title}</h1>
+    <h1 className="site-title text--md">{title}</h1>
     <p className="intro-text">
       Full stack software developer. Currently seeking a position in New York
       City / remote.

@@ -29,7 +29,7 @@ tags: ["Notes", "CS"]
 
 > #### Logarithmic versus exponential
 >
-> In logarithmic time, as input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. This means logarithmic is often better than linear with large data sets.
+> In logarithmic time, as input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. This means logarithmic is often better than linear with large datasets.
 
 ## Space complexity
 
@@ -425,27 +425,32 @@ mergeSort(list) // => [1, 2, 2, 3, 3, 5, 6, 7, 8]
 ## Greedy Algorithms
 
 - Always take the locally optimal solution
+- Without considering the big picture
 - Given a decision, do the one that looks like the best decision at that time, without considering the big picture
 - Always making the locally optimal choice does **_not_** always give the optimal solution.
-- When to use: Data set is so large that you can't think of all scenarios. It's computationally too much and it's better to have **_a_** solution than none at all
 
-#### Implementing a greed makeChange algorithm
+> #### Using greedy algorithms
+>
+> Can be a choice when the dataset is so large that you can't think of all scenarios. It's computationally too much and it's better to have **_a_** solution than none at all.
 
-```js
-// TODO
-```
+#### Problems with using a greedy approach
 
-## Dynamic Programming
+- Can seem like it's correct
+- But it's hard to prove that it's correct
+- Have to then ask, "Is locally optimal solution actually the globally optimal solution
+
+#### Implementing a brute force algorithm
+
+- In an interview setting could go with a brute force solution that is correct, and then optimize later
+
+#### Dynamic programming
 
 - Optimization technique
-
-- Cache values when doing work inside the sub-problems. If you have a solution that you can cache, that's dynamic programming
-
+- Cache values when doing work inside of sub-problems
+- If you have a solution that you can cache, that's dynamic programming
 - Different ways of caching:
   - Top down, recursive approach
   - Bottom up, iterative technique
-
-<!-- top down versus bottom up? examples -->
 
 ## On How to Learn and Improve
 

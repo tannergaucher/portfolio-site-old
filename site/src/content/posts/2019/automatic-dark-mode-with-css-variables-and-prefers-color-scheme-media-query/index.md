@@ -5,7 +5,7 @@ description: "Detect if a user is in light or dark mode and present a themed UI 
 tags: ["CSS", "Web"]
 ---
 
-<!-- VIDEOGIF HERE  -->
+<!-- VIDEO / GIF HERE  -->
 
 #### Minimal implementation of a responsive color scheme
 
