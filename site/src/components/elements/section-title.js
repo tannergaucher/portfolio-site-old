@@ -5,6 +5,9 @@ import { FormNextLink } from "grommet-icons"
 import { Link } from "../styles"
 
 const StyledSectionTitle = styled.div`
+  .section-title {
+    margin: var(--space-lg) 0;
+  }
   .arrow {
     transition: var(--transition);
   }

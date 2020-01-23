@@ -48,7 +48,7 @@ const StyledIndexHeader = styled.header`
 
 const IndexHeader = ({ title, social }) => (
   <StyledIndexHeader>
-    <h1 className="site-title text--lg">{title}</h1>
+    <h1 className="site-title text--md">{title}</h1>
     <p className="intro-text">
       Full stack software developer. Currently seeking a position in New York
       City / remote.
@@ -73,7 +73,9 @@ const StyledPlainHeader = styled.header`
   position: sticky;
   top: 0;
   background: var(--bg-1);
-  opacity: 0.9;
+  opacity: 0.85;
+  /* TODO: Set elevation on scroll  */
+  /* box-shadow: var(--elevation-1); */
   /* Because gatsby image has a zIndex */
   z-index: 3;
 
@@ -82,6 +84,7 @@ const StyledPlainHeader = styled.header`
     color: var(--href-color);
   }
 `
+
 const PlainHeader = ({ title }) => (
   <StyledPlainHeader>
     <Link to="/" none="true" inherit="true">

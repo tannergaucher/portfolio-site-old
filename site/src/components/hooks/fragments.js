@@ -8,7 +8,7 @@ export const POST_FRAGMENT = graphql`
     timeToRead
     frontmatter {
       title
-      date(formatString: "MMMM Do YYYY")
+      date(formatString: "MMMM Do, YYYY")
       description
       tags
     }
