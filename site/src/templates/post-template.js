@@ -22,6 +22,12 @@ const StyledPost = styled(StyledPage)`
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 600px) {
+    .post-title {
+      margin-top: var(--space-md);
+    }
+  }
 `
 
 export default function PostTemplatePage({ data, pageContext, location }) {

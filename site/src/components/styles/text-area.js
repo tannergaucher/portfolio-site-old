@@ -8,6 +8,7 @@ const TextArea = styled.textarea`
   margin-bottom: var(--space-md);
   background-color: var(--bg-2);
   color: var(--text-color);
+  font-size: var(--font-size);
 `
 
 export default TextArea

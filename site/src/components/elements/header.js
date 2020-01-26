@@ -35,6 +35,7 @@ const StyledIndexHeader = styled.header`
   }
 
   @media (max-width: 600px) {
+    margin: var(--space-lg) auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +49,7 @@ const StyledIndexHeader = styled.header`
 
 const IndexHeader = ({ title, social }) => (
   <StyledIndexHeader>
-    <h1 className="site-title text--md">{title}</h1>
+    <h1 className="site-title text--lg">{title}</h1>
     <p className="intro-text">
       Full stack software developer. Currently seeking a position in New York
       City / remote.
