@@ -15,6 +15,7 @@ const StyledPhotoPage = styled(StyledPage)`
 
   .image {
     margin-bottom: var(--space-md);
+    box-shadow: var(--elevation-2);
   }
 
   .photo-btns {

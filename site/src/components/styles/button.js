@@ -17,6 +17,9 @@ const Button = styled.button`
   text-transform: uppercase;
   opacity: ${props => (props.loading ? ".5" : "1")};
   transition: var(--transition);
+  font-weight: bolder;
+  /* box-shadow: ${props =>
+    props.theme.primary ? `var(--elevation-3)` : `var(--elevation-1)`}; */
 `
 
 export default Button

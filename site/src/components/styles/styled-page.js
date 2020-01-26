@@ -11,6 +11,10 @@ const StyledPage = styled.div`
   iframe {
     display: block;
   }
+
+  @media (max-width: 600px) {
+    margin: var(--space-sm) auto;
+  }
 `
 
 export default StyledPage
