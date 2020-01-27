@@ -5,10 +5,14 @@ import { Form, Button, Input, TextArea } from "../styles"
 
 const StyledContact = styled.div`
   max-width: var(--container);
-  margin: var(--space-lg) auto;
+  margin: var(--space-sm) auto;
 
   .contact {
     color: var(--href-color);
+  }
+
+  @media (max-width: 600px) {
+    margin: 0 auto;
   }
 `
 

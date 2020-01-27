@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Layout } from "../components/elements"
+import { SEO, Layout } from "../components/elements"
 import { useAllPosts } from "../components/hooks"
 import { PostCard } from "../components/post"
 import { StyledPage } from "../components/styles"
@@ -10,6 +10,7 @@ export default function PostsPage({ location }) {
 
   return (
     <Layout location={location}>
+      <SEO title="Posts" />
       <StyledPage>
         <h1>Posts</h1>
         <br />

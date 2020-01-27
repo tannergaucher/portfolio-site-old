@@ -28,6 +28,11 @@ export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
       <h4 className="project-title">{project.frontmatter.title}</h4>
+
+      <small className="project-description">
+        {project.frontmatter.description}
+      </small>
+
       <div
         className="project-iframe"
         style={{
@@ -50,10 +55,8 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         ></iframe>
       </div>
-      <small className="project-description">
-        {project.frontmatter.description}
-      </small>
-      <div className="href-btns">
+
+      {/* <div className="href-btns">
         <Button className="repo-btn">
           <a href={`${project.frontmatter.githubRepo}`}>
             <Github color="var(--href-color)" size="var(--text-md)" />
@@ -64,7 +67,7 @@ export default function ProjectCard({ project }) {
             <Domain color="var(--href-color)" size="var(--text-md)" />
           </a>
         </Button>
-      </div>
+      </div> */}
     </StyledProjectCard>
   )
 }

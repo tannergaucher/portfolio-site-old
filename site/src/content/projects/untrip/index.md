@@ -15,7 +15,7 @@ technologies:
     "Sanity Headless CMS",
   ]
 deployedUrl: "https://untrip.app"
-vimeoUrl: "https://player.vimeo.com/video/378214104"
+vimeoUrl: "https://player.vimeo.com/video/387479423"
 githubRepo: "http://www.github.com/tannergaucher/untrip-app"
 ---
 

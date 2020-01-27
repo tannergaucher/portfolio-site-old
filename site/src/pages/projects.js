@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Layout } from "../components/elements"
+import { SEO, Layout } from "../components/elements"
 import { StyledPage } from "../components/styles"
 import { useProjects } from "../components/hooks"
 import { ProjectCard } from "../components/project"
@@ -10,6 +10,7 @@ export default function Projects({ location }) {
 
   return (
     <Layout location={location}>
+      <SEO title="Projects" />
       <StyledPage>
         <h1>Projects</h1>
         <br />

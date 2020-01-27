@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Layout } from "../components/elements"
+import { SEO, Layout } from "../components/elements"
 import { PhotoCard } from "../components/photo"
 import { useAllMyImages } from "../components/hooks"
 import { StyledPage, Link, ContentGrid } from "../components/styles"
@@ -10,6 +10,7 @@ export default function PhotosPage({ location }) {
 
   return (
     <Layout location={location}>
+      <SEO title="Photos" />
       <StyledPage>
         <ContentGrid>
           {edges.map(edge => (

@@ -53,9 +53,11 @@
   --href-color: black;
   --bg-1: white;
   --bg-2: #f2f2f2;
+  --grey: #555555;
   --primary-btn-bg: black;
   --outline-btn-bg: var(--bg-2);
   --primary-btn-color: white;
+  --outline-btn-color: var(--grey);
   --input-border: black;
   --code-bg: black;
   /* Components */
@@ -77,6 +79,7 @@
     --href-color: fuchsia;
     --bg-1: rgb(5, 5, 5);
     --bg-2: #1a1a1b;
+    --grey: grey;
     --primary-btn-bg: #1a1a1b;
     --primary-btn-color: var(--href-color);
     --input-border: var(--bg-2);

@@ -16,6 +16,10 @@ const StyledPost = styled(StyledPage)`
     font-weight: 900;
   }
 
+  .next-prev {
+    text-transform: uppercase;
+  }
+
   .next,
   .prev {
     &:hover {
@@ -51,16 +55,25 @@ export default function PostTemplatePage({ data, pageContext, location }) {
         <br />
         <div className="next-prev-links">
           {next && (
-            <Link to={`${next.fields.slug}`} none="true">
-              <h3 className="next-prev-title next">{next.frontmatter.title}</h3>
-            </Link>
+            <>
+              <h4 className="next-prev">Next </h4>
+              <Link to={`${next.fields.slug}`} none="true">
+                <h2 className="next-prev-title next">
+                  {next.frontmatter.title}
+                </h2>
+              </Link>
+            </>
           )}
+
           {previous && (
-            <Link to={`${previous.fields.slug}`} none="true">
-              <h3 className="next-prev-title prev">
-                {previous.frontmatter.title}
-              </h3>
-            </Link>
+            <>
+              <h4 className="next-prev">Previous</h4>
+              <Link to={`${previous.fields.slug}`} none="true">
+                <h2 className="next-prev-title prev">
+                  {previous.frontmatter.title}
+                </h2>
+              </Link>
+            </>
           )}
         </div>
         <br />
