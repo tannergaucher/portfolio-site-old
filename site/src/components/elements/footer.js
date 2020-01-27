@@ -11,6 +11,11 @@ const StyledFooter = styled.div`
   .github-btn {
     margin-right: var(--space-sm);
   }
+
+  .footer-btn {
+    background: var(--bg-1);
+    border: var(--bg-1);
+  }
 `
 
 export default function Footer() {
@@ -19,12 +24,12 @@ export default function Footer() {
   return (
     <StyledFooter>
       <a href={social.github}>
-        <Button className="github-btn">
+        <Button className="github-btn footer-btn">
           <Github size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
       <a href={social.linkedIn}>
-        <Button>
+        <Button className="footer-btn">
           <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
