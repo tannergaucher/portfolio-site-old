@@ -34,6 +34,11 @@ const StyledIndexHeader = styled.header`
     margin-right: var(--space-sm);
   }
 
+  .header-btn {
+    /* background: var(--bg-1); */
+    border: none;
+  }
+
   @media (max-width: 600px) {
     margin: var(--space-lg) auto;
     display: flex;
@@ -56,12 +61,12 @@ const IndexHeader = ({ title, social }) => (
     </p>
     <div className="social-hrefs">
       <a href={social.github} target="_blank" rel="noopener noreferrer">
-        <Button className="github-btn">
+        <Button className="github-btn header-btn">
           <Github size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
       <a href={social.linkedIn} target="_blank" rel="noopener noreferrer">
-        <Button>
+        <Button className="header-btn">
           <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>

@@ -56,7 +56,7 @@ export default function ProjectCard({ project }) {
         ></iframe>
       </div>
 
-      <div className="href-btns">
+      {/* <div className="href-btns">
         <Button className="repo-btn">
           <a href={`${project.frontmatter.githubRepo}`}>
             <Github color="var(--href-color)" size="var(--text-md)" />
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }) {
             <Domain color="var(--href-color)" size="var(--text-md)" />
           </a>
         </Button>
-      </div>
+      </div> */}
     </StyledProjectCard>
   )
 }
