@@ -55,12 +55,12 @@ const IndexHeader = ({ title, social }) => (
       City / remote.
     </p>
     <div className="social-hrefs">
-      <a href={social.github} target="_blank">
+      <a href={social.github} target="_blank" rel="noopener noreferrer">
         <Button className="github-btn">
           <Github size="var(--text-md)" color="var(--href-color)" />
         </Button>
       </a>
-      <a href={social.linkedIn} target="_blank">
+      <a href={social.linkedIn} target="_blank" rel="noopener noreferrer">
         <Button>
           <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
         </Button>
