@@ -43,7 +43,7 @@ const StyledIndexHeader = styled.header`
   }
 `
 
-const IndexHeader = () => {
+function IndexHeader() {
   const { title, description, social } = useSiteMetadata()
 
   return (
@@ -81,7 +81,7 @@ const StyledPlainHeader = styled.header`
   }
 `
 
-const PlainHeader = () => {
+function PlainHeader() {
   const { title } = useSiteMetadata()
 
   return (
