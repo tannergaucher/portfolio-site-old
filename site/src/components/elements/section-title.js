@@ -30,7 +30,7 @@ export default function SectionTitle({ to, sectionTitle }) {
     <StyledSectionTitle>
       <Link none="true" to={to}>
         <div className="title-animated-arrow">
-          <h3 className="section-title">{sectionTitle}</h3>
+          <h3 className="section-title">All {sectionTitle}</h3>
           <FormNextLink
             className="arrow-icon"
             size="var(--text-lg)"
