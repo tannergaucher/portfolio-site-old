@@ -10,10 +10,12 @@ const StyledPostCard = styled.div`
 
   .post-title {
     color: var(--href-color);
+    margin-bottom: var(--space-md);
   }
 
-  .post-tags {
-    margin-top: var(--space-md);
+  .post-description {
+    margin-bottom: 0;
+    color: var(--grey);
   }
 
   .post-tag {
@@ -32,10 +34,8 @@ export default function PostCard({ post }) {
   return (
     <StyledPostCard>
       <Link to={post.fields.slug} none="true" inherit="true">
-        <h4 className="post-title">{post.frontmatter.title}</h4>
-        <small className="post-description">
-          {post.frontmatter.description}
-        </small>
+        <h3 className="post-title">{post.frontmatter.title}</h3>
+        <p className="post-description">{post.frontmatter.description}</p>
       </Link>
       <br />
       <div className="post-tags">
@@ -51,6 +51,7 @@ export default function PostCard({ post }) {
           </Button>
         ))}
       </div>
+      <br />
     </StyledPostCard>
   )
 }

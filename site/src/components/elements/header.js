@@ -22,6 +22,10 @@ const StyledIndexHeader = styled.header`
     color: var(--href-color);
   }
 
+  .site-description {
+    color: var(--grey);
+  }
+
   .github-btn {
     margin-right: var(--space-sm);
   }
@@ -53,12 +57,12 @@ function IndexHeader() {
       <div className="social-hrefs">
         <a href={social.github} target="_blank" rel="noopener noreferrer">
           <Button className="github-btn header-btn">
-            <Github size="var(--text-md)" color="var(--href-color)" />
+            <Github size="var(--text-md)" color="var(--grey)" />
           </Button>
         </a>
         <a href={social.linkedIn} target="_blank" rel="noopener noreferrer">
           <Button className="header-btn">
-            <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
+            <LinkedinOption size="var(--text-md)" color="var(--grey)" />
           </Button>
         </a>
       </div>
