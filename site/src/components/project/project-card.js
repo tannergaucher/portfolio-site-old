@@ -11,6 +11,10 @@ const StyledProjectCard = styled.div`
     color: var(--href-color);
   }
 
+  .project-description {
+    color: var(--grey);
+  }
+
   .project-iframe {
     margin: var(--space-md) 0;
   }
@@ -27,6 +31,10 @@ const StyledProjectCard = styled.div`
     margin-top: var(--space-md);
   }
 
+  .tech-item {
+    color: var(--grey);
+  }
+
   @media (max-width: 600px) {
     .repo-btn {
       margin-right: var(--space-md);
@@ -37,10 +45,8 @@ const StyledProjectCard = styled.div`
 export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
-      <h4 className="project-title">{project.frontmatter.title}</h4>
-      <small className="project-description">
-        {project.frontmatter.description}
-      </small>
+      <h3 className="project-title">{project.frontmatter.title}</h3>
+      <p className="project-description">{project.frontmatter.description}</p>
       <br />
       <div
         className="project-iframe"
@@ -66,7 +72,7 @@ export default function ProjectCard({ project }) {
       </div>
       <ul>
         {project.frontmatter.technologies.map(technology => (
-          <li className="text--xs" key={technology}>
+          <li className="tech-item text--sm" key={technology}>
             {technology}
           </li>
         ))}
