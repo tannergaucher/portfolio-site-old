@@ -26,6 +26,12 @@ const StyledProjectCard = styled.div`
   .deployed-btn {
     margin-top: var(--space-md);
   }
+
+  @media (max-width: 600px) {
+    .repo-btn {
+      margin-right: var(--space-md);
+    }
+  }
 `
 
 export default function ProjectCard({ project }) {
