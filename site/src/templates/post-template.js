@@ -18,6 +18,7 @@ const StyledPost = styled(StyledPage)`
 
   .next-prev {
     text-transform: uppercase;
+    color: var(--grey);
   }
 
   .next,
