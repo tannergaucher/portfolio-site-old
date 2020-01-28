@@ -3,11 +3,11 @@ import styled from "styled-components"
 
 import { Form, Button, Input, TextArea } from "../styles"
 
-const StyledContact = styled.div`
+const StyledContactSection = styled.div`
   max-width: var(--container);
-  margin: var(--space-sm) auto;
+  margin: var(--space-lg) auto;
 
-  .contact {
+  .contact-section-title {
     color: var(--href-color);
   }
 
@@ -18,13 +18,19 @@ const StyledContact = styled.div`
 
 export default function Contact() {
   return (
-    <StyledContact>
-      <h3 className="contact">Contact</h3>
+    <StyledContactSection>
+      <h3 className="contact-section-title">Contact</h3>
       <br />
-      <Form name="contact" netlify>
-        <Input type="email" name="email" placeholder="Email" required />
+      <Form name="contact-form" method="post" data-netlify="true">
+        <Input
+          type="email"
+          name="contact-form-email"
+          placeholder="Email"
+          required
+        />
         <TextArea
-          name="message"
+          type="text"
+          name="contact-form-message"
           cols="10"
           rows="10"
           htmlFor="message"
@@ -36,6 +42,6 @@ export default function Contact() {
         </Button>
       </Form>
       <br />
-    </StyledContact>
+    </StyledContactSection>
   )
 }
