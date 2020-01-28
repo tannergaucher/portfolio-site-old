@@ -21,9 +21,7 @@ export default function Contact() {
     <StyledContactSection>
       <h3 className="contact-section-title">Contact</h3>
       <br />
-      <Form name="contact-form" method="post" data-netlify="true">
-        {/* This type="hidden" input needs to be here for netlify form to not hide email input. */}
-        <input type="hidden" name="form-name" value="contact" />
+      <Form name="netlify-contact-form" method="POST" data-netlify="true">
         <Input
           type="email"
           name="contact-form-email"
@@ -35,7 +33,6 @@ export default function Contact() {
           name="contact-form-message"
           cols="10"
           rows="10"
-          htmlFor="message"
           placeholder="Message"
           required
         ></TextArea>
