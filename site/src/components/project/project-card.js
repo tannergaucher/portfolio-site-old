@@ -22,17 +22,20 @@ const StyledProjectCard = styled.div`
   .repo-btn {
     margin-right: var(--space-md);
   }
+
+  .deployed-btn {
+    margin-top: var(--space-md);
+  }
 `
 
 export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
       <h4 className="project-title">{project.frontmatter.title}</h4>
-
       <small className="project-description">
         {project.frontmatter.description}
       </small>
-
+      <br />
       <div
         className="project-iframe"
         style={{
@@ -55,19 +58,31 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         ></iframe>
       </div>
-
-      {/* <div className="href-btns">
-        <Button className="repo-btn">
-          <a href={`${project.frontmatter.githubRepo}`}>
-            <Github color="var(--href-color)" size="var(--text-md)" />
-          </a>
+      <ul>
+        {project.frontmatter.technologies.map(technology => (
+          <li className="text--xs" key={technology}>
+            {technology}
+          </li>
+        ))}
+      </ul>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`${project.frontmatter.githubRepo}`}
+      >
+        <Button className="repo-btn" fillMobile="true">
+          Github Repo
         </Button>
-        <Button className="deployed-btn">
-          <a href={`${project.frontmatter.deployedUrl}`}>
-            <Domain color="var(--href-color)" size="var(--text-md)" />
-          </a>
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`${project.frontmatter.deployedUrl}`}
+      >
+        <Button className="deployed-btn" fillMobile="true">
+          View Deployed
         </Button>
-      </div> */}
+      </a>
     </StyledProjectCard>
   )
 }

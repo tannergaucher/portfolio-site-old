@@ -22,6 +22,8 @@ export default function Contact() {
       <h3 className="contact-section-title">Contact</h3>
       <br />
       <Form name="contact-form" method="post" data-netlify="true">
+        {/* This type="hidden" input needs to be here for netlify form to not hide email input. */}
+        <input type="hidden" name="form-name" value="contact" />
         <Input
           type="email"
           name="contact-form-email"

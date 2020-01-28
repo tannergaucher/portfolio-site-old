@@ -6,8 +6,7 @@ import { PostCard } from "../post"
 import { SectionTitle } from "../elements"
 
 const StyledPosts = styled.div`
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-xl);
+  margin: var(--space-xl) 0;
 `
 
 export default function Posts() {

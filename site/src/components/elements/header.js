@@ -6,17 +6,9 @@ import { Link, Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 export default function Header({ location }) {
-  const { title, social } = useSiteMetadata()
+  const isIndexPage = location.pathname === "/"
 
-  return (
-    <>
-      {location.pathname === "/" ? (
-        <IndexHeader title={title} social={social} />
-      ) : (
-        <PlainHeader title={title} social={social} />
-      )}
-    </>
-  )
+  return isIndexPage ? <IndexHeader /> : <PlainHeader />
 }
 
 const StyledIndexHeader = styled.header`
@@ -35,7 +27,6 @@ const StyledIndexHeader = styled.header`
   }
 
   .header-btn {
-    /* background: var(--bg-1); */
     border: none;
   }
 
@@ -46,33 +37,34 @@ const StyledIndexHeader = styled.header`
     justify-content: center;
     align-items: center;
 
-    .intro-text {
+    .site-description {
       text-align: center;
     }
   }
 `
 
-const IndexHeader = ({ title, social }) => (
-  <StyledIndexHeader>
-    <h1 className="site-title text--lg">{title}</h1>
-    <p className="intro-text">
-      Full stack software developer. Currently seeking a position in New York
-      City / remote.
-    </p>
-    <div className="social-hrefs">
-      <a href={social.github} target="_blank" rel="noopener noreferrer">
-        <Button className="github-btn header-btn">
-          <Github size="var(--text-md)" color="var(--href-color)" />
-        </Button>
-      </a>
-      <a href={social.linkedIn} target="_blank" rel="noopener noreferrer">
-        <Button className="header-btn">
-          <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
-        </Button>
-      </a>
-    </div>
-  </StyledIndexHeader>
-)
+function IndexHeader() {
+  const { title, description, social } = useSiteMetadata()
+
+  return (
+    <StyledIndexHeader>
+      <h1 className="site-title text--lg">{title}</h1>
+      <p className="site-description">{description}</p>
+      <div className="social-hrefs">
+        <a href={social.github} target="_blank" rel="noopener noreferrer">
+          <Button className="github-btn header-btn">
+            <Github size="var(--text-md)" color="var(--href-color)" />
+          </Button>
+        </a>
+        <a href={social.linkedIn} target="_blank" rel="noopener noreferrer">
+          <Button className="header-btn">
+            <LinkedinOption size="var(--text-md)" color="var(--href-color)" />
+          </Button>
+        </a>
+      </div>
+    </StyledIndexHeader>
+  )
+}
 
 const StyledPlainHeader = styled.header`
   padding: var(--space-sm);
@@ -80,8 +72,6 @@ const StyledPlainHeader = styled.header`
   top: 0;
   background: var(--bg-1);
   opacity: 0.85;
-  /* TODO: Set elevation on scroll  */
-  /* box-shadow: var(--elevation-1); */
   /* Because gatsby image has a zIndex */
   z-index: 3;
 
@@ -91,10 +81,14 @@ const StyledPlainHeader = styled.header`
   }
 `
 
-const PlainHeader = ({ title }) => (
-  <StyledPlainHeader>
-    <Link to="/" none="true" inherit="true">
-      <small className="site-title">{title}</small>
-    </Link>
-  </StyledPlainHeader>
-)
+function PlainHeader() {
+  const { title } = useSiteMetadata()
+
+  return (
+    <StyledPlainHeader>
+      <Link to="/" none="true" inherit="true">
+        <small className="site-title">{title}</small>
+      </Link>
+    </StyledPlainHeader>
+  )
+}
