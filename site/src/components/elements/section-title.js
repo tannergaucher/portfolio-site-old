@@ -8,11 +8,12 @@ const StyledSectionTitle = styled.div`
   .section-title {
     margin: var(--space-lg) 0;
   }
-  .arrow {
+
+  .arrow-icon {
     transition: var(--transition);
   }
 
-  .animated-arrow {
+  .title-animated-arrow {
     display: flex;
     align-items: center;
   }
@@ -28,10 +29,10 @@ export default function SectionTitle({ to, sectionTitle }) {
   return (
     <StyledSectionTitle>
       <Link none="true" to={to}>
-        <div className="animated-arrow">
+        <div className="title-animated-arrow">
           <h3 className="section-title">{sectionTitle}</h3>
           <FormNextLink
-            className="arrow"
+            className="arrow-icon"
             size="var(--text-lg)"
             color="var(--href-color)"
           />

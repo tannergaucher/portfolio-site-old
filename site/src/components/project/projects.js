@@ -18,7 +18,6 @@ export default function Projects() {
       {edges.map(edge => (
         <ProjectCard key={edge.node.id} project={edge.node} />
       ))}
-      <br />
     </StyledProjects>
   )
 }

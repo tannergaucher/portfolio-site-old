@@ -23,10 +23,6 @@ export default function LatestPhotos() {
           </Link>
         ))}
       </ContentGrid>
-      {/* TODO: WHAA??*/}
-      <br />
-      <br />
-      <br />
       <br />
     </StyledLatestPhotos>
   )

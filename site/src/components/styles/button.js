@@ -18,6 +18,10 @@ const Button = styled.button`
   opacity: ${props => (props.loading ? ".5" : "1")};
   transition: var(--transition);
   font-weight: bolder;
+
+  @media (max-width: 600px) {
+    width: ${props => (props.fillMobile ? `100%` : ``)};
+  }
 `
 
 export default Button

@@ -12,7 +12,7 @@ export default function PostsPage({ location }) {
     <Layout location={location}>
       <SEO title="Posts" />
       <StyledPage>
-        <h1>Posts</h1>
+        <h1 className="">Posts</h1>
         <br />
         {edges.map(edge => (
           <PostCard key={edge.node.id} post={edge.node} />

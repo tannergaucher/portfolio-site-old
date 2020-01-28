@@ -6,7 +6,6 @@ import { camelCase } from "lodash"
 import { Link, Button } from "../styles"
 
 const StyledPostCard = styled.div`
-  transition: var(--transition);
   margin-bottom: var(--space-xl);
 
   .post-title {
@@ -37,8 +36,8 @@ export default function PostCard({ post }) {
         <small className="post-description">
           {post.frontmatter.description}
         </small>
-        <br />
       </Link>
+      <br />
       <div className="post-tags">
         {post.frontmatter.tags.map(tag => (
           <Button

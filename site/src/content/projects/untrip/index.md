@@ -10,8 +10,7 @@ technologies:
     "React Apollo Hooks",
     "Styled Components",
     "Apollo Server",
-    "Netlify AWS Lambda functions",
-    "Prisma Data Layer",
+    "Prisma ORM / DB",
     "Sanity Headless CMS",
   ]
 deployedUrl: "https://untrip.app"
