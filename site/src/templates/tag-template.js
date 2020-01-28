@@ -1,13 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Layout } from "../components/elements"
+import { Layout, SEO } from "../components/elements"
 import { StyledPage } from "../components/styles"
 import { PostCard } from "../components/post"
 
 export default function Tags({ location, pageContext, data }) {
   return (
     <Layout location={location}>
+      <SEO title={pageContext.tag} />
       <StyledPage>
         <h1>{pageContext.tag}</h1>
         {data.allMarkdownRemark.edges.map(edge => (
