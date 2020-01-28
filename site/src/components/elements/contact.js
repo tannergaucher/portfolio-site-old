@@ -5,21 +5,21 @@ import { Form, Button, Input, TextArea } from "../styles"
 
 const StyledContactSection = styled.div`
   max-width: var(--container);
-  margin: var(--space-lg) auto;
+  margin: var(--space-md) auto;
 
   .contact-section-title {
     color: var(--href-color);
   }
 
   @media (max-width: 600px) {
-    margin: 0 auto;
+    margin: var(--space-sm) auto;
   }
 `
 
 export default function Contact() {
   return (
     <StyledContactSection>
-      <h3 className="contact-section-title">Contact</h3>
+      <h3 className="contact-section-title">Contact Me</h3>
       <br />
       <Form name="netlify-contact-form" method="POST" data-netlify="true">
         {/* This hidden form needs to be here for netlify form */}

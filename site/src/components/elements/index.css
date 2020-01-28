@@ -14,7 +14,7 @@
   --responsive-unit: 0.9vw; /* TWEAK ME  */
   /* Base Values */
   --text-base-size: calc(0.9rem + var(--responsive-unit));
-  --text-scale-ratio: 1.355; /* TWEAK ME */
+  --text-scale-ratio: 1.255; /* TWEAK ME */
   /* Type Scale */
   --text-xs: calc(
     1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +

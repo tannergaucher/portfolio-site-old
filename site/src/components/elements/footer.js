@@ -10,10 +10,12 @@ const StyledFooter = styled.div`
 
   .github-btn {
     margin-right: var(--space-sm);
+    background: var(--bg-1);
   }
 
   .footer-btn {
     border: none;
+    background: var(--bg-1);
   }
 `
 
