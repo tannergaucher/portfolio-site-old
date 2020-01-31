@@ -3,10 +3,14 @@ import styled from "styled-components"
 
 import { PhotoCard } from "."
 import { useLatestMyImages } from "../hooks"
-import { ContentGrid, Link } from "../styles"
-import { SectionTitle } from "../elements"
+import { ContentGrid, Link, Button } from "../styles"
+import { ViewAllLink } from "../elements"
 
 const StyledLatestPhotos = styled.div`
+  margin-bottom: var(--space-xl);
+`
+
+const StyledLatestPhotosGrid = styled(ContentGrid)`
   margin-bottom: var(--space-xl);
 `
 
@@ -15,15 +19,24 @@ export default function LatestPhotos() {
 
   return (
     <StyledLatestPhotos>
-      <SectionTitle to="/photos" sectionTitle="Photos" />
-      <ContentGrid>
+      <StyledLatestPhotosGrid>
         {edges.map(edge => (
           <Link to={`/photo/${edge.node.slug.current}`} key={edge.node.id}>
             <PhotoCard sanityMyImage={edge.node} />
           </Link>
         ))}
-      </ContentGrid>
-      <br />
+      </StyledLatestPhotosGrid>
+      <ViewAllLink
+        to="/photos"
+        heading="More Photos"
+        subHeading="An almost daily photo journal"
+      />
+      <hr
+        style={{
+          border: `none`,
+          marginTop: `var(--space-xl)`,
+        }}
+      />
     </StyledLatestPhotos>
   )
 }

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Data Structures for Interviews"
 date: "2019-12-10"
-description: "My notes on the frontend masters course."
+description: "My notes from the Frontend Masters course"
 tags: ["Notes", "CS"]
 ---
 
@@ -344,11 +344,3 @@ class HashTable {
 > #### Strings and space complexity
 >
 > Strings are not mutable. If you change a string, you're really copying to a new string with that change. This has space complexity implications. If you're trying to do something in constant space, you can't use a strings. When working with strings, it's often better to split into array and manipulate using array methods.
-
-## Trees and heaps
-
-COMING SOON
-
-## Graphs
-
-COMING SOON

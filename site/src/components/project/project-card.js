@@ -7,47 +7,47 @@ import { Button } from "../styles"
 const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
 
-  .project-title {
-    color: var(--href-color);
-  }
-
   .project-description {
     color: var(--grey);
+    font-weight: lighter;
   }
 
-  .project-iframe {
-    margin: var(--space-md) 0;
-  }
-
-  .href-btns {
-    margin-top: var(--space-md);
-  }
-
-  .repo-btn {
-    margin-right: var(--space-md);
-  }
-
-  .deployed-btn {
-    margin-top: var(--space-md);
+  a {
+    margin: 0 var(--space-sm);
+    text-decoration: none;
   }
 
   .tech-item {
     color: var(--grey);
-  }
-
-  @media (max-width: 600px) {
-    .repo-btn {
-      margin-right: var(--space-md);
-    }
   }
 `
 
 export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
-      <h3 className="project-title">{project.frontmatter.title}</h3>
-      <p className="project-description">{project.frontmatter.description}</p>
-      <br />
+      <h3 className="project-title">
+        {project.frontmatter.title}{" "}
+        <span className="project-description text--md">
+          {project.frontmatter.description}
+        </span>
+        <span>
+          <a
+            href={project.frontmatter.githubRepo}
+            className="project-link text--sm"
+          >
+            Source Code
+          </a>
+        </span>
+        <span>
+          <a
+            href={project.frontmatter.deployedUrl}
+            className="project-link text--sm"
+          >
+            View Deployed
+          </a>
+        </span>
+      </h3>
+
       <div
         className="project-iframe"
         style={{
@@ -70,14 +70,14 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         ></iframe>
       </div>
-      <ul>
+      {/* <ul>
         {project.frontmatter.technologies.map(technology => (
           <li className="tech-item text--sm" key={technology}>
             {technology}
           </li>
         ))}
-      </ul>
-      <a
+      </ul> */}
+      {/* <a
         target="_blank"
         rel="noopener noreferrer"
         href={`${project.frontmatter.githubRepo}`}
@@ -94,7 +94,7 @@ export default function ProjectCard({ project }) {
         <Button className="deployed-btn" fillMobile="true">
           View Deployed
         </Button>
-      </a>
+      </a> */}
     </StyledProjectCard>
   )
 }

@@ -8,16 +8,16 @@ const Button = styled.button`
     props.primary ? "var(--primary-btn-color)" : "var(--outline-btn-color)"};
   padding: var(--space-sm) var(--space-md);
   font-family: var(--serif);
-  /* font-weight: bolder; */
+  font-weight: bolder;
   border: ${props =>
     props.plain
       ? "var(--thickness) solid var(--bg-1)"
-      : "var(--thickness) solid var(--bg-2)"};
+      : "var(--thickness) solid var(--outline-btn-border)"};
   border-radius: var(--radius);
-  text-transform: uppercase;
   opacity: ${props => (props.loading ? ".5" : "1")};
   transition: var(--transition);
   font-weight: bolder;
+  font-family: var(--serif);
 
   @media (max-width: 600px) {
     width: ${props => (props.fillMobile ? `100%` : ``)};

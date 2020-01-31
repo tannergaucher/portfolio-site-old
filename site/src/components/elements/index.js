@@ -4,6 +4,7 @@ import Layout from "./layout"
 import SEO from "./seo"
 import Avatar from "./avatar"
 import Contact from "./contact"
-import SectionTitle from "./section-title"
+import ViewAllLink from "./view-all-link"
+import InlineCard from "./inline-card"
 
-export { Footer, Header, Layout, SEO, Avatar, Contact, SectionTitle }
+export { Footer, Header, Layout, SEO, Avatar, Contact, ViewAllLink, InlineCard }

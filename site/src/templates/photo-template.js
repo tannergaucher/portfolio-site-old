@@ -40,7 +40,7 @@ const StyledPhotoPage = styled(StyledPage)`
 export default function PhotoTemplatePage({ data, location, pageContext }) {
   const formatedDateTime = moment(
     data.sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
-  ).format("MMMM Do YYYY")
+  ).format("MMMM Do, YYYY")
 
   return (
     <Layout location={location}>

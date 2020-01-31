@@ -1,57 +1,43 @@
 import React from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
-import { camelCase } from "lodash"
+import { kebabCase } from "lodash"
 
 import { Link, Button } from "../styles"
 
 const StyledPostCard = styled.div`
   margin-bottom: var(--space-xl);
-
-  .post-title {
-    color: var(--href-color);
-    margin-bottom: var(--space-md);
-  }
+  transition: var(--transition);
 
   .post-description {
-    margin-bottom: 0;
     color: var(--grey);
+    font-weight: lighter;
+    margin-right: var(--space-sm);
   }
 
   .post-tag {
     margin-right: var(--space-md);
-  }
-
-  &:hover {
-    .post-title {
-      text-decoration: underline;
-      transition: var(--transition);
-    }
   }
 `
 
 export default function PostCard({ post }) {
   return (
     <StyledPostCard>
-      <Link to={post.fields.slug} none="true" inherit="true">
-        <h3 className="post-title">{post.frontmatter.title}</h3>
-        <p className="post-description">{post.frontmatter.description}</p>
-      </Link>
-      <br />
-      <div className="post-tags">
-        {post.frontmatter.tags.map(tag => (
-          <Button
-            className="post-tag"
-            key={tag}
-            onClick={() => {
-              navigate(`/posts/${camelCase(tag)}`)
-            }}
-          >
-            {tag}
-          </Button>
-        ))}
+      <div className="text-flex">
+        <h3 className="post-title">
+          <Link to={post.fields.slug}>
+            {post.frontmatter.title}{" "}
+            <span className="post-description text--md">
+              {post.frontmatter.description}{" "}
+            </span>
+          </Link>
+          {post.frontmatter.tags.map(tag => (
+            <Link className="post-tag text--sm" to={`/posts/${kebabCase(tag)}`}>
+              {tag}
+            </Link>
+          ))}
+        </h3>
       </div>
-      <br />
     </StyledPostCard>
   )
 }

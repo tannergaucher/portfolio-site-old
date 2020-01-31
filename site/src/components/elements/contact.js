@@ -7,10 +7,6 @@ const StyledContactSection = styled.div`
   max-width: var(--container);
   margin: var(--space-md) auto;
 
-  .contact-section-title {
-    color: var(--href-color);
-  }
-
   @media (max-width: 600px) {
     margin: var(--space-sm) auto;
   }
@@ -19,8 +15,6 @@ const StyledContactSection = styled.div`
 export default function Contact() {
   return (
     <StyledContactSection>
-      <h3 className="contact-section-title">Contact Me</h3>
-      <br />
       <Form name="netlify-contact-form" method="POST" data-netlify="true">
         {/* This hidden form needs to be here for netlify form */}
         <input type="hidden" name="form-name" value="netlify-contact-form" />
@@ -39,7 +33,7 @@ export default function Contact() {
           required
         ></TextArea>
         <Button type="submit" primary>
-          Send
+          Contact
         </Button>
       </Form>
       <br />

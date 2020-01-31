@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Code|Merriweather:400,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fira+Code|Merriweather:300,400,900&display=swap");
 
 :root {
   /* Typography */
@@ -6,15 +6,15 @@
     "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   --serif: "Merriweather", serif;
   --mono: "Fira Code", monospace;
-  --heading-line-height: 1.1;
+  --heading-line-height: 1.26;
   --paragraph-line-height: 1.7;
   --heading-letter-spacing: 0;
   --paragraph-letter-spacing: 0;
   /* Vertical Rhythm */
   --responsive-unit: 0.9vw; /* TWEAK ME  */
   /* Base Values */
-  --text-base-size: calc(0.9rem + var(--responsive-unit));
-  --text-scale-ratio: 1.255; /* TWEAK ME */
+  --text-base-size: calc(1rem + var(--responsive-unit));
+  --text-scale-ratio: 1.21; /* TWEAK ME */
   /* Type Scale */
   --text-xs: calc(
     1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
@@ -50,25 +50,27 @@
   /* Colors */
   --text-color: black;
   --text-color-lighter: #140f0f;
-  --href-color: black;
+  --href-color: palevioletred;
   --bg-1: white;
   --bg-2: #f2f2f2;
-  --grey: #555555;
+  --grey: #77777;
+
   --primary-btn-bg: black;
-  --outline-btn-bg: var(--bg-2);
+  --outline-btn-bg: var(--bg-1);
   --primary-btn-color: white;
   --outline-btn-color: var(--grey);
+  --outline-btn-border: var(--black);
   --input-border: black;
   --code-bg: black;
   /* Components */
   --radius: 4px;
   --radius-lg: 12px;
-  --thickness: 2px;
+  --thickness: 0.3rem;
   --container: 833px;
   --elevation-1: 0 4px 12px rgba(0, 0, 0, 0.05);
   --elevation-2: 0px 4px 12px rgba(0, 0, 0, 0.2);
   --elevation-3: 0px 12px 20px rgba(0, 0, 0, 0.2);
-  --transition: all 0.15s ease-in 0s;
+  --transition: all 0.2s ease 0s;
   --opacity: opacity(0.35);
   --card-height: 250px;
 }
@@ -80,8 +82,10 @@
     --href-color: fuchsia;
     --bg-1: rgb(5, 5, 5);
     --bg-2: #1a1a1b;
+    --grey: #555555;
     --primary-btn-bg: #1a1a1b;
-    --primary-btn-color: var(--href-color);
+    --primary-btn-color: var(--text-color);
+    --outline-btn-border: var(--white);
     --input-border: var(--bg-2);
     --code-bg: var(--bg-2);
   }
@@ -185,7 +189,13 @@ button {
 }
 
 a {
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+a:hover {
   color: var(--href-color);
+  transition: var(--transition);
 }
 
 pre {

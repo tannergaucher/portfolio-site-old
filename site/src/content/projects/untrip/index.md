@@ -1,6 +1,6 @@
 ---
 title: "Untrip.app"
-description: "Curate content into your own city playlist and share it on social media."
+description: "Curate content into your own city playlist and share it on social media"
 technologies:
   [
     "React",

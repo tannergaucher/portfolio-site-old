@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 import { ProjectCard } from "."
 import { useLatestProjects } from "../hooks"
-import { SectionTitle } from "../elements"
+import { Button } from "../styles"
+import { ViewAllLink } from "../elements"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
@@ -14,10 +15,21 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <SectionTitle to="/projects" sectionTitle="Projects" />
       {edges.map(edge => (
         <ProjectCard key={edge.node.id} project={edge.node} />
       ))}
+
+      <ViewAllLink
+        to="/projects"
+        heading="More Projects"
+        subHeading="Built with modern web tech including React, Apollo Client, Apollo Server, Gatsby, Styled Components, Node, Prisma, MongoDB, AWS Lambda"
+      />
+
+      <hr
+        style={{
+          border: `none`,
+        }}
+      />
     </StyledProjects>
   )
 }
