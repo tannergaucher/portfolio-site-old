@@ -34,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             frontmatter {
               title
+              description
             }
             fields {
               slug
@@ -43,6 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             frontmatter {
               title
+              description
             }
             fields {
               slug
