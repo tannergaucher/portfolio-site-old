@@ -1,39 +1,21 @@
-import React from "react"
-import { navigate, graphql } from "gatsby"
-import Img from "gatsby-image"
-import styled from "styled-components"
-import moment from "moment"
+import { Button, StyledPage } from "../components/styles"
 import { FormNext, FormPrevious, Grid } from "grommet-icons"
+import { graphql, navigate } from "gatsby"
 
+import Img from "gatsby-image"
 import { Layout } from "../components/elements"
-import { StyledPage, Button } from "../components/styles"
+import React from "react"
+import moment from "moment"
+import styled from "styled-components"
 
 const StyledPhotoPage = styled(StyledPage)`
   max-width: var(--container);
   margin: var(--space-md) auto;
   margin-bottom: var(--space-xl);
 
-  .image {
-    margin-bottom: var(--space-md);
-    box-shadow: var(--elevation-2);
-  }
-
-  .photo-btns {
-    display: flex;
-    margin-top: var(--space-md);
-  }
-
-  .photo-btn {
-    font-size: var(--text-lg);
-    width: 100%;
-  }
-
-  .previous {
-    margin-right: var(--space-sm);
-  }
-
-  .grid {
-    margin-top: var(--space-sm);
+  .photo {
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--elevation-3);
   }
 `
 
@@ -45,37 +27,10 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
   return (
     <Layout location={location}>
       <StyledPhotoPage>
-        <Img className="image" fluid={data.sanityMyImage.myImage.asset.fluid} />
-        <small className="image-dateTime-caption">
-          {formatedDateTime}
-          {". "}
-          {data.sanityMyImage.caption}
-        </small>
-        <div className="photo-btns">
-          {pageContext.previous && (
-            <Button
-              className="photo-btn previous"
-              onClick={() =>
-                navigate(`/photo/${pageContext.previous.slug.current}`)
-              }
-            >
-              <FormPrevious size="var(--text-lg)" color="var(--text-color)" />
-            </Button>
-          )}
-          {pageContext.next && (
-            <Button
-              className="photo-btn"
-              onClick={() =>
-                navigate(`/photo/${pageContext.next.slug.current}`)
-              }
-            >
-              <FormNext size="var(--text-lg)" color="var(--text-color)" />
-            </Button>
-          )}
-        </div>
-        <Button className="photo-btn grid" onClick={() => navigate(`/photos`)}>
-          <Grid size="var(--text-md)" color="var(--text-color)" />
-        </Button>
+        <Img className="photo" fluid={data.sanityMyImage.myImage.asset.fluid} />
+        <p className="image-dateTime-caption">
+          {formatedDateTime}. {data.sanityMyImage.caption}
+        </p>
       </StyledPhotoPage>
     </Layout>
   )

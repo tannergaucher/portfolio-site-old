@@ -1,13 +1,12 @@
-import React from "react"
-import styled from "styled-components"
-import { navigate } from "gatsby"
-import { kebabCase } from "lodash"
+import { Button, Link } from "../styles"
 
-import { Link, Button } from "../styles"
+import React from "react"
+import { kebabCase } from "lodash"
+import { navigate } from "gatsby"
+import styled from "styled-components"
 
 const StyledPostCard = styled.div`
   margin-bottom: var(--space-xl);
-  transition: var(--transition);
 
   .post-title {
     font-weight: 900;
@@ -18,7 +17,7 @@ const StyledPostCard = styled.div`
 export default function PostCard({ post }) {
   return (
     <StyledPostCard>
-      <Link to={post.fields.slug} className="inherit none">
+      <Link to={post.fields.slug} className="post-title-link">
         <h2 className="post-title">{post.frontmatter.title}</h2>
       </Link>
       <p className="post-description">{post.frontmatter.description}</p>

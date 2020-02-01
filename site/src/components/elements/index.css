@@ -1,20 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code");
 
+/* @import url("https://rsms.me/inter/inter.css"); */
+
 :root {
   /* Typography */
   --sans: -apple-system, "Avenir Next", BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
-  /* --serif: "Merriweather", serif; */
+
   --mono: "Fira Code", monospace;
   --heading-line-height: 1.26;
   --paragraph-line-height: 1.7;
   --heading-letter-spacing: 0;
   --paragraph-letter-spacing: 0;
   /* Vertical Rhythm */
-  --responsive-unit: 0.9vw; /* TWEAK ME  */
+  --responsive-unit: 0.5vw; /* TWEAK ME  */
   /* Base Values */
   --text-base-size: calc(1rem + var(--responsive-unit));
-  --text-scale-ratio: 1.21; /* TWEAK ME */
+  --text-scale-ratio: 1.22; /* TWEAK ME */
   /* Type Scale */
   --text-xs: calc(
     1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
@@ -51,10 +53,12 @@
   /* Colors */
   --text-color: black;
   --text-color-lighter: #140f0f;
-  --href-color: blue;
-  --href-hover-color: dodgerblue;
-  --bg-1: white;
-  --bg-2: #f2f2f2;
+
+  --href-color: #9a7878;
+  --href-hover-color: #2f3061;
+
+  --bg-1: #fafafa;
+  --bg-2: #ededed;
   --grey: #666666;
 
   --primary-btn-bg: black;
@@ -63,15 +67,17 @@
   --outline-btn-color: var(--grey);
   --outline-btn-border: var(--black);
   --input-border: black;
-  --code-bg: black;
+  --code-bg: #28272c;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+
   /* Components */
   --radius: 4px;
   --radius-lg: 12px;
   --thickness: 0.3rem;
   --container: 833px;
-  --elevation-1: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --elevation-2: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  --elevation-3: 0px 12px 20px rgba(167, 141, 141, 0.2);
+  --elevation-1: 0 4px 12px var(--shadow-color);
+  --elevation-2: 0px 4px 12px var(--shadow-color);
+  --elevation-3: 0px 12px 20px var(--shadow-color);
   --transition: all 0.2s ease 0s;
   --opacity: opacity(0.35);
   --card-height: 250px;
@@ -83,14 +89,26 @@
     --grey: lightgrey;
     --href-color: fuchsia;
     --href-hover-color: #fd3f92;
-    --bg-1: rgb(5, 5, 5);
+    --bg-1: rgba(0, 0, 0, 0.95);
     --bg-2: #1a1a1b;
     --grey: #888888;
+    --code-bg: #1a1a1b;
+    --shadow-color: var(--bg-1);
     --primary-btn-bg: #1a1a1b;
     --primary-btn-color: var(--text-color);
     --outline-btn-border: var(--white);
     --input-border: var(--bg-2);
     --code-bg: var(--bg-2);
+  }
+}
+
+.one {
+  --href-color: ;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
   }
 }
 
@@ -207,6 +225,8 @@ blockquote {
   margin: 0;
   margin-bottom: var(--space-lg);
   border-left: 0.5rem solid var(--href-color);
+  box-shadow: var(--elevation-1);
+  border-radius: var(--radius);
 }
 
 blockquote > p {
@@ -234,7 +254,7 @@ h6 {
   text-decoration: none;
   margin-right: var(--space-md);
   font-size: var(--text-sm);
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 @media (max-width: 1024px) {

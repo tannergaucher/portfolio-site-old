@@ -1,13 +1,19 @@
-import React from "react"
-import styled from "styled-components"
-
-import { useLatestPost } from "../hooks"
-import { PostCard } from "../post"
 import { Button, Link } from "../styles"
+
+import { PostCard } from "../post"
+import React from "react"
 import { ViewAllLink } from "../elements"
+import styled from "styled-components"
+import { useLatestPost } from "../hooks"
 
 const StyledPosts = styled.div`
   margin: var(--space-xl) 0;
+
+  .all-posts {
+    font-weight: 900;
+    margin-bottom: var(--space-xl);
+    color: var(--text-color);
+  }
 `
 
 export default function Posts() {
@@ -15,12 +21,12 @@ export default function Posts() {
 
   return (
     <StyledPosts>
+      <Link to="/posts" className="all-posts-link">
+        <h2 className="all-posts">All Posts </h2>
+      </Link>
       {edges.map(edge => (
         <PostCard post={edge.node} key={edge.node.id} />
       ))}
-      <Link to="/posts" none="true">
-        <h2>View All Posts </h2>
-      </Link>
     </StyledPosts>
   )
 }
