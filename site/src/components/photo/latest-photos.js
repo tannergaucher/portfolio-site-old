@@ -1,13 +1,17 @@
-import React from "react"
-import styled from "styled-components"
+import { Button, ContentGrid, Link } from "../styles"
 
 import { PhotoCard } from "."
-import { useLatestMyImages } from "../hooks"
-import { ContentGrid, Link, Button } from "../styles"
+import React from "react"
 import { ViewAllLink } from "../elements"
+import styled from "styled-components"
+import { useLatestMyImages } from "../hooks"
 
 const StyledLatestPhotos = styled.div`
   margin-bottom: var(--space-xl);
+
+  .view-all {
+    font-weight: 900;
+  }
 `
 
 const StyledLatestPhotosGrid = styled(ContentGrid)`
@@ -27,7 +31,7 @@ export default function LatestPhotos() {
         ))}
       </StyledLatestPhotosGrid>
       <Link to="/photos" none="true">
-        <h2>View All Photos</h2>
+        <h2 className="view-all">All Photos &#8594;</h2>
       </Link>
     </StyledLatestPhotos>
   )

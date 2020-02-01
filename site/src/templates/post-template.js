@@ -25,6 +25,7 @@ const StyledPost = styled(StyledPage)`
   .next-post-title,
   .previous-post-title {
     margin-bottom: var(--space-lg);
+    font-weight: 900;
   }
 `
 
@@ -46,7 +47,11 @@ export default function PostTemplatePage({ data, pageContext, location }) {
           {next && (
             <>
               <small className="next">Next</small>
-              <Link to={`${next.fields.slug}`}>
+              <Link
+                className="next-post-link"
+                to={`${next.fields.slug}`}
+                none="true"
+              >
                 <h2 className="next-post-title">{next.frontmatter.title}</h2>
               </Link>
             </>
@@ -54,7 +59,11 @@ export default function PostTemplatePage({ data, pageContext, location }) {
           {previous && (
             <>
               <small className="previous">Previous</small>
-              <Link to={`${previous.fields.slug}`}>
+              <Link
+                className="previous-post-link"
+                to={`${previous.fields.slug}`}
+                none="true"
+              >
                 <h2 className="previous-post-title">
                   {previous.frontmatter.title}
                 </h2>

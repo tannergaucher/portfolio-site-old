@@ -18,9 +18,6 @@ const StyledIndexHeader = styled.header`
   .site-title {
     font-weight: 900;
   }
-
-  .site-description {
-  }
 `
 
 function IndexHeader() {

@@ -1,14 +1,16 @@
+import { Button } from "../styles"
 import React from "react"
 import styled from "styled-components"
-
-import { Button } from "../styles"
 
 const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
 
   .project-title {
     font-weight: 900;
-    color: var(--text-color);
+  }
+
+  .project-url-link {
+    text-decoration: none;
   }
 
   .project-iframe {
@@ -19,10 +21,19 @@ const StyledProjectCard = styled.div`
 export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
-      <a href={project.frontmatter.deployedUrl}>
+      <a
+        className="project-url-link"
+        href={project.frontmatter.deployedUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <h2 className="project-title">{project.frontmatter.title}</h2>
       </a>
       <p className="project-description">{project.frontmatter.description}</p>
+
+      <a href={project.frontmatter.githubRepo} className="nav-link">
+        View Source
+      </a>
 
       <div
         className="project-iframe"
@@ -46,9 +57,6 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         ></iframe>
       </div>
-      <a href={project.frontmatter.githubRepo} className="nav-link">
-        View Source
-      </a>
     </StyledProjectCard>
   )
 }
