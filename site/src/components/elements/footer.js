@@ -1,24 +1,26 @@
+import { Button, Link } from "../styles"
+
 import React from "react"
 import styled from "styled-components"
-
-import { Button, Link } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 const StyledFooter = styled.div`
   padding: var(--space-sm);
 
-  a {
-    font-weight: bolder;
+  .site-title {
+    color: var(--text-color);
   }
 `
 
-export default function Footer() {
+export default function Footer({ location }) {
+  const isIndexPage = location.pathname === "/"
+
   const { title } = useSiteMetadata()
 
-  return (
+  return isIndexPage ? null : (
     <StyledFooter>
-      <Link className="nav-link site-title" to="/">
-        {title}
+      <Link to="/" none="">
+        <small className="site-title">{title}</small>
       </Link>
     </StyledFooter>
   )

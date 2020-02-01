@@ -1,15 +1,11 @@
+import { Button, Form, Input, TextArea } from "../styles"
+
 import React from "react"
 import styled from "styled-components"
 
-import { Form, Button, Input, TextArea } from "../styles"
-
 const StyledContactSection = styled.div`
   max-width: var(--container);
-  margin: var(--space-md) auto;
-
-  @media (max-width: 600px) {
-    margin: var(--space-sm) auto;
-  }
+  margin: var(--space-lg) auto;
 `
 
 export default function Contact() {
@@ -32,7 +28,7 @@ export default function Contact() {
           placeholder="Message"
           required
         ></TextArea>
-        <Button type="submit" primary>
+        <Button type="submit" primary="true">
           Contact
         </Button>
       </Form>

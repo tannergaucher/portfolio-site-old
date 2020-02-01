@@ -26,17 +26,9 @@ export default function LatestPhotos() {
           </Link>
         ))}
       </StyledLatestPhotosGrid>
-      <ViewAllLink
-        to="/photos"
-        heading="More Photos"
-        subHeading="An almost daily photo journal"
-      />
-      <hr
-        style={{
-          border: `none`,
-          marginTop: `var(--space-xl)`,
-        }}
-      />
+      <Link to="/photos" none="true">
+        <h2>View All Photos</h2>
+      </Link>
     </StyledLatestPhotos>
   )
 }

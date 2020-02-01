@@ -16,7 +16,7 @@ export default function Layout({ children, location }) {
     <>
       <Header location={location} />
       <Main>{children}</Main>
-      <Footer />
+      <Footer location={location} />
     </>
   )
 }

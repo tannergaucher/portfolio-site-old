@@ -1,49 +1,47 @@
 ---
 title: "Introduction to Data Structures for Interviews"
 date: "2019-12-10"
-description: "My notes from the Frontend Masters course"
+description: "My notes from the Frontend Masters course."
 tags: ["Notes", "CS"]
 ---
 
-## Common data structures
-
-- [Stacks and queues](#stacks-and-queues)
-- [Linked lists](#linked-lists)
-- [Hash tables](#hash-tables)
-- [Arrays and strings](#arrays-and-strings)
-- [Trees and heaps](#trees-and-heaps)
+- [Stacks and Queues](#stacks-and-queues)
+- [Linked Lists](#linked-lists)
+- [Hash Tables](#hash-tables)
+- [Arrays and Strings](#arrays-and-strings)
+- [Trees and Heaps](#trees-and-heaps)
 - [Graphs](#graphs)
 
-#### On application versus implementation
+## On Application Versus Implementation
 
 - Be able to implement them, but more importantly, be able to apply the correct ones to solve problems / interview questions
 
-#### How to prepare effectively
+## How to Prepare Effectively
 
 - Don't just memorize
 - Find themes but don't jump to conclusions
 - Practice with a timer. Being able to solve things quickly matters
 - Actually practice. Reading doesn't count
 
-## Stacks and queues
+## Stacks and Queues
 
 - Ordered data structures that have opinions about how things can be inserted and removed
 
-#### Stack
+### Stack
 
 - Last in, first out
 - Push and pop methods
 
-#### Queue
+### Queue
 
 - First in, first out
 - Enqueue and dequeue methods
 
-#### Pros
+### Pros
 
 - Fast operations
 
-#### Implementation of a stack
+### Implementation of a Stack
 
 ```js
 class Stack {
@@ -75,7 +73,7 @@ class Stack {
 }
 ```
 
-#### Implementation of a queue
+### Implementation of a Queue
 
 ```js
 class Queue {
@@ -111,29 +109,29 @@ class Queue {
 }
 ```
 
-## Linked lists
+## Linked Lists
 
 - Organize items sequentially, with each item storing a pointer to the next
 - JS has dynamic arrays, more important in languages that don't have dynamic arrays
 - Each item has a property next that points to another object
 - Linked lists are often the underlying data structure for a stack or a queue
 
-> #### What is a reference?
+> ### What Is a Reference?
 >
 > When we assign values to an object, we are really just pointing to that object. The object doesn't live inside the variable, the variable is just a pointer to the object in memory. If we assign another variable to that object, we have 2 variables pointing to the same object. But there's only one object. That's what we mean by reference. Pointers point to nodes (objects).
 
-#### Pros
+### Pros
 
 - Fast operations on the ends
 - Flexible size
 - Can do constant time insertions anywhere in the list
 - Quick deletions from the middle (when deleting from middle of array, then must shift everything after that index over by one)
 
-#### Cons
+### Cons
 
 - Costly lookups (when searching. If you have a reference to a node that you want to delete, then it's constant)
 
-#### Naive linked list example
+### Naive Linked List Example
 
 ```js
 const linkedList = {
@@ -151,14 +149,13 @@ const linkedList = {
 ```
 
 - This example has no reference to previous. If it did, it would be a _doubly linked list_
-
 - Hash tables often use linked lists under the hood
 
-> #### Common use case for a linked list
+> ### Common Use Case for a Linked List
 >
 > A Least recently used cache, which keeps track of new searches. As we get new input, we take things out. A least recently used cache would remove the least recently searched term.
 
-#### Linked list implementation
+### Linked List Implementation
 
 ```js
 class LinkedList {
@@ -212,7 +209,7 @@ class LinkedList {
 }
 ```
 
-## Hash tables
+## Hash Tables
 
 - Are not ordered, don't get sorted
 - Organize data for quick lookup of a value for a given key
@@ -223,7 +220,7 @@ class LinkedList {
   - Map
   - Set
 
-#### Pros
+### Pros
 
 - Quick lookups (constant time)
 - Quick insertions (constant time)
@@ -232,24 +229,24 @@ class LinkedList {
 - With ES6, keys can be functions too if using set or map
 - In JS, object, set, map are hash table data structures
 
-#### Cons
+### Cons
 
 - Slow worst case lookups
 - Unordered
 - Single directional lookups
 
-#### Hash table main concepts
+### Hash Table Main Concepts
 
 - Hashing function
 - Collisions
 - Resizing
 
-#### Hashing function
+### Hashing Function
 
 - Takes key and hashes it
 - For every input, always gives the same output
 
-#### Resizing
+### Resizing
 
 - Hashing functions return a value within a certain range.
 - Have to specify this when implementing a hash table
@@ -258,12 +255,12 @@ class LinkedList {
 - After doubling range, you redistribute by rehashing all existing values to the newly doubled range
 - Implement this with same hash function, which has a range parameter, and double that value
 
-#### Collisions
+### Collisions
 
 - When you get the same hash value for multiple keys. So one hash value has multiple contents
 - Having many collisions can affect run time for a lookup
 
-#### Hash table implementation
+### Hash Table Implementation
 
 ```js
 class HashTable {
@@ -326,21 +323,21 @@ class HashTable {
 }
 ```
 
-## Arrays and strings
+## Arrays and Strings
 
 - Arrays organize items sequentially in memory
 - Strings can be thought of as arrays of characters
 
-#### Pros
+### Pros
 
 - Fast lookups
 - Fast appends
 
-#### Cons
+### Cons
 
 - Slow inserts
 - Slow deletes (because when inserting / deleting from the middle, must shift everything over)
 
-> #### Strings and space complexity
+> ### Strings and Space Complexity
 >
 > Strings are not mutable. If you change a string, you're really copying to a new string with that change. This has space complexity implications. If you're trying to do something in constant space, you can't use a strings. When working with strings, it's often better to split into array and manipulate using array methods.
