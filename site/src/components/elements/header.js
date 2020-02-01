@@ -1,7 +1,7 @@
+import { Button, Link } from "../styles"
+
 import React from "react"
 import styled from "styled-components"
-
-import { Link, Button } from "../styles"
 import { useSiteMetadata } from "../hooks"
 
 export default function Header({ location }) {
@@ -11,30 +11,15 @@ export default function Header({ location }) {
 }
 
 const StyledIndexHeader = styled.header`
-  padding: var(--space-sm);
+  padding: 0 var(--space-sm);
   max-width: var(--container);
-  margin: 0 auto;
-  margin-top: var(--space-xl);
+  margin: 0 auto var(--space-xl) auto;
 
   .site-title {
-    font-size: var(--text-lg);
+    font-weight: 900;
   }
 
   .site-description {
-    color: var(--grey);
-    font-weight: lighter;
-    margin-right: var(--space-sm);
-    font-size: var(--text-md);
-  }
-
-  a {
-    text-decoration: none;
-    margin-right: var(--space-md);
-    font-size: var(--text-sm);
-  }
-
-  @media (max-width: 600px) {
-    margin-top: var(--space-lg);
   }
 `
 
@@ -43,37 +28,35 @@ function IndexHeader() {
 
   return (
     <StyledIndexHeader>
-      <h3>
-        <span className="site-title">{title}</span>{" "}
-        <span className="site-description text--md">{description}</span>
-        {"  "}
-        <a href={social.github} target="_blank" rel="noopener noreferrer">
-          <span className="github-href">Github</span>
+      <h1 className="site-title">{title}</h1>
+      <p className="site-description">{description}</p>
+      <nav>
+        <a
+          className="nav-link"
+          href={social.github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
         </a>
-        <a href={social.linkedIn} target="_blank" rel="noopener noreferrer">
+        <a
+          className="nav-link"
+          href={social.linkedIn}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span>LinkedIn</span>
         </a>
-      </h3>
-
-      <hr
-        style={{
-          marginTop: `var(--space-xl)`,
-          border: `none`,
-        }}
-      />
+      </nav>
     </StyledIndexHeader>
   )
 }
 
 const StyledPlainHeader = styled.header`
   padding: var(--space-sm);
-  background: var(--bg-1);
-  /* Because gatsby image has a zIndex */
-  z-index: 3;
 
-  a {
-    font-weight: bolder;
-    font-size: var(--text-sm);
+  .site-title {
+    color: var(--text-color);
   }
 `
 
@@ -82,7 +65,9 @@ function PlainHeader() {
 
   return (
     <StyledPlainHeader>
-      <Link to="/">{title}</Link>
+      <Link to="/">
+        <small className="site-title">{title}</small>
+      </Link>
     </StyledPlainHeader>
   )
 }

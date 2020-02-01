@@ -12,7 +12,6 @@ export default function Projects({ location }) {
     <Layout location={location}>
       <SEO title="Projects" />
       <StyledPage>
-        <h1>Projects</h1>
         <br />
         {edges.map(edge => (
           <ProjectCard key={edge.node.id} project={edge.node} />

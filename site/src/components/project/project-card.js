@@ -1,52 +1,28 @@
 import React from "react"
 import styled from "styled-components"
-import { Domain, Github } from "grommet-icons"
 
 import { Button } from "../styles"
 
 const StyledProjectCard = styled.div`
   margin-bottom: var(--space-xl);
 
-  .project-description {
-    color: var(--grey);
-    font-weight: lighter;
+  .project-title {
+    font-weight: 900;
+    color: var(--text-color);
   }
 
-  a {
-    margin: 0 var(--space-sm);
-    text-decoration: none;
-  }
-
-  .tech-item {
-    color: var(--grey);
+  .project-iframe {
+    margin: var(--space-lg) 0;
   }
 `
 
 export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
-      <h3 className="project-title">
-        {project.frontmatter.title}{" "}
-        <span className="project-description text--md">
-          {project.frontmatter.description}
-        </span>
-        <span>
-          <a
-            href={project.frontmatter.githubRepo}
-            className="project-link text--sm"
-          >
-            Source Code
-          </a>
-        </span>
-        <span>
-          <a
-            href={project.frontmatter.deployedUrl}
-            className="project-link text--sm"
-          >
-            View Deployed
-          </a>
-        </span>
-      </h3>
+      <a href={project.frontmatter.deployedUrl}>
+        <h2 className="project-title">{project.frontmatter.title}</h2>
+      </a>
+      <p className="project-description">{project.frontmatter.description}</p>
 
       <div
         className="project-iframe"
@@ -70,31 +46,9 @@ export default function ProjectCard({ project }) {
           allowFullScreen
         ></iframe>
       </div>
-      {/* <ul>
-        {project.frontmatter.technologies.map(technology => (
-          <li className="tech-item text--sm" key={technology}>
-            {technology}
-          </li>
-        ))}
-      </ul> */}
-      {/* <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={`${project.frontmatter.githubRepo}`}
-      >
-        <Button className="repo-btn" fillMobile="true">
-          Github Repo
-        </Button>
+      <a href={project.frontmatter.githubRepo} className="nav-link">
+        View Source
       </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={`${project.frontmatter.deployedUrl}`}
-      >
-        <Button className="deployed-btn" fillMobile="true">
-          View Deployed
-        </Button>
-      </a> */}
     </StyledProjectCard>
   )
 }

@@ -18,19 +18,9 @@ export default function Posts() {
       {edges.map(edge => (
         <PostCard post={edge.node} key={edge.node.id} />
       ))}
-
-      <ViewAllLink
-        to="/posts"
-        heading="More Posts"
-        subHeading="On JavaScript, web development, self-learning"
-      />
-
-      <hr
-        style={{
-          marginTop: `var(--space-xl)`,
-          border: `none`,
-        }}
-      />
+      <Link to="/posts" none="true">
+        <h2>View All Posts </h2>
+      </Link>
     </StyledPosts>
   )
 }

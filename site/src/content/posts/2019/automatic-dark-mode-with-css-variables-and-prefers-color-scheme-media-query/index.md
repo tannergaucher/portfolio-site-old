@@ -1,7 +1,7 @@
 ---
 title: "Responsive UI Themes with @prefers-color-scheme Media Query and CSS Variables"
 date: "2019-11-13"
-description: "Detect if a user's operating system is in light / dark mode and present a themed UI without any JavaScript"
+description: "Detect if a user's operating system is in light / dark mode and present a themed UI without any JavaScript."
 tags: ["CSS", "Web"]
 ---
 

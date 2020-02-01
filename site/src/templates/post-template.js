@@ -1,51 +1,30 @@
+import { Layout, SEO } from "../components/elements"
+import { Link, StyledPage } from "../components/styles"
+
 import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 import { kebabCase } from "lodash"
-
-import { SEO, Layout } from "../components/elements"
-import { StyledPage, Link } from "../components/styles"
+import styled from "styled-components"
 
 const StyledPost = styled(StyledPage)`
-  max-width: var(--container);
+  .post-title {
+    font-weight: 900;
+  }
 
   .post-description {
-    font-weight: 300;
-    color: var(--grey);
-    font-size: var(--text-lg);
-    margin-right: var(--space-sm);
   }
 
-  .post-date {
-    font-size: var(--text-sm);
-    font-weight: lighter;
+  article {
+    margin: var(--space-xl) 0;
   }
 
-  .post-body {
-    margin-top: var(--space-lg);
+  .more-posts-links {
+    margin-bottom: var(--space-lg);
   }
 
-  .next,
-  .previous {
-    font-size: var(--text-lg);
-    margin-right: var(--space-sm);
-    color: var(--grey);
-    font-weight: lighter;
-  }
-
-  .next-title,
-  .previous-title {
-    font-size: var(--text-lg);
-  }
-
-  @media (max-width: 600px) {
-    .post-title {
-      margin-top: var(--space-md);
-    }
-
-    .post-body {
-      margin-top: var(--space-md);
-    }
+  .next-post-title,
+  .previous-post-title {
+    margin-bottom: var(--space-lg);
   }
 `
 
@@ -57,44 +36,32 @@ export default function PostTemplatePage({ data, pageContext, location }) {
     <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        <h1>
-          <span className="post-title">{post.frontmatter.title}</span>{" "}
-          <span className="post-description">
-            {post.frontmatter.description}
-          </span>
-          <span className="post-date">{post.frontmatter.date}</span>
-        </h1>
-        <br />
-        <div
+        <h1 className="post-title">{post.frontmatter.title}</h1>
+        <p className="post-description">{post.frontmatter.description}</p>
+        <article
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-        <br />
-        <div className="next-prev-links">
+        ></article>
+        <div className="more-posts-links">
           {next && (
-            <h2>
+            <>
+              <small className="next">Next</small>
               <Link to={`${next.fields.slug}`}>
-                <>
-                  <span className="next">Next</span>
-                  <span className="next-title">{next.frontmatter.title}</span>
-                </>
+                <h2 className="next-post-title">{next.frontmatter.title}</h2>
               </Link>
-            </h2>
+            </>
           )}
           {previous && (
-            <h2>
+            <>
+              <small className="previous">Previous</small>
               <Link to={`${previous.fields.slug}`}>
-                <h2 className="next-prev-title prev">
-                  <span className="previous">Previous</span>
-                  <span className="previous-title">
-                    {previous.frontmatter.title}
-                  </span>
+                <h2 className="previous-post-title">
+                  {previous.frontmatter.title}
                 </h2>
               </Link>
-            </h2>
+            </>
           )}
         </div>
-        <br />
       </StyledPost>
     </Layout>
   )
