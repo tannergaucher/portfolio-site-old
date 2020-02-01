@@ -7,10 +7,7 @@ const StyledProjectCard = styled.div`
 
   .project-title {
     font-weight: 900;
-  }
-
-  .project-url-link {
-    text-decoration: none;
+    color: var(--text-color);
   }
 
   .project-iframe {

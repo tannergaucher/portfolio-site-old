@@ -10,13 +10,14 @@ const StyledPostCard = styled.div`
 
   .post-title {
     font-weight: 900;
+    color: var(--text-color);
   }
 `
 
 export default function PostCard({ post }) {
   return (
     <StyledPostCard>
-      <Link to={post.fields.slug} className="post-title-link" none="true">
+      <Link to={post.fields.slug} className="post-title-link">
         <h2 className="post-title">{post.frontmatter.title}</h2>
       </Link>
       <p className="post-description">{post.frontmatter.description}</p>

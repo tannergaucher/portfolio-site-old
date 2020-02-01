@@ -53,8 +53,10 @@
   /* Colors */
   --text-color: black;
   --text-color-lighter: #140f0f;
+
   --href-color: #9a7878;
   --href-hover-color: #2f3061;
+
   --bg-1: #fafafa;
   --bg-2: #ededed;
   --grey: #666666;
@@ -98,6 +100,10 @@
     --input-border: var(--bg-2);
     --code-bg: var(--bg-2);
   }
+}
+
+.one {
+  --href-color: ;
 }
 
 @supports (font-variation-settings: normal) {
