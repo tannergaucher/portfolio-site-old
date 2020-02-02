@@ -11,9 +11,6 @@ const StyledPost = styled(StyledPage)`
     font-weight: 900;
   }
 
-  .post-description {
-  }
-
   article {
     margin: var(--space-xl) 0;
   }
@@ -49,7 +46,7 @@ export default function PostTemplatePage({ data, pageContext, location }) {
             <div className="next-post">
               <small>Next</small>
               <Link className="next-post-link" to={`${next.fields.slug}`}>
-                <h2 className="next-post-title">{next.frontmatter.title}</h2>
+                <h3 className="next-post-title">{next.frontmatter.title}</h3>
               </Link>
             </div>
           )}
@@ -60,9 +57,9 @@ export default function PostTemplatePage({ data, pageContext, location }) {
                 className="previous-post-link"
                 to={`${previous.fields.slug}`}
               >
-                <h2 className="previous-post-title">
+                <h3 className="previous-post-title">
                   {previous.frontmatter.title}
-                </h2>
+                </h3>
               </Link>
             </div>
           )}

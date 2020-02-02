@@ -18,7 +18,7 @@ export default function PostCard({ post }) {
   return (
     <StyledPostCard>
       <Link to={post.fields.slug} className="post-title-link">
-        <h2 className="post-title">{post.frontmatter.title}</h2>
+        <h3 className="post-title">{post.frontmatter.title}</h3>
       </Link>
       <p className="post-description">{post.frontmatter.description}</p>
       {post.frontmatter.tags.map(tag => (

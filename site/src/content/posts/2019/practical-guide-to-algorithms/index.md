@@ -11,14 +11,14 @@ tags: ["Notes", "CS"]
 - Why care? It's an engineers job to solve problems
 - Identify pattern -> apply correct algorithm -> solve problem in optimal way
 
-## Time complexity
+### Time Complexity
 
 - How we estimate the speed of an algorithm
 - How many operations are expected to solve the problem, in respect to input size
 - Pessimistic, assume worst case conditions
 - "As the input grows, it will grow in this proportion"
 
-#### Common run times from fast to very slow
+### Common Run Times From Fast to Very Slow
 
 - Constant 0(1)
 - Logarithmic 0(logN)
@@ -27,23 +27,23 @@ tags: ["Notes", "CS"]
 - Exponential 0(k^n)
 - Logarithmic
 
-> #### Logarithmic versus exponential
+> #### Logarithmic Versus Exponential
 >
 > In logarithmic time, as input increases, number of operations decreases by a fraction. Time complexity increases by a fraction, thus it grows slowly. This means logarithmic is often better than linear with large datasets.
 
-## Space complexity
+### Space Complexity
 
 - How much memory is used
 - Works in similar way to time, but on the question of how much more space are we taking up
 
-## Optimization with caching
+## Optimization with Caching
 
 - Keeping track of something that you've already seen
 - Save it to an object or array.
 - Caching trades time complexity for space complexity
 - Important when the callback function is expensive, and usually the right tradeoff in a browser environment
 
-#### Implementing a cache to keep track of already seen values in linear time
+### Implementing a Cache to Keep Track of Already Seen Values in Linear Time
 
 ```js
 const uniqSort = arr => {
@@ -63,17 +63,17 @@ const uniqSort = arr => {
 uniqSort([4, 2, 2, 2, 3, 2, 2, 2, 2]) // => [2,3,4]
 ```
 
-## Memoization
+### Memoization
 
 - When you cache the value that a function returns
 - Factorials are a common type of problem to solve using memoization, because you do a lot of the same calculations over and over
 - Rather than recalculating the result, memoize it
 
-> #### Memoization and caching
+> #### Memoization and Caching
 >
 > Memoization is just a type of caching. If you are caching the result of a function, then it's called memoization.
 
-#### Using memoization to save the results of a calculation
+### Using Memoization to Save the Results of a Calculation
 
 ```js
 const times10 = n => {
@@ -95,7 +95,7 @@ const memoTimes10 = n => {
 }
 ```
 
-#### Using memoization and closure to solve the same problem
+### Using Memoization and Closure to Solve the Same Problem
 
 ```js
 const memoizedClosureTimes10 = () => {
@@ -130,7 +130,7 @@ memoClosureTimes10(9) // cached result
 - This lets us remember prior values
 - Important concept: returning a function from a function that can be called later
 
-#### Writing a generic memoize function
+### Writing a Generic Memoize Function
 
 ```js
 // Possible callbacks
@@ -168,14 +168,14 @@ memoizeTimes20(8) // cached
 - An elegant solution to keep code DRY
 - Recursion can always be implemented as a loop, but it's often simpler to use recursion
 
-#### Recursion in 4 steps
+### Recursion in 4 steps
 
 1. Identify base case (when it is you want your loop to stop)
 2. Identify recursive case (the work that you want to do)
 3. Return where appropriate
 4. Write procedures for each case that bring you closer to the base case(otherwise infinite loop)
 
-#### Recursion patterns
+### Recursion patterns
 
 - Wrapper function
 - Accumulator function
@@ -186,14 +186,14 @@ memoizeTimes20(8) // cached
   - Take large problem
   - Divide into sub-problems and do work that brings us closer to the base case
 
-## Search algorithms
+## Search Algorithms
 
-#### Linear search
+### Linear Search
 
 - Search for a value in an array by checking each value in order
 - Linear time
 
-#### Implementing linear search
+#### Implementing Linear Search
 
 ```js
 function linearSearch(list, item) {
@@ -213,12 +213,12 @@ linearSearch([1, 2, 3, 4, 5, 6], 5) // returns 4
 
 - Simply loop through a list, and look for the searched value
 
-#### Binary search
+### Binary Search
 
 - Search for a value in a sorted array by cutting the side of the search area in half
 - Logarithmic time
 
-#### Implementing binary search
+#### Implementing Binary Search
 
 ```js
 function binarySearch(list, item) {
@@ -249,24 +249,24 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
 - It's logarithmic because the work that we have to do (dataset) is cut in half each time
 - List being searched _must be sorted_ for binary search
 
-#### Binary search steps
+#### Binary Search Steps
 
 1. Break sorted array in half
 2. Is value the value that we're looking for `<` or `>` current location?
 3. Repeat
 
-> #### Using binary search
+> #### Using Binary Search
 >
 > If you have an interview question involving a sorted array, binary search is usually the way to go. If it's not sorted, there are other searching algorithms.
 
-## Sorting algorithms
+## Sorting Algorithms
 
 - Sorting algorithms must look at every value, can never be less than linear time
 - Two main types of sorts
   - Naive sorts
   - Divide and conquer sorts
 
-#### Naive sorts
+### Naive Sorts
 
 - Keep looping and comparing values until list is sorted
 - Two loops involved == quadratic time
@@ -275,7 +275,7 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
   - Insertion sort
   - Selection sort
 
-#### Divide and conquer sorts
+### Divide and Conquer Sorts
 
 - Recursively divide list / smaller parts of list until entire list is sorted
 - Recursive division == logarithmic time
@@ -283,7 +283,7 @@ binarySearch([2, 6, 7, 90, 103], 90) // returns 3
   - Merge sort
   - Quicksort
 
-#### Implementing non-optimized bubble sort
+### Implementing Non-optimized Bubble Sort
 
 ```js
 const arrayRandom = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
@@ -322,7 +322,7 @@ bubbleSortBasic(arrayRandom) // =>
 - Compare adjacent indices
 - Swap the greater value to the end
 
-#### Implementing optimized bubble sort
+### Implementing Optimized Bubble Sort
 
 ```js
 const arrayRandom = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
@@ -363,11 +363,11 @@ bubbleSort(arrayRandom) // =>
 - If there's an iteration where we don't have to make any swaps, that's a sign that array is already sorted
 - Can short circuit extra looping and return that array
 
-> #### On using bubble sort
+> #### On Using Bubble Sort
 >
 > If you're dealing with a mostly sorted list, and you've optimized the algorithm to track arrays that are already sorted to begin with, bubble sort becomes an OK choice despite being quadratic time. When dealing with a reversed list, it is terrible.
 
-#### Implementing merge sort
+### Implementing Merge Sort
 
 ```js
 function mergeSort(arr) {
@@ -418,7 +418,7 @@ mergeSort(list) // => [1, 2, 2, 3, 3, 5, 6, 7, 8]
   - Shift the array with the lower value
   - Repeat until both arrays are empty
 
-> #### On using merge sort
+> #### On Using Merge Sort
 >
 > Merge sort is one of the best sorts. If you need to sort something in an interview, merge sort is probably what they are looking for. However a good strategy is to start with the simplest answer, reference the more complicated answer, but not necessarily jump into influencing merge sort. Acknowledge that you've heard of it, but don't necessarily jump to implement it. "Is it alright to start with bubble sort? It is quadratic time, while merge sort is logarithmic..."
 
@@ -429,21 +429,21 @@ mergeSort(list) // => [1, 2, 2, 3, 3, 5, 6, 7, 8]
 - Given a decision, do the one that looks like the best decision at that time, without considering the big picture
 - Always making the locally optimal choice does **_not_** always give the optimal solution.
 
-> #### Using greedy algorithms
+> ### Using Greedy Algorithms
 >
 > Can be a choice when the dataset is so large that you can't think of all scenarios. It's computationally too much and it's better to have **_a_** solution than none at all.
 
-#### Problems with using a greedy approach
+### Problems with Using a Greedy Approach
 
 - Can seem like it's correct
 - But it's hard to prove that it's correct
 - Have to then ask, "Is locally optimal solution actually the globally optimal solution
 
-#### Implementing a brute force algorithm
+### Implementing a Brute Force Algorithm
 
 - In an interview setting could go with a brute force solution that is correct, and then optimize later
 
-#### Dynamic programming
+## Dynamic Programming
 
 - Optimization technique
 - Cache values when doing work inside of sub-problems
@@ -455,5 +455,4 @@ mergeSort(list) // => [1, 2, 2, 3, 3, 5, 6, 7, 8]
 ## On How to Learn and Improve
 
 - Talk about how code is executing. Reason about it. Don't just run and see what happens. Be able to reason through what you are writing
-
 - In a typical interview environment, you **_can't_** run the code. Need to learn how to debug, run the code in your head
