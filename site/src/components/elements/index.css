@@ -145,7 +145,7 @@ h1,
 h2,
 .text--xl {
   font-size: var(--text-xl);
-  margin: var(--space-md) 0;
+  margin: var(--space-lg) 0;
 }
 
 h3,

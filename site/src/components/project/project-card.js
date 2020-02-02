@@ -24,7 +24,7 @@ export default function ProjectCard({ project }) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h2 className="project-title">{project.frontmatter.title}</h2>
+        <h3 className="project-title">{project.frontmatter.title}</h3>
       </a>
       <p className="project-description">{project.frontmatter.description}</p>
 
