@@ -11,12 +11,13 @@ export default function Header({ location }) {
 }
 
 const StyledIndexHeader = styled.header`
-  max-width: var(--container);
-  margin: 0 auto;
   min-height: 100vh;
+  max-width: var(--container);
+  padding: var(--space-sm);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 
   .site-title {
     font-weight: 900;

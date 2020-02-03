@@ -8,7 +8,7 @@ import moment from "moment"
 import styled from "styled-components"
 
 const StyledPhotoPage = styled.div`
-  max-width: 950px;
+  max-width: 1000px;
   margin-bottom: var(--space-xl);
 
   .photo {
@@ -85,7 +85,7 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
         >
           <h4 className="previous text--sm">Previous</h4>
         </Link>
-        <Link none="true" to="/photos">
+        <Link none="true" to="/photos" className="all-link">
           <h4 className="all text--sm">All</h4>
         </Link>
       </StyledPhotoPage>

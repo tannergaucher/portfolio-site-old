@@ -17,6 +17,10 @@ const StyledPostCard = styled.div`
   .nav-link {
     font-weight: bolder;
   }
+
+  &:last-child {
+    margin-bottom: var(--space-lg);
+  }
 `
 
 export default function PostCard({ post }) {

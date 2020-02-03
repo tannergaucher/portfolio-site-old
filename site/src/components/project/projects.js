@@ -6,6 +6,8 @@ import { useLatestProjects } from "../hooks"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
+  padding: var(--space-sm);
+  max-width: var(--container);
 
   .all-projects {
     font-weight: 900;

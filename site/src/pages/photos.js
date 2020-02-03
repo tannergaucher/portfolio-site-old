@@ -1,4 +1,4 @@
-import { ContentGrid, Link, StyledPage } from "../components/styles"
+import { ContentGrid, Link } from "../components/styles"
 import { Layout, SEO } from "../components/elements"
 
 import { PhotoCard } from "../components/photo"
@@ -9,7 +9,7 @@ export default function PhotosPage({ location }) {
   const { edges } = useAllMyImages()
 
   return (
-    <Layout location={location}>
+    <Layout location={location} noContainer="true" noPadding="true">
       <SEO title="Photos" />
       <ContentGrid>
         {edges.map(edge => (

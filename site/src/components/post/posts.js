@@ -8,6 +8,8 @@ import { useLatestPost } from "../hooks"
 
 const StyledPosts = styled.div`
   margin: var(--space-xl) 0;
+  padding: var(--space-sm);
+  max-width: var(--container);
 
   .all-posts {
     font-weight: 900;
