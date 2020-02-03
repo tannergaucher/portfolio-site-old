@@ -33,11 +33,9 @@ export default function ProjectCard({ project }) {
         <h3 className="project-title">{project.frontmatter.title}</h3>
       </a>
       <p className="project-description">{project.frontmatter.description}</p>
-
       <a href={project.frontmatter.githubRepo} className="nav-link">
         View Source
       </a>
-
       <div
         className="project-iframe"
         style={{

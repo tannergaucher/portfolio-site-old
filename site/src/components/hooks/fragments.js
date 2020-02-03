@@ -24,7 +24,6 @@ export const PROJECT_FRAGMENT = graphql`
     frontmatter {
       title
       description
-      technologies
       deployedUrl
       vimeoUrl
       githubRepo
