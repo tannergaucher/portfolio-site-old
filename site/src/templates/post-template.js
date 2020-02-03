@@ -9,6 +9,22 @@ import styled from "styled-components"
 const StyledPost = styled(StyledPage)`
   .post-title {
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
+    margin-bottom: 0;
+  }
+
+  .post-description {
+    margin-top: var(--space-lg);
+    font-weight: 400;
+  }
+
+  .post-date {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
+    font-weight: 400;
   }
 
   article {
@@ -34,8 +50,11 @@ export default function PostTemplatePage({ data, pageContext, location }) {
     <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        <h1 className="post-title">{post.frontmatter.title}</h1>
-        <p className="post-description">{post.frontmatter.description}</p>
+        <h1 className="post-title  text--xl">{post.frontmatter.title}</h1>
+        <h2 className="post-description text--md">
+          {post.frontmatter.description}
+        </h2>
+        <h4 className="post-date text--sm">{post.frontmatter.date}</h4>
         <article
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}

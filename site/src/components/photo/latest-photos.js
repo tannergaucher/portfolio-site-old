@@ -27,7 +27,7 @@ export default function LatestPhotos() {
   return (
     <StyledLatestPhotos>
       <Link to="/photos" none="true">
-        <h2 className="all-photos">All Photos &#8594;</h2>
+        <h2 className="all-photos">All Photos</h2>
       </Link>
       <StyledLatestPhotosGrid>
         {edges.map(edge => (
