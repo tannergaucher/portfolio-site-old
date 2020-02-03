@@ -1,17 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Code");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
 
-/* @import url("https://rsms.me/inter/inter.css"); */
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
 
 :root {
   /* Typography */
-  --sans: -apple-system, "Avenir Next", BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
-
-  --mono: "Fira Code", monospace;
-  --heading-line-height: 1.26;
+  --sans: "IBM Plex Sans", sans-serif;
+  --mono: "IBM Plex Mono", monospace;
+  --heading-line-height: 1.3;
   --paragraph-line-height: 1.7;
   --heading-letter-spacing: 0;
-  --paragraph-letter-spacing: 0;
+  --paragraph-letter-spacing: 0rem;
   /* Vertical Rhythm */
   --responsive-unit: 0.5vw; /* TWEAK ME  */
   /* Base Values */
@@ -85,11 +83,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color: rgb(227, 228, 232);
+    --text-color: white;
     --grey: lightgrey;
-    --href-color: fuchsia;
-    --href-hover-color: #fd3f92;
-    --bg-1: rgba(0, 0, 0, 0.95);
+    --href-color: #cc00ff;
+    --href-hover-color: fuchsia;
+    --bg-1: black;
     --bg-2: #1a1a1b;
     --grey: #888888;
     --code-bg: #1a1a1b;
@@ -104,12 +102,6 @@
 
 .one {
   --href-color: ;
-}
-
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
 }
 
 body {
@@ -128,6 +120,7 @@ h3,
 h4 {
   line-height: var(--heading-line-height);
   letter-spacing: var(--heading-letter-spacing);
+  font-family: var(--mono);
 }
 
 /* text size */
@@ -176,6 +169,11 @@ p {
   margin-bottom: var(--space-md);
   line-height: var(--paragraph-line-height);
   letter-spacing: var(--paragraph-letter-spacing);
+  font-weight: 500;
+}
+
+small {
+  font-weight: 500;
 }
 
 li {
@@ -211,7 +209,6 @@ a {
 
 a:hover {
   color: var(--href-hover-color);
-  /* Make a separate href hover variable */
   transition: var(--transition);
 }
 

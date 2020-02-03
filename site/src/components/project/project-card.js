@@ -7,11 +7,16 @@ const StyledProjectCard = styled.div`
 
   .project-title {
     font-weight: 900;
-    color: var(--text-color);
   }
 
   .project-iframe {
     margin: var(--space-lg) 0;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: var(--mono);
   }
 `
 
@@ -19,7 +24,7 @@ export default function ProjectCard({ project }) {
   return (
     <StyledProjectCard>
       <a
-        className="project-url-link"
+        className="nav-link"
         href={project.frontmatter.deployedUrl}
         target="_blank"
         rel="noopener noreferrer"

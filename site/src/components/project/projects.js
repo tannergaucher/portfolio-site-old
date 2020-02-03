@@ -10,7 +10,6 @@ const StyledProjects = styled.div`
   .all-projects {
     font-weight: 900;
     margin-bottom: var(--space-xl);
-    color: var(--text-color);
   }
 `
 
@@ -19,7 +18,7 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <Link to="/projects">
+      <Link to="/projects" none="true">
         <h2 className="all-projects">All Projects </h2>
       </Link>
       {edges.map(edge => (

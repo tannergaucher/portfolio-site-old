@@ -6,6 +6,11 @@ import styled from "styled-components"
 const StyledContactSection = styled.div`
   max-width: var(--container);
   margin: var(--space-lg) auto;
+
+  .btn {
+    /* Because some bug in styled component  */
+    font-family: var(--sans);
+  }
 `
 
 export default function Contact() {
@@ -28,7 +33,7 @@ export default function Contact() {
           placeholder="Message"
           required
         ></TextArea>
-        <Button type="submit" primary="true">
+        <Button type="submit" primary="true" className="btn">
           Contact
         </Button>
       </Form>

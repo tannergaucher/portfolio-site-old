@@ -12,7 +12,6 @@ const StyledPosts = styled.div`
   .all-posts {
     font-weight: 900;
     margin-bottom: var(--space-xl);
-    color: var(--text-color);
   }
 `
 
@@ -21,7 +20,7 @@ export default function Posts() {
 
   return (
     <StyledPosts>
-      <Link to="/posts" className="all-posts-link">
+      <Link to="/posts" className="all-posts-link" none="true">
         <h2 className="all-posts">All Posts </h2>
       </Link>
       {edges.map(edge => (
