@@ -72,7 +72,7 @@
   /* Components */
   --radius: 4px;
   --radius-lg: 12px;
-  --thickness: 0.3rem;
+  --thickness: 0.2vw;
   --container: 833px;
   --elevation-1: 0 4px 12px var(--shadow-color);
   --elevation-2: 0px 4px 12px var(--shadow-color);
@@ -91,7 +91,6 @@
     --bg-1: black;
     --bg-2: #1a1a1b;
     --grey: #888888;
-    --code-bg: #1a1a1b;
     --shadow-color: var(--bg-1);
     --primary-btn-bg: #1a1a1b;
     --primary-btn-color: var(--text-color);
@@ -273,5 +272,15 @@ h6 {
 pre[class*="language-"] {
   padding: var(--space-sm);
   border-radius: var(--radius);
+  background: var(--code-bg);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: var(--mono);
+}
+
+:not(pre) > code,
+pre {
   background: var(--code-bg);
 }
