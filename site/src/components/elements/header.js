@@ -22,10 +22,10 @@ const StyledIndexHeader = styled.header`
   .site-title {
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 
   .site-description {
-    font-family: var(--mono);
     font-weight: 500;
     letter-spacing: var(--paragraph-letter-spacing);
   }
@@ -33,12 +33,6 @@ const StyledIndexHeader = styled.header`
   .nav-link {
     font-weight: bolder;
   }
-
-  /* @media (max-width: 600px) {
-    display: inline;
-    height: "";
-    padding: var(--space-sm);
-  } */
 `
 
 function IndexHeader() {

@@ -11,11 +11,11 @@ const StyledPostCard = styled.div`
   .post-title {
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 
   .nav-link {
     font-weight: bolder;
-    font-family: var(--mono);
   }
 `
 

@@ -8,6 +8,7 @@ const StyledProjectCard = styled.div`
   .project-title {
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 
   .project-iframe {
@@ -17,7 +18,6 @@ const StyledProjectCard = styled.div`
   .nav-link {
     text-decoration: none;
     font-weight: bolder;
-    font-family: var(--mono);
   }
 `
 

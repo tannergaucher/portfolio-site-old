@@ -11,6 +11,7 @@ const StyledProjects = styled.div`
     font-weight: 900;
     margin-bottom: var(--space-xl);
     text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 `
 

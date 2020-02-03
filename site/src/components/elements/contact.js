@@ -10,6 +10,7 @@ const StyledContactSection = styled.div`
   .contact-title {
     text-transform: uppercase;
     font-weight: 900;
+    letter-spacing: var(--caps-letter-spacing);
   }
 
   .btn {
