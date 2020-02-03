@@ -12,6 +12,8 @@ const StyledPosts = styled.div`
   .all-posts {
     font-weight: 900;
     margin-bottom: var(--space-xl);
+    text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 `
 
@@ -21,7 +23,7 @@ export default function Posts() {
   return (
     <StyledPosts>
       <Link to="/posts" className="all-posts-link" none="true">
-        <h2 className="all-posts">All Posts </h2>
+        <h2 className="all-posts">All Posts &#8594;</h2>
       </Link>
       {edges.map(edge => (
         <PostCard post={edge.node} key={edge.node.id} />

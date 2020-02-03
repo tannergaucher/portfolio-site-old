@@ -1,1 +1,1 @@
-require("prism-themes/themes/prism-atom-dark.css")
+require("prism-theme-night-owl")

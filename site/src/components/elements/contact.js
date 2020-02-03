@@ -7,6 +7,12 @@ const StyledContactSection = styled.div`
   max-width: var(--container);
   margin: var(--space-lg) auto;
 
+  .contact-title {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: var(--caps-letter-spacing);
+  }
+
   .btn {
     /* Because some bug in styled component  */
     font-family: var(--sans);
@@ -16,6 +22,7 @@ const StyledContactSection = styled.div`
 export default function Contact() {
   return (
     <StyledContactSection>
+      <h2 className="contact-title">Contact Me </h2>
       <Form name="netlify-contact-form" method="POST" data-netlify="true">
         {/* This hidden form needs to be here for netlify form */}
         <input type="hidden" name="form-name" value="netlify-contact-form" />
@@ -34,7 +41,7 @@ export default function Contact() {
           required
         ></TextArea>
         <Button type="submit" primary="true" className="btn">
-          Contact
+          Send
         </Button>
       </Form>
       <br />
