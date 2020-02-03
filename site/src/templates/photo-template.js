@@ -59,8 +59,6 @@ const StyledPhotoPage = styled.div`
 `
 
 export default function PhotoTemplatePage({ data, location, pageContext }) {
-  console.log(pageContext)
-
   const formatedDateTime = moment(
     data.sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
   ).format("MMMM Do, YYYY")
