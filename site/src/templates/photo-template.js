@@ -59,6 +59,8 @@ const StyledPhotoPage = styled.div`
 `
 
 export default function PhotoTemplatePage({ data, location, pageContext }) {
+  console.log(pageContext)
+
   const formatedDateTime = moment(
     data.sanityMyImage.myImage.asset._rawMetadata.exif.DateTimeOriginal
   ).format("MMMM Do, YYYY")
@@ -71,20 +73,24 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
           <span className="text--sm date-time">{formatedDateTime}</span>{" "}
           <span className="text--md caption">{data.sanityMyImage.caption}</span>
         </h1>
-        <Link
-          none="true"
-          className="next-link"
-          to={`/photo/${pageContext.next.slug.current}`}
-        >
-          <h4 className="next text--sm">Next</h4>
-        </Link>
-        <Link
-          none="true"
-          className="previous-link"
-          to={`/photo/${pageContext.previous.slug.current}`}
-        >
-          <h4 className="previous text--sm">Previous</h4>
-        </Link>
+        {pageContext.next && (
+          <Link
+            none="true"
+            className="next-link"
+            to={`/photo/${pageContext.next.slug.current}`}
+          >
+            <h4 className="next text--sm">Next</h4>
+          </Link>
+        )}
+        {pageContext.previous && (
+          <Link
+            none="true"
+            className="previous-link"
+            to={`/photo/${pageContext.previous.slug.current}`}
+          >
+            <h4 className="previous text--sm">Previous</h4>
+          </Link>
+        )}
         <Link none="true" to="/photos" className="all-link">
           <h4 className="all text--sm">All</h4>
         </Link>
