@@ -1,9 +1,8 @@
-import React from "react"
+import { Layout, SEO } from "../components/elements"
 
-import { SEO, Layout } from "../components/elements"
-import { useAllPosts } from "../components/hooks"
 import { PostCard } from "../components/post"
-import { StyledPage } from "../components/styles"
+import React from "react"
+import { useAllPosts } from "../components/hooks"
 
 export default function PostsPage({ location }) {
   const { edges } = useAllPosts()
@@ -11,12 +10,9 @@ export default function PostsPage({ location }) {
   return (
     <Layout location={location}>
       <SEO title="Posts" />
-      <StyledPage>
-        <br />
-        {edges.map(edge => (
-          <PostCard key={edge.node.id} post={edge.node} />
-        ))}
-      </StyledPage>
+      {edges.map(edge => (
+        <PostCard key={edge.node.id} post={edge.node} />
+      ))}
     </Layout>
   )
 }

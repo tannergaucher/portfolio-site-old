@@ -1,12 +1,12 @@
 import { Layout, SEO } from "../components/elements"
-import { Link, StyledPage } from "../components/styles"
 
+import { Link } from "../components/styles"
 import React from "react"
 import { graphql } from "gatsby"
 import { kebabCase } from "lodash"
 import styled from "styled-components"
 
-const StyledPost = styled(StyledPage)`
+const StyledPost = styled.div`
   .post-title {
     font-weight: 900;
     text-transform: uppercase;
@@ -16,19 +16,18 @@ const StyledPost = styled(StyledPage)`
 
   .post-description {
     margin-top: var(--space-lg);
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .post-date {
     margin-top: var(--space-lg);
-    margin-bottom: var(--space-lg);
     text-transform: uppercase;
     letter-spacing: var(--caps-letter-spacing);
-    font-weight: 400;
+    font-weight: 500;
   }
 
-  article {
-    margin: var(--space-xl) 0;
+  .post-body {
+    margin-top: var(--space-xl);
   }
 
   .more-posts-links {
@@ -40,6 +39,12 @@ const StyledPost = styled(StyledPage)`
     margin-bottom: var(--space-lg);
     font-weight: 900;
   }
+
+  @media (max-width: 600px) {
+    .post-title {
+      font-size: var(--text-lg);
+    }
+  }
 `
 
 export default function PostTemplatePage({ data, pageContext, location }) {
@@ -50,15 +55,14 @@ export default function PostTemplatePage({ data, pageContext, location }) {
     <Layout location={location}>
       <StyledPost>
         <SEO title={post.frontmatter.title} />
-        <h1 className="post-title  text--xl">{post.frontmatter.title}</h1>
+        <h1 className="post-title">{post.frontmatter.title}</h1>
         <h2 className="post-description text--md">
           {post.frontmatter.description}
         </h2>
         <h4 className="post-date text--sm">{post.frontmatter.date}</h4>
-        <article
-          className="post-body"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        ></article>
+        <div className="post-body">
+          <article dangerouslySetInnerHTML={{ __html: post.html }}></article>
+        </div>
         <div className="more-posts-links">
           {next && (
             <div className="next-post">

@@ -29,7 +29,7 @@ export default function Contact() {
         <Input
           type="email"
           name="contact-form-email"
-          placeholder="Email"
+          placeholder="Your Email"
           required
         />
         <TextArea

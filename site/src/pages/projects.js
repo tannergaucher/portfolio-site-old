@@ -1,9 +1,8 @@
-import React from "react"
+import { Layout, SEO } from "../components/elements"
 
-import { SEO, Layout } from "../components/elements"
-import { StyledPage } from "../components/styles"
-import { useProjects } from "../components/hooks"
 import { ProjectCard } from "../components/project"
+import React from "react"
+import { useProjects } from "../components/hooks"
 
 export default function Projects({ location }) {
   const { edges } = useProjects()
@@ -11,12 +10,9 @@ export default function Projects({ location }) {
   return (
     <Layout location={location}>
       <SEO title="Projects" />
-      <StyledPage>
-        <br />
-        {edges.map(edge => (
-          <ProjectCard key={edge.node.id} project={edge.node} />
-        ))}
-      </StyledPage>
+      {edges.map(edge => (
+        <ProjectCard key={edge.node.id} project={edge.node} />
+      ))}
     </Layout>
   )
 }

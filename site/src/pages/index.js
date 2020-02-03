@@ -1,9 +1,9 @@
-import React from "react"
+import { Contact, Layout, SEO } from "../components/elements"
 
-import { SEO, Layout, Contact } from "../components/elements"
+import { LatestPhotos } from "../components/photo"
 import { Posts } from "../components/post"
 import { Projects } from "../components/project"
-import { LatestPhotos } from "../components/photo"
+import React from "react"
 
 export default function IndexPage({ location }) {
   return (

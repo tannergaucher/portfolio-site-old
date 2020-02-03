@@ -1,9 +1,9 @@
-import React from "react"
+import { ContentGrid, Link, StyledPage } from "../components/styles"
+import { Layout, SEO } from "../components/elements"
 
-import { SEO, Layout } from "../components/elements"
 import { PhotoCard } from "../components/photo"
+import React from "react"
 import { useAllMyImages } from "../components/hooks"
-import { StyledPage, Link, ContentGrid } from "../components/styles"
 
 export default function PhotosPage({ location }) {
   const { edges } = useAllMyImages()
@@ -11,19 +11,17 @@ export default function PhotosPage({ location }) {
   return (
     <Layout location={location}>
       <SEO title="Photos" />
-      <StyledPage>
-        <ContentGrid>
-          {edges.map(edge => (
-            <Link to={`/photo/${edge.node.slug.current}`} key={edge.node.id}>
-              <PhotoCard
-                sanityMyImage={edge.node}
-                next={edge.next}
-                previous={edge.previous}
-              />
-            </Link>
-          ))}
-        </ContentGrid>
-      </StyledPage>
+      <ContentGrid>
+        {edges.map(edge => (
+          <Link to={`/photo/${edge.node.slug.current}`} key={edge.node.id}>
+            <PhotoCard
+              sanityMyImage={edge.node}
+              next={edge.next}
+              previous={edge.previous}
+            />
+          </Link>
+        ))}
+      </ContentGrid>
     </Layout>
   )
 }

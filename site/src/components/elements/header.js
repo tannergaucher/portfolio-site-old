@@ -11,7 +11,6 @@ export default function Header({ location }) {
 }
 
 const StyledIndexHeader = styled.header`
-  padding: 0 var(--space-sm);
   max-width: var(--container);
   margin: 0 auto;
   min-height: 100vh;
@@ -67,8 +66,6 @@ function IndexHeader() {
 }
 
 const StyledPlainHeader = styled.header`
-  padding: var(--space-sm);
-
   .site-title {
     text-transform: uppercase;
     letter-spacing: var(--caps-letter-spacing);
