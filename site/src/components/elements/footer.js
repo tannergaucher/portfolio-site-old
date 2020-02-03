@@ -5,10 +5,9 @@ import styled from "styled-components"
 import { useSiteMetadata } from "../hooks"
 
 const StyledFooter = styled.div`
-  padding: var(--space-sm);
-
   .site-title {
     text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 `
 

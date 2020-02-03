@@ -1,10 +1,9 @@
-import StyledPage from "./styled-page"
+import Button from "./button"
+import ContentGrid from "./content-grid"
+import Divider from "./divider"
 import Form from "./form"
 import Input from "./input"
-import Button from "./button"
-import TextArea from "./text-area"
 import Link from "./link"
-import Divider from "./divider"
-import ContentGrid from "./content-grid"
+import TextArea from "./text-area"
 
-export { StyledPage, Form, Input, Button, TextArea, Link, Divider, ContentGrid }
+export { Form, Input, Button, TextArea, Link, Divider, ContentGrid }

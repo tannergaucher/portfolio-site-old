@@ -4,8 +4,9 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledContactSection = styled.div`
+  margin: var(--space-lg) left;
+  padding: 0 var(--space-sm);
   max-width: var(--container);
-  margin: var(--space-lg) auto;
 
   .contact-title {
     text-transform: uppercase;
@@ -29,7 +30,7 @@ export default function Contact() {
         <Input
           type="email"
           name="contact-form-email"
-          placeholder="Email"
+          placeholder="Your Email"
           required
         />
         <TextArea
@@ -39,6 +40,7 @@ export default function Contact() {
           rows="10"
           placeholder="Message"
           required
+          style={{ resize: `vertical` }}
         ></TextArea>
         <Button type="submit" primary="true" className="btn">
           Send

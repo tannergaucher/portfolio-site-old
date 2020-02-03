@@ -14,6 +14,7 @@ const StyledLatestPhotos = styled.div`
     margin-bottom: var(--space-xl);
     text-transform: uppercase;
     letter-spacing: var(--caps-letter-spacing);
+    padding: 0 var(--space-sm);
   }
 `
 

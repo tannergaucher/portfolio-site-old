@@ -1,5 +1,4 @@
-import { Button, StyledPage } from "../components/styles"
-import { FormNext, FormPrevious, Grid } from "grommet-icons"
+import { Button, Link, StyledPage } from "../components/styles"
 import { graphql, navigate } from "gatsby"
 
 import Img from "gatsby-image"
@@ -8,14 +7,54 @@ import React from "react"
 import moment from "moment"
 import styled from "styled-components"
 
-const StyledPhotoPage = styled(StyledPage)`
-  max-width: var(--container);
-  margin: var(--space-md) auto;
+const StyledPhotoPage = styled.div`
+  max-width: 1000px;
   margin-bottom: var(--space-xl);
 
   .photo {
     margin-bottom: var(--space-lg);
-    box-shadow: var(--elevation-3);
+  }
+
+  .date-time {
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: var(--caps-letter-spacing);
+  }
+
+  .date-time-description {
+    margin-left: var(--space-sm);
+  }
+
+  .caption {
+    font-weight: lighter;
+  }
+
+  .next,
+  .previous {
+    text-transform: uppercase;
+  }
+
+  .next {
+    margin-top: var(--space-xl);
+    margin-left: var(--space-sm);
+    letter-spacing: var(--caps-letter-spacing);
+  }
+
+  .previous {
+    margin-top: var(--space-lg);
+    margin-left: var(--space-sm);
+    letter-spacing: var(--caps-letter-spacing);
+  }
+
+  .all {
+    margin-top: var(--space-lg);
+    margin-left: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: var(--space-md);
   }
 `
 
@@ -25,12 +64,30 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
   ).format("MMMM Do, YYYY")
 
   return (
-    <Layout location={location}>
+    <Layout location={location} noContainer="true" noPadding="true">
       <StyledPhotoPage>
         <Img className="photo" fluid={data.sanityMyImage.myImage.asset.fluid} />
-        <p className="image-dateTime-caption">
-          {formatedDateTime}. {data.sanityMyImage.caption}
-        </p>
+        <h1 className="date-time-description">
+          <span className="text--sm date-time">{formatedDateTime}</span>{" "}
+          <span className="text--md caption">{data.sanityMyImage.caption}</span>
+        </h1>
+        <Link
+          none="true"
+          className="next-link"
+          to={`/photo/${pageContext.next.slug.current}`}
+        >
+          <h4 className="next text--sm">Next</h4>
+        </Link>
+        <Link
+          none="true"
+          className="previous-link"
+          to={`/photo/${pageContext.previous.slug.current}`}
+        >
+          <h4 className="previous text--sm">Previous</h4>
+        </Link>
+        <Link none="true" to="/photos" className="all-link">
+          <h4 className="all text--sm">All</h4>
+        </Link>
       </StyledPhotoPage>
     </Layout>
   )
