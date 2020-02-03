@@ -1,6 +1,6 @@
 ---
 title: "Untrip.app"
-description: "Curate static content into your own city lists and share on social media. Built with Gatsby, Sanity CMS, Apollo Client, React Hooks Apollo, JWT authentication, Apollo server, Styled Components, and Prisma DB."
+description: "Curate static content into dynamic city lists and share on social media. Built with Gatsby, Sanity CMS, Apollo Client, React Hooks Apollo, JWT authentication, Apollo Server, Styled Components, and Prisma DB."
 technologies:
   [
     "React",

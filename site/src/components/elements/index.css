@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
 
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+@import url("https://rsms.me/inter/inter.css");
 
 :root {
   /* Typography */
-  --sans: "IBM Plex Sans", sans-serif;
-  --mono: "IBM Plex Mono", monospace;
+  --sans: "Inter", sans-serif;
   --heading-line-height: 1.3;
   --paragraph-line-height: 1.7;
-  --heading-letter-spacing: 0;
-  --paragraph-letter-spacing: 0rem;
+  --heading-letter-spacing: 0.2rem;
+  --paragraph-letter-spacing: 0.02rem;
   /* Vertical Rhythm */
   --responsive-unit: 0.5vw; /* TWEAK ME  */
   /* Base Values */
@@ -52,8 +53,8 @@
   --text-color: black;
   --text-color-lighter: #140f0f;
 
-  --href-color: #9a7878;
-  --href-hover-color: #2f3061;
+  --href-color: blue;
+  --href-hover-color: blue;
 
   --bg-1: #fafafa;
   --bg-2: #ededed;
@@ -120,7 +121,6 @@ h3,
 h4 {
   line-height: var(--heading-line-height);
   letter-spacing: var(--heading-letter-spacing);
-  font-family: var(--mono);
 }
 
 /* text size */
@@ -179,6 +179,7 @@ small {
 li {
   margin-bottom: var(--space-sm);
   line-height: var(--paragraph-line-height);
+  font-weight: 500;
 }
 
 li:last-child {
@@ -203,7 +204,7 @@ textarea {
 }
 
 a {
-  color: var(--href-color);
+  color: var(--text-color);
   transition: var(--transition);
 }
 
@@ -250,8 +251,8 @@ h6 {
 .nav-link {
   text-decoration: none;
   margin-right: var(--space-md);
-  font-size: var(--text-sm);
-  font-weight: 500;
+  font-size: var(--text-md);
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {

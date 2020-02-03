@@ -8,8 +8,6 @@ tags: ["CSS", "Web"]
 <!-- LOOPED VIDEO / GIF HERE  -->
 <!-- INTRO PARAGRAPH TEXT HERE -->
 
-Intro paragraph here.
-
 ## Minimal Implementation of a Responsive Color Scheme
 
 ```css

@@ -10,6 +10,7 @@ const StyledPostCard = styled.div`
 
   .post-title {
     font-weight: 900;
+    text-transform: uppercase;
   }
 
   .nav-link {

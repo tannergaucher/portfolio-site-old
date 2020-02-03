@@ -6,6 +6,10 @@ import { useSiteMetadata } from "../hooks"
 
 const StyledFooter = styled.div`
   padding: var(--space-sm);
+
+  .site-title {
+    text-transform: uppercase;
+  }
 `
 
 export default function Footer({ location }) {
@@ -16,7 +20,7 @@ export default function Footer({ location }) {
   return isIndexPage ? null : (
     <StyledFooter>
       <Link to="/" none="true">
-        <h4 className="site-title">{title}</h4>
+        <small className="site-title">{title}</small>
       </Link>
     </StyledFooter>
   )

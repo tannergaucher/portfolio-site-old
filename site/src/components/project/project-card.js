@@ -7,6 +7,7 @@ const StyledProjectCard = styled.div`
 
   .project-title {
     font-weight: 900;
+    text-transform: uppercase;
   }
 
   .project-iframe {

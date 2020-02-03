@@ -13,16 +13,32 @@ export default function Header({ location }) {
 const StyledIndexHeader = styled.header`
   padding: 0 var(--space-sm);
   max-width: var(--container);
-  margin: 0 auto var(--space-xl) auto;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .site-title {
     font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .site-description {
+    font-family: var(--mono);
+    font-weight: 500;
+    letter-spacing: var(--paragraph-letter-spacing);
   }
 
   .nav-link {
-    font-family: var(--mono);
     font-weight: bolder;
   }
+
+  /* @media (max-width: 600px) {
+    display: inline;
+    height: "";
+    padding: var(--space-sm);
+  } */
 `
 
 function IndexHeader() {
@@ -31,7 +47,8 @@ function IndexHeader() {
   return (
     <StyledIndexHeader>
       <h1 className="site-title">{title}</h1>
-      <p className="site-description">{description}</p>
+      <h2 className="site-description">{description}</h2>
+
       <nav>
         <a
           className="nav-link github"
@@ -50,12 +67,17 @@ function IndexHeader() {
           <span>LinkedIn</span>
         </a>
       </nav>
+      <br />
     </StyledIndexHeader>
   )
 }
 
 const StyledPlainHeader = styled.header`
   padding: var(--space-sm);
+
+  .site-title {
+    text-transform: uppercase;
+  }
 `
 
 function PlainHeader() {
@@ -64,7 +86,7 @@ function PlainHeader() {
   return (
     <StyledPlainHeader>
       <Link to="/" none="true">
-        <h4 className="site-title">{title}</h4>
+        <small className="site-title">{title}</small>
       </Link>
     </StyledPlainHeader>
   )
