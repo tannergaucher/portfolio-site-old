@@ -18,6 +18,11 @@ const StyledIndexHeader = styled.header`
   .site-title {
     font-weight: 900;
   }
+
+  .nav-link {
+    font-family: var(--mono);
+    font-weight: bolder;
+  }
 `
 
 function IndexHeader() {
@@ -29,7 +34,7 @@ function IndexHeader() {
       <p className="site-description">{description}</p>
       <nav>
         <a
-          className="nav-link"
+          className="nav-link github"
           href={social.github}
           target="_blank"
           rel="noopener noreferrer"
@@ -37,7 +42,7 @@ function IndexHeader() {
           Github
         </a>
         <a
-          className="nav-link"
+          className="nav-link linkedin"
           href={social.linkedIn}
           target="_blank"
           rel="noopener noreferrer"
@@ -51,10 +56,6 @@ function IndexHeader() {
 
 const StyledPlainHeader = styled.header`
   padding: var(--space-sm);
-
-  .site-title {
-    color: var(--text-color);
-  }
 `
 
 function PlainHeader() {
@@ -62,8 +63,8 @@ function PlainHeader() {
 
   return (
     <StyledPlainHeader>
-      <Link to="/">
-        <small className="site-title">{title}</small>
+      <Link to="/" none="true">
+        <h4 className="site-title">{title}</h4>
       </Link>
     </StyledPlainHeader>
   )
