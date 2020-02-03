@@ -71,6 +71,7 @@ const StyledPlainHeader = styled.header`
 
   .site-title {
     text-transform: uppercase;
+    letter-spacing: var(--caps-letter-spacing);
   }
 `
 

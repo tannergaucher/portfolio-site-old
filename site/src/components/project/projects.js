@@ -21,7 +21,7 @@ export default function Projects() {
   return (
     <StyledProjects>
       <Link to="/projects" none="true">
-        <h2 className="all-projects">All Projects &#8594;</h2>
+        <h2 className="all-projects">All Projects</h2>
       </Link>
       {edges.map(edge => (
         <ProjectCard key={edge.node.id} project={edge.node} />

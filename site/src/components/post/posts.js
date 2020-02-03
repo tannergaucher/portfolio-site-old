@@ -23,7 +23,9 @@ export default function Posts() {
   return (
     <StyledPosts>
       <Link to="/posts" className="all-posts-link" none="true">
-        <h2 className="all-posts">All Posts &#8594;</h2>
+        <h2 className="all-posts" none="true">
+          All Posts{" "}
+        </h2>
       </Link>
       {edges.map(edge => (
         <PostCard post={edge.node} key={edge.node.id} />
