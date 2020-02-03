@@ -22,7 +22,7 @@ const StyledPhotoPage = styled.div`
   }
 
   .date-time-description {
-    margin-left: var(--space-sm);
+    margin: 0 var(--space-sm);
   }
 
   .caption {
