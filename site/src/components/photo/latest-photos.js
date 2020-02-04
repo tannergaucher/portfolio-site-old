@@ -9,12 +9,16 @@ import { useLatestMyImages } from "../hooks"
 const StyledLatestPhotos = styled.div`
   margin-bottom: var(--space-xl);
 
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+
   .all-photos {
     font-weight: 900;
     margin-bottom: var(--space-xl);
     text-transform: uppercase;
     letter-spacing: var(--caps-letter-spacing);
-    padding: 0 var(--space-sm);
   }
 `
 
@@ -27,9 +31,11 @@ export default function LatestPhotos() {
 
   return (
     <StyledLatestPhotos>
-      <Link to="/photos" none="true">
-        <h2 className="all-photos">All Photos</h2>
-      </Link>
+      <div className="container">
+        <Link to="/photos" none="true">
+          <h2 className="all-photos">All Photos</h2>
+        </Link>
+      </div>
       <StyledLatestPhotosGrid>
         {edges.map(edge => (
           <Link to={`/photo/${edge.node.slug.current}`} key={edge.node.id}>

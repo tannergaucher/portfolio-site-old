@@ -5,6 +5,7 @@ const ContentGrid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: var(--space-sm);
   max-width: 3000px;
+  padding: var(--space-sm);
 
   @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;

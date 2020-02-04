@@ -10,6 +10,7 @@ import styled from "styled-components"
 const StyledPhotoPage = styled.div`
   max-width: 1000px;
   margin-bottom: var(--space-xl);
+  margin: 0 auto;
 
   .photo {
     margin-bottom: var(--space-lg);
@@ -17,16 +18,8 @@ const StyledPhotoPage = styled.div`
 
   .date-time {
     text-transform: uppercase;
-    font-weight: lighter;
     letter-spacing: var(--caps-letter-spacing);
-  }
-
-  .date-time-description {
-    margin: 0 var(--space-sm);
-  }
-
-  .caption {
-    font-weight: lighter;
+    margin-right: var(--space-sm);
   }
 
   .next,
@@ -36,21 +29,19 @@ const StyledPhotoPage = styled.div`
 
   .next {
     margin-top: var(--space-xl);
-    margin-left: var(--space-sm);
     letter-spacing: var(--caps-letter-spacing);
   }
 
   .previous {
     margin-top: var(--space-lg);
-    margin-left: var(--space-sm);
     letter-spacing: var(--caps-letter-spacing);
   }
 
   .all {
     margin-top: var(--space-lg);
-    margin-left: var(--space-sm);
     text-transform: uppercase;
     letter-spacing: var(--caps-letter-spacing);
+    margin-bottom: var(--space-xl);
   }
 
   @media (max-width: 600px) {
@@ -64,13 +55,13 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
   ).format("MMMM Do, YYYY")
 
   return (
-    <Layout location={location} noContainer="true" noPadding="true">
+    <Layout location={location} noPadding="" noContainer="true">
       <StyledPhotoPage>
         <Img className="photo" fluid={data.sanityMyImage.myImage.asset.fluid} />
-        <h1 className="date-time-description">
+        <p className="date-time-description">
           <span className="text--sm date-time">{formatedDateTime}</span>{" "}
           <span className="text--md caption">{data.sanityMyImage.caption}</span>
-        </h1>
+        </p>
         {pageContext.next && (
           <Link
             none="true"

@@ -7,6 +7,9 @@ import { kebabCase } from "lodash"
 import styled from "styled-components"
 
 const StyledPost = styled.div`
+  margin: 0 auto;
+  max-width: var(--container);
+
   .post-title {
     font-weight: 900;
     text-transform: uppercase;
@@ -27,7 +30,7 @@ const StyledPost = styled.div`
   }
 
   .post-body {
-    margin-top: var(--space-xl);
+    margin: var(--space-xl) 0;
   }
 
   .more-posts-links {
@@ -42,7 +45,7 @@ const StyledPost = styled.div`
 
   @media (max-width: 600px) {
     .post-title {
-      font-size: var(--text-lg);
+      font-size: var(--text-xl);
     }
   }
 `
@@ -52,7 +55,7 @@ export default function PostTemplatePage({ data, pageContext, location }) {
   const { next, previous } = pageContext
 
   return (
-    <Layout location={location}>
+    <Layout location={location} noContainer="true">
       <StyledPost>
         <SEO title={post.frontmatter.title} />
         <h1 className="post-title">{post.frontmatter.title}</h1>
