@@ -1,15 +1,12 @@
-import React from "react"
+import { Layout, SEO } from "../components/elements"
 
-import { SEO, Layout } from "../components/elements"
-import { StyledPage } from "../components/styles"
+import React from "react"
 
 const NotFoundPage = ({ location }) => (
   <Layout location={location}>
-    <StyledPage>
-      <SEO title="404: Not found" />
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </StyledPage>
+    <SEO title="404: Not found" />
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </Layout>
 )
 
