@@ -59,8 +59,8 @@ export default function PhotoTemplatePage({ data, location, pageContext }) {
       <StyledPhotoPage>
         <Img className="photo" fluid={data.sanityMyImage.myImage.asset.fluid} />
         <p className="date-time-description">
-          <span className="text--sm date-time">{formatedDateTime}</span>{" "}
-          <span className="text--md caption">{data.sanityMyImage.caption}</span>
+          <span className="date-time text--sm">{formatedDateTime}</span>{" "}
+          <span className="caption text--md">{data.sanityMyImage.caption}</span>
         </p>
         {pageContext.next && (
           <Link

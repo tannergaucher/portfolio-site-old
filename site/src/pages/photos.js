@@ -9,7 +9,7 @@ export default function PhotosPage({ location }) {
   const { edges } = useAllMyImages()
 
   return (
-    <Layout location={location} noContainer="true" noPadding="true">
+    <Layout location={location} noContainer="true" noPadding="">
       <SEO title="Photos" />
       <ContentGrid>
         {edges.map(edge => (

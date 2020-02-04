@@ -34,7 +34,7 @@ const StyledPost = styled.div`
   }
 
   .more-posts-links {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
   }
 
   .next-post-title,
@@ -46,6 +46,10 @@ const StyledPost = styled.div`
   @media (max-width: 600px) {
     .post-title {
       font-size: var(--text-xl);
+    }
+
+    .more-posts-links {
+      margin-bottom: var(--space-lg);
     }
   }
 `
