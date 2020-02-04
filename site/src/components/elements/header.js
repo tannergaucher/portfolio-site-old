@@ -18,6 +18,7 @@ const StyledIndexHeader = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin: 0 auto;
 
   .site-title {
     font-weight: 900;

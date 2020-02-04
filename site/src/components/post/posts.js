@@ -7,7 +7,7 @@ import styled from "styled-components"
 import { useLatestPost } from "../hooks"
 
 const StyledPosts = styled.div`
-  margin: var(--space-xl) 0;
+  margin: var(--space-xl) auto;
   padding: var(--space-sm);
   max-width: var(--container);
 

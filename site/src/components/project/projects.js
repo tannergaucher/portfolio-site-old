@@ -6,6 +6,7 @@ import { useLatestProjects } from "../hooks"
 
 const StyledProjects = styled.div`
   margin-bottom: var(--space-xl);
+  margin: 0 auto;
   padding: var(--space-sm);
   max-width: var(--container);
 

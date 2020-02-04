@@ -4,7 +4,7 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledContactSection = styled.div`
-  margin: var(--space-lg) left;
+  margin: var(--space-lg) auto;
   padding: 0 var(--space-sm);
   max-width: var(--container);
 
