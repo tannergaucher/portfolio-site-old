@@ -8,6 +8,7 @@ import { useLatestMyImages } from "../hooks"
 
 const StyledLatestPhotos = styled.div`
   margin-bottom: var(--space-xl);
+  padding: 0 var(--space-sm);
 
   .container {
     max-width: var(--container);
