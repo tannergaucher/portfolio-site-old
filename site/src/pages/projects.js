@@ -7,7 +7,7 @@ import { useProjects } from "../components/hooks"
 
 const StyledProjectsPage = styled.div`
   max-width: var(--container);
-  margin: var(--space-xl) auto;
+  margin: var(--space-lg) auto;
 `
 
 export default function Projects({ location }) {
