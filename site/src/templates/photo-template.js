@@ -28,20 +28,21 @@ const StyledPhotoPage = styled.div`
   }
 
   .next {
-    margin-top: var(--space-xl);
     letter-spacing: var(--caps-letter-spacing);
+    padding: var(--space-md) 0;
+    margin-top: var(--space-xl);
   }
 
   .previous {
-    margin-top: var(--space-lg);
     letter-spacing: var(--caps-letter-spacing);
+    padding: var(--space-md) 0;
   }
 
   .all {
-    margin-top: var(--space-lg);
     text-transform: uppercase;
     letter-spacing: var(--caps-letter-spacing);
     margin-bottom: var(--space-xl);
+    padding: var(--space-md) 0;
   }
 
   @media (max-width: 600px) {

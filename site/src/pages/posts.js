@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { useAllPosts } from "../components/hooks"
 
 const StyledPostsPage = styled.div`
-  margin: var(--space-xl) auto;
+  margin: var(--space-lg) auto;
   max-width: var(--container);
 `
 
