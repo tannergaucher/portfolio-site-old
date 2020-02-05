@@ -12,7 +12,6 @@ const StyledTagPage = styled.div`
 
 export default function TagPage({ location, pageContext, data }) {
   return (
-      {data.allMarkdownRemark.edges.map(edge => (
     <Layout location={location} noContainer="true">
       <StyledTagPage>
         <SEO title={pageContext.tag} />
