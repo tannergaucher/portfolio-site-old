@@ -4,7 +4,7 @@ import { PostCard } from "../post"
 import React from "react"
 import { ViewAllLink } from "../elements"
 import styled from "styled-components"
-import { useLatestPost } from "../hooks"
+import { useLatestPosts } from "../hooks"
 
 const StyledPosts = styled.div`
   margin: var(--space-xl) auto;
@@ -20,7 +20,7 @@ const StyledPosts = styled.div`
 `
 
 export default function Posts() {
-  const { edges } = useLatestPost()
+  const { edges } = useLatestPosts()
 
   return (
     <StyledPosts>

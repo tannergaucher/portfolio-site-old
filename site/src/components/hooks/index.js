@@ -1,18 +1,18 @@
-import { useSiteMetadata } from "./use-site-metadata"
-import { useAvatarImage } from "./use-avatar-image"
+import { useAllMyImages } from "./use-all-my-images"
 import { useAllPosts } from "./use-all-posts"
-import { useLatestPost } from "./use-latest-post"
 import { useAllProjects } from "./use-all-projects"
+import { useAvatarImage } from "./use-avatar-image"
+import { useLatestMyImages } from "./use-latest-my-images"
+import { useLatestPosts } from "./use-latest-posts"
 import { useLatestProjects } from "./use-latest-projects"
 import { useProjects } from "./use-projects"
-import { useAllMyImages } from "./use-all-my-images"
-import { useLatestMyImages } from "./use-latest-my-images"
+import { useSiteMetadata } from "./use-site-metadata"
 
 export {
   useAllPosts,
   useAvatarImage,
   useSiteMetadata,
-  useLatestPost,
+  useLatestPosts,
   useAllProjects,
   useProjects,
   useAllMyImages,

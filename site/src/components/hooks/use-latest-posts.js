@@ -1,6 +1,6 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
-export const useLatestPost = () => {
+export const useLatestPosts = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query USE_LATEST_POSTS {
