@@ -1,104 +1,46 @@
-import { Layout, SEO } from "../components/elements"
+import { Layout, SEO } from "../components"
+import { Link, graphql } from "gatsby"
 
-import { Link } from "../components/styles"
 import React from "react"
-import { graphql } from "gatsby"
-import { kebabCase } from "lodash"
-import styled from "styled-components"
-
-const StyledPost = styled.div`
-  margin: 0 auto;
-  max-width: var(--container);
-
-  .post-title {
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: var(--caps-letter-spacing);
-    margin-bottom: 0;
-  }
-
-  .post-description {
-    margin-top: var(--space-lg);
-    font-weight: 500;
-  }
-
-  .post-date {
-    margin-top: var(--space-lg);
-    text-transform: uppercase;
-    letter-spacing: var(--caps-letter-spacing);
-    font-weight: 500;
-  }
-
-  .post-body {
-    margin: var(--space-xl) 0;
-  }
-
-  .more-posts-links {
-    margin-bottom: var(--space-xl);
-  }
-
-  .next-post-title,
-  .previous-post-title {
-    margin-bottom: var(--space-lg);
-    font-weight: 900;
-  }
-
-  @media (max-width: 600px) {
-    .post-title {
-      font-size: var(--text-xl);
-    }
-
-    .more-posts-links {
-      margin-bottom: var(--space-lg);
-    }
-  }
-`
 
 export default function PostTemplatePage({ data, pageContext, location }) {
   const post = data.markdownRemark
   const { next, previous } = pageContext
 
   return (
-    <Layout location={location} noContainer="true">
-      <StyledPost>
-        <SEO title={post.frontmatter.title} />
-        <h1 className="post-title">{post.frontmatter.title}</h1>
-        <h2 className="post-description text--md">
-          {post.frontmatter.description}
-        </h2>
-        <h4 className="post-date text--sm">{post.frontmatter.date}</h4>
-        <div className="post-body">
-          <article dangerouslySetInnerHTML={{ __html: post.html }}></article>
-        </div>
-        <div className="more-posts-links">
-          {next && (
-            <div className="next-post">
-              <small>Next</small>
-              <Link
-                className="next-post-link"
-                to={`${next.fields.slug}`}
-                none="true"
-              >
-                <h3 className="next-post-title">{next.frontmatter.title}</h3>
-              </Link>
-            </div>
-          )}
-          {previous && (
-            <div className="previous-post">
-              <small>Previous</small>
-              <Link
-                className="previous-post-link"
-                to={`${previous.fields.slug}`}
-                none="true"
-              >
-                <h3 className="previous-post-title">
-                  {previous.frontmatter.title}
-                </h3>
-              </Link>
-            </div>
-          )}
-        </div>
-      </StyledPost>
+    <Layout location={location}>
+      <SEO title={post.frontmatter.title} />
+      <article className="container padding">
+        <h1>{post.frontmatter.title}</h1>
+        <h2>{post.frontmatter.description}</h2>
+        <time className="text--sm">{post.frontmatter.date}</time>
+        <div
+          className="post-body"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          style={{ marginTop: `var(--space-lg)` }}
+        />
+      </article>
+      <div className="container padding">
+        {next && (
+          <div>
+            <small>Next</small>
+            <Link className="nav-link" to={`${next.fields.slug}`}>
+              <h3 className="next-post-title">{next.frontmatter.title}</h3>
+            </Link>
+          </div>
+        )}
+
+        {previous && (
+          <div>
+            <small>Previous</small>
+            <Link className="nav-link" to={`${previous.fields.slug}`}>
+              <h3 className="previous-post-title">
+                {previous.frontmatter.title}
+              </h3>
+            </Link>
+          </div>
+        )}
+      </div>
     </Layout>
   )
 }

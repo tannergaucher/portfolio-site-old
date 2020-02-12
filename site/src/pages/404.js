@@ -1,4 +1,4 @@
-import { Layout, SEO } from "../components/elements"
+import { Layout, SEO } from "../components"
 
 import React from "react"
 
