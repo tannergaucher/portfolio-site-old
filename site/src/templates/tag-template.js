@@ -4,14 +4,16 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export default function TagPage({ location, pageContext, data }) {
+  const { tag } = pageContext
+
   return (
     <Layout location={location}>
-      <SEO title={pageContext.tag} />
-      <h1>{pageContext.tag}</h1>
+      <SEO title={tag} />
+      <h1>{tag}</h1>
       <>
         {data.allMarkdownRemark.edges.map(edge => (
-          <div>
-            {/* Tag  */}
+          <div key="">
+            {/* Post Card  */}
             {/*  */}
           </div>
         ))}
